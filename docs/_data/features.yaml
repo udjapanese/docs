@@ -1,0 +1,147 @@
+- label: 'Abbr'
+  languages:
+  - label: 'u/feat'
+- label: 'AbsErgDatNumber'
+  languages:
+  - label: 'u/feat'
+- label: 'AbsErgDatPerson'
+  languages:
+  - label: 'u/feat'
+- label: 'AbsErgDatPolite'
+  languages:
+  - label: 'u/feat'
+- label: 'AdpType'
+  languages:
+  - label: 'u/feat'
+- label: 'AdvType'
+  languages:
+  - label: 'u/feat'
+- label: 'Animacy'
+  languages:
+  - label: 'u/feat'
+- label: 'Aspect'
+  languages:
+  - label: 'u/feat'
+- label: 'Case'
+  languages:
+  - label: 'u/feat'
+- label: 'Clusivity'
+  languages:
+  - label: 'u/feat'
+- label: 'ConjType'
+  languages:
+  - label: 'u/feat'
+- label: 'Definite'
+  languages:
+  - label: 'u/feat'
+- label: 'Degree'
+  languages:
+  - label: 'u/feat'
+- label: 'Echo'
+  languages:
+  - label: 'u/feat'
+- label: 'ErgDatGender'
+  languages:
+  - label: 'u/feat'
+- label: 'Evident'
+  languages:
+  - label: 'u/feat'
+- label: 'Foreign'
+  languages:
+  - label: 'u/feat'
+- label: 'Gender'
+  languages:
+  - label: 'u/feat'
+- label: 'Hyph'
+  languages:
+  - label: 'u/feat'
+- label: 'Mood'
+  languages:
+  - label: 'u/feat'
+- label: 'NameType'
+  languages:
+  - label: 'u/feat'
+- label: 'NounClass'
+  languages:
+  - label: 'u/feat'
+- label: 'NounType'
+  languages:
+  - label: 'u/feat'
+- label: 'Number'
+  languages:
+  - label: 'u/feat'
+- label: 'NumForm'
+  languages:
+  - label: 'u/feat'
+- label: 'NumType'
+  languages:
+  - label: 'u/feat'
+- label: 'NumValue'
+  languages:
+  - label: 'u/feat'
+- label: 'PartType'
+  languages:
+  - label: 'u/feat'
+- label: 'Person'
+  languages:
+  - label: 'u/feat'
+- label: 'Polarity'
+  languages:
+  - label: 'u/feat'
+- label: 'Polite'
+  languages:
+  - label: 'u/feat'
+- label: 'Poss'
+  languages:
+  - label: 'u/feat'
+- label: 'PossedNumber'
+  languages:
+  - label: 'u/feat'
+- label: 'PossGender'
+  languages:
+  - label: 'u/feat'
+- label: 'PossNumber'
+  languages:
+  - label: 'u/feat'
+- label: 'PossPerson'
+  languages:
+  - label: 'u/feat'
+- label: 'Prefix'
+  languages:
+  - label: 'u/feat'
+- label: 'PrepCase'
+  languages:
+  - label: 'u/feat'
+- label: 'PronType'
+  languages:
+  - label: 'u/feat'
+- label: 'PunctSide'
+  languages:
+  - label: 'u/feat'
+- label: 'PunctType'
+  languages:
+  - label: 'u/feat'
+- label: 'Reflex'
+  languages:
+  - label: 'u/feat'
+- label: 'Style'
+  languages:
+  - label: 'u/feat'
+- label: 'Subcat'
+  languages:
+  - label: 'u/feat'
+- label: 'Tense'
+  languages:
+  - label: 'u/feat'
+- label: 'Typo'
+  languages:
+  - label: 'u/feat'
+- label: 'VerbForm'
+  languages:
+  - label: 'u/feat'
+- label: 'VerbType'
+  languages:
+  - label: 'u/feat'
+- label: 'Voice'
+  languages:
+  - label: 'u/feat'

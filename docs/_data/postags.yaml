@@ -1,0 +1,51 @@
+- label: 'ADJ'
+  languages:
+  - label: 'u/pos'
+- label: 'ADP'
+  languages:
+  - label: 'u/pos'
+- label: 'ADV'
+  languages:
+  - label: 'u/pos'
+- label: 'AUX'
+  languages:
+  - label: 'u/pos'
+- label: 'CCONJ'
+  languages:
+  - label: 'u/pos'
+- label: 'DET'
+  languages:
+  - label: 'u/pos'
+- label: 'INTJ'
+  languages:
+  - label: 'u/pos'
+- label: 'NOUN'
+  languages:
+  - label: 'u/pos'
+- label: 'NUM'
+  languages:
+  - label: 'u/pos'
+- label: 'PART'
+  languages:
+  - label: 'u/pos'
+- label: 'PRON'
+  languages:
+  - label: 'u/pos'
+- label: 'PROPN'
+  languages:
+  - label: 'u/pos'
+- label: 'PUNCT'
+  languages:
+  - label: 'u/pos'
+- label: 'SCONJ'
+  languages:
+  - label: 'u/pos'
+- label: 'SYM'
+  languages:
+  - label: 'u/pos'
+- label: 'VERB'
+  languages:
+  - label: 'u/pos'
+- label: 'X'
+  languages:
+  - label: 'u/pos'

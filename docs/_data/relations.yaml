@@ -1,0 +1,111 @@
+- label: 'acl'
+  languages:
+  - label: 'u/dep'
+- label: 'advcl'
+  languages:
+  - label: 'u/dep'
+- label: 'advmod'
+  languages:
+  - label: 'u/dep'
+- label: 'amod'
+  languages:
+  - label: 'u/dep'
+- label: 'appos'
+  languages:
+  - label: 'u/dep'
+- label: 'aux'
+  languages:
+  - label: 'u/dep'
+- label: 'case'
+  languages:
+  - label: 'u/dep'
+- label: 'cc'
+  languages:
+  - label: 'u/dep'
+- label: 'ccomp'
+  languages:
+  - label: 'u/dep'
+- label: 'clf'
+  languages:
+  - label: 'u/dep'
+- label: 'compound'
+  languages:
+  - label: 'u/dep'
+- label: 'conj'
+  languages:
+  - label: 'u/dep'
+- label: 'cop'
+  languages:
+  - label: 'u/dep'
+- label: 'csubj'
+  languages:
+  - label: 'u/dep'
+- label: 'dep'
+  languages:
+  - label: 'u/dep'
+- label: 'det'
+  languages:
+  - label: 'u/dep'
+- label: 'discourse'
+  languages:
+  - label: 'u/dep'
+- label: 'dislocated'
+  languages:
+  - label: 'u/dep'
+- label: 'expl'
+  languages:
+  - label: 'u/dep'
+- label: 'fixed'
+  languages:
+  - label: 'u/dep'
+- label: 'flat'
+  languages:
+  - label: 'u/dep'
+- label: 'goeswith'
+  languages:
+  - label: 'u/dep'
+- label: 'iobj'
+  languages:
+  - label: 'u/dep'
+- label: 'list'
+  languages:
+  - label: 'u/dep'
+- label: 'mark'
+  languages:
+  - label: 'u/dep'
+- label: 'nmod'
+  languages:
+  - label: 'u/dep'
+- label: 'nsubj'
+  languages:
+  - label: 'u/dep'
+- label: 'nummod'
+  languages:
+  - label: 'u/dep'
+- label: 'obj'
+  languages:
+  - label: 'u/dep'
+- label: 'obl'
+  languages:
+  - label: 'u/dep'
+- label: 'orphan'
+  languages:
+  - label: 'u/dep'
+- label: 'parataxis'
+  languages:
+  - label: 'u/dep'
+- label: 'punct'
+  languages:
+  - label: 'u/dep'
+- label: 'reparandum'
+  languages:
+  - label: 'u/dep'
+- label: 'root'
+  languages:
+  - label: 'u/dep'
+- label: 'vocative'
+  languages:
+  - label: 'u/dep'
+- label: 'xcomp'
+  languages:
+  - label: 'u/dep'
