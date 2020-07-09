@@ -8,12 +8,9 @@ udver: '2'
 
 # Universal Dependency Relations
 
-The following table lists the 37 universal syntactic relations used in UD v2. It is a revised version of the relations 
-originally described in [*Universal Stanford Dependencies: A cross-linguistic typology*](http://nlp.stanford.edu/pubs/USD_LREC14_paper_camera_ready.pdf) (de Marneffe *et al.* 2014). 
+以下の表は，UD v2. で用いられる37つの普遍的な構文関係 (universal syntactic relations) をリスト化したものであり，これは  [*Universal Stanford Dependencies: A cross-linguistic typology*](http://nlp.stanford.edu/pubs/USD_LREC14_paper_camera_ready.pdf) (de Marneffe *et al.* 2014) の改変版である.
 
-The upper part of the table follows the main organizing principles of the UD taxonomy such that _rows_ correspond to functional categories in relation to the head (core arguments of clausal predicates, non-core dependents of clausal predicates, and dependents of nominals) while _columns_ correspond to structural categories of the dependent
-(nominals, clauses, modifier words, function words).
-The lower part of the table lists relations that are not dependency relations in the narrow sense.
+表の上部はUDの分類法における主な構成原則に従うものであり，_rows_ は主辞 (head; core arguments of clausal predicates, non-core dependents of clausal predicates, and dependents of nominals) に対する機能カテゴリ (functional categories) と対応し，_columns_ は依存部 (dependent; nominals, clauses, modifier words, function words) の構造的カテゴリに対応する．表の下部は狭義の依存関係 (dependency relations) にない関係をリスト化したものである． 
 
 <!-- 
 * Relations used to analyze coordination

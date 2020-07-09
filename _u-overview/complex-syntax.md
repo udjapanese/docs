@@ -13,8 +13,10 @@ udver: '2'
 
 ## Coordination
 
-Complex clauses involving coordination arise when two main clauses or two subordinate clauses at the same level are
-linked in a coordinate structure, which may or may not involve an overt coordinating conjunction. We treat coordinate structures asymmetrically by taking the first conjunct as the head with all other conjuncts attached to it via the [u-dep/conj]() relation. Coordinating conjunctions and punctuation delimiting the conjuncts are attached to the immediately following conjunct using the [u-dep/cc]() and [u-dep/punct]() relations respectively.
+２つの主節もしくは，２つの従属節が同じレベルで等位構造 (coordinate structures) の関係にある場合，等位関係を持つ複合節 (complex clauses) が生起する (等位接続詞 (coordinating conjunction) が表層に現れるとは限らない)．
+先頭の接続詞を主辞 (head) とし，他の全ての接続詞 [u-dep/conj]() を用いて主辞に付加させることによって，等位構造は非対称的に扱われる．
+%%
+Coordinating conjunctions and punctuation delimiting the conjuncts are attached to the immediately following conjunct using the [u-dep/cc]() and [u-dep/punct]() relations respectively.
 
 ~~~ sdparse
 He came home , took a shower and immediately went to bed .
