@@ -8,23 +8,10 @@ udver: '2'
 
 # Layered universal features
 
-In some languages, some features are marked more than once on the same word.
-We say that there are several _layers_ of the feature.
-The exact meaning of individual layers is language-dependent.
+言語によっては，同一の語に対して複数の素性 (features)  が標示される (marked) 場合があり，これを，素性の _layers_ が存在するものと考える． 個々のレイヤー (layers) の正確な意味は，言語に依存する．
 
-For example, possessive adjectives, determiners and pronouns may have two
-different values of [u-feat/Gender]() and two of [u-feat/Number](). One of the values is determined
-by agreement with the modified (possessed) noun. This is parallel to other
-(non-possessive)
-adjectives and determiners that agree in gender and number with the nouns they
-modify. The other value is determined lexically because it is a property of
-the possessor.
-The following table shows that
-English distinguishes only the possessor's gender and number;
-Hindi distinguishes gender in agreement and number both in agreement and of the possessor
-(there is no neuter gender in Hindi);
-German distinguishes both features in both dimensions
-(more differences would be seen if we also showed German dative and accusative forms, not just nominatives).
+例えば，所有形容詞 (possessive adjectives) ，限定詞 (determiners) や代名詞 (pronouns) は [u-feat/Gender]() で2つの異なる値 (values) を持ち， [u-feat/Number]() でも2つの異なる値を持つことがある．値の1つは修飾された (所有された) 名詞 (noun) との一致 (agreement) によって決定される．これは，他の (所有を表さない) 形容詞や限定詞といった，性 (gender) と数 (number) に関して修飾した名詞と一致を起こさないものと並行的に考えることができる．他の値は語彙的に決定されるが，これは，所有者 (possessor) 自身の性質である．
+以下の表では，次のことを示している；英語では所有者の性と数のみを区別する；ヒンディー語は性の一致を区別し，数は一致と所有者の両方から区別される (ヒンディー語には中性 (neuter) が存在しない)；ドイツ語では，性と数のどちらも，一致と所有者の両方から区別される (ドイツ語において，主格 (nominative) だけではなく与格 (dative) や対格 (accusative) 形をみたとき，変化はより鮮明となる)．
 
 <table>
   <tr>
@@ -74,40 +61,21 @@ German distinguishes both features in both dimensions
   </tr>
 </table>
 
-If a feature is (can be) layered in a language, the name of the feature must
-indicate the layer. An additional identifier in square brackets is used to
-distinguish layers, e.g. `Gender[psor]` for the possessor's gender.
-We recommend that the layer identifiers consist of lowercase English letters
-`[a-z]` and/or digits `[0-9]`.
-The layers, their meaning and their
-identifiers must be defined in a language-specific extension to this
-documentation. For each layered feature, one layer may be defined as default
-and the corresponding features then appear without identifier,
-e.g. `Gender=Masc|Gender[psor]=Fem`.
+ある言語で素性がレイヤーを成すとき，素性の名前はレイヤーを示す必要がある．また，レイヤーを区別するため，例えば所有者の性を `Gender[psor]` のようにして，大括弧 [ ] に表される識別子が用いられる. レイヤーの識別子は，小文字の英字 `[a-z]` か，もしくは `[0-9]` から構成することが推奨される．レイヤー，レイヤーの意味や識別子は，本ドキュメンテーションで用いられる言語固有の拡張子 (language-specific extension) <!--extensionはUDのタグを指すと思ったので，拡張子と呼ぶことにしています--> によって定義されなければならない．各レイヤーにある素性に関して，1つのレイヤーはデフォルトとして定義されることがあり，その場合は，例えば  `Gender=Masc|Gender[psor]=Fem` のように，対応する素性が識別子なしで現れることになる．
 
-<strong>In the following, we list some examples of layered features attested in existing corpora.
-These may be used as inspiration or they may be used _as-is_ in treebanks for which they are
-found appropriate. Note that even if a treebank uses a layered feature from this section,
-it should still be described in the language-specific documentation.</strong>
+<strong>以下，実際のコーパスで確認されたレイヤーの素性の例を列挙しておく．<!--These may be used as inspiration or they may be used _as-is_ in treebanks for which they are found appropriate.--> また，ツリーバンクが本セクションで示したレイヤーの素性を用いたとしても，特定言語のドキュメンテーションにおいては，レイヤーが何なのかを説明することが望ましい．
 
 ## Gender[psor]
 
-Possessive
-adjectives and pronouns may have two different <a href="u/feat/Gender.html">genders</a>: that of the
-possessed object (gender agreement with modified noun) and that of
-the possessor (lexical feature, inherent gender).
+所有形容詞や代名詞は2つの異なる <a href="u/feat/Gender.html">性</a> を持つことがある: 1つは所有物 (被修飾名詞との性の一致) であり，もう1つは所有者 (語彙的素性，固有の性) である．
 
-The `Gender[psor]` feature captures the possessor's gender.
+素性  `Gender[psor]` は所有者の性を表す．
 
-In
-the Czech examples below, the masculine Gender[psor] implies using one
-of the suffixes <I>-</I><I>ův, -ova, -ovo,</I>
-and the feminine Gender[psor] implies using one of <I>-</I><I>in,
--ina, -ino</I>.
+以下のチェコ語の例では，男性 (masuline) の Gender[psor] が 接尾辞 <I>-</I><I>ův, -ova, -ovo,</I> をいずれかを用いることを示しており，女性 (feminine) の Gender[psor] が <I>-</I><I>in, -ina, -ino</I> のいずれかを用いることを示している．
 
 ### Masc: masculine possessor
 
-Examples:
+例:
 [cs]
 <span style='color: red'><I>otcův syn</I></span> (father's son; `Gender=Masc|Gender[psor]=Masc`);
 <span style='color: red'><I>otcova dcera</I></span> (father's daughter; `Gender=Fem|Gender[psor]=Masc`);
@@ -115,33 +83,31 @@ Examples:
 
 ### Fem: feminine possessor
 
-Examples:
+例:
 [cs]
 <span style='color: red'><I>matčin syn</I></span> (mother's son; `Gender=Masc|Gender[psor]=Fem`);
 <span style='color: red'><I>matčina dcera</I></span> (mother's daughter; `Gender=Fem|Gender[psor]=Fem`);
 <span style='color: red'><I>matčino dítě</I></span> (mother's child; `Gender=Neut|Gender[psor]=Fem`).
 
-In other languages (Hebrew, Arabic), the possessor's gender and number are agreement rather than lexical features:
+他の言語 (ヘブライ語，アラビア語) では，所有者の性と数は語彙自体の素性よりも，一致によって決定される．
 
-Examples: [he] <i><span style='color:red'>HKPH</span> FL HARC</i> (perimeter of country).
-Features of the two nouns are as follows:
+例: [he] <i><span style='color:red'>HKPH</span> FL HARC</i> (国の周囲 (perimeter of country) ).
+2つの名詞の素性は以下の通り:
 perimeter.`Gender=Masc|Gender[psor]=Fem|Number=Sing|Number[psor]=Sing`
 country.`Definite=Def|Gender=Fem|Number=Sing`.
 
-The [psor] features of _perimeter_ are dictated by agreement with the possessor, _country._
 
-(This is a partial description of this example. _HKPH_ has many morphological analyses, some of them are masculine single-layered, some of them are feminine single-layered. You can only find the right morphosyntactic analysis if you detect the two layers of agreement features, and can identify this specific agreement pattern.)
+_perimeter_  の素性 [psor]  は，所有者である _country._ との一致から決定される．
 
+(これは，上記の例の部分的な記述である．_HKPH_ は多数の形態論的分析が行われ，男性・単数のレイヤーと，女性・単数のレイヤーに分かれる．2つの一致素性のレイヤーを見つけて個々の一致パターンに同定できれば，正しい形態分析が可能となる．<!-- right morphosyntactic analysis-->)
 ## Number[psor]
 
-Possessives
-may have two different <a href="u/feat/Number.html">numbers</a>: that of the possessed object (number
-agreement with modified noun) and that of the possessor. The
-`Number[psor]` feature captures the possessor's number.
+所有形は2つの異なった <a href="u/feat/Number.html">数</a> を持つことがある: 1つは所有物 (被修飾名詞との数の一致) であり，もう1つは所有者である．
+素性 `Number[psor]` は所有者の数を表す．
 
 ### Sing: singular possessor
 
-Examples:
+例:
 [en]
 <i><span style='color: red'>my, his, her, its</span>;</i>
 [cs]
@@ -152,7 +118,7 @@ Examples:
 
 ### Plur: plural possessor
 
-Examples:
+例:
 [en]
 <i><span style='color: red'>our, their</span>;</i>
 [cs]
@@ -163,8 +129,9 @@ Examples:
 
 ## Person[psor]
 
-The possessor's person is marked e.g. on Hungarian nouns. These noun
-forms would be translated to English as possessive pronoun + noun.
+所有者の人称 (person) は，ハンガリー語の名詞などで標示される．これらの名詞形は，所有代名詞 + 名詞 として英語に翻訳されるだろう．
+
+
 
 Note that it is reasonable to make this a layered feature even though
 the default <a href="u/feat/Person.html">Person</a> is normally not
