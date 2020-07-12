@@ -1,5 +1,7 @@
 title: Universal Dependencies 日本語
+
 email: masayu-a@ninjal.ac.jp
+
 description: >- # this means to ignore newlines until "baseurl:"
   Universal Dependencies 日本語関連情報ページです。
   
@@ -32,6 +34,16 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: masayu_a
+    github:  masayu-a
 
 source:   .
 
