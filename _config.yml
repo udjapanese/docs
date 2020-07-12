@@ -85,6 +85,8 @@ collections:
     output: true
   u-feat:
     output: true
+  includes:
+    output: true
 
 
 # URL configuration
