@@ -40,7 +40,7 @@
 {% if page.generated != 'true' %}          <span class="header-text"><a href="{{ site.git_edit }}/{% if page.collection %}{{ page.relative_path }}{% else %}{{ page.path }}{% endif %}" target="#">edit page</a></span>{% endif %}
           <span class="header-text"><a href="{{ site.tracker }}">issue tracker</a></span>
         </td><td>
-          <gcse:search></gcse:search>
+          <!-- gcse:search></gcse:search -->
         </td></tr></table>
       </div>
 
@@ -71,8 +71,8 @@
 <!-- support for embedded visualizations -->
 {% include embedding.html %}
 
-<!-- google analytics -->
-{% include analytics.html %}
+<!-- google analytics {% include analytics.html %} -->
+
 
       <div id="footer">
 	  <p class="footer-text">&copy; 2014–2020
