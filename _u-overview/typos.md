@@ -11,6 +11,7 @@ udver: '2'
 
 # Typos and Other Errors in Underlying Text
 
+時として，UDツリーバンクにあるテキストが当該言語の標準的なスペリングや他の文法規則に従わない場合があり，ほとんどの場合ではエラーをそのままにしておくことが望ましい．なぜなら，タグ付けや解析を行った <!--taggerが手作業っぽいが，parserは解析機を指すのか? 文脈からして，後者も人間による感じがするけど--> 人が
 Sometimes the text underlying a UD treebank does not conform to canonical spelling or other grammatical rules of the language. In most situations it is desirable to preserve the error because taggers and parsers that learn their models from the data should learn how to deal with noisy input too. On the other hand, it is also desirable to mark such places as errors and to show the correct spelling, so that an application can hide bad sentences or present their correct version when necessary.
 
 The recommendations on this page are designed with sporadic errors in mind. Technically they could be also applied to learner corpora, which are full of errors; however, learner corpora usually require more thinking, and the main question is: Do we want to guess what the author would have written if they knew the language better, or do we want to approximate “the grammar in their head,” which is probably a mixture of the intended language and a language they know better?

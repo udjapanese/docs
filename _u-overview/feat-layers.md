@@ -129,34 +129,15 @@ _perimeter_  の素性 [psor]  は，所有者である _country._ との一致�
 
 ## Person[psor]
 
-所有者の人称 (person) は，ハンガリー語の名詞などで標示される．これらの名詞形は，所有代名詞 + 名詞 として英語に翻訳されるだろう．
+所有者の人称 (person) はハンガリー語の名詞などには標示される．これらの名詞形は，所有代名詞 + 名詞 として英語に翻訳されるだろう．
 
+これは、デフォルトの <a href="u/feat/Person.html">人称</a> が通常，名詞に標示されないとしても，レイヤー素性と考えることが合理的だろう．名詞は，動詞との関係 (名詞と人称の一致を行う場合がある) により，常に3人称として現れる．よって，デフォルトの人称が表層で形態的に標示されず，デフォルトの  `Person` が名詞の素性に現れなかったとしても，所有者を標示するためにデフォルトのレイヤーを用いるべきではない．デフォルトのレイヤーを濫用することで，名詞が置き換わる人称代名詞と並行的にタグ付けを扱えなくなるからである． 
 
-
-Note that it is reasonable to make this a layered feature even though
-the default <a href="u/feat/Person.html">Person</a> is normally not
-marked on nouns. In relation to verbs (which may have to mark person
-agreement with nouns), a noun is almost always in the third person.
-So even if this default person is not explicitly marked morphologically,
-and probably the default `Person` does not appear among features of
-the noun, we should not use the default layer of persons to mark the
-possessor. If we abused the default layer, the annotation would no longer
-be parallel to personal pronouns that could be substituted for the noun.
-
-On the other hand, we probably do not want a separate `[psor]` layer
-for the person of possessive determiners / pronouns.
-They modify a noun, not a verb. Arguably they have only one `Person`
-feature and it is lexical (while for the Hungarian nouns,
-`Person[psor]` is inflectional).
-They usually modify nouns, not verbs, and agreement with verbs does
-not play any role.
-Moreover, in some languages possessive pronouns are actually identical
-to personal pronouns in the genitive <a href="u/feat/Case.html">case</a>
-and it is logical that they have the same `Person` as in the nominative.
+一方で，所有形の限定詞/代名詞の人称に対して独立した `[psor]` のレイヤーを設けることは行わないだろう． それらは動詞ではなく名詞を修飾し，おそらく `Person` を一つしか持たず，その素性は語彙的なものであろう (ハンガリー語の名詞では，`Person[psor]`  は屈折する (inflectional) であるが) . また，通常それらは動詞ではなく名詞を修飾するため，動詞との一致は役割をもたない．さらに，いくつかの言語では，所有代名詞が人称代名詞の属格 (genitive) <a href="u/feat/Case.html">case</a> と同一であり，これらは当然，主格 (nominative) においても同じ  `Person` を持っている．
 
 ### 1: first person possessor
 
-Examples:
+例:
 [hu]
 <I>kutya</I> = dog;
 <span style='color: red'><I>kutyám</I></span> = my dog;
@@ -164,7 +145,7 @@ Examples:
 
 ### 2: second person possessor
 
-Examples:
+例:
 [hu]
 <I>kutya</I> = dog;
 <span style='color: red'><I>kutyád</I></span> = your.Sing dog;
@@ -172,7 +153,7 @@ Examples:
 
 ### 3: third person possessor
 
-Examples:
+例:
 [hu]
 <I>kutya</I> = dog;
 <span style='color: red'><I>kutyája</I></span> = his/her/its dog;
@@ -192,15 +173,13 @@ Peter has a lot of money.
 
 ## Number[psee]
 
-This feature seems to be very specific to Hungarian.
-It denotes the possessee's (possessed, owned noun phrase's) number.
-Hungarian has three types of number in the nominal inflection:
+この素性はハンガリー語に特有であり，所有物の (所有された名詞句の) 数を示す．ハンガリー語は名詞の屈折に関して3タイプの数がある．:
 
-* The number of the noun (inflectional, non-agreement).
-* The number of owners that own the noun (inflectional, agreement with possessor that may or may not be pronounced).
-* The number of the context-given referent, which is some possession of the noun, i.e. belongs to the noun (anaphoric possessive; in a sense, this is an agreement feature, but the head noun is not pronounced in the sentence).
-
-Examples from the Multext-East Hungarian lexicon:
+* 名詞の数 (屈折し，一致を行わない). 
+* 名詞を所有する，その所有者の数 (屈折し，発音されるかもしれない<!--表層に現れるかもしれない?-->所有者と一致を行う).
+* 所有物の名詞を表す，文脈から与えられた指示対象 (referent) の数 (これを照応所有 (anaphoric possessive) と呼ぶ; ある意味で，これは一致素性であるが，主辞の名詞 (所有物) は文において発音されない)．
+ 
+Multext-East にあるハンガリー語のレキシコンからの例:
 
 * <I>könnyedén</I> (SSS)
   * <I>könny</I> = a tear (singular)
@@ -223,16 +202,15 @@ Examples from the Multext-East Hungarian lexicon:
   * <I>tárgyalópartnerei</I> = his/her/its negotiators (plural, singular owner)
   * <I>tárgyalópartnereinkét</I> = (possession) of our negotiators (plural, plural owner, singular possession, accusative case)
 
-Words marked for plural possessions are very rare, though. Note
-that in the following example from Multext-East, Columbus is marked
-for plural possession, but not for his own owner. 
+ただし，複数の所有 (plural possession) <!--照応所有の例なので，この訳だとわかりづらいかも-->が標示された語は極めて稀である．以下はMultext-Eastからの例であるが，Columbusにある標示は所有者を表すのではなく，複数の所有を表していることに注意されたい．
 
 * <I>Kolumbuszéinál</I>
   * <I>Kolumbusz</I> = Columbus (singular)
   * <I>Kolumbuszéi</I> = (possessions) of Columbus (plural possession)
   * <I>Kolumbuszéinál</I> = (at the possessions) of Columbus (adessive case)
 
-See also <a href="http://ling.auf.net/lingbuzz/002042/current.pdf">Éva Dékány (2014): The syntax of anaphoric possessives in Hungarian</a>:
+詳しくは <a href="http://ling.auf.net/lingbuzz/002042/current.pdf">Éva Dékány (2014): The syntax of anaphoric possessives in Hungarian</a> を参照されたい:
+
 In anaphoric possessives the possessed noun, the head of the whole nominal phrase,
 is not pronounced, and its reference has to be recovered from the context.
 The possessor in Hungarian anaphoric possessives has to bear the _-é_ suffix.
@@ -244,19 +222,11 @@ there is an unpronounced possession.
 
 ## Layered verb agreement in Basque
 
-Verbs in many Indo-European languages must agree in person and number
-with their subject. This is what typically [u-feat/Person]() and
-[u-feat/Number]() of verbs denote.
+印欧語 (Indo-European languages) の多くの言語では，動詞は主語 (subject) の人称と数に一致しなければらない．これは，動詞の [u-feat/Person]() と [u-feat/Number]() によって示される． 
 
-Some verbs in Basque must agree in person and number with up to three arguments:
-the absolutive argument (subject of intransitive verbs and object of transitive verbs),
-the ergative argument (subject of transitive verbs)
-and the dative argument (indirect object).
+バスク語 (Basque) のいくつかの動詞では，最大3つの項 (arguments) の数と人称に一致する必要がある: 絶対格 (absolutive) の項 (自動詞の主語，他動詞の目的語)，能格 (ergative) の項 (他動詞の主語)，与格 (dative) の項 (間接目的語). 
 
-We could make the absolutive agreement the default, thus using `Person` and `Number`
-without layer identifiers.
-If there is also one of the other two arguments, we will have
-`Person[erg]`, `Number[erg]` and `Person[dat]`, `Number[dat]`, respectively.
+絶対格の一致をデフォルトとして扱い，`Person` and `Number` を識別子なしに用いることが可能である．そのとき，他の2つの項のいずれかがある場合は `Person[erg]`， `Number[erg]` ，`Person[dat]`， `Number[dat]` をそれぞれ用いる．　
 
 Example: <i><span style='color:red'>nahi dizkiegu</span>,</i> lemma = <i>nahi_izan</i>,
 feats = `Number=Plur|Number[dat]=Plur|Number[erg]=Plur|Person=3|Person[dat]=3|Person[erg]=1`
