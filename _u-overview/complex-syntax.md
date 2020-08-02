@@ -5,13 +5,13 @@ permalink: u/overview/complex-syntax.html
 udver: '2'
 ---
 
-# 複雑な節 (Complex Clauses)
+# Complex Clauses
 
 * [Coordinated clauses](#coordination)
 * [Subordinate clauses](#subordination)
 * [Secondary predicates](#secondary-predicates)
 
-## 等位関係 (Coordination)
+## Coordination
 
 ２つの主節もしくは，２つの従属節が同じレベルで等位構造 (coordinate structures) を成す場合，等位関係を持つ複合節 (complex clauses) が生起する (等位接続詞 (coordinating conjunction) が表層に現れるとは限らない)．
 先頭の接続詞を主辞 (head) とし，他の全ての接続詞は [u-dep/conj]() を用いて主辞に付加させることによって，等位構造は非対称的に扱われる．
@@ -43,9 +43,9 @@ And then we left .
 cc(left, And)
 ~~~
 
-### 節の等位接続における省略 (Ellipsis)
+### Ellipsis
 
-<!--等位関係は _省略要素 (ellipsis)_ と結合することがよくある．省略要素は通常必須の構成素であり，もう片方の連言子 (conjunct) の内容から推測可能であるため省略される．
+<!--等位関係は通常必須の構成素である_省略要素 (ellipsis)_ と結合することがよくある．省略要素は通常必須の構成素であり，もう片方の連言子 (conjunct) の内容から推測可能であるため省略される．
 Coordination is often combined with _ellipsis_, where one or more of the normally obligatory constituents
 of a clause or omitted because they can be inferred from material in another conjunct.-->
 
@@ -125,7 +125,7 @@ orphan(Jenny, CD)
 
 だが，関係 `orphan` は通常の関係が誤解を招く (例えば，目的語が主語に付加される場合) ときに限って用いられることに注意されたい．特に， 通常は関係 `cc` が等位接続に用いられるべきであり， それは `orphan` の依存関係 (dependency) によって形成された擬似的な構成素 (pseudo-constituent) に付加される.
 
-## 従属関係 (Subordination)
+## Subordination
 
 主要な，ないしは主要でない依存部 (dependent) が節構造として実現されるため，従属関係 (subordination) に関与する複雑な節 (complex clauses) が発生する．これは，以下の4つの基本タイプに区別される．:
 
@@ -136,7 +136,7 @@ orphan(Jenny, CD)
 
 さらに，_二次述語 (secondary predicates)_ についても議論の対象となり，これは節の補部ないしは名詞に後置される節を形成する修飾句として分析される．
 
-### 節の主語 (Clausal Subjects)
+### Clausal Subjects
 
 節の主語 (clausal subject) は節の統語的な主語であり，その統率子 (governor) となるのは，動詞もしくは動詞を用いない述語 (nonverbal predicate) の場合がある．統率子が受動態 (passive) にある場合，下位タイプの `csubj:pass` が用いられる場合がある．
 
@@ -156,7 +156,7 @@ What she said was well received
 csubj:pass(received, said)
 ~~~
 
-### 補文節 (Clausal Complements; 目的語)
+### Clausal Complements; 目的語
 
 動詞や形容詞の補文節は依存部の節であり，必須項 (core argument) である. すなわち，それは動詞や形容詞の目的語のように機能する．
 
@@ -220,7 +220,7 @@ nsubj(is, problem)
 (このような例において，コピュラ動詞は，節境界の緊密性 (integrity) を保持し，1つの述語が2つの主語に割り当てられることを避けるため，主辞として扱われる．名詞句が関与して，そのうちの1つが主辞として扱われるような等価構文の分析を考えたとき，上記の分析が最適とは言えないが，現在のところ推奨される解決策である．)
 
 
-### 副詞節を形成する修飾句 (Adverbial Clause Modifiers)
+### Adverbial Clause Modifiers
  
 副詞節を形成する修飾句 (adverbial clause modifier) は，動詞や他の述語 (形容詞など) を修飾する節を指し，必須の補部 (core compliment) ではなく，修飾句 (modifier) として分析される．これには，時間を表す節，結論 (consequence) や条件を表す節，目的を表す節などが含まれる．その依存部は必ず節であり (もしくは  [advmod]()) )，[advcl]() の依存部はその節内の一次述語である．<!--The dependent must be clausal (or else it is an [advmod]()) and the dependent is the main predicate of the clause. は理解ができるが，訳に困った．-->
 
@@ -244,7 +244,7 @@ He was upset when I talked to him
 advcl(upset, talked)
 ~~~
 
-### 名詞を後置修飾する節 (Adnominal Clause Modifiers)
+### Adnominal Clause Modifiers
 
 名詞を後置修飾する節 (An adnominal clause modifier) は，名詞句を修飾する節である． 
 
@@ -284,7 +284,7 @@ the fact that nobody cares
 acl(fact, cares)
 ~~~
 
-## 二次述語 (Secondary Predicates)
+## Secondary Predicates
 
 節は_二次述語 (secondary predication)_ や <!--_述語相当のもの (predicative)_-->を含む．このような効果が叙述名詞 (predicative noun) や前置詞が標示された句によって生まれたとしても，最も一般的な例は形容詞である．
 
@@ -296,7 +296,7 @@ acl(fact, cares)
 このような文には2つの述語，すなわち一次述語と二次述語があり，後者は *the cake* が *beatiful* であったり， *She* が *sad* であることを表す.
 
 
-Huddleston and Pullum (2002) の “The Cambridge Grammar of the English Language”  4章の5.3節では，述語相当の要素を任意的なものと義務的なものに分けており，それらは描写的 (depictives) であるか結果的 (resultatives) であるかのどちらかに属し，自動詞節か他動詞節に現れる．よって，以下の8つの可能性がある．:
+Huddleston and Pullum (2002) の “The Cambridge Grammar of the English Language”  4章の5.3節では，述語相当の要素<!--predicative-->を任意のものと義務的なものに分けており，それらは描写述語 (depictives) もしくは結果述語 (resultatives) どちらかに属し，自動詞節か他動詞節に現れる．よって，以下の8つの可能性がある．:
 
 * _He looked **fantastic**._ [obligatory, depictive, intransitive host]
 * _She kept Kim **warm**._ [obligatory, depictive, transitive host]
