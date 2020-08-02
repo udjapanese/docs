@@ -45,9 +45,9 @@ cc(left, And)
 
 ### Ellipsis
 
-<!--等位関係は通常必須の構成素である_省略要素 (ellipsis)_ と結合することがよくある．省略要素は通常必須の構成素であり，もう片方の連言子 (conjunct) の内容から推測可能であるため省略される．
+<!--等位関係は，_省略 (ellipsis)_ と組み合わさることが頻繁にある．他方の連言子 (conjunct) の内容から推測可能であるため，通常は義務的である一つかそれ以上の構成素が省略されるのである．
 Coordination is often combined with _ellipsis_, where one or more of the normally obligatory constituents
-of a clause or omitted because they can be inferred from material in another conjunct.-->
+of a clause or→ここ，be動詞ではなく本当にorなのか? omitted because they can be inferred from material in another conjunct.-->
 
 一次述語 (main predicate) が省略された場合，関連する `aux` か `cop` が節の主辞へと昇格 (promoted) する.
 
@@ -127,7 +127,7 @@ orphan(Jenny, CD)
 
 ## Subordination
 
-主要な，ないしは主要でない依存部 (dependent) が節構造として実現されるため，従属関係 (subordination) に関与する複雑な節 (complex clauses) が発生する．これは，以下の4つの基本タイプに区別される．:
+必須の，もしくは必須でない依存部 (dependent) が節構造として実現される場合，従属関係 (subordination) の関わる複合節 (complex clauses) が発生する．これは，以下の4つの基本タイプに区別される．:
 
 1. 節の主語 (Clausal subjects) ([u-dep/csubj]()).
 2. 補文節 (Clausal complements; 目的語) で，コントロール (control) を義務的に受けるもの ([u-dep/xcomp]()) と ([u-dep/ccomp]()) に分かれる.
@@ -156,7 +156,7 @@ What she said was well received
 csubj:pass(received, said)
 ~~~
 
-### Clausal Complements; 目的語
+### Clausal Complements (Object)
 
 動詞や形容詞の補文節は依存部の節であり，必須項 (core argument) である. すなわち，それは動詞や形容詞の目的語のように機能する．
 
@@ -277,7 +277,7 @@ I saw the man you love
 acl(man, love)
 ~~~
 
-また，いくつかの言語では，*fact* や *report* といった名詞の部分集合に対して定の補文節を許すことがある．これらは，おおよそ関係節に類似しているが，依存部の節において<!--ロール (role)--> の省略を許さない (これはHuddleston and Pullum (2002) における "content clauses" のクラスである)．このような補文節も，同様に `acl` として分析される．
+また，いくつかの言語では，*fact* や *report* といった名詞の部分集合に対して定の補文節を許すことがある．これらは，おおよそ関係節に類似しているが，依存部の節において<!--ロール (role) はθ役? それとも，別の意味? H&P を読んでもよくわからなかった--> の省略を許さない (これはHuddleston and Pullum (2002) における "content clauses" のクラスである)．このような補文節も，同様に `acl` として分析される．
 
 ~~~ sdparse
 the fact that nobody cares
