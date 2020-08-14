@@ -10,3 +10,6 @@ udver: '2'
 
 Universal Dependencies の日本語の情報ページです。
 
+## Universal Dependencies for Japanese
+
+[Introduction](ja/overview/introduction.html)
