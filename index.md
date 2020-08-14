@@ -11,8 +11,8 @@ udver: '2'
 Universal Dependencies の日本語の情報ページです。
 
 ## Universal Dependencies for Japanese
-
-[Introduction](ja/overview/introduction.html)
+### Overview
+* [Introduction](ja/overview/introduction.html)
 
 ## Universal Dependencies ドキュメントの日本語訳
 
