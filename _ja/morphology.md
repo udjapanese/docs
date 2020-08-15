@@ -1,13 +1,14 @@
 ---
 layout: base
 title:  'Morphology'
+udver: '2'
 ---
 
 # Morphology
 
 As described in Introduction, the parts-of-speech of Japanese are defined as a
-mapping from UniDic POS tags, because the UniDic guideline is fully
-established and widely used in Japanese NLP.
+mapping from UniDic POS tags of SUW (short unit word), LUW (long unit word) and their syntactic positions, because the UniDic guideline is fully established and widely used in Japanese NLP.
+The rule is defined cabocha2ud/conf/bccwj_pos_suw_rule.json
 
 The following table defines a mapping from UniDic SUW POS tags into
 Universal Dependencies POS tags (this table is not finalized yet; any
@@ -18,11 +19,11 @@ suggestions are welcome).
   <tr><td>ADJ</td><td>形容詞(adjective), 連体詞(adnomial), 形状詞(adjectival noun)</td></tr>
   <tr><td>ADV</td><td>副詞(adverb)</td></tr>
   <tr><td>INTJ</td><td>感動詞(interjection)</td></tr>
-  <tr><td>NOUN</td><td>名詞-普通名詞(common noun), 接頭辞(prefix), 接尾辞(suffix)</td></tr>
-  <tr><td>PROPN</td><td>名詞-固有名詞(proper noun)</td></tr>
+  <tr><td>NOUN</td><td>名詞-普通名詞(common noun), 接頭辞(prefix), 接尾辞(suffix), 形状詞-助動詞語幹, 外国語, 記号</td></tr>
+  <tr><td>PROPN</td><td>名詞-固有名詞(proper noun), 外国語</td></tr>
   <tr><td>VERB</td><td>動詞(verb)</td></tr>
   <tr><td>ADP</td><td>助詞-格助詞(case particle), 助詞-係助詞(binding particle)</td></tr>
-  <tr><td>AUX</td><td>助動詞(auxiliary verb)</td></tr>
+  <tr><td>AUX</td><td>助動詞(auxiliary verb) of SUW and LUW</td></tr>
   <tr><td>CONJ</td><td>接続詞(conjunction), 助詞-格助詞(case particle)</td></tr>
   <tr><td>DET</td><td>連体詞(adnomial)</td></tr>
   <tr><td>NUM</td><td>名詞-数詞(numeral noun)</td></tr>
@@ -34,9 +35,9 @@ suggestions are welcome).
   <tr><td>X</td><td>空白(white space)</td></tr>
 </table>
 
-Several UniDic POS tags are mapped into different UD POS tags
-depending on additional information like lemmas, and/or syntactic
-context.
+Several UniDic POS tags of SUW are mapped into different UD POS tags
+depending on additional information like lemmas, LUW POS tags and/or syntactic
+context (HEAD or not).
 
 * 連体詞(adnomial): demonstrative determiners (e.g. この/this) are
   DET, while other adnomials are ADJ
@@ -55,5 +56,5 @@ context.
 * 補助記号(supplementary symbol): period, comma, open/close bracket
   are tagged PUNCT, while others are SYM.
 
-Currently, we do not use features in Japanese.
+
 
