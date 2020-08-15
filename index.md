@@ -13,6 +13,9 @@ Universal Dependencies の日本語の情報ページです。
 ## Universal Dependencies for Japanese
 ### Overview
 * [Introduction](ja/overview/introduction.html)
+* [POS tags](ja/pos/index.html)
+* [Dependencies](ja/dep/index.html)
+* [Morphology](ja/overview/morphology.html
 
 ## Universal Dependencies ドキュメントの日本語訳
 
