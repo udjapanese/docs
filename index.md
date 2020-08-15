@@ -15,7 +15,7 @@ Universal Dependencies の日本語の情報ページです。
 * [Introduction](ja/overview/introduction.html)
 * [POS tags](ja/pos/index.html)
 * [Dependencies](ja/dep/index.html)
-* [Morphology](ja/overview/morphology.html)
+* [Morphology](ja/morphology.html)
 
 ## Universal Dependencies ドキュメントの日本語訳
 
