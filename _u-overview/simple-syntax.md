@@ -7,8 +7,7 @@ udver: '2'
 
 # Simple Clauses
 
-The UD annotation assumes the clause as one of the basic structures that we expect to find in all languages. A simple clause minimally consists of a predicate together with its core argument dependents, but may be extended with oblique modifiers. Core arguments are typically nominals, while oblique modifiers are either (oblique) nominals or adverbial modifiers. (In [complex clauses](complex-syntax.html), both core arguments and oblique modifiers can also be realized as subordinate clauses.) Finally, the predicate may be associated with function words that express different types of grammatical information such as tense, mood, aspect, voice, evidentiality, or type of subordination.
-
+UDのタグ付けでは，節 (clause) をあらゆる言語にみられる基本的な構造だと仮定している．単純な節 (simple clause) は少なくとも述語 (predicate) および依存部 (dependents) である必須項 (core argument) から構成されるが，斜格の修飾部 (oblique modifier) が伴う場合もある．必須項は典型的には名詞句 (nominals) であるが，斜格の修飾部は (斜格の) 名詞句もしくは副詞的な修飾部である．( [complex clauses](complex-syntax.html) では，必須項と斜格の修飾部は従属節 (subordinate clauses) として実現することもある.) そして，述語は時制 (tense)，ムード (mood)，アスペクト (aspect)，ヴォイス (voice)，エビデンシャリティー (evidentiality) もしくは従位接続 (subordination) といった，様々な機能語 (function words) と結びつくことがある．
 
 * [Intransitive and transitive clauses](#intransitive-and-transitive-clauses)
 * [Nonverbal clauses](#nonverbal-clauses)
@@ -18,7 +17,7 @@ The UD annotation assumes the clause as one of the basic structures that we expe
 
 ## Intransitive and Transitive Clauses
 
-In most clauses, the predicate takes the form of a verb, which may be intransitive or transitive.
+ほとんどの節では，述語は動詞の形式をとり，それは自動詞か他動詞である．
 
 ~~~ sdparse
 she left
@@ -30,10 +29,11 @@ nsubj(left, she)
 obj(left, note)
 ~~~
 
-An intransitive verb takes a single argument (usually referred to as S in the literature on linguistic typology) with the [u-dep/nsubj]() relation. A transitive verb in addition takes an argument with the [u-dep/obj]() relation. When deciding which relation to use with which argument in a transitive clause, the [u-dep/nsubj]() relation should be used with the argument that most resembles the proto-agent (often called A in linguistic typology) and that satisfies additional language-internal criteria for subjecthood based on case-marking, agreement and/or linear position with respect to the predicate. The [u-dep/obj]() relation should be used for the argument that most resembles the proto-patient (often called O or P in linguistic typology) and that satisfies relevant language-internal criteria. Note that, while case-marking (whether morphological or analytic) can provide important evidence in specific languages, case alignment should not be used to decide the assignment of core argument roles. Thus, in ergative languages, the patient-like argument of a transitive verb (O/P) will take the the [u-dep/obj]() relation despite the fact that it carries the same case marking as the [u-dep/nsubj]() argument (S) of an intranstive verb.
+自動詞は関係 [u-dep/nsubj]() を伴う単一の項 (言語類型論の文献では，通常Sと呼ばれる) をとる．他動詞は，それに加えて関係 [u-dep/obj]() を伴う項をとる．どちらの関係を他動詞節で用いるかを決定する際， 動作主 (proto agent) (言語類型論ではAと呼ばれる) と類似し，当該言語での主語性 (subjecthood) を満たすような項には関係 [u-dep/nsubj]() が用いられる (主語性は格標示 (case-marking)，一致 (agreement)，または述語と比較した線形順序の位置 (linear position) を基に判断される)．一方，関係 [u-dep/obj]() は，被動作主 (proto-patient) (言語類型論ではOかPと呼ばれる) に類似し，当該言語内の基準を満たすような項に用いられる．ただし，格標示 (形態的 (morphological)か分析的 (analytic) のどちらか) が特定の言語で重要な証拠を提供するものの，必須項の意味役割 (roles) を決定するために格のアライメント (case alignment) を用いるべきではないことに注意されたい．つまり，能格言語 (ergative language) においては，他動詞における被動作主 (patient; O/P) は，自動詞の[u-dep/nsubj]() が用いられる項と同じ格標示 (S) を受けるにもかかわらず，関係  [u-dep/obj]() をとるのである．
+ 
 
-Some languages allow extended transitive clauses, where more than two dependents are realized as core arguments. The additional core arguments then receive the [u-dep/iobj]() relation (for "indirect object"), while the [u-dep/obj]() relation 
-is reserved for the argument most patient-like non-subject argument. The criterion for deciding whether an additional dependent is a core argument is whether it has the typical encoding of a core argument with respect to case-marking, agreement and word order. For example, the English double object construction qualifies as an extended transitive clause because all three nominals appear without prepositions:
+いくつかの言語では，2つ以上の依存部が必須項として実現することで他動詞節の拡張を許す．加わった必須項が (間接目的語) として関係 [u-dep/iobj]() をとる一方で，被動作主に類似し，かつ主語でない項に対しては関係 [u-dep/obj]() が保持される.  追加の依存部が必須項がどうかを判断する基準とは，格標示，一致や語順に照らしたとき典型的なエンコーディングが為されるかどうかである．例えば英語の二重目的語構文 (double object  construction) は，３つ全ての名詞句が前置詞を伴わずに生起するため，拡張した他動詞節として認定される．
+
 
 ~~~ sdparse
 she left him a note
@@ -42,7 +42,7 @@ obj(left, note)
 iobj(left, him)
 ~~~
 
-By contrast, the alternative construction where the recipient role is realized by a prepositional phrase is _not_ an extended transitive by our criteria, and the third participant should therefore be annotated as oblique in this case.
+対照的に，受益者 (recipitent) の意味役割が前置詞句によって実現するような斜格構文 (交替構文 (alternative construction) ) は，我々の基準からすると拡張した他動詞節ではないため，3番目の参与者は斜格としてタグ付けされる．
 
 ~~~ sdparse
 she left a note to him
@@ -51,15 +51,14 @@ obj(left, note)
 obl(left, him)
 ~~~
 
-It follows that the semantic role cannot (by itself) be used to determine whether a dependent is core or not, nor can its status as an obligatory dependent. UD does not make a distinction between (obligatory) arguments and (optional) adjuncts, and oblique dependents can be either arguments or adjuncts. 
+意味役割 (それ自体) は依存部が必須項であるかを決定づけない．UDは (必須の) 項と (任意) の付加詞を区別しないため，斜格の依存部は項でも付加詞でもありうる.
 
-Note, finally, that not all languages allow extended transitives (and some do only in connection with special valency-changing operationssuch as applicatives). Hence, the [u-dep/iobj]() relation will not be used in all languages.
+最後に，あらゆる言語が拡張された他動詞節を許すわけではない (また，いくつかの言語では適用形 (applicative) の形成といった，原子価 (valency) を変える操作でのみ行われる) ことに注意されたい．よって，関係  [u-dep/iobj]() は全ての言語で用いられるわけではない．
 
 ### Valency-Changing Operations
 
-If passivization involves the promotion of an argument to subject position, then this argument can be 
-annotated with a special subtype `nsubj:pass` to indicate that promotion has taken place. The subtype
-`obl:agent` can be used to annotated the demoted subject (if present). 
+受動化 (passivization) が項の主語位置への昇格 (promotion) に関わるとき，昇格したことを示すため，この項には主語のサブタイプである `nsubj:pass` のタグが付与される．斜格のサブタイプの `obl:agent`  は，(文中に生起する場合は) 降格した (demoted) 主語に付与される．
+
 
 ~~~ sdparse
 she left a note on the table
@@ -79,8 +78,7 @@ obl:agent(left, her)
 obl(left, table)
 ~~~
 
-Similar subtyping can be used for other valency-changing operations. With causatives, for example, subtypes
-like `obj:caus` and `iobj:caus` can be used to indicate that an object is a demoted subject in relation to the non-causative form of the verb.
+同様の下位タイプは原子価 (valency) を変える操作でも用いられる場合がある．動詞の使役形 (causatives) では，目的語が降格した主語であることを示すのに `obj:caus` や `iobj:caus` といったサブタイプが用いられる．
 
 ~~~ sdparse
 Hasan koştu \n Hasan ran
@@ -103,9 +101,7 @@ iobj:caus(okuttum, Hasana)
 
 ## Nonverbal Clauses
 
-A nonverbal predicate (nominal or adjective) takes a single argument with the [u-dep/nsubj]() relation.
-The core argument relation is the same regardless of whether there is an overt copula linking the predicate
-to the subject or not.
+動詞でない述語 (名詞句もしくは形容詞) は関係 [u-dep/nsubj]() をもつ単一の項をとる．必須項の関係は，述語と主語を結合する連結動詞が生起するか否かに関わらず同じである．
 
 ~~~ sdparse
 she is my mother
@@ -126,29 +122,29 @@ nsubj(милая, она)
 nsubj(nice, she)
 ~~~
 
-In order to achieve a consistent treatment of nonverbal predication in v2, we first define six categories of nonverbal predication that can be found cross-linguistically (with or without a copula):
+UDのv2において動詞でない述語を一貫して取り扱うため，まず，通言語的に観察される，非動詞述語の6つのカテゴリを定義する (連結動詞 (連結動詞) がある場合/ない場合がある):
 
-1. Equation (aka identification): “she is my mother”
-2. Attribution: “she is nice”
-   2.1. Quantification: “they are two”
-3. Location: “she is in the bathroom”
-4. Possession: “the book is hers”
-5. Benefaction: “the book is for her”
-6. Existence: “there is food (in the kitchen)”
+1. 等価 (Equation; もしくは同定 (identification) ): “she is my mother”
+2. 属性 (Attribution): “she is nice”
+   2.1. 量化 (Quantification): “they are two”
+3. 場所 (Location): “she is in the bathroom”
+4. 所有 (Possession): “the book is hers”
+5. 受益 (Benefaction): “the book is for her”
+6. 存在 (Existence): “there is food (in the kitchen)”
 
-We then give the following guidelines for the analysis of these constructions:
+これらの構文の分析にあたっては，以下のガイドラインを設ける:
 
-* If there is no overt linking word (or if such a word can be omitted at least in some persons or tenses), then the predicative nominal is treated as the head of the clause regardless of which of the six categories it falls in. In languages with fixed SVO order (like English), the final nominal is the predicate and the first nominal is the subject. In free-word-order languages it is possible that the first nominal is the predicate, and distinguishing the subject from the predicate is based on language-specific criteria.
-* If there is an overt linking word used in equational constructions (category 1), then that word is treated as a copula and marked with the [u-dep/cop]() dependency, and is not the head of the clause. **Exception:** If the predicative element in the equation is a clause, then the copula verb is treated as the head of the clause, with the following clause as a [u-dep/ccomp]() (to prevent that the head of the smaller clause gets two subjects). Note that in some languages it may be instead possible to analyze the clause as the subject ([u-dep/csubj]()), retaining the [u-dep/cop]() relation for the copula verb.
-* If there is an overt word used in existential constructions (category 6), which is different from the copula in equational constructions (either a different lemma or with different syntax), then it should be regarded as the head of existential clauses, taking a subject (and often a locative [u-dep/obl]()).
-* All other cases of putative copula constructions (categories 2-5) should be assimilated to the equational and existential cases as seems to make most sense according to the inherent logic of the language concerned. 
-* A language should normally have at most one copula, but exceptions can be made in case of defective paradigms or if there are two verbs alternating in categories 1-5 (but not in 6) and where any meaning difference reflect at most TAME categories.
+* 連結動詞が生起しない場合 (もしくは，当該の語の人称 (person) や時制 (tense) が省略された場合)，叙述名詞 (predicative nominal) は上記の6カテゴリのいずれに該当しようとも節の主語として扱われる．(英語のような) 固定されたSVO語順をとる言語では，最後の名詞句が述語であり，最初の名詞句が主語である．語順が自由な言語においては，最初の名詞句が述語となるのも可能であり，述語と主語の区別は言語特有の基準に基づく．
+* 等価構文 (カテゴリ1) で用いられる連結動詞が生起している場合，その語はコピュラとみなされ，依存部 [u-dep/cop]() として標示されるため，節の主辞 (head) にはならない．**例外:** 等価構文における述語の要素が節である場合，連結動詞は節の主辞として扱われ，後続の節は (小さい方の節が2つの主語を持たないように)  [u-dep/ccomp]() として表される．いくつかの言語では，その節を，連結動詞を関係 [u-dep/cop]() として保持しつつ，主語 ([u-dep/csubj]()) として分析することが可能であるかもしれない．
+* 存在構文 (カテゴリー6) に用いられる，等価構文におけるコピュラとは異なる語が生起する場合，連結動詞は主語 (場所格 [u-dep/obl]() も頻繁に) をとる存在文節の主辞としてみなされる．
+* コピュラ構文と目される他の事例 (カテゴリ2-5) は，当該言語に固有の考え方に則して，等価構文や存在構文に吸収されると考えるのが最も合理的である.
+* どの言語も高々1つのコピュラを持つのが通常であるが，例外もある．それは，屈折のパラダイムが欠けていたり，1から5のカテゴリで動詞が交替したり (6にはない)，同じカテゴリであっても意味の違いを区別するような場合においてである<!--TAME categories?→SAME categories?-->．
 
-To illustrate how these guidelines apply to different languages, we now given parallel examples from English, Irish, Swedish, Czech, Russian and Turkish. 
+これらのガイドラインが様々な言語に適用されることを例証するため，英語，アイルランド語，スウェーデン語，チェコ語，ロシア語およびトルコ語から類例を示す．
 
 ### English
 
-In English, the verb "to be" is used in all of (1-6), and a copula analysis is therefore used consistently, except for equated clauses (1b) and existentials (6), where the verb must be treated as the head of the clause.
+英語では，(1b) の等価構文節や，連結動詞が節の主辞として扱われる (6) の存在構文節を除いて，"to be" が (1-6) の全てで用いられるため，一貫したコピュラの分析が与えられる．
 
 (1a)
 
@@ -222,7 +218,7 @@ case(kitchen, in)
 
 ### Irish
 
-Irish uses a copula verb in categories 1, 4 and 5, and a different verb in categories 2, 3 and 6. Not only the verb but also the word order is different.
+アイルランド語は，連結動詞はカテゴリ1，4と5で用いられ，別の動詞が2，3と6で用いられる．このとき，動詞だけではなく語順も異なる．
 
 (1) 
 
@@ -274,7 +270,7 @@ nsubj(tá, bia)
 
 ### Czech
 
-The Czech verb _být_ is used in all categories (1-6) and can be analyzed as copula everywhere except for pure existentials (without location) where no predicate other than the verb is available. Czech word order is free and it is not guaranteed that all constructions will come out as subject-copula-predicate. Reversed order (predicate-copula-subject) is less common but possible, even in the “equation” category (1). Czech is a pro-drop language which means that pronominal subjects are optional.
+チェコ語の動詞_být_は (1-6) の全てのカテゴリで用いられ，_být_以外の述語が使用できない，純粋な存在を表す場合 (場所が示されない) を除き，あらゆる場合において連結動詞として分析される．チェコ語の語順は自由であるため，あらゆる構文が主語-連結動詞-述語の順で現れる保証はない．逆の語順 (述語-連結動詞-主語) は一般的ではないが，「等価」のカテゴリ1であっても可能である．また，チェコ語はpro-drop言語であるため，代名詞の主語は任意である．
 
 (1a)
 
@@ -367,8 +363,8 @@ case(kitchen, in)
 
 ### Russian
 
-In Russian, there is no copula verb in the present tense. In the future and past tenses, the verb _быть_ "be" is used.
-The same analysis applies to categories (1-5).
+ロシア語では，連結動詞の現在形が存在しない．未来時制と過去時制では動詞_быть_ "be"が用いられる．
+同様の分析はカテゴリ (1-5) にも適用される．
 
 (1a)
 
@@ -380,7 +376,8 @@ nsubj(mother, she)
 
 (1b)
 
-When the second part is a clause, the demonstrative pronoun _то_ must be inserted. As a result, we have a different syntactic structure with different analysis: the clause formally modifies a nominal represented by the demonstrative.
+カンマに後続する部分が節であるとき，指示代名詞の_то_が挿入されなければならない．結果として，その統語構造には異なった分析が与えられる:
+形式的に，節は指示詞によって表される名詞句を修飾する．
 
 ~~~ sdparse
 дело в том , что она моя мать \n fact in that , that she my mother
@@ -430,7 +427,7 @@ case(her, for)
 
 (6a) 
 
-The form _есть_ is originally the 3rd person singular present indicative of the verb _быть_ (which also functions as copula). However, in Modern Russian this form is used only in existential statements, in both numbers and all persons. Past and future existential statements still use normal forms of _быть._
+ _есть_の形式は，もとは動詞_быть_ (連結動詞としても機能する) の3人称単数の直接法 (indicative) である．しかし現代ロシア語においては，この形式は，どの数や人称であっても，存在を言明する場合のみに用いられる．ただし，過去や未来での存在の言明は_быть_の通常の形式を用いる．
 
 ~~~ sdparse
 есть еда \n is food
@@ -453,11 +450,12 @@ case(kitchen, in)
 
 ### Turkish
 
-In Turkish, there are two copula verbs, _i-_ and _ol-_. The "true" copula is _i-_ which is defective, only having a limited number of tense forms (aorist and past), and cliticising. When a copula is needed in another tense, _ol-_ is employed. However, if there is a form of _i-_ then the equivalent form of _ol-_ takes on the meaning "become".
+トルコ語では，_i-_ と _ol-_ の2つの連結動詞がある．"真正の" のコピュラはパラダイム上に存在しない (defective) _i-_であり，特定の時制形式 (アオリスト，過去) と接語しかもたない．コピュラで他の時制を表す場合，_ol-_ が用いられる．ただし，_i-_ という形式が生起する場合，それに対応する_ol-_という形式は「~になる」(become) を意味する．
 
-In the present tense, third person singular aorist non-formal then there is no overt suffix for third person singular. Unlike Russian, where the copula verb does not appear in any part of the present tense paradigm, in Turkish it appears in all persons except third person (compare 1a and 1b). This means that it is more like the nominative case in the paradigm (which also has a -Ø suffix, than like the Russian copula).
+現在時制において，3人称単数のアオリストがnon-formalであるとき，3人称単数の接尾辞が現れない．ロシア語と異なり，コピュラ動詞がパラダイムにおける現在時制の位置に存在ようなトルコ語では，3人称を除き全ての人称で現れる (1aと1bを比較せよ)．これは，パラダイム上の主格部分に類似している (ゼロ接尾辞 (-Ø suffix) も存在し，ロシア語のコピュラよりも類似する)．
 
-In Turkish (and indeed in most Turkic languages), existence is a syntactically different (see 6a and 6b), using an adjective _var_ "existent", and so gets a different structure.
+トルコ語 (および，ほとんどのテュルク諸語で) では存在構文は統語的に異なり， 形容詞 _var_ "existent" を用いる (6aと6bを見よ)．
+
 
 (1a)
 
@@ -540,10 +538,8 @@ obl(existing, Kitchen-in)
 
 ## Non-Core Dependents
 
-In addition to the core arguments, a predicate may have additional dependents whose grammatical encoding differs 
-from that of core arguments with respect to case marking, agreement and/or linear position in the clause. All such
-dependents are said to be oblique, regardless of whether they can be considered as arguments in the semantic sense. 
-The [obl]() relation is used for oblique nominals, and the [advmod]() relation is used for adverbial modifiers.
+必須項に加えて，述語も追加の依存部を持つことがある．その文法的な形式は，格標示，一致および節の線形位置に関して必須項と異なる．そのような依存部は，意味的に項とみなせるか否かに関係なく，全て斜格である．関係 [obl]() が斜格名詞句に用いられ，関係 [advmod]() は副詞の修飾句に用いられる．
+
 
 ~~~ sdparse
 she left a note on the table
@@ -568,11 +564,11 @@ nsubj(left, she)
 advmod(left, suddenly)
 ~~~
 
-In addition to the general [u-dep/obl]() relation, there are three special relations that are used for non-core dependents of a predicate: [u-dep/expl](), [u-dep/dislocated](), and [u-dep/vocative](). 
+一般的な関係 [u-dep/obl]() に加えて，述語の必須項ではない依存部のために用いられる3つ関係がある: [u-dep/expl](), [u-dep/dislocated](), および [u-dep/vocative]().
 
 ### Expletives
 
-The [u-dep/expl]() relation captures expletive or pleonastic nominals. These are nominals that appear in an argument position of a predicate but which do not themselves satisfy any of the semantic roles of the predicate. The main predicate of the clause (the verb or predicate adjective or noun) is the governor. In English, this is the case for some uses of *it* and *there*: the existential *there*, and *it* when used in extraposition constructions.  (Note that both *it* and *there* also have non-expletive uses.) 
+関係 [u-dep/expl]() は虚辞 (expletive) もしくは冗長表現となる名詞句を表す．これらは述語の項の位置に現れる名詞句であるが，述語のいずれの意味役割を満たさない．節の主述語 (main predicate; 動詞，形容詞の叙述用法，叙述名詞) は支配項 (governor) である．英語の虚辞としては，*it*や*there*のいくつかの用法が該当する: 存在の*there* および，倒置構文 (extraposition construction) の*it* (*it*と*there*には虚辞ではない用法があることに注意)．
 
 ~~~ sdparse
 There is a ghost in the room
@@ -584,7 +580,7 @@ It is clear that we should decline .
 expl(clear, It)
 ~~~
 
-Some languages do not have expletives of the English sort, including most languages with free pro-drop (the ability to use zero anaphora rather than overt pronouns). In languages with expletives of this sort, they can be positioned where normally a core argument appears: the subject and direct object (and even indirect object) slots, as in the examples below. Note that in the analysis of these examples, we treat the postposed subject or clausal argument as a regular core argument, and mark the expletive with [u-dep/expl]().
+pro-dropが自由に行われる (代名詞の代わりにゼロ照応を用いる) 言語を含め，いくつかの言語では英語にみられるような虚辞を持たない．虚辞を持つ英語のような言語では，通常必須項が現れる位置に虚時が生起する: 主語の位置および直接目的語 (もしくは間接目的語) の位置．以下の分析では，後置した主語や節の項を必須項として扱い，虚辞に [u-dep/expl]() を付与していることに注意されたい．
 
 ~~~ sdparse
 There is a ghost in the room
@@ -621,7 +617,9 @@ obl(mentioned, Mary)
 ccomp(mentioned, leaving)
 ~~~
 
-A second, related, use of the [u-dep/expl]() relation is for cases of true clitic doubling.  For languages in which clitics and lexical nominals are ususally in complementary distribution – languages, such as French, which obey "Kayne's generalization" – then whichever of a clitic or a lexical nominal occurs will get the appropriate role, such as [u-dep/obj]() or [u-dep/iobj](). In such languages, when doubling does occur, such as in spoken French, the right analysis is to regard the lexical nominal as [dislocated]() (see the examples there). As such, the analysis will be the same as when a noun phrase doubles another noun phrase or a regular pronoun that fills a nominal argument position. However, other languages, such as Greek and Bulgarian, standardly allow doubling of a lexical nominal and a pronominal clitic, with the former still appearing in its regular role as an argument of the predicate. In these cases, if only one of the lexical nominal and the clitic appear in a clause, then whichever appears will be given the grammatical role of [u-dep/obj](), [u-dep/iobj](), etc. – parallel to the treatment of lexical nominals and pronouns in other languages, modulo the clitic pronoun having a different position in the sentence.  However, if both occur, the lexical nominal will be given the grammatical role of [u-dep/obj](), [u-dep/iobj](), etc., and the clitic will be treated as a pronominal copy, which does not receive its own semantic role, and hence will get the role [u-dep/expl](). Modulo the different word order, this is fairly parallel to the treatment of _it_ and _there_ in English mentioned above, where another phrase satisfies the semantic role of the predicate. Examples from Greek and Bulgarian follow:
+関係 [u-dep/expl]() の2番目の用法は，真正の二重の接語付加 (clitic doubling) である．接語と語彙的な名詞句が相補分布を示す言語 –"Kayneの一般化"に従うような，フランスといった言語– では，接語と名詞句のどちらが生起しても，[u-dep/obj]() もしくは [u-dep/iobj]() といった適切な役割を得る．そのような言語において，口語フランス語にように二重の接語付加が起きる場合，語彙的な名詞句を [dislocated]() としてみなすのが正しい分析である (例を参照せよ)．その分析では，名詞句が他の名詞句や規則的な代名詞を二重にした場合と同様である．名詞句の項の位置を埋める
+As such, the analysis will be the same as when a noun phrase doubles another noun phrase or a regular pronoun that fills a nominal argument position. 
+しかし，ギリシャ語やブルガリア語といった他の言語では，語彙的な名詞句と代名詞的接語の二重を標準的に許すが，前者では述語の項として通常の役割の位置に現れる．このような例において，語彙的名詞句と接語が一つの節に一つしか現れない場合に限り，両者は [u-dep/obj]() や [u-dep/iobj]() 等の文法役割が与えられる – 他の言語における語彙的名詞句と代名詞の扱いと並行的であり，接語である代名詞は文の異なる位置に生起する．しかし，両者がともに生起する場合，語彙的名詞句は [u-dep/obj]() や [u-dep/iobj]() 等の文法役割が与えられ，接語は代名詞のコピーとして扱われる．一方で後者はそれ自身が意味役割を受けるわけではないため，[u-dep/expl]() が与えられる．語順が異なるものの，これは上述した英語における_it_と_there_の扱いと並行的であり，別の句が述語の意味役割を満たす．ギリシャ語とブルガリア語の例は以下の通り:
 
 ~~~ sdparse
 Της τον έδωσε της Καίτης τον αναπτήρα \n PRON.Fem.Gen PRON.Masc.Acc gave ART.Fem.Gen Keti.Gen ART.Masc.Acc lighter.Acc
@@ -641,11 +639,9 @@ iobj(izprati, rabotnika)
 case(rabotnika, na)
 ~~~
 
-The expletive relation is also used for reflexive pronouns (see the feature [u-feat/Reflex]())
-attached to inherently reflexive verbs, i.e. verbs that cannot occur without the reflexive
-pronoun and thus the pronoun does not play the role of a normal object
-(otherwise it would be possible to substitute it with an irreflexive pronoun or other nominal).
-A Czech example:
+虚辞の関係 (expletive relation) は再帰代名詞にも用いられ (素性
+ [u-feat/Reflex]() を参照)，再帰動詞 (reflexive verbs) に付加される．再動詞は再帰代名詞なしには現れず，その代名詞は通常の目的語としての役割を果たさない (さもなければ，非再帰代名詞 (irreflexive) や他の名詞句と置換が可能となる)．
+チェコ語の例:
 
 ~~~ sdparse
 Martin se bojí zvířat . \n Martin REFLEX fears animals .
@@ -653,15 +649,13 @@ expl(bojí, se)
 expl(fears, REFLEX)
 ~~~
 
-Further general discussion of expletives can be found in Postal, P. M., and G. K. Pullum (1988) “Expletive Noun Phrases in Subcategorized Positions,” _Linguistic Inquiry_ 19(4): 635–670. The status of clitic doubling, and arguments for the lexical nominal being an argument with the clitic a kind of pronominal copy, appear inter alia in Boris Harizanov (2014) [Clitic doubling at the syntax-morphology interface: A-movement and morphological merger in Bulgarian](http://stanford.edu/~bharizan/pdfs/Harizanov_2014_NLLT.pdf). _Natural Language and Linguistic Theory_.
+虚辞の一般的な議論については，Postal, P. M., and G. K. Pullum (1988) “Expletive Noun Phrases in Subcategorized Positions,” _Linguistic Inquiry_ 19(4): 635–670 にもある. 二重接語の付加 (clitic doubling) の地位と，代名詞のコピーの一種である接語に対する項となるような語彙的名詞句についての議論は，特にBoris Harizanov (2014) [Clitic doubling at the syntax-morphology interface: A-movement and morphological merger in Bulgarian](http://stanford.edu/~bharizan/pdfs/Harizanov_2014_NLLT.pdf). _Natural Language and Linguistic Theory_ に見られる．
 
 ### Dislocated
 
-The [u-dep/dislocated]() relation is used for fronted or postposed elements
-that do not fulfill the usual core grammatical relations of a
-sentence. These elements often appear to be in the periphery of the sentence, and may be separated off with a comma intonation.
+関係 [u-dep/dislocated]() は前置もしくは後置した，文の通常の文法関係を満たさないような要素に用いられる．これらの要素は文の周辺部 (periphery) にしばしば現れ，カンマのイントネーション (comma intonation) によって分離する.
 
-It is used for fronted elements that introduce the topic of a sentence, as in the following Japanese and Greek examples. The dislocated element attaches to the head of the clause to which it belongs:
+以下の日本語やギリシャ語の例が示すように，文のトピックを導入するために前置要素が用いられる．転移要素 (dislocated element) は節の主辞に付加される:
 
 ~~~ sdparse
 象 は 鼻 が 長い \n zoo wa hana ga naga-i \n elephant TOPIC nose SUBJ long-PRES
@@ -673,9 +667,9 @@ to jani ton kserume poli kala \n the John-Acc him know-1pl very well
 dislocated(kserume, jani)
 ~~~
 
-However, it would not be used for a topic-marked noun that is also the subject of the sentence; this would be an [nsubj]().
+しかし，文主語でもある，トピックが付与された名詞には用いられない; この場合，[nsubj]() となる．
 
-It is also used for postposed elements. The dislocated elements attach to the same governor as the dependent that they double for. Right dislocated elements are frequent in spoken languages. French and Greek examples follow.
+転移要素は後置要素にも用いられ，二重に現れる依存部と同一の支配項 (governor) に付加される．右側に転移した要素は話し言葉に現れることが多く，それはフランス語とギリシャ語の以下の例から示される．
 
 ~~~ sdparse
 Il faut pas la manger , la plasticine \n It must not it eat , the playdough
@@ -692,7 +686,7 @@ dislocated(kserume, jani)
 
 ### Vocatives
 
-The [u-dep/vocative]() relation is used to mark a dialogue participant addressed in a text (common in conversations, dialogue, emails, newsgroup postings, etc.). The relation links the addressee's name to its host sentence. A vocative commonly co-occurs with a null subject, as in the first example below. If the nominal is clearly vocative in intent, the preference is to use the [u-dep/vocative]() relation.
+関係 [u-dep/vocative]() は，テキスト (会話，対話，電子メール，ニュースグループの投稿など) で言及される対話の参加者を表示するのに用いられる．この関係は聞き手の名前とホストの文を結合する．一つ目の例が示すとおり，呼格 (vocative) は空主語 (null subject) と共起することが一般である．名詞句が呼格であることが意図的である場合，関係 [u-dep/vocative]() が優先的に用いられる．
 
 ~~~ sdparse
 Guys , take it easy!
@@ -707,11 +701,11 @@ vocative(vas, Marie)
 
 ## Function Word Dependents
 
-In addition to core and non-core dependents, the predicate of a clause may be modified by function words:
+必須項と必須でない項に加え，節の述語も機能語 (function words) によって修飾される場合がある:
 
-1. An `aux` modifies a verbal predicate by adding information relating to tense, aspect, mood, voice, or evidentiality.
-2. A `cop` links a nonverbal predicate to its subject and may add information relating to tense, aspect, mood, voice, or evidentiality.
-3. A `mark` indicates that the predicate heads a (specific type of) subordinate clause.
+1. `aux` は時制，アスペクト，ムード，ヴォイス，もしくはエビデンシャリティーに関する情報を付け加えることで動詞を修飾する．
+2. `cop` は動詞でない述語を主語と結合させ，また，時制，アスペクト，ムード，ヴォイス，もしくはエビデンシャリティーに関する情報を付け加えることがある．
+3. `mark` は，述語が (特定のタイプの) 従属節における主辞であることを示す．
 
 ~~~ sdparse
 she has left
