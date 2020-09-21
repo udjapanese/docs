@@ -12,9 +12,11 @@ adjective or pronoun, that expresses a number and a relation to the
 number, such as quantity, sequence, frequency or fraction.
 
 Cardinal numerals are convered by [NUM](),
-which are tagged with `noun(numeral)` / 名詞-数詞 in UniDic,
+which are tagged with `suffix(numeral)` 名詞-普通名詞-助数詞可能 or 助数詞, and `noun(numeral)` / 名詞-数詞 in UniDic,
 including Kanji expressions
 (e.g. _<b>二十</b>_&nbsp;“20”, _<b>六万</b>_&nbsp;“60,000”).
+
+
 
 Note that each numeral in UniDic SUW delimitation is split into one or more word units 
 based on the number of units, (e.g. _<b>二千十四</b>&nbsp;“2014”
