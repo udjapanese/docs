@@ -7,10 +7,8 @@ udver: '2'
 
 # Syntax: General Principles
 
-<!--UDスキームにおいて統語タグは，語間のタイプ付けされた依存関係 (dependency relations) から構成される．_通常 (basic)_ の依存関係の形式は樹構造 (tree) である，
-The _basic_ dependency representation forms a tree, where exactly one word is the head of the sentence, dependent on a notional ROOT and all other words are dependent
-on another word in the sentence, as exemplified below (where we explicitly represent the root dependency which will
-otherwise be left implicit).-->
+UDスキームにおいて統語タグは，語間のタイプ付けされた依存関係 (dependency relations) から構成される．_通常_ の依存関係の表示は木 (tree) を形成する．1つの語が文の主辞 (head) となり，これは概念的な根 (ROOT) に依存する．そして，他の全ての語は文中の語に依存する．例は以下の通りである (ここでは根 (root) の依存関係を明示してあるが，省略されることもある．)．
+
 
 ~~~ sdparse
 ROOT she wanted to buy and eat an apple
@@ -55,10 +53,8 @@ obj(buy, apple)
 
 タイプ化した依存関係の目標は通言語的に適用可能な "普遍的な依存関係" を設定することにある．そのような依存関係では，重要な区別は設定しつつも，通言語的に同じ方法で同一の文法関係をタグ付けすることによって並行性を最大限に高めようとする．初めに，以下の2点に注意されたい:
 
-* 並行性の目標には限界がある: UDでは複数の言語で生起しない "空" の要素を仮定せず，またタグ付けを行わない．<!--当該言語に特有な関係を表示するために，UDはを許すand it allows the use of language-specific refinements of universal dependencies to represent particular relations of language-particular importance.-->
-* 依存関係の概念には限界がある: 全ての文法関係が統語的な主辞と従属要素の間にある非対称的な関係に還元されるわけではない．よって，"依存" 関係のいくつかは単に他の関係のエンコードに便利なものとして理解する必要があり，それらは統語的な主辞とは無関係である．
-
-<!-- This holds in particular for relations used to analyze multiword expressions, coordination and function words.-->
+* 並行性の目標には限界がある: UDでは複数の言語で生起しない "空" の要素を仮定せず，またタグ付けを行わない．また，当該言語に特有な関係を表示するため，普遍的な依存関係の改変を許す.
+* 依存関係の概念には限界がある: 全ての文法関係が統語的な主辞と従属要素の間にある非対称的な関係に還元されるわけではない．よって，"依存" 関係のいくつかは単に他の関係のエンコードに便利なものとして理解する必要があり，それらは統語的な主辞とは無関係である．これは特に，複合表現 (multiword expressions)，等位関係 (coordination) や機能語 (function words) で関係する．
 
 以降では，普遍的な依存関係が可能な限り通言的な並行性を満たすような一般原則について述べる．
 
@@ -173,7 +169,7 @@ nummod(books, three)
 
   1. 複合的な機能語 (Multiword function words)
   2. 並置された機能語 (Coordinated function words)
-  3. <!--機能語の修飾句 (Function word modifiers)-->
+  3. 機能語の修飾句 (Function word modifiers)
   4. 主辞の省略による昇格 (Promotion by head elision)
 
 ### Multiword Function Words
@@ -188,7 +184,7 @@ fixed(in,of)
 obl(had,rain)
 </div>
 
-ある表現が固定のMWEとして扱われるかの判断は，各々の言語によって決定されるべきであり，恣意的な慣習に従う場合もある．それは，文法化 (grammaticalization) の過程からある一点を抜き出すことに関わるからである．大抵の言語は<!--linkers, marks, or case particles-->といった，機能語のようにふるまう一般的なMWEがあるとはいえ，これらを複合的な機能語としてみなすことが望ましいわけではない．英語の例には _in spite of_ (_despite_に類似)，_as well as_ (_and_に類似) や _prior to_ (_before_に類似) といったものが含まれる．.
+ある表現が固定のMWEとして扱われるかの判断は，各々の言語によって決定されるべきであり，恣意的な慣習に従う場合もある．それは，文法化 (grammaticalization) の過程からある一点を抜き出すことに関わるからである．大抵の言語は，リンカー (linker)，標示 (marks) や格助詞 (case particle) といった，機能語のようにふるまう一般的なMWEがあるとはいえ，これらを複合的な機能語としてみなすことが望ましいわけではない．英語の例には _in spite of_ (_despite_に類似)，_as well as_ (_and_に類似) や _prior to_ (_before_に類似) といったものが含まれる．.
 
 ### Coordinated Function Words
 
@@ -230,13 +226,7 @@ mark(thought, when)
 advmod(when, just)
 </div>
 
-<!--否定辞は任意の機能語を修飾できるが，他のタイプの修飾句では，主辞の性質を表現し，他の言語において形態的に表現されるような機能語には修飾することが認められない．_純粋な機能語 (pure function words)_ と呼ばれる，このクラスには助動詞，格付与マーカー (後置詞) および冠詞が含まれるが，各々の言語において明示的に定義される必要がある．純粋な機能語が否定辞以外の修飾句と生起したとき，修飾句を句全体に適用させて機能語の主辞に付加する．これは以下の例によって示される． 
-Negation can modify any function word, but other types of modifiers are disallowed for function words that express
-properties of the head word often expressed morphologically in other languages. This class, which we refer to as
-_pure function words_, includes auxiliary verbs, case markers (adpositions), and articles, but needs to be defined
-explicitly for each language. When pure function words appear with modifiers other than negation, we take the modifier
-to apply to the entire phrase and therefore attach it to the head word of the function word, as illustrated in
-the following example.-->
+否定辞は任意の機能語を修飾できるが，他のタイプの修飾句では，主辞の性質を表現し，他の言語において形態的に表現されるような機能語には修飾することが認められない．_純粋な機能語 (pure function words)_ と呼ばれる，このクラスには助動詞，格付与マーカー (後置詞) および冠詞が含まれるが，各々の言語において明示的に定義される必要がある．純粋な機能語が否定辞以外の修飾句と生起したとき，修飾句を句全体に適用させて機能語の主辞に付加する．これは以下の例によって示される． 
 
 <div id="s7d" class="sd-parse">
 right before midnight
@@ -251,10 +241,7 @@ right then
 advmod(then, right)
 </div>
 
-<!--純粋な機能語が依存部を持たないと担保することで
-Making sure that pure function words do not have dependents of their own facilitates
-comparison with languages where the corresponding properties are expressed morphologically as well as conversion
-to the enhanced representation where this difference is neutralized.-->
+純粋な機能語が依存部を持たないと保証することは，対応する性質が形態的に示される言語との比較を促す．<!-- as well as conversion to the enhanced representation where this difference is neutralized.-->
 
 要約すると，機能語の修飾句の扱いは3つの原則によって表される:
 
@@ -294,31 +281,29 @@ ccomp(know, how)
 
 ### Core Arguments vs. Oblique Modifiers
 
-UDの分類法で専念するのは，必須項 (主語，目的語，節の補部) と他の依存部の区別についてである．この分類法では付加詞 (一般に修飾句) と斜格項 (主辞によって選択されるが必須でない項) をしない．<!--このセクションの残りでは， 
-The rest of this section expands on the linguistic basis of these choices, and may be skipped.-->
+UDの分類法で専念するのは，必須項 (主語，目的語，節の補部) と他の依存部の区別についてである．この分類法では付加詞 (一般に修飾句) と斜格項 (主辞によって選択されるが必須でない項) をしない．このセクションの残りでは，これらの選択に関する言語的証拠を挙げていくが，飛ばしても構わない．
 
 #### The definition of core arguments
 
-必須項/斜格項の区別はつまるところ情報の区別
-The core/oblique distinction is ultimately an information packaging distinction. 全てあるいは大半の言語には，ほとんどの動詞 (自動詞および他動詞) で1つか2つの項を表現する手段があり，項の無標 (unmarked) な形式は必須項である．必須項と同じように扱われる追加の項が生起可能な場合，それらも必須項としてみなされるかもしれない．(例えば，いくつかの言語では追加の必須項を持たないが，他の言語では複数の目的語項を許す．) 必須項は参与者の意味役割とは分離している．通常は，項を表す同一の手段を用いつつも動詞の意味によって様々な意味役割が表現されるが，相関性は存在する: 無標の原子価 (valence) において，述語の行為者 (agent) や被行為者 (patient)， もしくは<!--被影響者 (theme)--> といった意味役割は通常必須項として実現する．
+必須項/斜格項の区別は，つまるところ情報の与え方の区別に求められる．全て，あるいは大半の言語には，大抵の動詞 (自動詞および他動詞) で1つか2つの項を表現する手段があり，項の無標 (unmarked) な形式は必須項である．必須項と同じように扱われる追加の項が生起可能な場合，それらも必須項としてみなされるかもしれない．(例えば，いくつかの言語では追加の必須項を持たないが，他の言語では複数の目的語項を許す．) 必須項は参与者の意味役割とは分離している．通常は，項を表す同一の手段を用いつつも動詞の意味によって様々な意味役割が表現されるが，相関性は存在する: 無標の原子価 (valence) において，述語の行為者 (agent) や被行為者 (patient)， もしくは主題 (theme) といった意味役割は通常必須項として実現する．
 
 統語的には必須項から斜格を区別するような唯一の基準は存在しないものの，特定の言語において有用な基準は存在する．これらは以下のものを含む:
 
 * 動詞は必須項のみと一致 (agree) する
 * 斜格項は後置詞によって標示される一方，必須項は名詞句単体で生起する
 * 伝統的に主格，対格，絶対格と呼ばれる特定の項は典型的に必須項を標示する
-* いくつかの言語において必須項は節の特別な位置 (<!--adjecent to the verb-->) を占める
+* いくつかの言語において必須項は節の特別な位置 (動詞に隣接) を占める
 * 従属節の項のコントローラーや関係節化のターゲットを形成するような統語現象において，その対象は必須項に限定される
 
 要するに，必須項と斜格は言語特有の観点から区別されるのである．例えば，多くの言語には与格もしくは経験者といった斜格の項を取る動詞があるが，これらの項は他動詞の項と並行的に扱われる統語的ふるまいに基づき，必須項としてみなされる．
 
 #### Avoiding an argument/adjunct distinction
 
-多くの文法的枠組みでは，斜格のいくつかは主辞から選択されるか，その項となる (例えば，_from the Queen_ の<!--source argument--> は _receive_ の主辞である)．一方で，他の斜格は一般的な付加詞であり，選択を行う主辞を伴わずに述語と共起する (例えば， _after the holidays_ の時間項 (temporal argument) )．
+多くの文法的枠組みでは，斜格のいくつかは主辞から選択されるか，その項となる (例えば，_from the Queen_ の起点項 (source argument) は _receive_ の主辞である)．一方で，他の斜格は一般的な付加詞であり，選択を行う主辞を伴わずに述語と共起する (例えば， _after the holidays_ の時間項 (temporal argument) )．
 
-しかし，項/付加詞の区別は微妙なもので，議論が絶えない．例えば，統語論者が様々な斜格を項だと主張する時もあれば，道具や発生源の意味役割を示す斜格が付加詞であると主張する時もあった．ここでは，その区別が微細なもので，実践的に最良の解決策とは区別を取り払うことだと考える．このアプローチはPennツリーバンク<!--annotator-->の元々の考えに軌を一にする．
+しかし，項/付加詞の区別は微妙なもので，議論が絶えない．例えば，統語論者が様々な斜格を項だと主張する時もあれば，道具や発生源の意味役割を示す斜格が付加詞であると主張する時もあった．ここでは，その区別が微細なもので，実践的に最良の解決策とは区別を取り払うことだと考える．このアプローチはPennツリーバンクの元々の考えに軌を一にしている．
 
-必須項と斜格の区別は言語類型論で認められ，両者は項と付加詞の区別よりも通言語的に適用が容易である．その例として以下を参照:
+必須項と斜格の区別は言語類型論で認められ，両者は項と付加詞の区別よりも通言語的に適用が容易である．例として以下を参照されたい:
 
 * Avery D. Andrews. 2007. The Major Functions of the Noun Phrase. In Timothy Shopen (ed.) Language Typology and Syntactic Description: Clause Structure (2nd ed), Cambridge University Press, Cambridge, United Kingdom, pp. 132-223. (1st edition, 1985.)
 * Sandra A. Thompson. 1997. Discourse Motivations for the Core-Oblique Distinction as a Language Universal. In Akio Kamio (ed.) Directions in Functional Linguistics. Benjamins, Amsterdam, the Netherlands, pp. 59-82.
@@ -328,11 +313,10 @@ The core/oblique distinction is ultimately an information packaging distinction.
 依存関係の主要な役割の一つは機能 (function) を表示することにあるが，UDは構造概念もエンコードする．構造的な側面では，言語は原則的に3つの事柄に関与する:
 
 * 名詞句 (存在物を表現する通常の手段であり，他の事物にも用いられる場合がある)
-* 述語が主辞となる節 (多くは動詞であるが，形容詞，副詞，もしくは　_He is **a wreck**_　のような叙述名詞である場合もある)
-* 修飾を許すような <!--which may themselves allow some modification-->，他の修飾語 (しかし，名詞句や述語ほど豊かな構造へと拡張できない)
+* 述語が主辞となる節 (多くは動詞であるが，形容詞，副詞，もしくは _He is **a wreck**_ のような叙述名詞である場合もある)
+* それ自体が修飾を許すような，他の修飾語 (しかし，名詞句や述語ほど豊かな構造へと拡張できない)
 
-3つの区別は通常，依存関係の名称にエンコードされる．例えば，動詞が副詞の修飾句を取る場合，[u-dep/obl](), [u-dep/advcl](), または [u-dep/advmod]() のいずれか1つを表す．
-<!--This three-way distinction is generally encoded in dependency names. For example, if a verb is taking an adverbial modifier, it may bear one of three relations [u-dep/obl](), [u-dep/advcl](), or [u-dep/advmod]() depending on which of these three sorts it is:-->
+3つの区別は通常，依存関係の名称にエンコードされる．例えば，動詞が副詞の修飾句を取る場合，[u-dep/obl](), [u-dep/advcl](), または [u-dep/advmod]() のいずれか1つで表される．
 
 <div id="fss1" class="sd-parse">
 John talked in the movie theatre
@@ -359,7 +343,7 @@ advmod(talked, quickly)
 </div>
 
 同じように，必須の文法関係は節を成す必須項から名詞句であるもの (例: [u-dep/nsubj](), [u-dep/obj]()) を区別する．
-
+<!--以下，元々コメントアウトされている部分-->
 <!-- ### Voice
 
 Relation names attempt to differentiate canonical voice (where the proto-agent argument is the subject) from non-canonical voice constructions (where another argument is the subject). This is marked as appropriate on both the subject argument (e.g., nsubjpass) and auxiliaries indicating this (auxpass). Marking both is helpful, as either may be missing.
@@ -399,7 +383,7 @@ cc(went, and)
 * [u-dep/flat]() は _Barack Obama_ のように，明らかな主辞を持たない，外心的 (exocentric) で半ば固定したMEWsを分析するために用いられる
 * [u-dep/compound]() は ，_phrase_ が 主辞となる _noun phrase_ のような (主辞を持つ/内心的である) 複合語を分析するために用いられる
 
-[u-dep/fixed]() と [u-dep/flat]() から分析される構造は定義的に主辞を欠いており，これらは先頭の要素にその他の要素が付加することでタグ付けされ，<!--only allowing outgoing dependents from the first element-->
+[u-dep/fixed]() と [u-dep/flat]() から分析される構造は定義的に主辞を欠いており，これらは先頭の要素にその他の要素が付加することでタグ付けされる．<!--only allowing outgoing dependents from the first element-->
 
 <div id="s8a" class="sd-parse">
 We had a nice time in spite of the rain .
@@ -416,7 +400,7 @@ flat(Martin,Luther)
 flat(Martin,King)
 </div>
 
-対照的に，[compounds](compound) は，主辞 (head) の概念<!--regular concept of head-->を含む修飾構造を明示するためにタグ付けされる:
+対照的に，[compounds](compound) は，主辞 (head) の概念を含む修飾構造を明示するためにタグ付けされる:
 
 <div id="s9" class="sd-parse">
 I bought a computer disk drive enclosure .
@@ -432,7 +416,7 @@ obj(bought, enclosure)
 
 必須の依存関係，機能関係，等位を分析する関係やMEWや句読点に加えて，UDの分類法にはテクストの誤字，話しでの非流暢性 (disfluencies) や内部に統語構造を持たないリスト構造を扱うような特別な関係を備えている．
 
-
+<!--以下，元々コメントアウトされている文書-->
 <!--Some of the universal relations do not really encode syntactic dependency relations but are used to represent
 punctuation, various kinds of multiword units, or unanalyzable segments. The use of these relations is subject
 to special restrictions explained below.

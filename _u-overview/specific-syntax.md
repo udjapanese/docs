@@ -127,7 +127,7 @@ nsubj(want-7, they-6)
 xcomp(want-7, to-8)
 ~~~
 
-述語が省略されつつも`aux`か`cop`が生起しない，より複雑な場合では，単純な昇格 (`orphan` <!--without `orphan` deprels deprelsってなんだ？-->) は極めて不自然か混乱を招くような関係を形成することとなる．例えば，次の例で_you_が_coffee_の主語となるのは，2番目の節が省略された述語ではなくコピュラ構文 (copular construction) を含んでいることを示唆する.
+述語が省略されつつも`aux`か`cop`が生起しない，より複雑な場合では，単純な昇格 (`orphan`<!--without `orphan` deprels → deprelsってなんだ？-->) は極めて不自然か混乱を招くような関係を形成することとなる．例えば，次の例で_you_が_coffee_の主語となるのは，2番目の節が省略された述語ではなくコピュラ構文 (copular construction) を含んでいることを示唆する.
 
 <div class="conllu-parse" tabs="yes">
 # visual-style 6 5 nsubj color:red
@@ -215,9 +215,7 @@ punct(gave, .)
 
 関係`orphan`は，通常の関係が誤解を招く場合 (例えば，主語へ目的語を付加してしまう) にのみ用いること．特に，関係`cc`は，`orphan`の依存部によって形成される擬似的な構成素 (pseudo-constituent) へ付加するような等位接続に限定して用いるべきである．
 
-<!--ドイツ語では不定動詞が節の最後尾に生起することを要求し，定の助動詞とは異なることを
-In German the grammar requires that non-finite verbs are at the end of the clause, which may mean that they are far away from
-their finite auxiliary verbs, possibly with intervening conjuncts.--> 次の例では，_wurde geschieden_が一つの構成素内にあると考えない代わりに，助動詞の_wurde_が先頭の等位要素へと昇格し，かつ<!--content participle-->の_geschieden_が3番目の要素の主辞になると考える．2番目の要素には動詞が存在せず，その代わり関係`orphan`が用いられている．また，[issue 522](https://github.com/UniversalDependencies/docs/issues/522) も参照されたい．
+ドイツ語では不定動詞が節の最後尾に生起することを要求し，それは定の助動詞とは完全に異なることを意味し，また，接続詞が挿入される可能性もある．次の例では，_wurde geschieden_が一つの構成素内にあると考えない代わりに，助動詞の_wurde_が先頭の等位要素へと昇格し，かつ分詞の_geschieden_が3番目の要素の主辞になると考える．2番目の要素には動詞が存在せず，その代わり関係`orphan`が用いられている．また，[issue 522](https://github.com/UniversalDependencies/docs/issues/522) も参照されたい．
 
 ~~~ sdparse
 Der Genuß wurde von der Arbeit , das Mittel vom Zweck , die Anstrengung von der Belohnung geschieden . \n The pleasure was from the work , the means from-the goal , the effort from the reward distinguished .
@@ -240,9 +238,7 @@ punct(geschieden, ,-12)
 * [u-dep/flat]() は_Barack Obama_のように，外心的 (exocentric) で固定されつつあるMWEsの分析に用いられる
 * [u-dep/compound]() _noun phrase_のような内心的 (endocentric) な複合語 (compounds) を分析するのに用いられる
 
-<!--[u-dep/fixed]() や [u-dep/flat]() で分析される構造は，定義的に主辞を欠き， 
-Structures analyzed with [u-dep/fixed]() and [u-dep/flat]() are headless by definition and are consistently
-annotated by attaching all non-first elements to the first and only allowing outgoing dependents from the first element.-->
+[u-dep/fixed]() や [u-dep/flat]() で分析される構造は，定義的に主辞を欠く．これらは常に先頭要素へ後続要素を付加することでタグ付けされる. <!--only allowing outgoing dependents from the first element.-->
 
 <div id="s8a" class="sd-parse">
 We had a nice time in spite of the rain .
@@ -273,7 +269,7 @@ obj(bought, enclosure)
 
 ## Comparatives
 
-比較構文 (comparative construction) の統語論は言語理論に対して多くの困難を与える．英語では，これらの多くがBresnan (1973) や Huddleston and Pullum (2002, 13章) で議論されてきた．ここでは，<!--equality comparisons (_That car is as big as mine_) and inequality scalar comparisons (_Sue is taller than Jim_).について議論を行う．-->
+比較構文 (comparative construction) の統語論は言語理論に対して多くの困難を与える．英語では，これらの多くがBresnan (1973) や Huddleston and Pullum (2002, 13章) で議論されてきた．ここでは，等価性の比較 (equality comparisons; _That car is as big as mine_) と等価でないの量の比較 (inequality scalar comparisons; _Sue is taller than Jim_).について議論を行う．
 
 _as X as Y_ もしくは _the same X as Y_ といった形式の構文では，XとYは様々な統語タイプをとり，以下のような表層形を生み出す:
 
@@ -327,8 +323,7 @@ obl(heard, him)
 punct(hear, .)
 ~~~
 
-<!--We take the _as Y_ clause as a dependent of the content-word whose degree is being assessed (here _often_). We take its head to be the head of the clause, here _heard_.  An initially plausible alternative analysis would be to make the clausal dependent headed by _as_ a dependent of the comparative modifier _as_, _more_, or _less_, and indeed this is the analysis which Huddleston and Pullum (2002) argue for in English.
-_as Y_節は，程度 (degree) が評価対象となる内容語 (ここでは_often_) の依存部として扱われ，上記の例では_heard_が_as Y_節の主辞として扱われる．他の妥当な分析としては，_as_を主辞とした節の依存部を_as_，_more_もしくは_less_といった比較の修飾語の依存部として扱うことであり，これはHuddleston and Pullum (2002) が英語において主張している分析である． しかし，いくつかの理由からこの分析は疑わしい． 一点目は，UDの基本原則として内容語を主辞として選好することに求められる．二点目は，通言語的な妥当性を満たす動機に基づいている: フィランド語や日本語といった言語では，このような機能語を持たない.-->
+_as Y_節は，程度 (degree) が評価対象となる内容語 (ここでは_often_) の依存部として扱われ，上記の例では_heard_が_as Y_節の主辞として扱われる．他の妥当な分析としては，_as_を主辞とした節の依存部を_as_，_more_もしくは_less_といった比較の修飾語の依存部として扱うことであり，これはHuddleston and Pullum (2002) が英語において主張している分析である． しかし，いくつかの理由からこの分析は疑わしい． 一点目は，UDの基本原則として内容語を主辞として選好することに求められる．二点目は，通言語的な妥当性を満たす動機に基づいている: フィランド語や日本語といった言語では，このような機能語を持たない.
 
 ~~~ sdparse
 “Y” より “X” が 面白い 。 \n Y than X NOM interesting .
@@ -421,8 +416,8 @@ mark(sober, than)
 advcl(better, sober)
 ~~~
 
-<!--一般的には[u-dep/advcl]() であり続けるremnantは何であれ，上記のように扱われる.
-In general, we treat whatever remnant that remains as still an [u-dep/advcl](), as above.-->
+一般的には[u-dep/advcl]() として残った残部 (remnant) は何であれ，上記のように扱われる.
+
 
 しかし，限定的であるが，名詞句のみが生起する事例もある.
 
@@ -513,9 +508,7 @@ The guy , John said , left early in the morning
 parataxis(left, said)
 ~~~
 
-基本的に同じ意味を表すパラフレーズが存在するものの，その統語構造は異なる．間接話法が従属節に埋め込まれたとき (顕在的な補文マーカーのthatを伴う/伴わない場合のいずれでも)，従属節は発言動詞 (speech verb) の [ccomp]() となる．<!--間接話法が発言動詞に後続し，コロンで分離されたとき，When the
-reported speech follows the speech verb and is separated by a colon, the reported speech forms a main clause
-that attaches to the preceding main clause with a [parataxis]() relation, hence with the speech verb as its head.-->
+基本的に同じ意味を表すパラフレーズが存在するものの，その統語構造は異なる．間接話法が従属節に埋め込まれたとき (顕在的な補文マーカーのthatを伴う/伴わない場合のいずれでも)，従属節は発言動詞 (speech verb) の [ccomp]() となる．間接話法が発言動詞に後続してコロンで分離されたとき，間接話法の形式は主節をとり，関係 [parataxis]() によって先行する主節へ付加させる．すなわち，発言動詞が主辞となるのである．
 しかし，発言動詞が中間部か最後部の挿入句として生起する場合はその関係が逆転し，発言動詞は間接話法の [parataxis]() として扱われる．
 この分析は異論がないわけではないが，Huddleston and Pullum (2002), _The Cambridge Grammar of the English Language_ (see chapter 11, section 9) といった文献に裏付けられている．
 
