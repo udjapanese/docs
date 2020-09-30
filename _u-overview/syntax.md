@@ -7,9 +7,10 @@ udver: '2'
 
 # Syntax: General Principles
 
-Syntactic annotation in the UD scheme consists of typed dependency relations between words. The _basic_ dependency representation forms a tree, where exactly one word is the head of the sentence, dependent on a notional ROOT and all other words are dependent
+<!--UDスキームにおいて統語タグは，語間のタイプ付けされた依存関係 (dependency relations) から構成される．_通常 (basic)_ の依存関係の形式は樹構造 (tree) である，
+The _basic_ dependency representation forms a tree, where exactly one word is the head of the sentence, dependent on a notional ROOT and all other words are dependent
 on another word in the sentence, as exemplified below (where we explicitly represent the root dependency which will
-otherwise be left implicit).
+otherwise be left implicit).-->
 
 ~~~ sdparse
 ROOT she wanted to buy and eat an apple
@@ -23,9 +24,7 @@ det(apple, an)
 obj(buy, apple)
 ~~~
 
-In addition to the basic dependency representation, which is obligatory for all UD treebanks, it is possible to give an _enhanced_ dependency representation, which adds (and in a few cases changes) relations in order to give a more complete
-basis for semantic interpretation. The enhanced representation is in general
-not a tree but a general graph structure, as shown below (enhanced dependencies in blue).
+全てのUDツリーバンクにおいて義務的である基本の依存関係の表示に加えて，_拡張版 (enhanced)_ の依存関係の表示を与えることができる．これは意味解釈に対して，より完全な規則を与えるために関係を加えよう (いくつかの関係は改変される) というものである．拡張版の表示は一般的に樹構造ではなくグラフ構造から成り，以下に示される (拡張版の依存関係は青で示される).
 
 ~~~ conllu
 # visual-style 5 2 nsubj color:blue
@@ -45,8 +44,7 @@ not a tree but a general graph structure, as shown below (enhanced dependencies 
 
 ~~~
 
-
-In the rest of this document, we discuss the fundamental principles of our dependency annotation, focusing on aspects that are common to both the basic and the enhanced representation. For more information about basic and enhanced dependencies, we refer to the detailed annotation guidelines:
+本ドキュメントの残りでは，基本的な表示と詳密な表示の両方に共通する側面に着目し，依存関係のタグ付けに係る基本原則を議論する．依存関係の表示の詳しい情報については，タグ付けの以下のガイドラインを参照している:
 
 * Basic dependencies
     * [Simple clauses](simple-syntax.html)
@@ -55,18 +53,18 @@ In the rest of this document, we discuss the fundamental principles of our depen
     * [Other constructions](specific-syntax.html)
 * [Enhanced dependencies](enhanced-syntax.html)
 
-The goal of the typed dependency relations is a set of broadly observed "universal dependencies" that work across languages. Such dependencies seek to maximize parallelism by allowing the same grammatical relation to be annotated the same way across languages, while making enough crucial distinctions such that different things can be differentiated. Two things should be noted from the outset:
+タイプ化した依存関係の目標は通言語的に適用可能な "普遍的な依存関係" を設定することにある．そのような依存関係では，重要な区別は設定しつつも，通言語的に同じ方法で同一の文法関係をタグ付けすることによって並行性を最大限に高めようとする．初めに，以下の2点に注意されたい:
 
-* The goal of parallelism has limits: The standard does not postulate and annotate "empty" things that do not appear in various languages, and it allows the use of language-specific refinements of universal dependencies to represent particular relations of language-particular importance.
-* The notion of dependency has limits: Not all grammatical relations can be reduced to binary asymmetric relations between a syntactic head and a subordinate element, and some of our typed "dependency" relations therefore must be understood as convenient encodings of other relations without implications about syntactic headedness.
+* 並行性の目標には限界がある: UDでは複数の言語で生起しない "空" の要素を仮定せず，またタグ付けを行わない．<!--当該言語に特有な関係を表示するために，UDはを許すand it allows the use of language-specific refinements of universal dependencies to represent particular relations of language-particular importance.-->
+* 依存関係の概念には限界がある: 全ての文法関係が統語的な主辞と従属要素の間にある非対称的な関係に還元されるわけではない．よって，"依存" 関係のいくつかは単に他の関係のエンコードに便利なものとして理解する必要があり，それらは統語的な主辞とは無関係である．
 
 <!-- This holds in particular for relations used to analyze multiword expressions, coordination and function words.-->
 
-We now try to lay down some general principles that should guide the use of universal dependencies to achieve as much parallelism as possible (but not more) across languages.
+以降では，普遍的な依存関係が可能な限り通言的な並行性を満たすような一般原則について述べる．
 
 ## The Primacy of Content Words
 
-Dependency relations hold primarily between content words, rather than being indirect relations mediated by function words.
+依存関係は機能語によって導かれる間接的な関係ではなく，内容語の間にあることが主である．
 
 <div id="s1a" class="sd-parse">
 The cat could have chased all the dogs down the street .
@@ -75,7 +73,7 @@ obj(chased, dogs)
 obl(chased, street)
 </div>
 
-Function words attach as direct dependents of the most closely related content word.
+機能語は最も密接に関係する内容語の直接的な依存部として付加する
 
 <div id="s1b" class="sd-parse">
 The cat could have chased all the dogs down the street .
@@ -88,15 +86,15 @@ case(street, down)
 det(street, the-10)
 </div>
 
-Punctuation attaches to the head of the clause or phrase to which they belong.
+カンマは節や句の主辞に付加される．
+
 
 <div id="s1c" class="sd-parse">
 The cat could have chased all the dogs down the street .
 punct(chased, .)
 </div>
 
-Putting this together gives a complete dependency tree where internal nodes
-are content words and where function words and punctuation appear as leaves.
+カンマを置くことで依存木を完全にする．内部の節点 (nodes) は内容語であり，機能語とカンマは枝葉として現れる．
 
 <div id="s1" class="sd-parse">
 The cat could have chased all the dogs down the street .
@@ -113,7 +111,7 @@ det(street, the-10)
 punct(chased, .)
 </div>
 
-Preferring content words as heads maximizes parallelism between languages because content words vary less than function words between languages. In particular, one commonly finds the same grammatical relation being expressed by morphology in some languages or constructions and by function words in other languages or constructions, while some languages may not mark the information at all (such as not marking tense or definiteness).
+主辞が内容語を選好することで言語間の並行性は最大限に高まることとなる．それは，内容語の変異が機能語に比べて少ないためである．特に，いくつかの言語や構文では同一の文法関係が形態論によって表現され，他の言語では機能語によって表現されることが普通だが，そのような情報を全く標示しない言語もあるかもしれない (時制や定性を標示しない，といったように).
 
 <div id="s2a" class="sd-parse">
 On a dormi ...
@@ -142,10 +140,7 @@ amod(tancor, lučšij)
 
 ## The Status of Function Words
 
-The primacy of content words implies that function words normally do not have dependents of their own.
-In particular, it means that multiple function words related to the same content word always appear as
-siblings, never in a nested structure, regardless of their interpretation.
-A typical case is that of auxiliary verbs, which never depend on each other.
+内容語の卓越は機能語が通常それ自身では依存部を持たないことを含意する．特に，同一の内容語に関連する複数の機能語は兄弟 (sibling) として生起し，解釈に関わらず埋め込み構造をとらない．典型例は助動詞であり，互いに依存関係を結ばない．
 
 <div id="s3a" class="sd-parse">
 She could have been injured .
@@ -154,8 +149,7 @@ aux(injured, have)
 aux:pass(injured, been)
 </div>
 
-Note that copula verbs are also counted as auxiliaries in this respect. In copula constructions, auxiliaries
-will therefore often be attached to predicates that are not verbs.
+この観点からは，コピュラ動詞 (copula verbs) も助動詞となる．コピュラ構文では，助動詞が動詞以外の述語に付加することがよくある．
 
 <div id="s3b" class="sd-parse">
 She could have been sick .
@@ -164,7 +158,7 @@ aux(sick, have)
 cop(sick, been)
 </div>
 
-Similarly, multiple determiners are always attached to the head noun.
+同様に，複数の限定詞は常に主辞の名詞に付加される．
 
 <div id="s3c" class="sd-parse">
 All these three books .
@@ -173,25 +167,18 @@ det(books, these)
 nummod(books, three)
 </div>
 
-We are aware that the choice to treat function words formally as dependents of content words is at odds with many versions of dependency grammar, which prefer the opposite relation for many syntactic constructions.
-We prefer to view the relations between content words and function words, not as dependency relations in the narrow
-sense, but as operations that modify the grammatical category of the content word so that it can participate in
-different dependency relations with other content words. We refer to these relations as _functional relations_ or
-_function word relations_ when we want to emphasize that they are different from dependency relations between content words.
-This view makes function words functionally (but not structurally) similar to morphological operations and is compatible with Tesnière's notion of the nucleus as the locus of syntactic dependencies.
+機能語を内容語の依存部として形式的に扱うことは，多数の統語的構文で逆の関係を選好するような他の依存文法と比べると異質であることを意識しておく必要がある．UDでは内容語と機能語との関係を狭義の依存関係とみなすのではなく，内容語の文法カテゴリを修飾する操作としてみなすことによって他の内容語とは異なる依存関係に参与させることが可能となる．内容語間の依存関係とは異なることを強調したいとき，それらの関係は_機能関係_もしくは_機能語関係_と呼ばれる．この見方は，機能語を (構造的にではなく) 機能的に形態論的操作へと類似させ，またTesnièreが仮定した統語的な依存関係の中心としての核 (nucleus) の概念とも整合する．
 
-Nevertheless, there are four important exceptions to the rule that function words do not take dependents:
+しかし，機能後が依存部とならないような，4つの重要な例外が存在する:
 
-  1. Multiword function words
-  2. Coordinated function words
-  3. Function word modifiers
-  4. Promotion by head elision
+  1. 複合的な機能語 (Multiword function words)
+  2. 並置された機能語 (Coordinated function words)
+  3. <!--機能語の修飾句 (Function word modifiers)-->
+  4. 主辞の省略による昇格 (Promotion by head elision)
 
 ### Multiword Function Words
 
-The word forms that make up a fixed function-word multiword expression (MWE) are connected
-using the special dependency relation [u-dep/fixed]() (see below). By convention, the first word is always taken as the head, so when the multiword expression is a functional element,
-the initial word form will then superficially look like a function word with dependents.
+固定的な機能語の複合表現 (multiword expression; MWE) を形成する語は [u-dep/fixed]() という特別な関係によって結合される．慣習的に先頭の語は主辞として扱われるため，複合表現が機能的要素であるとき，先頭の語は表層的に依存部を伴う機能語のように見える．
 
 <div id="s6" class="sd-parse">
 We had a nice time in spite of the rain .
@@ -201,12 +188,11 @@ fixed(in,of)
 obl(had,rain)
 </div>
 
-Deciding whether an expression in a language should be treated as a fixed multiword expression is something that has to be decided for each language, and in some cases this will require somewhat arbitrary conventions, because it involves choosing a cut point along a path of grammaticalization. Nevertheless, most languages have some very common multiword expressions that effectively behave like other function words as linkers, marks, or case particles, and it would be highly undesirable not to recognize them as a multi-word function word. Examples in English include _in spite of_ (like _despite_), _as well as_ (like _and_), and _prior to_ (like _before_).
+ある表現が固定のMWEとして扱われるかの判断は，各々の言語によって決定されるべきであり，恣意的な慣習に従う場合もある．それは，文法化 (grammaticalization) の過程からある一点を抜き出すことに関わるからである．大抵の言語は<!--linkers, marks, or case particles-->といった，機能語のようにふるまう一般的なMWEがあるとはいえ，これらを複合的な機能語としてみなすことが望ましいわけではない．英語の例には _in spite of_ (_despite_に類似)，_as well as_ (_and_に類似) や _prior to_ (_before_に類似) といったものが含まれる．.
 
 ### Coordinated Function Words
 
-Head coordination is a syntactic process that can apply to almost any word category, including
-function words like conjunctions and prepositions. In such cases, the standard analysis of coordination is used and function words have dependents.
+主辞の並置は，接続詞や前置詞といった機能語を含むほとんどの品詞に適用できる統語プロセスである．そのような場合並置の標準的な分析が用いられ，機能語は依存部を持つことになる．
 
 <div id="s4a" class="sd-parse">
 She drove to and from work .
@@ -224,9 +210,7 @@ cc(when, and)
 
 ### Function Word Modifiers
 
-Certain types of function words can take a restricted class of modifiers, mainly light adverbials (including negation).
-Typical cases are modified determiners like _not every (linguist)_ and _exactly two (papers)_
-and modifiers of subordinating conjunctions.
+特定のタイプの機能語は，修飾句の限定的なクラス，主に軽副詞 (light adverbials; 否定辞を含む) をとることが可能である．典型的な例としては _not every (linguist)_ や _exactly two (papers)_ のような修飾された限定詞や従属接続詞の修飾句がある．
 
 <div id="s7a" class="sd-parse">
 not every linguist
@@ -246,12 +230,13 @@ mark(thought, when)
 advmod(when, just)
 </div>
 
+<!--否定辞は任意の機能語を修飾できるが，他のタイプの修飾句では，主辞の性質を表現し，他の言語において形態的に表現されるような機能語には修飾することが認められない．_純粋な機能語 (pure function words)_ と呼ばれる，このクラスには助動詞，格付与マーカー (後置詞) および冠詞が含まれるが，各々の言語において明示的に定義される必要がある．純粋な機能語が否定辞以外の修飾句と生起したとき，修飾句を句全体に適用させて機能語の主辞に付加する．これは以下の例によって示される． 
 Negation can modify any function word, but other types of modifiers are disallowed for function words that express
 properties of the head word often expressed morphologically in other languages. This class, which we refer to as
 _pure function words_, includes auxiliary verbs, case markers (adpositions), and articles, but needs to be defined
 explicitly for each language. When pure function words appear with modifiers other than negation, we take the modifier
 to apply to the entire phrase and therefore attach it to the head word of the function word, as illustrated in
-the following example.
+the following example.-->
 
 <div id="s7d" class="sd-parse">
 right before midnight
@@ -259,39 +244,29 @@ case(midnight, before)
 advmod(midnight, right)
 </div>
 
-The analysis here is that _right_ modifies the entire phrase _before midnight_ and therefore attaches to _midnight_,
-which is the head of this phrase. (It is a general property of dependency trees that phrase modification is
-structurally indistinguishable from head modification.) Further support for this analysis comes from the possibility
-of replacing _before midnight_ by the adverb _then_.
+ここでは_right_が_before midnight_の句全体を修飾し，主辞である_midnight_へ付加するという分析が与えられる．(句の修飾が主辞の修飾と区別されないのは依存木の一般的性質である．) この分析は_before midnight_を副詞の_then_で置き換えが可能なことからも支持される．
 
 <div id="s7e" class="sd-parse">
 right then
 advmod(then, right)
 </div>
 
+<!--純粋な機能語が依存部を持たないと担保することで
 Making sure that pure function words do not have dependents of their own facilitates
 comparison with languages where the corresponding properties are expressed morphologically as well as conversion
-to the enhanced representation where this difference is neutralized.
+to the enhanced representation where this difference is neutralized.-->
 
-To sum up, our treatment of function word modifiers can be expressed in three principles:
+要約すると，機能語の修飾句の扱いは3つの原則によって表される:
 
-  1. Pure function words can only be modified by negation.
-  2. Other function words can also take (other) light adverbial modifiers.
-  3. When in doubt, prefer a flat structure where function words attach to a content word.
+  1. 純粋な機能語は否定辞によってのみ修飾される．
+  2. 他の機能語は軽副詞の修飾語をとる．
+  3. 迷いが生じる場合は，機能語が内容語に付加されるような平板な構造 (flat structure) として扱うこと. 
 
-Note also that the language-specific documentation should specify what words (if any) are treated as pure function words
-in that language.
+また，言語特有のドキュメンテーションでは当該言語で何の語が純粋な機能語として扱われるかを特定すべきであることに注意されたい．
 
 ### Promotion by Head Elision
 
-When the natural head of a function word is elided, the function word will be "promoted"
-to the function normally assumed by the content word head. This type of analysis should
-in general be preferred over an analysis using the [u-dep/orphan]() relation, because it disrupts
-the structure less. The orphan analysis of ellipsis should only be used when there is no function word
-that can be promoted. The following examples illustrate promotion of auxiliaries, prepositions
-and subordinating conjunctions (but only the first example illustrates the exception
-from the rule than function words have no dependents).
-
+機能語の通常の主辞が省略される (elided) とき，機能語は，通常であれば内容語が主辞となるような関係に"昇格"する．このタイプの分析は，構造の断続が少なるため，一般的に関係 [u-dep/orphan]() を用いたものよりも選好される．よって，orphanを用いた分析は昇格できる機能語が存在しないときに限って行われるべきである．以下の例では助動詞，前置詞および従属接続詞の昇格を示している (ただし，最初の例のみが機能語が依存部を持たないことへの例外を示している)．
 <div id="s5a" class="sd-parse">
 Bill could not answer , but Ann could .
 nsubj(answer, Bill)
@@ -315,50 +290,49 @@ ccomp(know, how)
 
 ## The Taxonomy of Typed Dependencies
 
-We now review some of the key ideas underlying our taxonomy of typed dependency relations, focusing first on the central
-dependency relations between content words.
+以降，タイプ付けされた依存関係の分類法に関する重要概念について，いくつか検討していく．まず，内容語間の中心的な依存関係に注目する．
 
 ### Core Arguments vs. Oblique Modifiers
 
-The UD taxonomy is centered around the fairly clear distinction between core arguments (subjects, objects, clausal complements) versus other dependents.
-It does not make a distinction between adjuncts (general modifiers) versus oblique arguments (arguments said to be selected by a head but not expressed as a core argument).
-The rest of this section expands on the linguistic basis of these choices, and may be skipped.
+UDの分類法で専念するのは，必須項 (主語，目的語，節の補部) と他の依存部の区別についてである．この分類法では付加詞 (一般に修飾句) と斜格項 (主辞によって選択されるが必須でない項) をしない．<!--このセクションの残りでは， 
+The rest of this section expands on the linguistic basis of these choices, and may be skipped.-->
 
 #### The definition of core arguments
 
-The core/oblique distinction is ultimately an information packaging distinction. All or nearly all languages have a basic way of expressing the one or two arguments of most verbs (intransitive and transitive verbs), and this unmarked form of argument expression is as a core argument. If additional arguments can appear that are treated similarly to these arguments, they may also be regarded as core arguments. (Some languages have no additional core arguments, while other languages allow multiple object arguments, for instance.) Status as a core argument is decoupled from the semantic roles of participants. Normally, depending on the meaning of a verb, many different semantic roles can be expressed by the same means of encoding core arguments. Nevertheless, there is a correlation: agent and patient or theme roles of predicates in their unmarked valence are normally realized as core arguments.
+必須項/斜格項の区別はつまるところ情報の区別
+The core/oblique distinction is ultimately an information packaging distinction. 全てあるいは大半の言語には，ほとんどの動詞 (自動詞および他動詞) で1つか2つの項を表現する手段があり，項の無標 (unmarked) な形式は必須項である．必須項と同じように扱われる追加の項が生起可能な場合，それらも必須項としてみなされるかもしれない．(例えば，いくつかの言語では追加の必須項を持たないが，他の言語では複数の目的語項を許す．) 必須項は参与者の意味役割とは分離している．通常は，項を表す同一の手段を用いつつも動詞の意味によって様々な意味役割が表現されるが，相関性は存在する: 無標の原子価 (valence) において，述語の行為者 (agent) や被行為者 (patient)， もしくは<!--被影響者 (theme)--> といった意味役割は通常必須項として実現する．
 
-Syntactically, there is not a single criterion which can be used crosslinguistically to distinguish core arguments from obliques, though there are often good and useful criteria for particular languages. These include:
+統語的には必須項から斜格を区別するような唯一の基準は存在しないものの，特定の言語において有用な基準は存在する．これらは以下のものを含む:
 
-* Verbs usually only agree with core arguments
-* Oblique arguments may usually or always appear marked by an adposition while core arguments appear as bare nominals
-* Certain cases, traditionally called nominative, accusative, and absolutive typically mark core arguments
-* Core arguments in many languages occupy special positions in the clause, often adjacent to the verb
-* Syntactic phenomena such as being the controller of a subordinate clause argument or the target of relativization are limited to core arguments in some languages
+* 動詞は必須項のみと一致 (agree) する
+* 斜格項は後置詞によって標示される一方，必須項は名詞句単体で生起する
+* 伝統的に主格，対格，絶対格と呼ばれる特定の項は典型的に必須項を標示する
+* いくつかの言語において必須項は節の特別な位置 (<!--adjecent to the verb-->) を占める
+* 従属節の項のコントローラーや関係節化のターゲットを形成するような統語現象において，その対象は必須項に限定される
 
-At the end of the day, the distinction must be drawn and documented on language particular grounds. For example, many languages have certain verbs which take arguments in oblique cases such as dative or an experiencer case, but these arguments should be regarded as core arguments based on their syntactic behavior being parallel to the arguments of other transitive verbs.
+要するに，必須項と斜格は言語特有の観点から区別されるのである．例えば，多くの言語には与格もしくは経験者といった斜格の項を取る動詞があるが，これらの項は他動詞の項と並行的に扱われる統語的ふるまいに基づき，必須項としてみなされる．
 
 #### Avoiding an argument/adjunct distinction
 
-Many grammatical frameworks suggest that some obliques are selected by or are arguments of a head (for instance, a source argument of _from the Queen_ is an argument of the head _receive_), while other obliques are general adjuncts, which can appear with any predicate without the head selecting for them (for instance, a temporal argument such as _after the holidays_).
+多くの文法的枠組みでは，斜格のいくつかは主辞から選択されるか，その項となる (例えば，_from the Queen_ の<!--source argument--> は _receive_ の主辞である)．一方で，他の斜格は一般的な付加詞であり，選択を行う主辞を伴わずに述語と共起する (例えば， _after the holidays_ の時間項 (temporal argument) )．
 
-However, the argument/adjunct distinction is subtle, unclear, and frequently argued over. For instance, syntacticians at certain times have argued for various obliques to be arguments, while at other times arguing that they are adjuncts, particularly for certain semantic roles such as oblique instruments or sources. We take the distinction to be sufficiently subtle (and its existence as a categorical distinction sufficiently questionable) that the best practical solution is to eliminate it. This approach echoes the viewpoint of the original Penn Treebank annotators.
+しかし，項/付加詞の区別は微妙なもので，議論が絶えない．例えば，統語論者が様々な斜格を項だと主張する時もあれば，道具や発生源の意味役割を示す斜格が付加詞であると主張する時もあった．ここでは，その区別が微細なもので，実践的に最良の解決策とは区別を取り払うことだと考える．このアプローチはPennツリーバンク<!--annotator-->の元々の考えに軌を一にする．
 
-The core-oblique distinction is generally accepted in language typology as being both more relevant and easier to apply cross-linguistically than the argument-adjunct distinction. See, for example:
+必須項と斜格の区別は言語類型論で認められ，両者は項と付加詞の区別よりも通言語的に適用が容易である．その例として以下を参照:
 
 * Avery D. Andrews. 2007. The Major Functions of the Noun Phrase. In Timothy Shopen (ed.) Language Typology and Syntactic Description: Clause Structure (2nd ed), Cambridge University Press, Cambridge, United Kingdom, pp. 132-223. (1st edition, 1985.)
 * Sandra A. Thompson. 1997. Discourse Motivations for the Core-Oblique Distinction as a Language Universal. In Akio Kamio (ed.) Directions in Functional Linguistics. Benjamins, Amsterdam, the Netherlands, pp. 59-82.
 
 ### A Mixed Functional-Structural System
 
-One major role of dependencies is to represent function, but the Universal Dependencies also encode structural notions.
-On the structural side, languages are taken to principally involve three things:
+依存関係の主要な役割の一つは機能 (function) を表示することにあるが，UDは構造概念もエンコードする．構造的な側面では，言語は原則的に3つの事柄に関与する:
 
-* Nominal phrases (which are the usual means of entity expression, but may also be used for other things)
-* Clauses headed by a predicate (most commonly a verb, but it may be other things, such as an adjective or adverb, or even a predicate nominal, such as _He is **a wreck**_)
-* Miscellaneous other kinds of modifier words, which may themselves allow some modification, but do not expand into the same rich structures as nominal phrases and predicates.
+* 名詞句 (存在物を表現する通常の手段であり，他の事物にも用いられる場合がある)
+* 述語が主辞となる節 (多くは動詞であるが，形容詞，副詞，もしくは　_He is **a wreck**_　のような叙述名詞である場合もある)
+* 修飾を許すような <!--which may themselves allow some modification-->，他の修飾語 (しかし，名詞句や述語ほど豊かな構造へと拡張できない)
 
-This three-way distinction is generally encoded in dependency names. For example, if a verb is taking an adverbial modifier, it may bear one of three relations [u-dep/obl](), [u-dep/advcl](), or [u-dep/advmod]() depending on which of these three sorts it is:
+3つの区別は通常，依存関係の名称にエンコードされる．例えば，動詞が副詞の修飾句を取る場合，[u-dep/obl](), [u-dep/advcl](), または [u-dep/advmod]() のいずれか1つを表す．
+<!--This three-way distinction is generally encoded in dependency names. For example, if a verb is taking an adverbial modifier, it may bear one of three relations [u-dep/obl](), [u-dep/advcl](), or [u-dep/advmod]() depending on which of these three sorts it is:-->
 
 <div id="fss1" class="sd-parse">
 John talked in the movie theatre
@@ -384,7 +358,7 @@ advmod(quickly, very)
 advmod(talked, quickly)
 </div>
 
-Similarly, the core grammatical relations differentiate core arguments that are clauses (e.g., [u-dep/csubj](), [u-dep/ccomp]()) from those that are nominal phrases (e.g., [u-dep/nsubj](), [u-dep/obj]()).
+同じように，必須の文法関係は節を成す必須項から名詞句であるもの (例: [u-dep/nsubj](), [u-dep/obj]()) を区別する．
 
 <!-- ### Voice
 
@@ -393,23 +367,21 @@ Relation names attempt to differentiate canonical voice (where the proto-agent a
 
 ### Clausal Dependents
 
-To classify dependents of the main predicate in a clause, the UD taxonomy obeys the following principles:
+節内にある述語の依存部を分類するため，UDの分類法は以下の原則に準拠する:
 
-- differentiate core arguments from noncore arguments and adjuncts (see "Core arguments vs. oblique modifiers" above)
-- differentiate subjects from complements
-- differentiate clauses with obligatory control from clauses with other types of subject licensing
-- differentiate attachment to predicates from attachment to nominal phrases
-- capture clausal modifiers of nouns that do not take the form of a relative clause
+- 必須項を必須でない項と付加詞から区別すること (上記の "Core arguments vs. oblique modifiers" を参照)
+- 主語を補部から区別すること
+- 義務的なコントロールを受ける節を，他の主語の認可 (subject licensing) を受ける節から区別すること
+- 主語への付加要素と名詞句への付加要素を区別すること
+- 関係節の形式をとらない，名詞に対する修飾節を捉えること
 
-Additional distinctions (for example, with respect to voice) can be captured via language-specific subtypes
-(such as `nsubj:pass` for the subject of a passivized verb).
-Note that the UD taxonomy does not attempt to differentiate finite from nonfinite clauses.
+さらなる区別 (例えばヴォイスに関するもの) は言語特有の下位タイプによって捉えられる (受動化した動詞の主語に対する `nsubj:pass` のように)．
+UDの分類法では，定節と不定節の区別を試みないことに注意されたい．
 
 ### Coordination
 
-We treat coordinate structures asymmetrically:
-The head of the relation is the first conjunct and all the other conjuncts depend on it via the [u-dep/conj]() relation.
-Coordinating conjunctions and punctuation delimiting the conjuncts are attached using the [u-dep/cc]() and [u-dep/punct]() relations respectively to the immediately **following** conjunct.
+等位構造 (coordinate structures) は非対照的に扱う:
+主辞は先頭の等位要素 (conjunct) であり，他の全ての要素は主辞に依存する．これは，関係 [u-dep/conj]() によって示される．等位接続詞および，等位要素を限定するカンマは，それぞれ [u-dep/cc]() と [u-dep/punct]() を用いて **後続する** 要素に付加される．  
 
 ~~~ sdparse
 He came home , took a shower and immediately went to bed .
@@ -421,16 +393,13 @@ cc(went, and)
 
 ### Multiword Expressions
 
-Multiword expressions (MWEs) are combinations of words that (in some respect and to different degrees) behave
-as lexical units rather than compositional syntactic phrases. The UD taxonomy contains three special relations
-for analyzing MWEs:
+複合表現 (multiword expressions; MWWs) は，(ある側面において程度差はあるが) 構成的な統語句というより語彙単位として振る舞うような語の組み合わせである．UDの分類法ではMEWsの分析用に3つの特別な関係を含む:
 
-* [u-dep/fixed]() is used to analyze fixed grammaticized function-word MWEs like _in spite of_ (see above)
-* [u-dep/flat]() is used to analyze exocentric semi-fixed MWEs like _Barack Obama_ with no clear head
-* [u-dep/compound]() is used to analyze (headed or endocentric) compounds like _noun phrase_, with head _phrase_
+* [u-dep/fixed]() は _in spite of_ のように，文法化した機能語であるMWEsを分析するために用いられる
+* [u-dep/flat]() は _Barack Obama_ のように，明らかな主辞を持たない，外心的 (exocentric) で半ば固定したMEWsを分析するために用いられる
+* [u-dep/compound]() は ，_phrase_ が 主辞となる _noun phrase_ のような (主辞を持つ/内心的である) 複合語を分析するために用いられる
 
-Structures analyzed with [u-dep/fixed]() and [u-dep/flat]() are headless by definition and are consistently
-annotated by attaching all non-first elements to the first and only allowing outgoing dependents from the first element.
+[u-dep/fixed]() と [u-dep/flat]() から分析される構造は定義的に主辞を欠いており，これらは先頭の要素にその他の要素が付加することでタグ付けされ，<!--only allowing outgoing dependents from the first element-->
 
 <div id="s8a" class="sd-parse">
 We had a nice time in spite of the rain .
@@ -447,7 +416,7 @@ flat(Martin,Luther)
 flat(Martin,King)
 </div>
 
-By contrast, [compounds](compound) are annotated to show their modification structure, including a regular concept of head:
+対照的に，[compounds](compound) は，主辞 (head) の概念<!--regular concept of head-->を含む修飾構造を明示するためにタグ付けされる:
 
 <div id="s9" class="sd-parse">
 I bought a computer disk drive enclosure .
@@ -461,8 +430,8 @@ obj(bought, enclosure)
 
 ### Special Relations
 
-Besides core dependency relations, functional relations, and relations for analyzing coordination, MWEs and punctuation,
-the UD taxonomy includes a number of special relations for handling things like orthographic errors in text, disfluencies in speech, and list structures without internal syntactic structure.
+必須の依存関係，機能関係，等位を分析する関係やMEWや句読点に加えて，UDの分類法にはテクストの誤字，話しでの非流暢性 (disfluencies) や内部に統語構造を持たないリスト構造を扱うような特別な関係を備えている．
+
 
 <!--Some of the universal relations do not really encode syntactic dependency relations but are used to represent
 punctuation, various kinds of multiword units, or unanalyzable segments. The use of these relations is subject

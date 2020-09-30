@@ -24,7 +24,7 @@ udver: '2'
 
 表の下部は狭義の依存関係 (dependency relations) にない関係をリスト化したものである:
 
-* 等置関係 (coordination) の分析に用いられる関係
+* 等位関係 (coordination) の分析に用いられる関係
 * 複合表現 (multiword expressions; MWE) の分析に用いられる関係
 * 緩い結合関係 (Loose joining relations)
 * 省略 (ellipsis)，言い淀み (disfluencies)，つづりの間違い (orthographic erros) を表す特別な関係
