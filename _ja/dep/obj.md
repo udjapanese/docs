@@ -1,7 +1,8 @@
 ---
 layout: relation
-title: 'dobj'
+title: 'obj'
 shortdef: 'direct object'
+udver: '2'
 ---
 
 Direct object (typically a postpositional phrase with a case marker を / o).
