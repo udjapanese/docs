@@ -2,7 +2,10 @@
 layout: relation
 title: 'nsubjpass'
 shortdef: 'passive nominal subject'
+udver: '1'
 ---
+
+This page is obsolete.
 
 Nominal subjects in passive forms.
 
