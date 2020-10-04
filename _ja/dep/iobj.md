@@ -2,6 +2,7 @@
 layout: relation
 title: 'iobj'
 shortdef: 'indirect object'
+udver: '2'
 ---
 
 Indirect object (typicall a postpositional phrase with a case marker に / ni).
