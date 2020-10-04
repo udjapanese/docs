@@ -3,6 +3,7 @@ layout: relation
 title: 'fixed'
 redirect_from: "ja/dep/mwe.html"
 shortdef: 'multi-word expression'
+udver: '2'
 ---
 
 Multi-word functional expressions.
