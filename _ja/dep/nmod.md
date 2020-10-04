@@ -2,6 +2,7 @@
 layout: relation
 title: 'nmod'
 shortdef: 'nominal modifier'
+udver: '2'
 ---
 
 Prepositional/noun phrases modifying another phrase.
