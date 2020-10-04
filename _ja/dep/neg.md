@@ -2,7 +2,10 @@
 layout: relation
 title: 'neg'
 shortdef: 'negation modifier'
+udver: '1'
 ---
+
+This page is obsolete.
 
 Negation with ない / nai, ず / zu for clausal predicates.
 Negation with 不 / fu, 非 / hi for Noun dependents.
