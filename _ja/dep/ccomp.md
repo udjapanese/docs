@@ -2,6 +2,7 @@
 layout: relation
 title: 'ccomp'
 shortdef: 'clausal complement'
+udver: '2'
 ---
 
 Clausal complements are typically introduced by a postpositional particle と / *to* "that".
