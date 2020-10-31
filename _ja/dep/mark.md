@@ -2,6 +2,7 @@
 layout: relation
 title: 'mark'
 shortdef: 'marker'
+udver: '2'
 ---
 
 Subordinating conjunction, conjunctive particle, complementizer (と / to, か / ka).

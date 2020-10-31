@@ -2,6 +2,7 @@
 layout: relation
 title: 'vocative'
 shortdef: 'vocative'
+udver: '2'
 ---
 
 Dialogue participant names in text.

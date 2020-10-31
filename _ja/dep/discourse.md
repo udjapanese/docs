@@ -2,6 +2,7 @@
 layout: relation
 title: 'discourse'
 shortdef: 'discourse element'
+udver: '2'
 ---
 
 Discourse elements (`discourse`) in UD Japanese is interjection and emoticons.

@@ -2,6 +2,7 @@
 layout: relation
 title: 'nsubj'
 shortdef: 'nominal subject'
+udver: '2'
 ---
 
 Nominal subjects (typically a postpositional phrase with a case marker "が" or sometimes with は / wa).

@@ -2,6 +2,7 @@
 layout: relation
 title: 'compound'
 shortdef: 'compound'
+udver: '2'
 ---
 
 The dependency type `compound` in UD Japanese is used for noun compounds and verb compounds.

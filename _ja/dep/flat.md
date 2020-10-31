@@ -1,13 +1,10 @@
 ---
 layout: relation
 title: 'flat'
-redirect_from: "ja/dep/name.html"
 shortdef: 'name'
+udver: '2'
 ---
 
 Proper noun compounds.
 
-~~~ sdparse
-山田 太郎 \n Yamada Taro
-name(山田, 太郎)
-~~~
+`flat` is not used in Japanese, since their left head restriction is not appropriate for Japanese.
