@@ -7,22 +7,11 @@ udver: '2'
 
 ### Definition
 
-Adposition is a cover term for prepositions and postpositions.
-Adpositions belong to a closed set of items that occur before
-(preposition) or after (postposition) a complement composed of a noun
-phrase, noun, pronoun, or clause that functions as a noun phrase, and
-that form a single structure with the complement to express its
-grammatical and semantic relation to another unit within a clause.
+側置詞 (adposition) は前置詞 (prepositions) と後置詞 (postpositions) のカバータームである．側置詞は，名詞句，名詞，代名詞もしくは名詞句として機能する節に前に生起する項目 (前置詞) および後に生起する項目 (後置詞) から成る閉じた集合 (closed set) である．また，側置詞と補部から成る単一の構造により，節内にある他のユニットとの文法的・意味的な関係が表現される．
 
-In many languages, adpositions can take the form of fixed multiword
-expressions, such as _in spite of_, _because of_, _thanks to_. The
-component words are then still tagged according to their basic use
-(_in_ is `ADP`, _spite_ is [NOUN](), etc.) and their status as
-multiword expressions are accounted for in the syntactic annotation.
+多くの言語では，側置詞は_in spite of_, _because of_および_thanks to_よいった固定した複合表現の形式を取ることができる．それらの要素は通常の使用に則したタグ付け (_in_ is `ADP`, _spite_ is [NOUN](), etc.) がなされ，複合表現としてのステータスは統語タグによって説明される．
 
-Note that in Germanic languages, some prepositions may also function
-as verbal particles, as in _give <b>in</b>_ or _hold <b>on</b>_. They
-are still tagged `ADP` and not [PART]().
+ゲルマン語では前置詞が_give <b>in</b>_ や _hold <b>on</b>_のように，動詞の不変化詞 (verbal particles) として機能することもあるので注意されたい．また，不変化詞は [PART]() ではなく`ADP`としてタグ付けされる．
 
 ### Examples
 

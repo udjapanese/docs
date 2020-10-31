@@ -7,27 +7,14 @@ udver: '2'
 
 ### Definition
 
-A proper noun is a noun (or nominal content word) that is the name (or
-part of the name) of a specific individual, place, or object.
+固有名詞 (proper noun) とは，特定の人物，場所，物体に対して名称を与える名詞を指す．
 
-Note that `PROPN` is only used for the subclass of nouns that are used
-as names and that often exhibit special syntactic properties (such as
-occurring without an article in the singular in English). When other
-phrases or sentences are used as names, the component words retain
-their original tags. For example, in _Cat on a Hot Tin Roof_, _Cat_ is
-[NOUN](), _on_ is [ADP](), _a_ is [DET](), etc.
+`PROPN`が使用できるのは，名称として用いられ，特殊な統語的性質 (英語において，冠詞を伴わずに単数形が生起する) をみせるような名詞の下位クラスに限定される．他の句や文が名称として用いられるとき，構成要素の語は元々のタグを保持する．例えば，_Cat on a Hot Tin Roof_では_Cat_は[NOUN](), _on_が[ADP](), _a_が[DET]()，など．
 
-A fine point is that it is not uncommon to regard words that are
-etymologically adjectives or participles as proper nouns when they
-appear as part of a multiword name that overall functions like a
-proper noun, for example in _the Yellow Pages_, _United Airlines_ or
-_Thrall Manufacturing Company_.  This is certainly the practice for
-the English Penn Treebank tag set.
+この手法を採る利点は，語源的に形容詞や分詞である語が_the Yellow Pages_, _United Airlines_や_Thrall Manufacturing Company_のように，表現全体が固有名詞として機能する複合表現の部分であるとき，これらの語を固有名としてみなすことが珍しくないことにある．これは，英語のPennツリーバンクのタグセットの慣習に基づく．
 
-Acronyms of proper nouns, such as _UN_ and _NATO_, should be tagged `PROPN`.
-Even if they contain numbers (as in various product names), they are tagged `PROPN` and not [SYM]():
-_130XE_, _DC10_, _DC-10_.
-However, if the token consists entirely of digits (like _7_ in _Windows 7_), it is tagged [NUM]().
+_UN_や_NATO_といった頭文字語 (acronym) の固有名詞は，`PROPN`としてタグ付けされる．数字 (製品名など) を含む場合であっても，[SYM]() ではなく`PROPN`としてタグ付けされる: _130XE_, _DC10_, _DC-10_．
+しかし，トークン全体が桁数から構成される (_Windows 7_の_7_のように) 場合，[NUM]() とタグ付けされる．
 
 ### Examples
 

@@ -7,36 +7,21 @@ udver: '2'
 
 ### Definition
 
-Particles are function words that must be associated with another word
-or phrase to impart meaning and that do not satisfy definitions of
-other universal parts of speech (e.g. [adpositions](ADP),
-[coordinating conjunctions](CCONJ), [subordinating conjunctions](SCONJ)
-or [auxiliary verbs](AUX)).  Particles may encode grammatical
-categories such as negation, mood, tense etc.  Particles are normally
-not inflected, although exceptions may occur.
+不変化詞 (particles) とは，他の語や句と連結することで意味を与え，他の品詞 (e.g. [adpositions](ADP), [coordinating conjunctions](CCONJ), [subordinating conjunctions](SCONJ) もしくは[auxiliary verbs](AUX)) の定義を満たさないような機能語を指す．不変化詞は否定，ムード，時制といった文法カテゴリをエンコードすることがあり，例外はあるものの，通常は屈折しない．
 
-Note that the `PART` tag does not cover so-called _verbal particles_
-in Germanic languages, as in _give <b>in</b>_ or _end <b>up</b>_.
-These are adpositions or adverbs by origin and are tagged accordingly
-[ADP]() or [ADV]().  Separable verb prefixes in German are treated
-analogically.
+`PART`タグは，ゲルマン諸語における，_give <b>in</b>_や_end <b>up</b>_といった_小辞 (verbal particles)_ と呼ばれるものを包括することができない．
+これらは元々側置詞や副詞であるため，[ADP]() や [ADV]() としてタグ付けされる．ゲルマン諸語における分離可能な動詞接頭辞 (separable verb prefixes) の扱いは類推から与えられる．
 
-Note that not all function words that are traditionally called
-particles in Japanese automatically qualify for the `PART` tag.  Some
-of them do, e.g. the question particle か / _ka._ Others (e.g. に /
-_ni,_ の / _no_) are parallel to adpositions in other languages and
-should thus be tagged [ADP]().
+日本語において伝統的に助詞と呼ばれる機能語の全てが自動的に`PART`タグの資格を持つわけではない．`PART`として扱うものには，例えば疑問助詞 か/_ka_ があり，他の助詞 (e.g. に/_ni_，の/no) は他言語における側置詞 (adpostion) と並行的であるため，[ADP]() としてタグ付けされる．
 
-In general, the `PART` tag should be used restrictively and only when
-no other tag is possible. The the language-specific documentation
-should list the words classified as `PART` in the given language.
+一般的に，`PART`タグの適用は限定すべきで，他のタグが適用できない場合に限り用いるべきである．言語特有のドキュメンテーションでは，`PART`として分類される語をリストしておくことが望ましい．
 
 ### Examples
 
-- Possessive marker: [en] _'s_
-- Negation particle: [en] _not;_ [de] _nicht_
-- Question particle: [ja] か / _ka_ (adding this particle to the end of a clause turns the clause into a question); [tr] _mu_
-- Sentence modality: [cs] _ať, kéž, nechť_ (_Let's_ do it! _If only_ I could do it over. _May you_ have an enjoyable stay!)
+- 所有マーカー (possessive marker): [en] _'s_
+- 否定辞 (negation particle): [en] _not;_ [de] _nicht_
+- 疑問助詞 (question particle): [ja] か / _ka_ (adding this particle to the end of a clause turns the clause into a question); [tr] _mu_
+- 文のモダリティ (sentence modality): [cs] _ať, kéž, nechť_ (_Let's_ do it! _If only_ I could do it over. _May you_ have an enjoyable stay!)
 
 ### References
 

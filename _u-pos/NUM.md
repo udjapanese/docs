@@ -7,23 +7,11 @@ udver: '2'
 
 ### Definition
 
-A numeral is a word, functioning most typically as a determiner,
-adjective or pronoun, that expresses a number and a relation to the
-number, such as quantity, sequence, frequency or fraction.
+数詞 (numeral) とは，限定詞，形容詞や代名詞として典型的に機能し，数字や，数に関係する量，順序，頻度もしくは比などを表すような語を指す．
 
-Note that cardinal numerals are covered by `NUM` whether they are used
-as determiners or not (as in _Windows <b>Seven</b>_) and whether they
-are expressed as words _(four)_, digits _(4)_ or Roman numerals
-_(IV)_. Other words functioning as determiners (including quantifiers
-such as _many_ and _few_) are tagged [DET]().
+基数詞 (cardinal numerals) は，限定詞として用いられるか (_Windows <b>Seven</b>_のように)，単語の_(four)_, 桁数の_(4)_ もしくはローマ数字_(IV)_で表記されるかに関わらず`NUM`として扱われる．限定詞として機能する他の語 (_many_や_few_など) には[DET]()がタグ付けされる．
 
-Note that there are words that may be traditionally called numerals in
-some languages (e.g. Czech) but which are not tagged `NUM`. Such
-non-cardinal numerals belong to other parts of speech in our universal
-tagging scheme, based mainly on syntactic criteria: ordinal numerals
-are [adjectives](ADJ) _(first, second, third)_ or [adverbs](ADV) ([cs]
-_poprvé_ "for the first time"), multiplicative numerals are adverbs
-_(once, twice)_ etc.
+いくつかの言語 (e.g., チェコ語) では序数 (numerals) と伝統的に呼ばれる語が存在するが，`NUM`としてタグ付けをしない．序数のような，基数でない数詞はUDのタグ付けスキームにおいて他の品詞に属し，その基準は主に統語的なものである: 通常の序数は [adjectives](ADJ) _(first, second, third)_ または [adverbs](ADV) ([cs] _poprvé_ "for the first time") である．_倍数 (multiplicative numerals)_ は副詞で，_(once, twice)_ がその例である．
 
 ### Examples
 

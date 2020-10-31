@@ -7,15 +7,11 @@ udver: '2'
 
 ### Definition
 
-Nouns are a part of speech typically denoting a person, place, thing,
-animal or idea.
+名詞 (nouns) は，典型的には人物，場所，物，動物や思想を示すような品詞を指す．
 
-The `NOUN` tag is intended for common nouns only. See [PROPN]() for
-proper nouns and [PRON]() for pronouns.
+`NOUN`タグは普通名詞 (common nouns) のみを意図しており，固有名詞 (proper nouns) については [PROPN]()，代名詞 (pronouns) は [PRON]() を参照されたい．
 
-Note that some verb forms such as _gerunds_ and _infinitives_ may
-share properties and usage of nouns and verbs. Depending on language
-and context, they may be classified as either [VERB]() or `NOUN`.
+動名詞 (gerunds) や不定詞 (infinitives) は名詞と動詞の用法を共有していることに注意したい．これらは，言語やコンテクストによって [VERB]() か`NOUN`として分類される．
 
 ### Examples
 

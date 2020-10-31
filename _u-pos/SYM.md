@@ -7,26 +7,18 @@ udver: '2'
 
 ### Definition
 
-A symbol is a word-like entity that differs from ordinary words by
-form, function, or both.
+シンボル (symbol) は語のようなものを指し，形式や機能が通常の語とは異なる．
 
-Many symbols are or contain special non-alphanumeric characters,
-similarly to [punctuation](PUNCT).  What makes them different from
-punctuation is that they can be substituted by normal words.  This
-involves all currency symbols, e.g. _$ 75_ is identical to
-_seventy-five dollars_.
+シンボルの多くは，[punctuation](PUNCT) のようなアルファベット・数字ではない特殊文字を含む．句読点とシンボルの違いは，通常の語と置き換え可能か否にある．通貨のシンボル (e.g. _$ 75_) は，_seventy-five dollars_と同一である．
 
-Mathematical operators form another group of symbols.
+数学の演算子は他のシンボルとは異なるグループを形成する．
 
-Another group of symbols is emoticons and emoji.
+他のシンボルのグループには顔文字 (emoticons) や絵文字 (emoji) がある
 
-Strings that consists entirely of alphanumeric characters are not
-symbols but they may be [proper nouns](PROPN): _130XE_, _DC10_; others
-may be tagged `PROPN` (rather than `SYM`) even if they contain special
-characters: _DC-10_. Similarly, abbreviations for single words are not symbols but are assigned the part of speech of the full form. For example, _Mr._ (mister), _kg_ (kilogram), _km_ (kilometer), _Dr_ (Doctor) should be tagged [nouns](NOUN). Acronyms for proper names such as _UN_ and _NATO_ should be tagged as [proper nouns](PROPN).
+アルファベット・数字のみから成る文字列はシンボルではなく，[proper nouns](PROPN) である: _130XE_, _DC10_; 他の場合は，特殊文字を文字を含んでいても (`SYM`ではなく) `PROPN`としてタグ付けされる: _DC-10_. 
+同様に，略語 (abbreviations) はシンボルではなく，完全な形式の品詞として分析される．例えば，_Mr._ (mister), _kg_ (kilogram), _km_ (kilometer) や_Dr_ (Doctor) は [nouns](NOUN) としてタグ付けされる．_UN_や_NATO_のように頭文字語 (acronym) で表される固有名は [proper nouns](PROPN) としてタグ付けされる．
 
-Characters used as bullets in itemized lists _(•, ‣)_ are not symbols,
-they are punctuation.
+箇条書きに用いられる記号 _(•, ‣)_ はシンボルではなく，句読点である．
 
 ### Examples
 

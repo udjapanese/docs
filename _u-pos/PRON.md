@@ -7,42 +7,28 @@ udver: '2'
 
 ### Definition
 
-Pronouns are words that substitute for [nouns](NOUN) or noun phrases,
-whose meaning is recoverable from the linguistic or extralinguistic
-context.
+代名詞 (pronouns) とは，[nouns](NOUN) もしくは名詞句を置き換える語を指し，その意味は言語的または言語外のコンテクストから復元可能である．
 
-Pronouns under this definition function like nouns. Note that some
-languages traditionally extend the term _pronoun_ to words that
-substitute for [adjectives](ADJ). Such words are not tagged `PRON`
-under our universal scheme. They are tagged as [determiners](DET) in
-order to annotate the same thing the same way across languages.
+この定義のもとでは，代名詞は名詞のように機能する．いくつかの言語では，_代名詞_という用語を拡張し，[adjectives](ADJ) と置き換えるようにしてあることに注意したい．そのような語は，UDのタグ付けスキームでは`PRON`とタグ付けされず，言語間で同じ手法を採るべく [determiners](DET) のタグを付与する．
 
-It is not always crystal clear where pronouns end and determiners start.
-Unlike in UD v1 it is no longer required that they are told apart solely on
-the base of the context. The words can be pre-classified in the dictionary
-as either `PRON` or `DET`, based on their _typical_ syntactic distribution
-(and morphology, when applicable).
-Language-specific documentation should list all pronouns (it is a closed class)
-and point out ambiguities, if any.
+代名詞と限定詞の境目が常に明瞭だとは限らない．UD v1とは異なり，これらの語の区別はコンテクストのみに基づくわけではなく，_典型的な_統語分布 (適用可能なら形態論的なものも) に基づき，辞書によって`PRON`もしくは`DET`の分類が予め決定されることもある．言語特有のドキュメンテーションでは (閉じたクラスである) 全ての限定詞をリスト化し，可能ならば曖昧な点を挙げておくべきである．
 
-See also [general principles on pronominal words](../overview/morphology.html#pronominal-words)
-for more tips on how to define pronouns.
-In particular:
+限定詞の決定に関するヒントとしては，[general principles on pronominal words](../overview/morphology.html#pronominal-words) も参照されたい
+詳しい情報:
 
-* Non-possessive personal, reflexive or reciprocal pronouns are always tagged `PRON`.
-* Possessives vary across languages. In some languages the above tests put them in the `DET` category.
-  In others, they are more like a normal personal pronoun in a specific case (often the genitive), or a personal pronoun with an adposition; they are tagged `PRON`.
+* 所有格でない人称代名詞 (non-possessive personal)，再帰代名詞 (reflexive)，相互代名詞 (reciprocal), は必ず`PRON`とタグ付けされる．
+* 所有表現は言語で異なり，上記のテストによって所有表現が`DET`カテゴリに入る言語もある．すなわち，所有表現は特定の格 (属格 (genitive) が多い) をとる人称代名詞や，側置詞 (adposition) を伴う人称代名詞と類似する; よって，`PRON`とタグ付けされる
 
 ### Examples
 
-- personal pronouns: _I, you, he, she, it, we, they_
-- reflexive pronouns: _myself, yourself, himself, herself, itself, ourselves, yourselves, theirselves_
-- interrogative pronouns: _who, what_ as in _<b>What</b> do you think?_
-- relative pronouns: _who, what_ as in _I wonder <b>what</b> you think._ (Note, however, that some relative clause introducing words, such as [en] _that_ are better analyzed as subordinating conjunctions (otherwise known as “complementizers” in the literature), and so are tagged as [SCONJ]().)
-- indefinite pronouns: _somebody, something, anybody, anything_
-- total pronouns: _everybody, everything_
-- negative pronouns: _nobody, nothing_
-- possessive pronouns (which usually stand alone as a nominal): _mine, yours, (his), hers, (its), ours, theirs_
+- 人称代名詞 (personal pronouns): _I, you, he, she, it, we, they_
+- 再帰代名詞 (reflexive pronouns): _myself, yourself, himself, herself, itself, ourselves, yourselves, theirselves_
+- 疑問代名詞 (interrogative pronouns): _who, what_ as in _<b>What</b> do you think?_
+- 関係代名詞 (relative pronouns): _who, what_ as in _I wonder <b>what</b> you think._ ([en]_that_のような，関係節を導入する語は従属接続詞 (文献によっては“補文標識 (complimentizers)“と呼ばれる) として分析した方が適切な場合があり，それらは [SCONJ]() としてタグ付けされる.)
+- 不定代名詞 (indefinite pronouns): _somebody, something, anybody, anything_
+- 総称代名詞 (total pronouns): _everybody, everything_
+- 否定代名詞 (negative pronouns): _nobody, nothing_
+- 所有代名詞 (possessive pronouns; 名詞句として単独で生起する): _mine, yours, (his), hers, (its), ours, theirs_
 
 ### References
 

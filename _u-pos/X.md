@@ -7,16 +7,10 @@ udver: '2'
 
 ### Definition
 
-The tag `X` is used for words that for some reason cannot be assigned
-a real part-of-speech category. It should be used very restrictively.
+`X`タグは，何らかの理由で実際の品詞カテゴリに属さないような語を指し，限定的な使用に留めるべきである．
 
-A special usage of `X` is for cases of code-switching where it is not
-possible (or meaningful) to analyze the intervening language
-grammatically (and where the dependency relation [flat:foreign](flat) is
-typically used in the syntactic analysis).  This usage does not extend
-to ordinary loan words which should be assigned a normal
-part-of-speech. For example, in _he put on a large sombrero_,
-_sombrero_ is an ordinary [NOUN]().
+特別な`X`の使用にはコード切り替え (code-switching) があり，その場合，切り替わった言語を文法的に分析できない (分析が有意義でない) ことがある (または，依存関係 [flat:foreign](flat) が統語分析に用いられることがある)．
+通常の借用語 (loan words) に対しては，この用法は適用できず，通常の品詞に割り当てるべきである．例えば，_he put on a large sombrero_における_sombrero_は通常の [NOUN]() である．
 
 ### Examples
 

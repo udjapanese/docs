@@ -7,18 +7,11 @@ udver: '2'
 
 ### Definition
 
-An interjection is a word that is used most often as an exclamation or
-part of an exclamation. It typically expresses an emotional reaction,
-is not syntactically related to other accompanying expressions, and
-may include a combination of sounds not otherwise found in the
-language.
+間投詞 (interjection) とは，感嘆 (exclamation) や，その一部を成すものとして用いられる語を指す．間投詞は典型的に感情的な反応を表し，他の表現と統語的な関係を結ばず，他の言語にはないような音の組み合わせも含んでいる．
 
-Note that words primarily belonging to another part of speech retains
-their original category when used in exclamations. For example, _God_
-is a [NOUN]() even in exclamatory uses.
+第一義として他の品詞に属している間投詞は，感嘆で使用されたとしても元々の品詞カテゴリを保持することに注意されたい．例えば，_God_は感嘆であっても [NOUN]() である．
 
-As a special case of interjections, we recognize feedback particles
-such as _yes_, _no_, _uhuh_, etc.
+間投詞の特殊例として，_yes_, _no_, _uhuh_ といった応答の不変化詞 (feedback particles) もある．
 
 ### Examples
 

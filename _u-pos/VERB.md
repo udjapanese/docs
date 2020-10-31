@@ -7,33 +7,15 @@ udver: '2'
 
 ### Definition
 
-A verb is a member of the syntactic class of words that typically
-signal events and actions, can constitute a minimal predicate in a
-clause, and govern the number and types of other constituents which
-may occur in the clause. Verbs are often associated with grammatical
-categories like tense, mood, aspect and voice, which can either be
-expressed inflectionally or using auxilliary verbs or particles.
+動詞 (verb) は典型的事象や行為を表す統語クラスの成員を指し，節内で最小の述語を構成することが可能で，節に生起する他の構成素における数 (number) やタイプを支配 (govern) する．動詞は時制，ムード，アスペクトやヴォイスといった文法カテゴリに関連することが多く，それらは動詞の屈折や助動詞または分詞によって表現される．
 
-Note that the `VERB` tag covers main verbs _(content verbs)_
-but it does not cover _auxiliary verbs_ and verbal _copulas_
-(in the narrow sense), for which there is
-the [AUX]() tag. _Modal verbs_ may be considered `VERB` or `AUX`,
-depending on their behavior in the given language. Language-specific
-documentation should specify which verbs are tagged `AUX` in which
-contexts.
+`VERB`タグは主に本動詞_(内容動詞)_をカバーし，_助動詞_や (狭義の) _コピュラ動詞_ は [AUX]() タグで表示される．_法動詞_ は`VERB`か`AUX`だと考えられ，当該言語の振る舞いによって判断される．言語特融のドキュメンテーションでは，どのコンテクストで，どの動詞が`AUX`とタグ付けされるかを指定しておくのが良い．
 
-Note that _participles_ are word forms that may share properties and
-usage of adjectives and verbs. Depending on language and context, they
-may be classified as either `VERB` or [ADJ]().
+_分詞 (particle)_ とは，形容詞と動詞の性質・用法を共有する語形を指し，言語とコンテクストによって`VERB`か [ADJ]() のどちらかにタグ付けされる．
 
-Note that some verb forms such as _gerunds_ and _infinitives_ may
-share properties and usage of nouns and verbs. Depending on language
-and context, they may be classified as either `VERB` or [NOUN]().
+_動名詞 (gerunds)_ や_不定詞 (infinitives)_ といった語形も形容詞と動詞の性質・用法を共有し．言語とコンテクストによって`VERB`か [NOUN]() のどちらかにタグ付けされる．
 
-Note that there are verb forms such as _converbs (transgressives)_ or _adverbial
-participles_ that share properties and usage of adverbs and
-verbs. Depending on language and context, they may be classified as
-either `VERB` or [ADV]().
+_副動詞 (transgressives)_ や_副詞的分詞 (adverbial participles)_ とは，副詞と動詞の性質・用法を共有する動詞の形式を指し，言語やコンテクストによって`VERB`もしくは [ADV]() のどちらかに分類される．
 
 ### Examples
 

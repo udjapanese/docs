@@ -7,37 +7,26 @@ udver: '2'
 
 ### Definition
 
-Adjectives are words that typically modify nouns and specify their
-properties or attributes:
+形容詞は．典型的に名詞を修飾し，その特性や属性を指定するような語を指す:
 
 _The **oldest French** bridge_
 
-They may also function as predicates, as in:
+形容詞は述語機能を果たすこともある::
 
 _The car is **green**._
 
-The `ADJ` tag is intended for ordinary adjectives only. See [DET]()
-for determiners and [NUM]() for (cardinal) numbers. `ADJ` is used for “proper adjectives”
-such as *European*.
+`ADJ`タグは通常の形容詞のみを意図している．限定詞に関しては [DET]() を，(基数) 数に関しては [NUM]() を参照したい．`ADJ`は*European*といった“真正な形容詞”に対してのみ用いられる．
 
-**Numbers vs. Adjectives:** In general, cardinal numbers receive the
-part of speech [NUM](), while _ordinal numbers_ (more
-precisely _adjectival_ ordinal numerals) receive the tag `ADJ`.
+**数 対 形容詞:** 一般的に，基数は品詞 [NUM]() をとる一方，_序数 (ordinal numbers)_ (より正確には，_形容詞的_序数) は`ADJ`タグをとる．
 
-There are words that may traditionally be called numerals in
-some languages (e.g., Czech) but which are treated as adjectives in our
-universal tagging scheme. In particular, the _adjectival_ ordinal numerals
-(note: Czech also has adverbial ones) behave both morphologically and syntactically as
-adjectives and are tagged `ADJ`.
+数詞 (numeral) と伝統的に呼ばれる語はいくつかの言語 (e.g., チェコ語) にみられるが，UDのタグ付けスキーマでは形容詞として扱う．特に，_形容詞的_序数 (注意: チェコ語は副詞的なものを備えている) は，形態的にも統語的にも形容詞として振る舞うため，`ADJ`とタグ付けされる． 
 
-**Nouns vs. Adjectives:** A noun modifying another noun to form a compound noun is given the tag [NOUN]() not `ADJ`.
+**名詞 対 形容詞:** 別の名詞に修飾することで複合名詞 (compound noun) を形成するような名詞は，`ADJ` ではなく [NOUN]() タグが与えられる．
 
-**Participles:** Participles are word forms that may share properties and
-usage of any of adjectives, nouns, and verbs. Depending on the language and context, they
-may be classified as any of `ADJ`, [NOUN]() or [VERB]().
+**分詞:** 分詞 (participles) は，その特性や用法を形容詞，名詞および動詞と共有するような語形を指す．言語やコンテクストによって，分詞は`ADJ`，[NOUN]() もしくは [VERB]() として分類される．
 
-**Adjectival modifiers of adjectives:** In general, an `ADJ` is modified by an [ADV]() (_**very** strong_).
-However, sometimes a word modifying an `ADJ` is still regarded as an `ADJ`. These cases include: (i) ordinal numeral modifiers of a superlative adjective (_the **third** oldest bridge_) and (ii) when a pair of adjectives form a compound adjectival modifier (_an **African American** mayor_).
+**形容詞を修飾する形容詞:** 一般的に，`ADJ`は [ADV]() (_**very** strong_) によって修飾される．しかし，場合によっては`ADJ`を修飾する語が`ADJ`としてみなされることがある．これらのケースは
+次のものを含む: (i) 最上級の形容詞を修飾する序数 (_the **third** oldest bridge_) (ii) 2つの形容詞が複合形容詞を形成するとき (_an **African American** mayor_).
 
 
 ### Examples

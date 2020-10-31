@@ -7,32 +7,13 @@ udver: '2'
 
 ### Definition
 
-Adverbs are words that typically modify [verbs](VERB) for such
-categories as time, place, direction or manner. They may also modify
-[adjectives](ADJ) and other adverbs, as in _<b>very briefly</b>_ or
-_<b>arguably</b> wrong_.
+副詞 (adverbs) は [verb](VERB) を典型的に修飾し，時間，場所，方向や様態といったカテゴリを表す語を指す．副詞は [adjectives](ADJ) や_<b>very briefly</b>_，_<b>arguably</b> wrong_といった他の副詞を修飾する．直接命名するのではなく，コンテクストにおける状況を指示する_代名詞的副詞_の下位クラスが存在する; 代名詞に類似しており，これらは疑問詞，関係詞，指示詞などとして分類される．代名詞的副詞は`ADV`の品詞タグを持つが，追加の素性によって区別される．
 
-There is a closed subclass of _pronominal adverbs_ that refer to
-circumstances in context, rather than naming them directly; similarly
-to pronouns, these can be categorized as interrogative, relative,
-demonstrative etc. Pronominal adverbs also get the `ADV`
-part-of-speech tag but they are differentiated by additional features.
+ゲルマン語では，いくつかの副詞は，_write <b>down</b>_ or _end <b>up</b>_のように動詞の不変化詞として機能することがある．それらは [PART]() ではなく，`ADV`としてタグ付けされる．
 
-Note that in Germanic languages, some adverbs may also function as
-verbal particles, as in _write <b>down</b>_ or _end <b>up</b>_.  They
-are still tagged `ADV` and not [PART]().
+いくつかの言語 (e.g., チェコ語) では序数 (numerals) と伝統的に呼ばれる語が存在するが，UDのタグ付けスキームでは副詞として扱う．特に，_副詞的序数_([cs] _poprvé_ "for the first time") と_倍数_ (e.g. _once, twice_) は統語的に副詞として振る舞い，`ADV`としてタグ付けされる．
 
-Note that there are words that may be traditionally called numerals in
-some languages (e.g. Czech) but they are treated as adverbs in our
-universal tagging scheme. In particular, _adverbial ordinal numerals_
-([cs] _poprvé_ "for the first time") and _multiplicative numerals_
-(e.g. _once, twice_) behave syntactically as adverbs and are tagged
-`ADV`.
-
-Note that there are verb forms such as _transgressives_ or _adverbial
-participles_ that share properties and usage of adverbs and
-verbs. Depending on language and context, they may be classified as
-either [VERB]() or `ADV`.
+また，_副動詞_ (transgressives) もしくは _副詞的分詞_と呼ばれる動詞の語形が存在し，副詞と動詞の性質および用法を共有している．これらは言語やコンテクストによって，[VERB]() や`ADV`として分類されるだろう．
 
 ### Examples
 
@@ -41,11 +22,11 @@ either [VERB]() or `ADV`.
 - _exactly_
 - _tomorrow_
 - _up, down_
-- interrogative adverbs: _where, when, how, why_
-- demonstrative adverbs: _here, there, now, then_
-- indefinite adverbs: _somewhere, sometime, anywhere, anytime_
-- totality adverbs: _everywhere, always_
-- negative adverbs: _nowhere, never_
+- 疑問副詞: _where, when, how, why_
+- 指示的副詞: _here, there, now, then_
+- 不定副詞: _somewhere, sometime, anywhere, anytime_
+- <!--副詞totality adverbs-->: _everywhere, always_
+- 否定副詞: _nowhere, never_
 
 ### References
 

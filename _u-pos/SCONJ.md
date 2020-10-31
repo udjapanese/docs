@@ -7,22 +7,19 @@ udver: '2'
 
 ### Definition
 
-A subordinating conjunction is a conjunction that links constructions
-by making one of them a constituent of the other. The subordinating
-conjunction typically marks the incorporated constituent which has the
-status of a (subordinate) clause.
+従属接続詞 (subordinating conjunction) は，一つの構造を他方の構造の構成素にすることで構造を結合する接続詞を指す．従属接続詞は，編入した構成素 (incorporated constituent) を典型的に標示し，これは (従属) 節のステータスを持つ．
 
-We follow [Loos et al. 2003](http://www-01.sil.org/linguistics/GlossaryOfLinguisticTerms/WhatIsASubordinatingConjunctio.htm) in recognizing these three subclasses as subordinating conjunctions:
+以下3つの下位クラスは従属接続詞としてみなされ，これは [Loos et al. 2003](http://www-01.sil.org/linguistics/GlossaryOfLinguisticTerms/WhatIsASubordinatingConjunctio.htm) に準拠している:
 
-* Complementizers, like [en] _that_ or _if_
-* Adverbial clause introducers, like [en] _when_, _since_, or _before_ (when introducing a clause not a nominal)
-* Relativizers, like [he] _še_. (Note that these words, which simply introduce a relative caluse, and normally don't inflect, need to be distinguished from relative or resumptive pronouns, which have a nominal function within the relative clause and which we analyze as [PRON]().)
+* 補文標識 (complementizers) で，[en] _that_や_if_のようなもの
+* 節を導入する副詞 (adverbial clause introducers) で，[en] _when_, _since_, や_before_のようなもの (名詞句ではなく，節を導入するもの)
+* 関係詞 (relativizers) で，[he] _še_ のようなもの (これらの語は単に関係節を導入するもので，通常は屈折しない．そして，関係詞は関係代名詞や再述代名詞 (resumptive pronouns) との区別が必要で，関係節内で名詞句のように機能し，[PRON]() として分析する．)
 
-For _coordinating conjunctions,_ see [CCONJ]().
+_等位接続詞 (coordinating conjunctions)_ については，[CCONJ]() を参照されたい．.
 
 ### Examples
 
-- _that_ as in _I believe <b>that</b> he will come._
+- _I believe <b>that</b> he will come._の_that_
 - _if_
 - _while_
 

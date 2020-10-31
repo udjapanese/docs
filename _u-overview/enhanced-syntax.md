@@ -1,4 +1,4 @@
----
+　---
 layout: base
 title:  'Enhanced Dependencies'
 permalink: u/overview/enhanced-syntax.html
@@ -7,11 +7,16 @@ udver: '2'
 
 # Enhanced Dependencies
 
+UD (Universal Dependency) は，関係の抽出や生物医学的な事象抽出といった，shallow 自然言語理解タスクに用いることを志向する．そのようなタスクでは，特定のエンティティ間の関係 (e.g., 2者の関係，単一のタンパク質が他方へ交流するかどうか，など) が典型的に興味対象となる．UDのツリーには内容語間の直接的な関係を多数含んでいて，依存関係ラベルは二語間の関係タイプの情報を多く提供するため，UDはそのようなタスクに適している．しかし，いくつかの構文では，当該の二語間の依存関係の経路がツリー内で長大になる場合があり，内容語同士の関係を決定するのが複雑となる．さらに，[`obl`](u-dep/obl) や [`nmod`](u-dep/nmod) といった依存関係タイプは様々な項や修飾語に対して用いられるため，依存関係自体の情報度が高いとは言えない．これらの理由から，_拡張された_表示 (enhanced representation) に対するガイドラインを提供する．拡張表示は語間の関係を明示化し，項や修飾語のタイプの曖昧性を解消するように依存ラベルを補強するものである．
 
-We always intended the Universal Dependencies representation to be used in shallow natural language understanding tasks such as relation extraction or biomedical event extraction. For such tasks, one is typically interested in the relation between certain entities, e.g., the relation between two persons or whether one protein interacts with another. UD is particularly well suited for such tasks as UD trees contain many direct dependencies between content words and many of the dependency labels provide a lot of information about the type of relation between two content words. However, for some constructions, the dependency path between two content words of interest can be very long in a UD tree, which complicates determining how the content words are related. Further, some dependency types such as [`obl`](u-dep/obl) or [`nmod`](u-dep/nmod) are used for many different types of arguments and modifiers, and therefore they are not very informative on their own. For these reasons, we also provide guidelines for an _enhanced_ representation, which makes some of the implicit relations between words more explicit, and augments some of the dependency labels to facilitate the disambiguation of types of arguments and modifiers.
 
+_拡張版_のUDのグラフは以下の拡張を含みうるもので，それぞれ以下のセクションで論じられる．
 
-_Enhanced_ UD graphs may contain some or all of the following enhancements, which are described in the sections below.
+* [省略要素の空のノード](#ellipsis)
+* [等位接続の伝播](#propagation-of-conjuncts)
+* [コントロール構文，上昇構文のための追加の主語関係](#controlledraised-subjects)
+* [関係詞節内の同一指示](#relative-clauses)
+* [前置詞や格標示の情報を含む修飾ラベル](#case-information)
 
 * [Null nodes for elided predicates](#ellipsis)
 * [Propagation of conjuncts](#propagation-of-conjuncts)
@@ -19,39 +24,30 @@ _Enhanced_ UD graphs may contain some or all of the following enhancements, whic
 * [Coreference in relative clause constructions](#relative-clauses)
 * [Modifier labels that contain the preposition or other case-marking information](#case-information)
 
-Note that the _enhanced_ graph is not necessarily a supergraph of the basic tree, i.e., the graph is not required to contain all the basic dependency relations. For this reason, all relations of the enhanced graph (also the ones that are present in the basic UD tree) have to be included in the _DEPS_ column of a CoNLL-U file. See the specificiation of the [CoNLL-U](/format.html) file format for details.
+注意が必要なのは，_拡張_グラフは必ずしも基本的なツリーのスーパーグラフとは限らないことである．すなわち，そのグラフは基本的な依存関係の全てを含む必要はない．この理由より，拡張グラフのあらゆる関係 (基本のツリーにある関係も) はCoNLL-Uファイルの_DEPS_カラムに含めておく必要がある．詳細は [CoNLL-U](/format.html) のファイルフォーマットの指定法を参照すること．
 
-Furthermore, the dependency relation labels in the enhanced graph in DEPS may contain certain extensions that are not permitted
-in the basic relation type in the DEPREL column. The regular expression restricting relation labels in DEPREL is pretty simple;
-the label can contain only lowercase English letters and at most one colon, which separates the universal and the language-specific
-part of the label: `^[a-z]+(:[a-z]+)?$`. In contrast, the relation label in DEPS may contain up to three colons, separating up to
-four sections. One of the sections (never the first one) may also contain lowercase Unicode letters and the underscore character:
+さらに，DEPS内の拡張グラフにおける依存関係ラベルは，DEPRELカラム内にある基本関係タイプでは許されない，特定の拡張を含むことがある．DEPREL内の関係を限定する正規表現は極めて単純である;
+ラベルには小文字の英字と最大1つのコロンのみを含み，コロンによって言語普遍的なラベルと言語特有のものとを区別する: `^[a-z]+(:[a-z]+)?$`. 対照的に，DEPS内の関係ラベルはコロンを3つまで含むので，ラベルは最大で4つに分割される．ラベルの一部分 (先頭部分を除いて) には，ユニコード文字とアンダースコアも含むことがある:
 `^[a-z]+(:[a-z]+)?(:[\p{Ll}\p{Lm}\p{Lo}\p{M}]+(_[\p{Ll}\p{Lm}\p{Lo}\p{M}]+)*)?(:[a-z]+)?$`.
-Only the first section, the universal relation, is mandatory. The other sections are optional but if they appear, they must appear
-in the order described below. We provide a more detailed explanation of the extra sections later on this page; here is a summary:
+普遍的関係 (universal relation) はラベルの先頭部分でのみ必須である．他の部分では任意的であるが，以下に記される生起順序に従う．より詳細な解説は本ページ後半のセクションで行う; 概略は次の通り:
 
-1. Universal dependency relation. In addition to the [37 relations](http://universaldependencies.org/u/dep/index.html)
-   defined in the basic representation, the relation can also be <tt><a href="#relative-clauses">ref</a></tt>.
-2. Documented [relation subtype](/ext-dep-index.html) (either language-specific or more general) from the basic representation.
-3. [Case information](#case-information) –
-   adposition or conjunction that occurs as a `case` or `mark` dependent of the node whose relation to its
-   parent is being enhanced. Note that this is the only part where non-ASCII letters are permitted within the enhanced relation label.
-   The word should be normalized (lowercased, no typos), i.e., in general we take its lemma. However, if the case/mark dependent is
-   a fixed multi-word expression, the lemma of the expression is not necessarily composed of lemmas of the individual member words.
-   For instance, the string representing the English expression “As Opposed To” is `as_opposed_to`. That is, the casing is normalized
-   from “As” to “as” etc., but “opposed” is not replaced by its lemma “oppose” because the expression is fixed. We use the underscore
-   character (“_”) to connect member words.
-4. [Case information](#case-information) –
-   morphological case of the node whose relation to its parent is being enhanced. Value corresponds to the value of
-   the Case feature but it is lowercased (e.g., `gen` instead of `Gen`). Unlike in morphological features, multivalues with comma
-   (`Case=Acc,Dat`) are not allowed. Case information in enhanced relations must be fully disambiguated.
+1. 普遍的依存関係．基本的表示において定義される [37関係](http://universaldependencies.org/u/dep/index.html) に加えて，<tt><a href="#relative-clauses">ref</a></tt> も可能である.
+2. 基本的表示から記録された [関係のサブタイプ](/ext-dep-index.html) (言語特有のものか，一般的なものであっても) ．
+3. [格情報](#case-information) –
+   等位接続詞や接続詞で，`case` もしくは `mark` の依存部adposition or conjunction that occurs as a `case` or `mark` dependent of the node whose relation to its
+   parent is being enhancedただし，拡張関係ラベル内でアスキー文字でないものが生起できる部分に限られることに注意．
+   語は標準化される (小文字にする，タイポを直す) べきであり，つまり，語彙素を (lemma) を用いる．格/標示の依存部が固定化した複合表現である場合，必ずしも当該表現の語彙素が要素の個々の語彙素から構成されるとは限らない.例えば，英語表現“As Opposed To”を表す文字列は`as_opposed_to`と表記される．すなわち，レターケースは“As”から“as”へと標準化されるが，この表現は固定表現であるため，“opposed”は“oppose”の語彙素によって置き換えることができない．要素の語を結合する際はアンダースコア (“_”) を用いる.
+4. [格情報](#case-information) –
+   その親の関係が拡張されるような，ノードにおける形態格．値は格素性に対応するが，
+   小文字で表記する (e.g., `Gen`の代わりに`gen`)．形態素性とは異なり，カンマを伴う多値な格情報 (`Case=Acc,Dat`) は拡張関係内に存在するが，十分に曖昧さを取り除いておく必要がある．
 
 
 ## Ellipsis
 
-(See also the guidelines on [ellipsis](specific-syntax.html#ellipsis).)
 
-In the _enhanced_ representation, we add special null nodes in clauses in which a predicate is elided.
+([ellipsis](specific-syntax.html#ellipsis) のガイドラインも参照.)
+
+_拡張_表示では，述語が省略された節において特別な空のノード (null nodes) が追加される．
 
 <table id="ellipsis-example1"> <!--I like tea and you E5.1 rum .-->
 <tbody><tr><td width="600">
@@ -128,16 +124,17 @@ In the _enhanced_ representation, we add special null nodes in clauses in which 
 </td></tr></tbody>
 </table>
 
-Note that this is a case in which the _enhanced_ UD graph is not a supergraph of the _basic_ tree as the _basic_ tree contains `orphan` relations, which are not present in the _enhanced_ UD graph.
+これは，_基本_ツリーが_拡張_UDグラフにない関係`orphan`を含んでいるため，_拡張_UDグラフが_基本_ツリーのスーパーグラフではない事例であることに注意したい．
 
 
 ## Propagation of Conjuncts
 
-In the _basic_ representation, the governor and dependents of a conjoined phrase are all attached to the first conjunct. This often leads to very long dependency paths between content words. The _enhanced_ representation therefore also contains dependencies between the other conjuncts and the governor and dependents of the phrase.
+_基本_表示においては，支配項 (governor) と並列句の依存部が両方とも最初の等位要素に付加されている．これは，内容語間の長大な依存関係の経路を生み出す．ゆえに，_拡張_表示には他の等位要素，句における支配項や依存部も含める．
 
 ### Conjoined verbs and verb phrases
 
-When two verbs share their objects (or other complements), the subject and the object of the conjoined verbs are attached to every conjunct.
+2つの動詞が目的語 (もしくは他の補部) を共有しているとき，等位関係にある動詞の主語と目的語は全ての接続要素に付加される．
+
 
 <table> <!--The store buys and sells cameras .-->
 <tbody><tr><td width="600">
@@ -165,7 +162,7 @@ When two verbs share their objects (or other complements), the subject and the o
 </td></tr></tbody>
 </table>
 
-However, if the complements of the second verb are not shared, only the shared dependents are attached to every conjunct.
+しかし，2番目の動詞の補部が共有されていない場合，全ての等位要素に付加されるのは共有された依存部のみである．
 
 <table> <!--She was reading or watching a movie .-->
 <tbody><tr><td width="600">
@@ -195,7 +192,7 @@ However, if the complements of the second verb are not shared, only the shared d
 </td></tr></tbody>
 </table>
 
-Similarly, the enhanced representation can also distinguish private dependents of the first verb. Note however that in this case it cannot be inferred from the basic representation automatically.
+同様に，拡張表示は最初の動詞のみに対する依存部を区別することが可能である．ただし，このケースでは基本表示から自動的に推測することができないので注意したい．
 
 <table> <!--She was reading or watching a movie .-->
 <tbody><tr><td width="600">
@@ -227,7 +224,8 @@ Similarly, the enhanced representation can also distinguish private dependents o
 
 ### Conjoined subjects and objects
 
-When the subject is a conjoined noun phrase, each of the conjuncts is attached to the predicate.
+主語が等位関係にある名詞句であるとき，等位要素はそれぞれ述語へ付加される．
+
 
 <table> <!--Paul and Mary are running .-->
 <tbody><tr><td width="600">
@@ -252,7 +250,7 @@ When the subject is a conjoined noun phrase, each of the conjuncts is attached t
 </td></tr></tbody>
 </table>
 
-The same is true for conjoined objects.
+これは，等位関係にある目的語においても同様である．
 
 <table> <!--Paul bought apples and oranges .-->
 <tbody><tr><td width="600">
@@ -277,7 +275,7 @@ The same is true for conjoined objects.
 </td></tr></tbody>
 </table>
 
-This leads to slightly strange dependencies in the case of collective subjects or objects:
+これは，集合的 (collective) な主語や目的語においては幾分奇妙な依存関係を生むことになる．
 
 <table> <!--Paul and Mary are meeting .-->
 <tbody><tr><td width="600">
@@ -327,9 +325,9 @@ This leads to slightly strange dependencies in the case of collective subjects o
 </td></tr></tbody>
 </table>
 
-However, as the distinction between distributive and collective readings is often context-dependent, we take the simplest approach and always attach all conjuncts to the predicate.
+ただし，分散読み (distributive reading) と集合読み (collective reading) の違いは文脈に依存することがよくあるので，ここでは単純なアプローチを採り，全ての等位要素を述語へと付加させる．
 
-When the subject is attached to a control or raising predicate, there is a dependency between the matrix verb and each conjunct and between the embedded verb and each conjunct.
+主語が，コントロール構文もしくは上昇構文の述語の主語であるとき，主節動詞 (matrix verb) と等位要素間の依存関係が存在し，埋め込み動詞 (embedded verb) と等位要素間の依存関係が存在する．
 
 <table> <!--Mary and John wanted to buy a hat .-->
 <tbody><tr><td width="600">
@@ -364,7 +362,7 @@ When the subject is attached to a control or raising predicate, there is a depen
 
 ### Conjoined modifiers
 
-Each conjunct in a conjoined modifier phrase gets attached to the governor of the modifier phrase. For example, the following phrase contains a conjoined adjectival phrase that modifies a noun. In the enhanced representation, there is an additional `amod` relation between the noun _river_ and the second conjunct _wide_.
+等位関係にある修飾句の各要素は，修飾句の支配項へ付加される．例えば，次の句では等位関係を成す形容詞句が名詞を修飾していおり，拡張表示では，関係`amod`が名詞_river_と2番目の形容詞_wide_の間に成立する．
 
 <table> <!--a long and wide river-->
 <tbody><tr><td width="600">
@@ -390,7 +388,7 @@ Each conjunct in a conjoined modifier phrase gets attached to the governor of th
 
 ## Controlled/raised subjects
 
-The _basic_ trees lack a subject dependency between a controlled verb and its controller or between an embedded verb and its raised subject. In the _enhanced_ graph, there is an additional dependency between the embedded verb and the subject of the matrix clause.
+_基本_ツリーは，コントロールされた動詞とコントローラー間，もしくは埋め込み動詞と上昇した主語間にある依存関係を欠いている．_拡張_グラフには，埋め込み動詞と主節主語間の依存関係が存在する．
 
 <table id="control-raising-example1"> <!--Mary wants to buy a book .-->
 <thead><tr><th>Basic</th><th>Enhanced</th></tr></thead>
@@ -448,7 +446,7 @@ The _basic_ trees lack a subject dependency between a controlled verb and its co
 
 ## Relative clauses
 
-In _basic_ trees, relative pronouns are attached to the main predicate of the relative clause (typically with a `nsubj` or `obj` relation). In the corresponding _enhanced_ graphs, the relative pronoun is attached to its antecedent with the special `ref` relation and the antecedent is attached as an argument to the main predicate of the relative clause. In the case where there is no explicit relative pronoun, only the latter arc is added. Note that such graphs contain a cycle.
+_基本_ツリーでは，関係代名詞は関係節の主述語へと付加される (典型的には関係`nsubj`か`obj`を用いて)．対応する_拡張_グラフでは，関係代名詞は特別な関係`ref`を用いて先行詞へと付加され，先行詞は項として関係詞の主述語へ付加される．関係代名詞が生起しないケースでは，後者のアーク (枝) のみが追加される．そのようなグラフには閉路 (cycle) が含まれることに注意されたい．
 
 <table> <!--the boy who lived-->
 <tbody><tr><td width="600">
@@ -513,7 +511,7 @@ In _basic_ trees, relative pronouns are attached to the main predicate of the re
 </td></tr></tbody>
 </table>
 
-Adverbial relativizers receive the same treatment.
+副詞的関係詞 (adverbial relativizers) も同じ扱いを受ける．
 
 <table> <!--the episode where Monica sings-->
 <tbody><tr><td width="600">
@@ -538,7 +536,8 @@ Adverbial relativizers receive the same treatment.
 </td></tr></tbody>
 </table>
 
-The enhanced relations include deep syntactic relations. Therefore, in case marking languages the enhanced dependencies may link verb dependents that are not in the expected morphological case, required by surface syntax. In the following Czech example, the relative modifier phrase _v&nbsp;němž_ “in which” is obligatorily in the locative case form (`Case=Loc`). If it were a main clause, the referent _dům_ “house” would have to be in locative too: _v&nbsp;domě_ “in house”. However, here it is in the nominative (`Case=Nom`), and the enhanced dependency `obl` going to a nominative dependent is something we would not expect to see, given the morpho-syntactic rules of the language.
+拡張関係は深い (deep) 統語関係を含んでいる．ゆえに，格標示言語では，拡張依存関係は表層の統語論からは要請される形態格にはない動詞依存部と結合する．次のチェコ語の例では関係詞を形成する修飾句_v&nbsp;němž_ “in which” は場所格 (lacative) の形式を必須とする(`Case=Loc`)．それが主節にある場合，_dům_ “house” の指示対象も場所格となる: _v&nbsp;domě_ “in house”．ただし，この例には主格 (nominative) があり (`Case=Nom`)，チェコ語の形態統語論的規則に照らすと，主格依存部に対して適用される拡張依存関係`obl`が生起することは予期されない．
+<!--The enhanced relations include deep syntactic relations. Therefore, in case marking languages the enhanced dependencies may link verb dependents that are not in the expected morphological case, required by surface syntax. In the following Czech example, the relative modifier phrase _v&nbsp;němž_ “in which” is obligatorily in the locative case form (`Case=Loc`). If it were a main clause, the referent _dům_ “house” would have to be in locative too: _v&nbsp;domě_ “in house”. However, here it is in the nominative (`Case=Nom`), and the enhanced dependency `obl` going to a nominative dependent is something we would not expect to see, given the morpho-syntactic rules of the language.-->
 
 <table> <!--dům, v němž žijeme = the house we live in (lit. house, in that we-live)-->
 <tbody><tr><td width="600">
@@ -591,12 +590,7 @@ It may be embedded deeper as in the following example.
 </td></tr></tbody>
 </table>
 
-If the relative clause has a nominal predicate, the relative pronoun may occupy the head position
-within the clause. In such cases no relation should be added from its parent to its co-referential
-element (because they are the same node). We should only add a `nsubj` relation from the antecedent
-to the `nsubj` of the relative clause (and remove the corresponding `nsubj` relation between the
-relative pronoun and the subject). The `acl:relcl` should remain the same as in basic
-dependencies.
+関係詞が叙述名詞を持つとき，その関係代名詞は節内の主辞 (head) 位置を占めることがある．そのようなケースでは，親 (parent) と同一指示対象に新たな関係が導入されることない (両者は同一ノードにあるので)．先行詞と関係節の`nsubj`のは，関係`nsubj`のみが追加される (そして，関係代名詞と主語間の対応する関係`nsubj`を取り除く)．`acl:relcl`は基本依存関係と同様のままにしておく．
 
 <!-- https://github.com/UniversalDependencies/docs/issues/531 -->
 <table> <!--He became chairman, which he still is-->
@@ -633,19 +627,14 @@ dependencies.
 
 ## Case Information
 
-Adding prepositions (or case information) to the relation name of non-core dependents often makes it possible to disambiguate its
-semantic role. We therefore augment certain relation labels with the case information of the modifier.
-The augmented relations are `nmod`, `acl`, `obl` and `advcl`; if it makes sense in the language, some core relations may also be
-augmented: `obj`, `iobj`, `ccomp`.
-Case information may be represented by the lemma of an adposition attached via a `case` relation.
-For clauses, the corresponding information may be represented by the lemma of a `mark` dependent instead.
-<!-- DZ: Do we really want to include cc dependents here? How are they related to case? Don't we want to make them augment conj relations instead? -->
-Case information may also be represented by the value of the morphological feature [Case](/u/feat/Case.html).
-In some languages, there is both the adposition and the morphological case, and their combination must be reflected in the enhanced relation.
+必須項でない依存部 (non-core dependents) の関係に対して前置詞 (もしくは格の情報) を加えることで，その意味役割 (semantic role) の曖昧性が除去できる場合が多いため，修飾部の格情報を用いて依存関係を補完する．補完される関係は`nmod`，`acl`，`obl`および`advcl`である; 理解の助けになるなら，言語によっては必須の関係も補完される: `obj`, `iobj`, `ccomp`．
+格の情報は，関係`case`を介して付加される側置詞 (adposition) の見出し語 (lemma) から表示される．節に対しては，対応する情報が依存部`mark`の見出し語によって表示される．
+<!--もともとコメントアウトの部分→ DZ: Do we really want to include cc dependents here? How are they related to case? Don't we want to make them augment conj relations instead? -->
+格情報は形態素性 [Case](/u/feat/Case.html) の値 (value) によって表示される．側置詞と形態格の両方が存在する言語もあり，それらの組み合わせは拡張関係へ反映されなければならない．
 
-The following formal rules apply (copied from the summary at the beginning of this page):
+以下の形式規則が適用される (本ページ冒頭の概要からコピーしたもの):
 
-* Adposition or conjunction that occurs as a `case` or `mark` <!--or `cc` ?--> dependent of the node whose relation to its
+* 側置詞もしAdposition or conjunction that occurs as a `case` or `mark` <!--or `cc` ?--> dependent of the node whose relation to its
   parent is being enhanced. Note that this is the only part where non-ASCII letters are permitted within the enhanced relation label.
   The word should be normalized (lowercased, no typos), i.e., in general we take its lemma. However, if the case/mark dependent is
   a fixed multi-word expression, the lemma of the expression is not necessarily composed of lemmas of the individual member words.
@@ -823,4 +812,4 @@ The following formal rules apply (copied from the summary at the beginning of th
 
 ## Additional enhancements
 
-Some postprocessing steps such as demoting light nouns that behave like quantificational determiners (as, for example, described in [Schuster and Manning (2016)](http://www.lrec-conf.org/proceedings/lrec2016/pdf/779_Paper.pdf)) can improve the usability of the dependency graphs for downstream applications. However, as most of these additions are highly language-specific, we do not provide any universal guidelines for such a representation and anything beyond the above additions is not part of the UD standard and should not be added to the officially released treebanks.
+数量限定詞 (quantificational determiners) のように振る舞う軽名詞 (light nouns) の降格 (demoting) といったポストプロセス (例えば，[Schuster and Manning (2016)](http://www.lrec-conf.org/proceedings/lrec2016/pdf/779_Paper.pdf) にあるような) は，下流のアプリケーションにおける依存グラフの有用性を高める．しかし，このような追加は大いに言語特有のものであるため，表示に関して言語普遍的なガイドラインを設けることはしない．そして，上記の追加を超えるものは標準的なUDの要素とは言えず，公式にリリースされるツリーバンクには搭載されない．
