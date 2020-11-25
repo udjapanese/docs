@@ -4,38 +4,25 @@ title: 'clf'
 shortdef: 'classifier'
 udver: '2'
 ---
-
-A `clf` (classifier) is a word which accompanies a noun in certain grammatical contexts. 
-The most canonical use is numeral classifiers, where the word is used with a number for counting objects. 
-A classifier generally reflects some kind of 
-conceptual classification of nouns, based principally on features of their referents. 
-Etymologically, classifiers are normally historically nouns, and the words may still also be used as independent nouns,
-but in their classifier use they have scant semantics left.
-In most cases, the most appropriate UPOS to give classifiers will still be NOUN, though you may wish to give the words a feature
-indicating their special status as a classifier. (There is at present no Universal feature for classifiers, but `NounType=Clf`
-might be apt.)
-The `clf` function is intended for languages which have highly grammaticalized systems of classifiers.
-The greatest density of such languages is in Asia.
-As well as core classifiers, there are often also other words, sometimes called "massifiers" that are used in counting with
-similar behavior to classifiers. These typically include words for containers ("cup", "box") and units ("month", "inch"),
-such as Chinese 袋 ‘bag’ in 一袋米 [one bag rice] ‘a bag of rice’.
-In a classifier language, it is usually most appropriate to also analyze these words as classifiers.
-Most other languages also count things with units, however, for these languages, such as English, `clf` is not used and rather
-standard noun phrase relations are still used (despite there also being incipient grammaticalization in many cases, including English).
+`clf` (類別詞 (classifier) ) は，特定の統語環境において名詞に付随する語を指す．最も標準的な使用法は数の類別詞 (numeral classifiers) であり，対象物を数えるために用いられる．通常，類別詞は名詞におけるある種の概念分類を反映しており，それは原理的に指示物 (referents) の特性に基づいている．
+類別詞は語源的に名詞であるため，それらは名詞としても独立に用いられる．しかし，類別詞として用いた場合は，その意味が希薄となる．
+大抵の場合で，類別詞に対してはNOUNが最も適したUPOSとなるが，類別詞としての特別なステータスを示すための素性を与えたくなるかもしれない．(類別詞に対する普遍的な素性は存在しないが，`NounType=Clf`が適しているだろう.)
+関数`clf`は，類別詞の文法化した体系を備える言語に対して利用することを志向している．そのような傾向が最も強い言語はアジア諸語である．
+主要な類別詞だけでなく、"massifiers"と呼ばれる，類別詞に類似した数の数え方をする他の語が存在する．，
+これらには容器 ("cup", "box") や単位 ("mouth", "inch") が含まれ，中国語の一袋米 [one bag rice] ‘a bag of rice’における袋 ‘bag’ といったものが該当する.
+類別詞を用いる言語においては，これらの語を類別詞として分析することが最も適切である．
+他の言語では数を数える際に単位 (units) を用いるが，英語といった言語に対しては`clf`は用いられず，標準的な名詞句の関係が依然として用いられる (英語を含め，多くの事例で文法化の兆候がみられるとしても)
+英語の例については，本ページの最後を参照されたい．
 See the examples for English at the end.
 
-Here are some examples from Mandarin/Putonghua Chinese:
+以下，関東語/普通話中国語の例である:
 
 * 三个学生 (三個學生) sān gè xuéshēng = “three students”, literally “three [human-classifier] student”
 * 三棵树 (三棵樹) sān kē shù = “three trees”, literally “three [tree-classifier] tree”
 * 三只鸟 (三隻鳥) sān zhī niǎo = “three birds”, literally “three [bird-classifier] bird”
 * 三条河 (三條河) sān tiáo hé = “three rivers”, literally “three [long-wavy-classifier] river”
 
-Syntactically, the classifier groups with the numeral rather than the noun and we therefore treat
-classifiers as functional dependents of numerals (or possessives) using the new `clf` relation. (This
-is one of Greenberg’s universals and is true in almost all cases. 
-A couple of exceptions are noted in Aikhenvald (2000: 105) _Classifiers_, OUP, but it is noticeable that in those languages
-the putative head noun is in the genitive case.)
+統語的には，この類別詞は名詞ではなく数詞とグループ<!--動詞group-->を形成する．ゆえに，新たな関係`clf`を用いて，類別詞は数詞 (所有格表現) の機能的依存部として扱われる．(これはGreenbergの普遍性の一種であり，他の全ての事例にも該当する．いくつかの例外は Aikhenvald (2000: 105) の _Classifiers_ (OUP) で言及されているが，この文献で取り上げられる言語において，いわゆる主辞名詞は属格形で顕著にみられる.)
 
 <div class="sd-parse">
 sān gè xuéshēng \n three clf student
@@ -43,7 +30,7 @@ nummod(xuéshēng, sān)
 clf(sān, gè)
 </div>
 
-Sometimes a classifier is inserted between a demonstrative and a noun (instead of numeral and noun) [zh]:
+ときおり，類別詞が指示詞と名詞の間に挿入されることがある (数詞や名詞のかわりに) [zh]:
 
 <div class="sd-parse">
 乘坐 這 輛 巴士 \n Chéngzuò zhè liàng bāshì \n Take this CLF bus
@@ -58,12 +45,9 @@ det(bus, this)
 clf(this, CLF)
 </div>
 
-Classifier words also occur in various other constructions, and so it is important to distinguish the word in a particular
-language from the universal classifier function proposed in UD. We go through here some further examples with Chinese classifiers.
+類別詞を示す語は様々な構文でも生起するが，個別言語における類別詞とUDで提案されたものを区別することが重要である．ここで，中国語の類別詞の例についてさらに検討したい．
 
-No noun may appear with the number and classifier. 
-In this case, the classifier takes the role of the missing noun, and we promote the classifier to be the head.
-So 我 買 兩 本 “I am buying two” is regarded as “I am buying two [books-CLF]”.
+名詞が生起せず，数や類別詞だけが生起する場合がある．このとき，類別詞が欠けた名詞の役割を埋め，類別詞を主辞へ昇格 (promote) させる．よって， 我 買 兩 本 “I am buying two” は “I am buying two [books-CLF]” とみなされる.
 
 <div class="sd-parse">
 我 買 兩 本 \n I buy two CLF
@@ -71,8 +55,7 @@ obj(買, 本)
 nummod(本, 兩)
 </div>
 
-In some languages, including Chinese, a classifier can also appear without a number, and frequently then has some sort of
-determinative function. We use the relation `det` for such uses of a classifier. For instance, in Cantonese ‘She bought a/the book’:
+中国語を含むいくつかの言語では類別詞が数を伴わずに生起することがあり，ある種の決定詞の機能を表すことが頻繁にある．そのような類別詞の使用においては`det`が用いられる．例えば広東語の‘She bought a/the book’は次のように分析される:
 
 <div class="sd-parse">
 佢 買 咗 本 書 \n keoi maai zo bun syu \n 3sg buy PERF CLF book
@@ -80,8 +63,7 @@ obj(買, 書)
 det(書, 本)
 </div>
 
-For languages without highly grammaticalized classifier systems, standard nominal modification relationships are used
-even when things are being counted in groups (with "massifiers"). For example, in English:
+高度に文法化した類別詞の体系を備えない言語においては，事物が ("massifiers" を伴って) グループとして数えられる場合であっても，標準の名詞修飾関係が用いられる．例えば，英語では:
 
 <div class="sd-parse">
 three cups of rolled oats

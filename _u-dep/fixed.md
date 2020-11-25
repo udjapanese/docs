@@ -5,23 +5,15 @@ shortdef: 'fixed multiword expression'
 udver: '2'
 ---
 
-The `fixed` relation is one of the three relations for multiword expressions (MWEs)
-(the other two being [flat]() and [compound]()). 
-It is used for certain fixed grammaticized expressions that behave
-like function words or short adverbials.
+関係`fixed`は，複合表現 (multiword expressions; MWEs) に用いられる3つの関係のうち，その1つを指す (他の2つは[flat]() および [compound]()).
+`fixed`は機能語もしくは短い副詞句として振る舞うような，文法化した固定表現に対して用いられる．
 
-**New from v2:** The `fixed` relation replaces the old `mwe` relation to prevent misunderstanding regarding its scope.
 
-The scope of `fixed` MWEs corresponds roughly to the *fixed
-expressions* category of
-[Sag et al.](http://lingo.stanford.edu/pubs/WP-2001-03.pdf)
-and excludes any semi-fixed or flexible MWEs. 
+**New from v2:** 関係の適用範囲に対する誤解を防ぐ目的で，関係`fixed`は従来の`mwe`と置き換えられる
 
-Fixed MWEs are annotated in a flat structure, where all subsequent words in the expression 
-are attached to the first one using the `fixed` label. The assumption is that these expressions
-do not have any internal syntactic structure (except from a historical perspective) and that the
-structural annotation is in principle arbitrary. In practice, however, it is highly desirable to use
-a consistent annotation of all fixed MWEs in all languages.
+MWEにおける`fixed`の適用範囲は，おおよそ [Sag et al.](http://lingo.stanford.edu/pubs/WP-2001-03.pdf) の*fixed expressions*カテゴリに相当し，準固定表現 (semi-fixed) や可変性のあるMEW (flexible MWEs) は排除される．
+
+固定したMEWは平板構造 (flat structure) としてタグ付けされる．MWEにおいて先頭の語に後続するすべての語は，ラベル`fixed`を用いて先頭の語に付加させる．これらの表現は内部の統語構造を持たず (歴史的な観点を除くと)，構造のタグ付けは原理的に恣意的になってしまう．ただし実践上の理由から，全ての言語において一貫したタグ付けを固定したMWEに与えることが望ましい．
 
 ~~~ sdparse
 I like dogs as well as cats

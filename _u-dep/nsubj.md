@@ -5,25 +5,13 @@ shortdef: 'nominal subject'
 udver: '2'
 ---
 
-A nominal subject (`nsubj`) is a nominal which is the syntactic subject and the proto-agent of a clause.
-That is, it is in the position that passes typical grammatical test for subjecthood, and this argument is the more agentive,
-the do-er, or the proto-agent of the clause. This nominal may be headed by a noun, 
-or it may be a pronoun or relative pronoun or, in ellipsis contexts, other things such as an adjective.
+名詞句主語 (`nsubj`) は，節の統語的主語やプロト行為者 (proto-agent) を表す名詞句を指す．名詞句主語はすなわち，主語性 (subjecthood) に関する典型的な文法テストに合格するような節の場所に位置し，この項は行為性 (agentive) が高く，行為者であったり節のプロト行為者であったりする．この名詞句の主辞となるのは，名詞，もしくは代名詞や関係代名詞，または省略 (ellipsis) が起きる文脈では形容詞といったものが該当する．
 
-**New from v2:** The `nsubj` relation is also used for the nominal subject of a passive verb or verb group, even
-though the subject is then not typically the proto-agent argument due to valency changing operations. For languages
-that have a grammaticalized passive transformation, it is strongly recommended to use the subtype `nsubj:pass` in 
-such cases.
+**New from v2:** 動詞が受身形を表し，原子価 (valency) が変更されたことで主語が典型的にプロト行為者を表さない場合であっても，その名詞句主語には関係`nsubj`が用いられる．文法化した受動変形を有する言語においては，上記の事例に対して，`nsubj`のサブタイプ`nsubj:pass`を用いることが強く推奨される．
 
-The governor of the `nsubj` relation might not always be a verb: when
-the verb is a copular verb, the root of the clause is the complement
-of the copular verb, which can be an adjective or noun, including a noun marked by a preposition,
-as in the examples below.
+関係`nsubj`の支配項 (governor) は常に動詞だとは限らない: 動詞がコピュラ動詞 (copular verb) である場合，節の根 (root) はコピュラ動詞の補部であり，形容詞，および前置詞で修飾されたものを含む名詞となる．これは，以下の例から示される．
 
-The `nsubj` role is only applied to semantic arguments of a predicate.
-When there is an empty argument in a grammatical subject position (sometimes called a pleonastic or expletive),
-it is labeled as [expl](). If there is then a displaced subject
-in the clause, as in the English existential _there_ construction, it will be labeled as `nsubj`.)
+`nsubj`の役割は述語の意味項に対してのみ適用される．文法的な主語位置に空の項 (empty argument) が存在する (この要素は虚辞 (expletive) と呼ばれることがある) とき，それは [expl]() としてラベル付けされる．英語における，存在を表す_there_構文のように，分離 (displaced) した主語が存在する節においては，主語は`nsubj`としてラベル付けされる．
 
 ~~~ sdparse
 Clinton defeated Dole

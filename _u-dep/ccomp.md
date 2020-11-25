@@ -5,9 +5,8 @@ shortdef: 'clausal complement'
 udver: '2'
 ---
 
-A clausal complement of a verb or adjective is a dependent clause 
-which is a core argument. That is, it functions like an object of the verb, or
-adjective.
+動詞もしくは形容詞の節補部 (clausal complement) とは必須項として生起する依存部節を指し，動詞や形容詞の目的語のように機能する．
+
 
 ~~~ sdparse
 He says that you like to swim
@@ -20,10 +19,7 @@ He says you like to swim
 ccomp(says, like)
 ~~~
 
-Such clausal complements may be finite or nonfinite. However, if the
-subject of the clausal complement is controlled (that is, must be the same
-as the higher subject or object, with no other possible interpretation)
-the appropriate relation is [xcomp]().
+そのような節補部は定型節か非定型節のどちらでもありうる．しかし，節補部の主語がコントロールされる場合 (つまり，上位の節の主語か目的語と同一であり，かつ他の解釈を許さない場合)，適切な関係は [xcomp]() である．
 
 ~~~ sdparse
 The boss said to start digging
@@ -36,12 +32,9 @@ We started digging
 xcomp(started, digging)
 ~~~
 
-The key difference here is that, while it is possible to interpret the first
-sentence to mean that the boss will not be doing any digging, in the second
-sentence it is clear that the subject of __digging__ can only be __we__. This is
-what distinguishes `ccomp` and `xcomp`.
+ここでの重要な相違点は，最初の文で上司 (the boss) が掘削をしない解釈が許される一方，2番目の文では _digging_ の主語が明らかに _we_ しか許容されない．これは，`ccomp`と`xcomp`を区別づけるものである．
 
-Additionally, `ccomp` is used with copulas in equational constructions involving full clauses.
+さらに，`ccomp`は完全な節 (full clauses) が関与する等価構文 (equational constructions) においても用いられる．
 
 ~~~ sdparse
 The important thing is to keep calm.
@@ -55,10 +48,6 @@ ccomp(is, tried)
 nsubj(is, problem)
 ~~~
 
-(In these cases, the copula is treated as a head to preserve the integrity of clause boundaries and prevent one predicate to
-be assigned two subjects. This is not an optimal solution given the analysis of equational constructions involving nominals, where one of the nominals is treated as the head, but it is the preferred solution for now.)
+(これらの例では，節境界の緊密性 (integrity) を保持し，1つの述語が2つの述語に割り当てられることを防ぐため，コピュラが主辞として扱われる．これは，名詞句の一つが主辞として扱われるような等価構文の分析を考えたとき最適な解決策とはいえない．しかし，現行の枠組みでは選好される策である.)
 
-_Note:_ In earlier versions of SD/USD, complement
-clauses with nouns like *fact* or *report* were also analyzed as `ccomp`. 
-However, we now analyze them as [acl](). Hence, `ccomp` does not appear in nominals.
-This makes sense, since nominals normally do not take core arguments.
+_注意:_ SD/USDの従来のバージョンでは，*fact* や *report*といった名詞の補部節も`ccomp`として分析された．しかし，ここでは[acl]() として分析するため，名詞句には`ccomp`が生起しない．名詞句は通常必須項をとらないため，この扱い方が合理的である．

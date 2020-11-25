@@ -5,7 +5,7 @@ shortdef: 'case marking'
 udver: '2'
 ---
 
-The `case` relation is used for any case-marking element which is treated as a separate syntactic word (including prepositions, postpositions, and clitic case markers). Case-marking elements are treated as dependents of the noun they attach to or introduce. (Thus, contrary to SD, UD abandons treating a preposition as a mediator between a modified word and its object.) The `case` relation aims at providing a more uniform analysis of nominal elements, prepositions and case in morphologically rich languages: a nominal in an oblique case will receive the same dependency structure as a nominal introduced by an adposition.
+関係`case`は格を付与する要素を指し，個別の統語要素 (前置詞，後置詞，および接語である格マーカーを含む) として扱われるものに該当する. 格付与要素は名詞の依存部 (dependents) として扱われ，名詞へ付加したり名詞を導入したりする．(ゆえに，SD<!--SDって何?-->とは逆に，UDでは被修飾語と目的語を媒介する要素としてみなす見方を退ける) 関係`case`は，名詞的要素，前置詞および形態論が豊富な言語における格に対して統一的な分析を与えることを志向している: 斜格 (oblique case) の名詞句は側置詞から導入される名詞句と同一の依存構造を持つ.
 
 ~~~ sdparse
 the Chair 's office
@@ -40,13 +40,11 @@ case(klb-5, at-3)
 ~~~
 
 
-When case markers are morphemes, they are not divided off the noun as a separate case dependent,
-but the noun as a whole is analyzed as [obl]() (if dependent on a predicate) or [nmod]() (if dependent on noun).
-To overtly mark case,
-<a href="../pos/index.html">POS tags</a> and
-<a href="../feat/index.html">features</a>
-are included in the representation as shown below on a Russian example
-(put your mouse pointer over the words to see additional morphosyntactic features).
+格マーカーが形態素である場合，格の依存部 (case dependet) の独立した要素として名詞を分離することができず，(述語の依存部であるならば) 名詞全体が [obl]() として分析され，もしくは (名詞の依存部であるならば) [nmod]() として分析される．明示的に格を標示するには，
+<a href="../pos/index.html">POSタグ</a> と
+<a href="../feat/index.html">素性</a>
+といった情報が用いられ，それは以下のロシア語の例から示される．
+(追加の統語形態論的素性を参照するには，当該の語にマウスを重ねること.)
 
 ~~~ conllu
 # I wrote the letter with a quill.
@@ -56,11 +54,11 @@ are included in the representation as shown below on a Russian example
 4   пером     pero       NOUN   _   Case=Ins|Gender=Neut|Number=Sing                  2   obl    _   with-a-quill
 ~~~
 
-This treatment provides parallelism between different constructions
-across and within languages. A good result is that we now have greater
+このように取り扱うことで，多様な構文間と多くの言語内に対して平行性を与えることができる．(ただし，これらの格において) ここで得られた良い結果として，前置詞句と従属節との間にある平行性を捉えられたことが挙げられる．(ただし，これらの例では関係 [mark]() が用いられる):
+<!--A good result is that we now have greater
 parallelism between prepositional phrases and subordinate clauses,
 which are often introduced by a preposition in some languages (but note that 
-the relation should be [mark]() in those cases):
+the relation should be [mark]() in those cases):-->
 
 ~~~ sdparse
 Sue left after the rehearsal
@@ -78,10 +76,10 @@ mark(did-5, after-3)
 nsubj(did-5, we-4)
 ~~~
 
-We also obtain parallel constructions for
+構文の平行的な分析<!--parallel construction-->は，以下のものに対しても与えられる．
 
 
-- the possessive alternation
+- 受動交替 (possessive alternation)
 
 ~~~ sdparse
 the Chair 's office
@@ -99,8 +97,7 @@ det(Chair-5, the-4)
 ~~~
 
 
-- variant forms with case, a preposition or a
-postposition in Finnish
+- フィンランド語における，格，前置詞，もしくは後置詞における異形態 (variant forms)
 
 ~~~ sdparse
 etsiä ilman johtolankaa \n to_search without clue.PARTITIVE
@@ -120,8 +117,7 @@ obl(etsiä, johtolangatta)
 ~~~
 
 
-- the dative alternation where the prepositional construction gets a similar
-analysis to the double object construction
+- 二重目的語構文の分析が前置詞構文の分析と類似するような与格交替 (dative alternation)
 
 ~~~ sdparse
 give the children the toys
@@ -147,9 +143,7 @@ case(children, to)
 6     enfants   enfant   NOUN   _   Gender=Masc|Number=Plur    1   obl   _   children
 ~~~
 
-Another advantage of this new analysis is that it provides a treatment
-of prepositional phrases that are predicative complements of "be" that is consistent with the treatment of nominal predicative
-complements:
+この新しい分析を採るもう一つの利点として，"be"の述語補部となる前置詞句への対処法を提供することにある. この分析は名詞述語補部の扱いと一貫している:
 
 ~~~ sdparse
 Sue is in shape
@@ -158,7 +152,7 @@ cop(shape-4, is-2)
 case(shape-4, in-3)
 ~~~
 
-When prepositions are stacked (that is, there is a sequence of prepositions), there are two possible analyses. If the sequence is a frozen combination with a specific meaning, then the best analysis is as `fixed`. An English example of this is *out of*:
+前置詞が積み重なる場合 (前置詞が連続するとき)，可能な分析が2つある．前置詞の連続が特定の意味を伴う固定したものである場合，`fixed`が最良の分析法となる．関連する英語の例として *out of* がある:
 
 ~~~ sdparse
 Out of all this , something good will come .
@@ -168,7 +162,8 @@ det(this-4, all-3)
 obl(come, this-4)
 ~~~
 
-However, if various combinations of prepositions can be used to express different meaning combinations or nuances, then  each preposition is independently analyzed as a case dependent. Examples of this in English include *up beside* (which can alternate with *down beside* or *up near*) or *except during* which can alternate with *as during* or *except after*:
+しかし，前置詞の様々な組み合わせによって異なる意味やニュアンスが表現される場合，各前置詞は格依存部として独立に分析される．関連する英語の例には *up beside* (*down beside* や *up near* と交替可能) や，*as during* もしくは *except after* と交替可能な*except during* が挙げられる．
+
 
 ~~~ sdparse
 The cafe up beside the lookout

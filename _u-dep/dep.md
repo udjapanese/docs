@@ -5,7 +5,4 @@ shortdef: 'unspecified dependency'
 udver: '2'
 ---
 
-A dependency can be labeled as `dep` when it is impossible to determine a more precise relation.
-This may be because of a weird grammatical construction, or a limitation in conversion or parsing software.
-The use of `dep` should be avoided as much as possible.
-
+依存部は，それ以上正確な関係が同定できない場合には`dep`ラベルを付与することが可能である．これは，奇妙にみえる文法構造や，パージングを行うソフトウェアの限界を原因とするものであり，`dep`は可能であるなら用いるべきでない．

@@ -5,11 +5,8 @@ shortdef: 'flat multiword expression'
 udver: '2'
 ---
 
-The `flat` relation is one of three relations for multiword expressions multiword expressions (MWEs) in UD 
-(the other two being [fixed]() and [compound]()). It is used for exocentric (headless) semi-fixed MWEs like
-names (_Hillary Rodham Clinton_) and dates (_24 December_). It contrasts with [fixed](), which applies to
-completely fixed grammaticized (function word-like) MWEs (like _in spite of_), and with [compound](), which applies to
-endocentric (headed) MWEs (like _apple pie_).
+`flat`は，UDにおいて，複合表現 (multiword expressions; MWEs) の3つの関係のうちの1つを表す関係である．(他の2つは [fixed]() および [compound]()). 関係`flat`は名称 (_Hillary Rodham Clinton_) や日付 (_24 December_) といった，外心的 (exocentric; 主辞を欠く) な準固定的MWE (semi-fixed MWEs) に用いられる．これは，完全に固定的な (機能語のような) MWE (_in spite of_) や，内心的 (endocentric; 主辞を持つ) なMWE (_apple pie_のような) [compound]() と対比される．
+
 
 Flat MWEs are annotated with a flat structure, where all subsequent words in the expression are attached to the 
 first one using the `flat` label. The assumption is that these expressions do not have any internal syntactic structure 

@@ -5,19 +5,9 @@ shortdef: 'adverbial modifier'
 udver: '2'
 ---
 
-An adverbial modifier of a word is a (non-clausal) [adverb](u-pos/ADV)
-or adverbial phrase that serves to modify a predicate or a modifier word.
+語の副詞的修飾句 (advervial modifier) とは，[adverb](u-pos/ADV) もしくは，述語や修飾語として働く副詞句を指す．
 
-Note that in some grammatical traditions, the term _adverbial modifier_ covers
-constituents that function like adverbs regardless whether they are realized
-by adverbs, adpositional phrases, or nouns in particular morphological 
-[cases](u-feat/Case).
-We differentiate adverbials realized as adverbs _(advmod)_ and
-adverbials realized by noun phrases or adpositional phrases
-([obl]()). However, we do not differentiate between modifiers of predicates
-(adverbials in a narrow sense) and modifiers of other modifier words like
-adjectives or adverbs (sometime called qualifiers). These functions are all
-subsumed under `advmod`.
+いくつかの伝統文法においては，_副詞的修飾句 (adverbial modifier)_ という用語は，副詞，側置詞句 (adpositionnal phrases) や特定の形態的 [cases](u-feat/Case) のいずれかとして実現されるような，副詞として機能する構成要素 (constituents) を包括するものである．UDでは副詞類を，副詞として実現する _(advmod)_ と，名詞句や側置詞句 ([obl]()) として実現するものの間に区別を設ける．ただし，述語の修飾句 (狭義の副詞類) と，他の形容詞や副詞における修飾句 (修飾語句 (qualifiers) と呼ばれることがある) は区別されない．これらは全て`advmod`に包含される．
 
 ~~~ sdparse
 Genetically modified food

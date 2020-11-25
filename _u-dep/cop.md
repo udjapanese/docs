@@ -5,16 +5,12 @@ shortdef: 'copula'
 udver: '2'
 ---
 
-A `cop` (copula) is the relation of a function word used to link a subject to a nonverbal predicate.
-It is often a verb but nonverbal (pronominal) copulas are also frequent in the world's languages.
-Verbal copulas are tagged [AUX](), not `VERB`. Pronominal copulas are tagged [PRON]() or [DET]().
+`cop` (コピュラ) は，主語と動詞以外の述語を連結するのに用いられる関係を指す．コピュラは動詞であることが多いが，動詞以外 <!--(-pronominal 代名詞)--> のコピュラを多く使用する言語もある．コピュラ動詞は，`VERB`ではなく[AUX]()とタグ付けされる．そして，代名詞コピュラは[PRON]()もしくは[DET]()が付与される．
 
-The `cop` relation
-should only be used for pure copulas that add at most TAME categories to the meaning of the predicate,
-which means that most languages have at most one copula, and only when the nonverbal predicate is treated
-as the head of the clause.
+関係`cop`は述語の意味にTAMEカテゴリを加えるような純粋なコピュラに対してのみ用いるべきであり，大抵の言語は最大1つのコピュラしか持たないことになる．そして，`cop`は動詞以外の述語が節の主辞であるような場合にのみ適用するべきである．
 
-As a concrete example, in many European languages the equivalent of the English verb _to be_ is the only word that can appear with the `cop` relation. In Spanish and related languages, both _ser_ and _estar_ can be copulas. In Czech and related languages, both _být_ and _bývat_ are copulas (because they are morphological variants of the same lexeme, and the reason they have two lemmas is that aspect-related morphology is treated as derivational in these languages). In contrast, the equivalents of _to become_ are not copulas despite the fact that traditional grammar may label them as such. Existential _to be_ can be copula only if it is the same verb as in equivalence clauses _(John is a teacher)_. If a language uses two different verbs, then the existential one is not a copula. Some more discussion of the topic is archived [here](https://universaldependencies.org/v2/copula.html#guidelines-for-udv2).
+具体的に言えば，西欧言語の多くでは英語の_to be_に相当するものだけが関係`cop`として生起できる．スペイン語や，それに関連する言語においては，_ser_と_estar_の両方がコピュラとなる．チェコ語や，それに関連する言語においては，_být_ と _bývat_ の両方がコピュラとなる (これらは同じ語彙素 (lexeme) の異形態である．2つの語が見出し語 (lemma) として認定されるのは，チェコ語等においてアスペクト関連の形態論 (aspect-related morphology) が派生形態論として扱われるからである.)
+対照的に，_to become_に相当する表現は伝統文法とは異なりコピュラとしては扱われない. 存在の_to be_は，等価を表す節で用いられる動詞と同一である場合に限り，コピュラとして扱われる _(John is a teacher)_. ある言語内で異なる2つの動詞を用いる場合，存在を表す動詞はコピュラとしては扱われない．このトピックに関する義議論は [here](https://universaldependencies.org/v2/copula.html#guidelines-for-udv2) にアーカイブされている.
 
 ~~~ sdparse
 Bill is honest
@@ -30,10 +26,9 @@ det(dancer-5, the-3)
 amod(dancer-5, best-4)
 ~~~
 
-The copula *be* is not treated as the head of a clause, but rather the nonverbal predicate, as exemplified above.
+コピュラの*be*ではなく，上記に示した動詞以外の述語が節の主辞として扱われる.
 
-Such an analysis is motivated by the fact that many languages often or always lack an overt copula in such
-constructions, as in the the following Russian example:
+そのような分析は，以下のロシア語の例で示すように，多くの言語では明示的なコピュラを頻繁に，もしくは常に欠くという事実によって動機づけられる:
 
 ~~~ sdparse
 Ivan lučšij tancor \n Ivan best dancer
@@ -41,16 +36,14 @@ nsubj(tancor, Ivan)
 amod(tancor, lučšij)
 ~~~
 
-In informal English, this may also arise.
+インフォーマルな英語でもコピュラの省略が起こる.
 
 ~~~ sdparse
 Email usually free if you have Wifi.
 nsubj(free, Email)
 ~~~
 
-This analysis is adopted also when the predicate is a prepositional phrase, provided that the same copula
-(or absence thereof) is used here, in which case the nominal part of the
-prepositional phrase is the head of the clause.
+同一のコピュラが用いられる (もしくはコピュラを欠く) とした場合，述語が前置詞であってもこの分析は適用される．そのようなケースでは，前置詞句の名詞部分が節の主辞となる．
 
 ~~~ sdparse
 Sue is in shape
@@ -59,7 +52,8 @@ cop(shape, is)
 case(shape, in)
 ~~~
 
-<!--A parallel can also be drawn to so-called raising-to-object or small clause constructions in English.
+<!--元々コメントアウトの部分
+A parallel can also be drawn to so-called raising-to-object or small clause constructions in English.
 Under the basic analysis proposed for SD, the predicate complement is
 not linked to its subject argument, but in the enhanced representation
 (see below), the linkage is then parallel to the treatment in a zero
@@ -76,7 +70,7 @@ nsubj(dancer-6, Ivan-3)
 ~~~
 -->
 
-If the copula is accompanied by other verbal auxiliaries for tense, aspect, etc., then they are also given a flat structure, and taken as dependents of the lexical predicate:
+コピュラが他の助動詞を伴う (時制やアスペクトといった要素を表す) 場合，それらに対しては平板構造 (flat structure) が与えられ，語彙的述語の依存部として扱われる:
 
 ~~~ sdparse
 Sue has been helpful
@@ -85,7 +79,7 @@ cop(helpful, been)
 aux(helpful, has)
 ~~~
 
-The motivation for this choice is that this structure is parallel to the flat structure which we give to auxiliary verbs accompanying verbs. In particular, in languages such as English, it is often very difficult to decide whether to regard a participle as a verb or an adjective.  Perhaps the following sentence is such a case:
+この方略を採る動機として，この構造が動詞に伴う補助動詞に対する説明と平行的であることがある. 特に英語といった言語においては，分詞を動詞か形容詞のどちらとして扱うかが困難である．以下の文は，そのような事例に相当する:
 
 ~~~ sdparse
 The presence of troops will be destabilizing .
@@ -94,9 +88,9 @@ cop(destabilizing, be)
 aux(destabilizing, will)
 ~~~
 
-While a part of speech has to be decided in such cases, it would be unfortunate if the choice of part of speech also changed the dependency structure. Note, however, that the exact distribution of the copula construction is subject to language-specific variation.
+このような事例であっても品詞を同定する必要が生じるが，品詞の選択によって依存構造が変わることは望ましくない．ただし，コピュラ構文の正確な分布は言語によって変異を見せることに注意されたい．
 
-Finally, the `cop` relation is not used when the nonverbal predicate has the form of a clause, which typically occur in equational constructions like the following:
+動詞以外のコピュラが節の形式を取るとき，関係`cop`は用いられない.この形式は以下の例のような等価構文 (equational construction) において頻繁に生起する:
 
 ~~~ sdparse
 The important thing is to keep calm .
@@ -110,4 +104,5 @@ ccomp(is, tried)
 nsubj(is, problem)
 ~~~
 
-If we took the predicate of the clause as the head, instead of the copula verb, it would have two subjects, which would be unworkable. Examples like the above *could* be analyzed reversed with the initial noun phrase as the predicate, but in addition to this seeming undesirable, it would fail to be a solution if there were a clause on both sides of *be*, such as in: *(For us) to not attempt to solve the problem is (for us) to acknowledge defeat*. (Note: This solution is not perfect and refining it is a possible direction for the future.)
+コピュラ動詞ではなく節の述語を主辞としたとき，その文は2つの主語を持つことになるため，この方略は効果的でない．上記の例だと先頭の名詞句を述語として分析*できるかもしれない*が，この解決策が望ましいとは言えず，*be*の左右両方に節が存在する例を説明することができない: *(For us) to not attempt to solve the problem is (for us) to acknowledge defeat*.
+(注意: この解決策は完璧なものではないので，これを改良することが今後の方針として考えられる．)

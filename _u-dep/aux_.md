@@ -8,15 +8,9 @@ redirect_from: "u/dep/aux.html"
 udver: '2'
 ---
 
-An `aux` (auxiliary) of a clause is a function word associated with a verbal predicate that
-expresses categories such as tense, mood, aspect, voice or evidentiality. It is often a verb 
-(which may have non-auxiliary uses as well) but many languages have nonverbal TAME markers and these
-are also treated as instances of `aux`. 
+節の `aux` (補助動詞 (auxiliary) ) とは動詞述語と連結する機能語を指し，時制 (tense)，アスペクト (aspect)，ヴォイス (voice) もしくはエビデンシャリティ (evidentiality) といったカテゴリを表現する．補助動詞は動詞であることが多いが，多数の言語では動詞でないTAMEマーカー<!--TAMEって何？-->を持っており，これらも同様に`aux`のインスタンスとして扱われる．
 
-**New from v2:** Auxiliares used to construct the passive [voice](u-feat/Voice) are now also labeled `aux`,
-although we strongly encourage the use of the subtype `aux:pass` in language that have a grammaticalized (periphrastic)
-passive. 
-
+**New from v2:** 受動の [voice](u-feat/Voice) を構成するのに用いられてきた補助動詞は，現在では`aux`としてラベル付けされる．しかし，文法化した (周辺的な) 受動態を備えた言語においては`aux`のサブタイプである`aux:pass`を用いることが強く推奨される
 ~~~ sdparse
 Reagan has died
 aux(died-3, has-2)

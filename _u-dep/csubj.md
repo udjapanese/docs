@@ -5,16 +5,9 @@ shortdef: 'clausal subject'
 udver: '2'
 ---
 
-A clausal subject is a clausal syntactic subject of a clause, i.e.,
-the subject is itself a clause. The governor of this relation might
-not always be a verb: when the verb is a copular verb, the root of the
-clause is the complement of the copular verb. The dependent is the main lexical verb or other 
-predicate of the subject clause. In the following
-examples, *what she said* (that is, *said*) is the clausal subject of *makes* and *interesting*, respectively.
+節主語 (clausal subject) とは，節の統語的な主語を指す．すなわち，主語それ自身が節となるようなものである．この関係の支配項 (governor) はいつでも動詞だとは限らない：動詞がコピュラ動詞であるとき，節の根 (root) はコピュラ動詞の補部となる．このときの依存部は主動詞や，主節における他の述語である．以下の例にある*what she said* (すなわち *said*) は，それぞれ*makes*と*interesting*の節主語となる．
 
-**New from v2:** The `csubj` relation is also used for the clausal subject of a passive verb or verb group. For languages
-that have a grammaticalized passive transformation, it is strongly recommended to use the subtype `csubj:pass` in 
-such cases.
+**v2から:** 関係`csubj`は動詞の受身形や特定の動詞グループにも用いられるようになった．そのとき，文法化した受動変形が起きる言語においては，サブタイプの`csubj:pass`を用いることが強く推奨される．
 
 ~~~ sdparse
 What she said makes sense

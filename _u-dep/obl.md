@@ -5,13 +5,11 @@ shortdef: 'oblique nominal'
 udver: '2'
 ---
 
-The `obl` relation is used for a nominal (noun, pronoun, noun phrase) functioning as a non-core (oblique) argument or 
-adjunct. This means that it functionally corresponds to an adverbial attaching to a verb, adjective or other adverb.
+関係`obl`は，必須でない項 (斜格; oblique) や付加詞 (adjunct) として機能するような名詞句 (名詞，代名詞，名詞句) に対して用いられる．このことは，必須でない項が動詞，形容詞，もしくは他の副詞に付加する副詞と機能的に対応することを意味する．
 
-The `obl` relation can be further specified by the case. In conjunction with the [case]() relation, it provides a uniform
-analysis for:
+関係`obl`は格 (case) によってさらなる指定を受ける．関係 [case]() と同様，`obl`は以下の事例に対して一貫した分析を提供する:
 
-- variant forms with case, a preposition or a postposition, as in Finnish for example:
+- フィンランド語の例に示される，格，前置詞もしくは後置詞による名詞の異形 (variant):
 
 ~~~ sdparse
 etsiä ilman johtolankaa \n to_search without clue.PARTITIVE
@@ -30,7 +28,7 @@ etsiä johtolangatta \n to_search clue.ABESSIVE
 obl(etsiä, johtolangatta)
 ~~~
 
-- the dative alternation where the prepositional construction gets a similar analysis to the double object construction:
+- 二重目的語構文 (double object construction) に類似した分析を受ける，与格交替 (dative alternation)
 
 ~~~ sdparse
 give the children the toys
@@ -56,7 +54,7 @@ case(children, to)
 6     enfants   enfant   NOUN   _   Gender=Masc|Number=Plur    1   obl   _   children
 ~~~
 
-`obl` is also used for temporal and locational nominal modifiers:
+`obl` は時間や場所を表す名詞修飾語に対しても用いられる:
 
 ~~~ sdparse
 Last night , I swam in the pool
@@ -64,7 +62,7 @@ obl(swam, night)
 obl(swam, pool)
 ~~~
 
-and for the agent of a passive verb (with the optional subtype obl:agent):
+また，動詞受身形の行為者 (任意的であり，サブタイプ obl:agentを伴う) に対しても用いられる．
 
 ~~~ sdparse
 the cat was chased by the dog

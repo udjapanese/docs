@@ -5,10 +5,7 @@ shortdef: 'appositional modifier'
 udver: '2'
 ---
 
-An appositional modifier of a noun is a nominal immediately following
-the first noun that serves to define, modify, name, or describe that noun. It includes
-parenthesized examples, as well as defining abbreviations in one of
-these structures.
+名詞の同格修飾句 (appositional modifier) とは先頭の名詞の直後に後続する名詞を指し，名詞に対して定義，修飾，名付け，もしくは記述を行うものである．同格修飾語には括弧内にある要素や略語も含まれる．
 
 ~~~ sdparse
 Sam , my brother , arrived
@@ -25,8 +22,7 @@ The Australian Broadcasting Corporation ( ABC )
 appos(Corporation-4, ABC-6)
 ~~~
 
-`appos` is intended to be used between two nominals. In general, modulo punctuation, the two halves of an apposition can be switched. 
-For example, you could also say _My brother, Sam, arrived._ There are somewhat similar constructions with titles 
+`appos` は2つの名詞の間に用いられる．<!--In general, modulo punctuation, the two halves of an apposition can be switched. 概して，同格要素は交替が可能である modulo punctuation --> 例えば，_My brother, Sam, arrived._ と言うことが可能である．For example, you could also say _My brother, Sam, arrived._ There are somewhat similar constructions with titles 
 where the title is less than a full nominal, such as _state senator Paul Mnuchin_, where reversal is impossible 
 or would require insertion of a determiner to make a 
 full nominal. Some grammatical traditions, descending from Latin, call _state senator_ in such cases a “fixed (or close) apposition” and take the name as the head. However, we seem to have only one nominal not two here. For example:
@@ -39,7 +35,7 @@ full nominal. Some grammatical traditions, descending from Latin, call _state se
 
 > \*Paul Mnuchin state senator
 
-`appos` should not be used in such cases. However, the examples can usually be rendered in a fuller form, corresponding to “loose (or wide) apposition” in the Latin tradition, where there are two full phrases. Then the relation `appos` is appropriate, for example:
+そのような場合`appos`は用いるべきでないが，should not be used in such cases. However, the examples can usually be rendered in a fuller form, corresponding to “loose (or wide) apposition” in the Latin tradition, where there are two full phrases. Then the relation `appos` is appropriate, for example:
 
 ~~~ sdparse
 Paul Mnuchin , the senior Oregon state senator

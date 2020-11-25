@@ -5,10 +5,9 @@ shortdef: 'determiner'
 udver: '2'
 ---
 
-The relation determiner (`det`) holds between a nominal head and its
-[determiner](u-pos/DET). Most commonly, a word of POS `DET` will have the relation `det` and vice versa. The known exceptions at present are:
+限定詞 (`det`) は名詞句の主辞と [determiner](u-pos/DET) の関係を形成する．一般的に，POSタグの `DET` は関係`det`を持ち，その逆も成立する．知られている例外には次のものがある:
 
-* In some of the datasets, a possessive determiner like [en] _my_ is currently given the POS tag `DET` but the relation [nmod](), so that it is parallel with other possessive constructions. This is not yet completely parallel across languages; in some languages, it is much more clear than in English how possessive determiners relate to adjectives, and the `nmod` relation is out of question.
+* データセットのいくつかでは [en] _my_ といった所有限定詞 (possessive determiner) にPOSタグの`DET`だけでなく[nmod]() も付与されるため，他の所有構文と並行的に扱われることになる．ただし，言語間では完全に並行的とはいえない; いくつかの言語では，どのように所有限定詞を形容詞と関係づけるかが英語よりも明確である場合があり，このことは当然関係`nmod`にも該当する．
 
 ~~~ sdparse
 The man is here

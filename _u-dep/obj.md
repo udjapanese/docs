@@ -5,32 +5,23 @@ shortdef: 'object'
 udver: '2'
 ---
 
-The object of a verb is the second most core argument of a verb after the subject. 
-Typically, it is the noun phrase that denotes the entity acted upon or which undergoes a change of state or motion (the proto-patient).
+動詞の目的語 (object) は，主語に後続する，動詞の2番目の必須項 (core argument) である．目的語は典型的に，行為を受けたり，状態変化もしくは動作を経験するような事物を表す (プロト被動作主)．
 
 ~~~ sdparse
 She gave me a raise
 obj(gave, raise)
 ~~~
 
-In languages distinguishing morphological [cases](u-feat/Case), the
-object will often be marked by the accusative case. However,
-verb valency may occasionally dictate a different form, such as the
-dative case in the following German example:
-
+形態 [cases](u-feat/Case) を区別する言語において，目的語は対格 (accusative case) として標示される．ただし，動詞の原子価 (verb valency) は，以下のドイツ語の例が示すように与格 (dative case) といった，他の形式を取るように指定する場合がある:
 ~~~ sdparse
 jemandem begegnen \n someone.Dat to-meet
 obj(begegnen, jemandem)
 ~~~
 
-In general, if there is just one object, it should be labeled `obj`,
-regardless of the morphological case or semantic role that it bears. If there are two or more
-objects, one of them should be `obj` and the others should be
-[iobj](). In such cases it is necessary to decide what is the most
-directly affected object _(patient)._ 
+一般的に，目的語が1つだけ生起する場合，それは形態格や意味役割の種類に関わらず`obj`としてラベル付けされる．2つ以上の目的語が存在する場合，1つは`obj`，もう1つは [iobj]() となる．そのような事例では，どれが最も影響を受けた目的語 _(patient)_ なのかを決定する必要がある．
 
-<!--The one exception is when there is a clausal complement. 
+<!--以下，元々コメントアウト
+The one exception is when there is a clausal complement. 
 Then the clausal complement is regarded as a “clausal object” and an object nominal will be an [iobj]().-->
 
-There is more discussion of constructions with multiple objects on the page for [iobj](). 
-If possible, language-specific documentation should be available to help identify the primary (or direct) object.
+目的語を複数とる構文に関するさらなる議論は，[iobj]() のページにある．可能なら，1番目の (もしくは直接) 目的語を同定させるような言語固有のドキュメンテーションがあることが望ましい．

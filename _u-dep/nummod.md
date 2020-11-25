@@ -5,8 +5,7 @@ shortdef: 'numeric modifier'
 udver: '2'
 ---
 
-A numeric modifier of a noun is any [number](u-pos/NUM) phrase
-that serves to modify the meaning of the noun with a quantity.
+名詞に対する数の修飾語は [number](u-pos/NUM) であり，名詞を数量によって修飾する．
 
 ~~~ sdparse
 Sam ate 3 sheep
@@ -23,10 +22,7 @@ Sam spent $ 40
 nummod($, 40)
 ~~~
 
-Note that indefinite quantifiers such as _few, many_ are tagged
-[u-pos/DET]() rather than [u-pos/NUM](). 
-Therefore their relation to the quantified noun is not `nummod` but
-[det]():
+_few や many_ といった不定の数量詞 (quantifier) は [u-pos/NUM]() ではなく，[u-pos/DET]() としてタグ付けされることに注意．よって，このような数量化をうけた名詞は`nummod`ではなく，[det]() としてタグ付けされる:
 
 ~~~ sdparse
 Sam ate many sheep

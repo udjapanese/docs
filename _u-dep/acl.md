@@ -5,11 +5,7 @@ shortdef: 'clausal modifier of noun (adjectival clause)'
 udver: '2'
 ---
 
-`acl` stands for finite and non-finite clauses that modify a nominal.  The `acl` relation 
-contrasts with the [advcl]() relation, which is used for adverbial clauses
-that modify a predicate. The head of the `acl` relation is the noun
-that is modified, and the dependent is the head of the clause that
-modifies the noun.
+`acl`は，名詞を修飾する定型/非定型節 (finite/non-finite clauses) を表す. 関係`acl`は関係 [advcl]() と対照を成し，後者は述語 (predicate) を修飾する副詞節に用いられる．関係`acl`の主辞 (head) は被修飾名詞であり，依存部 (dependent) は名詞を修飾する節の主辞である．
 
 ~~~ sdparse
 the issues as he sees them
@@ -36,7 +32,7 @@ Cette affaire à suivre \n This case to follow
 acl(affaire, suivre)
 ~~~
 
-This relation is also used for optional depictives. The adjective is taken to modify the nominal of which it provides a secondary predication. See [xcomp]() for further discussion of resultatives and depictives.
+この関係は付随的な描写 (optional depictives) としても用いられ，形容詞が名詞を修飾し，二次述語 (secondary predication) として働く．結果構文 (resultatives) や描写構文 (depictives) のさらなる議論については [xcomp]() を参照されたい．
 
 ~~~ sdparse
 She entered the room sad
@@ -48,17 +44,14 @@ He painted the model naked
 acl(model, naked)
 ~~~
 
-A relative clause is an instance of `acl`, characterized by finiteness and usually omission of 
-the modified noun in the embedded clause. Some languages use a language-particular subtype `acl:relcl` for the traditional class of relative clauses.
+関係節 (relative clause) は`acl`のインスタンスであり，定性 (finiteness) および埋め込み節における被修飾名詞の省略によって特徴づけられる．いくつかの言語では，伝統的な関係節のクラスにおける下位クラスとして`acl:relcl`を設けることがある．
 
 ~~~ sdparse
 I saw the man you love
 acl:relcl(man, love)
 ~~~
 
-Some languages allow finite clausal complements for nouns with 
-a subset of nouns like *fact* or *report*. These look roughly like relative clauses, but do not have any omitted role in the dependent clause. This is the class of "content
-clauses" in Huddleston and Pullum 2002). These are also analyzed as `acl`.
+言語によっては，*fact* もしくは *report* といった名詞のサブセットに対する定型節の補部 (complements) を許す．これらは概して関係節のようにふるまうが，依存部節内には省略要素が存在しない．これはHuddleston and Pullum 2002における"内容節 (content clauses)"に該当するものであり，`acl`として分析される.
 
 ~~~ sdparse
 the fact that nobody cares

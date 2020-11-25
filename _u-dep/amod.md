@@ -5,8 +5,7 @@ shortdef: 'adjectival modifier'
 udver: '2'
 ---
 
-An adjectival modifier of a noun (or pronoun) is any adjectival phrase that serves
-to modify the meaning of the noun (or pronoun).
+名詞 (もしくは代名詞) の形容詞的修飾句 (adjectival modifier) とは，名詞 (代名詞) の意味を修飾するような形容詞句を指す．
 
 ~~~ sdparse
 Sam eats red meat

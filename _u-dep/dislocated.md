@@ -5,11 +5,9 @@ shortdef: 'dislocated elements'
 udver: '2'
 ---
 
-The `dislocated` relation is used for fronted or postposed elements
-that do not fulfill the usual core grammatical relations of a
-sentence. These elements often appear to be in the periphery of the sentence, and may be separated off with a comma intonation.
+関係`dislocated`は前置もしくは後置した要素に用いられ，必須である文の文法関係を満たさない. これらの要素は文の周辺部 (periphery) に生起することが多く，カンマやイントネーションによって分離する場合がある．
 
-It is used for fronted elements that introduce the topic of a sentence, as in the following Japanese and Greek examples. The dislocated element attaches to the head of the clause to which it belongs:
+この関係は文のトピックを導入するような前置要素に用いられ，以下の日本語およびギリシア語の例から示される．転移要素 (dislocated element) は節の主辞に付加される:
 
 ~~~ sdparse
 象 は 鼻 が 長い \n zoo wa hana ga naga-i \n elephant TOPIC nose SUBJ long-PRES
@@ -21,9 +19,9 @@ to jani ton kserume poli kala \n the John-Acc him know-1pl very well
 dislocated(kserume, jani)
 ~~~
 
-However, it would not be used for a topic-marked noun that is also the subject of the sentence; this would be an [nsubj]().
+しかし，トピックの標示を受け，当該文の主語でもあるような名詞には用いられない; この場合，[nsubj]() となる.
 
-It is also used for postposed elements. The dislocated elements attach to the same governor as the dependent that they double for. Right dislocated elements are frequent in spoken languages. French and Greek examples follow.
+また，この関係は後置要素にも用いられる．転移要素は同一の支配項 (governor) に付加され，右方転移要素 (Right dislocated elements) は話言葉で頻繁に用いられる．<!--The dislocated elements attach to the same governor as the dependent that they double for.-->以下はフランス語とギリシア語の例である．
 
 ~~~ sdparse
 Il faut pas la manger , la plasticine \n It must not it eat , the playdough
