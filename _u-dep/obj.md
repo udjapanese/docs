@@ -12,7 +12,7 @@ She gave me a raise
 obj(gave, raise)
 ~~~
 
-形態 [cases](u-feat/Case) を区別する言語において，目的語は対格 (accusative case) として標示される．ただし，動詞の原子価 (verb valency) は，以下のドイツ語の例が示すように与格 (dative case) といった，他の形式を取るように指定する場合がある:
+形態 [cases](u-feat/Case) を区別する言語において，目的語は対格 (accusative case) として標示される．ただし，動詞の結合価 (verb valency) は，以下のドイツ語の例が示すように与格 (dative case) といった，他の形式を取るように指定する場合がある:
 ~~~ sdparse
 jemandem begegnen \n someone.Dat to-meet
 obj(begegnen, jemandem)

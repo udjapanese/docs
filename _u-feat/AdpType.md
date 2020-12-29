@@ -6,25 +6,23 @@ shortdef: 'adposition type'
 
 ### Prep: preposition
 
-Examples: in, on, to, from
+例: in, on, to, from
 
 ### Post: postposition
 
-Examples: German "entlang" in "der Strasse entlang" (along the street)
+例: ドイツ語 "der Strasse entlang" における "entlang" (along the street)
 
 ### Circ: circumposition
 
-Examples: German "von … an" in "von dieser Stelle an" (from this place
+Examples: ドイツ語 "von … an" in "von dieser Stelle an" (from this place
 on)
 
 ### Voc: vocalized preposition
 
-In Slavic languages, some prepositions are non-syllabic and their form
-has to be changed in some contexts to facilitate pronunciation.
+スラブ諸語において，前置詞 (preposition) のいくつかは音節を形成 (non-syllabic) しない．発音を流暢にするため，前置詞の形式はコンテクストによって変わる．
 
-Czech examples: ke, ku, se, ve, ze
+チェコ語の例: ke, ku, se, ve, ze
 
-(Non-vocalized equivalents are: k, k, s, v, z)
+(有声でないもの: k, k, s, v, z)
 
-Same phenomenon exists in Slovak, Russian and probably elsewhere.
-
+同様の現象はスロバキア語，ロシア語，おそらく他の言語にもみられる．

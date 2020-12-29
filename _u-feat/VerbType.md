@@ -4,10 +4,10 @@ title: 'VerbType'
 shortdef: 'verb type'
 ---
 
-We already split auxiliary and non-auxiliary verbs at the level of POS
-tags but some tagsets mark other distinctions.
+POSのレベルで既に助動詞とそれ以外を区別してきたが，タグセットによっては他の区別を設定する．
 
-### Aux: auxiliary verb
+### Aux: 助動詞 (auxiliary verb)
+
 
 Verb used to create periphrastic verb forms (tenses, passives etc.) In
 many languages there will be ambiguity between auxiliary and other

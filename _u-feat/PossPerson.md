@@ -4,23 +4,13 @@ title: 'PossPerson'
 shortdef: 'possessor’s person'
 ---
 
-PossPerson
-is possessor's person, marked e.g. on Hungarian nouns. These noun
-forms would be translated to English as possessive pronoun + noun.
+素性`PossPerson`は所有者の人称 (person) を表し，ハンガリー語の名詞などで標示される．これらの名詞形は英語の 所有代名詞 + 名詞 に翻訳されるだろう．
 
-Note
-that there is currently a sort of inconsitency in Interset: since
-this feature was introduced, it would be logical to use it also for
-possessive pronouns in other languages. Yet the possessor's person of
-these pronouns is traditionally captured in the &ldquo;Person&rdquo;
-feature. Also note that using PossPerson for possessive pronouns
-might introduce inconsistency at the other end because in some
-languages, possessive pronouns are actually identical to personal
-pronouns in the genitive case.
+現行のIntersetには一貫しない部分があることに注意されたい: この素性を導入したのならば他言語の所有代名詞にも用いるべきだが，代名詞における所有者の人称は伝統的に&ldquo;Person&rdquoから捉えられてきた; また，`PossPerson`を所有代名詞に用いると他の不一貫性を招くことになるだろう．いくつかの言語では，所有代名詞は所有格の人称代名詞と同一だからである．
 
-### 1: first person possessor
+### 1: 1人称の所有者
 
-Examples:
+例:
 [hu]
 <I>kutya</I>
 = dog;
@@ -31,9 +21,9 @@ my dog;
 =
 our dog.
 
-### 2: second person possessor
+### 2: 2人称の所有者 (second person possessor)
 
-Examples:
+例:
 [hu]
 <I>kutya</I>
 = dog;
@@ -44,9 +34,9 @@ your.Sing dog;
 =
 your.Plur dog.
 
-### 3: third person possessor
+### 3: 3人称の所有者 (third person possessor)
 
-Examples:
+例:
 [hu]
 <I>kutya</I>
 = dog;

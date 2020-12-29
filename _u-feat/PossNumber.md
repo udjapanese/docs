@@ -4,14 +4,9 @@ title: 'PossNumber'
 shortdef: 'possessor’s number'
 ---
 
-Possessives
-may have two different numbers: that of the possessed object (number
-agreement with modified noun) and that of the possessor. The
-PossNumber feature captures the possessor's number. For simplicity,
-the set of possible values is identical to Number, although only a
-subset has been observed in corpora so far.
+所有形 (possessives) は2つの異なる数 (number) を持つ: 所有物 (被修飾名詞との数の一致 (agreement)) と所有者．素性`PossNumber`は所有者の数を捉える．今のところサブセットだけがコーパスで観察されるが，議論の簡潔性のため，この素性の値は`Number`の値と同一だと考えたい．
 
-### Sing: singular possessor
+### Sing: 単数の所有者 (singular possessor)
 
 Examples:
 [en]
@@ -27,7 +22,7 @@ psi</I>
 (my
 dogs; PossNumber=Sing|Number=Plur).
 
-### Plur: plural possessor
+### Plur: 複数の所有者 (plural possessor)
 
 Examples:
 [en]

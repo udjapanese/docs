@@ -17,50 +17,35 @@ udver: '2'
 </tr>
 </table>
 
-Definiteness is typically a feature of nouns, adjectives and
-articles. Its value distinguishes whether we are talking about
-something known and concrete, or something general or unknown. It can
-be marked on definite and indefinite [articles](u-pos/DET), or
-directly on [nouns](u-pos/NOUN), [adjectives](u-pos/ADJ) etc.  In
-Arabic, definiteness is also called the "state".
+定性 (definiteness) とは，典型的に名詞，形容詞と冠詞に関する特徴を指す．その値は，既知で具体的なものか，一般的か，未知のものかによって区別される．定性は定/不定[冠詞 (articles)](u-pos/DET)もしくは，[名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ)に標示される. アラビア語において，定性は"state"とも呼ばれる.
 
-### <a name="Ind">`Ind`</a>: indefinite
+### <a name="Ind">`Ind`</a>: 不定 (indefinite)
 
-In languages where `Spec` is distinguished the value `Ind` is interpreted as non-specific
-indefinite, i.e. “any (one) stick”.
+`Spec`が区別される言語において，値`Ind`は非特定的・不定として解釈される (i.e. “any (one) stick”)．
 
-#### Examples
+#### 例
 
 * [en] _<b>a</b> dog_
 * [sv] _<b>en hund</b>_ “a dog”
 
-### <a name="Spec">`Spec`</a>: specific indefinite
+### <a name="Spec">`Spec`</a>: 特定的な不定 (specific indefinite)
 
-Specific indefinite, e.g. “a certain stick”.
-Occurs e.g. in Lakota.
-In languages where it is used the value `Ind` is interpreted as non-specific
-indefinite, i.e. “any (one) stick”.
+特定的な不定 (e.g. “a certain stick”) はラコタ語などに生起する．特定的な不定が用いられる言語において，値`Ind`は非特定的な不定として解釈される (i.e. “any (one) stick”)．
 
-### <a name="Def">`Def`</a>: definite
+### <a name="Def">`Def`</a>: 定 (definite)
 
-#### Examples
+#### 例
 
 * [en] _<b>the</b> dog_
 * [sv] _<b>hunden</b>_ “the dog”
 
-### <a name="Cons">`Cons`</a>: construct state / reduced definiteness
+### <a name="Cons">`Cons`</a>: 連語形 (construct state / reduced definiteness)
 
-Used in [construct
-state](http://en.wikipedia.org/wiki/Status_constructus) in Arabic. If
-two nouns are in genitive relation, the first one (the "nomen regens")
-has "reduced definiteness," the second is the genitive and can be
-either definite or indefinite.  Reduced form has neither the definite
-morpheme (article), nor the indefinite morpheme (nunation).
+[連語形 (construct state)](http://en.wikipedia.org/wiki/Status_constructus) はアラビア語で用いられる．2つの名詞が所有関係 (genitive relation) にあるとき，先頭の名詞 ("nomen regens") は"reduced definiteness"を有し，後続の名詞は属格であり定か不定である．Reduced formは定の形態素 (冠詞) および不定の形態素 (nunation) を持たない．
 
-Note that in UD v1 this value was called `Red`. It has been renamed `Cons` in
-UD v2.
+UD v1において，この値は`Red`と呼ばれた．UD v2では`Cons`とリネームされた．
 
-#### Examples
+#### 例
 
 * [ar] indefinite state:
   حلوَةٌ
@@ -77,9 +62,7 @@ UD v2.
 
 Used in <A
 HREF="http://books.google.cz/books?id=rs3hzfgj3hoC&amp;pg=PA131&amp;lpg=PA131&amp;dq=arabic+improper+annexation&amp;source=bl&amp;ots=d6gGCpprOX&amp;sig=3G6YkRZsIy_EL0OCEh7_V7qqnlE&amp;hl=cs&amp;ei=ZasDTuLhGc_vsgaLlcyeDg&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=2&amp;ved=0CB4Q6AEwAQ#v=onepage&amp;q=arabic%20improper%20annexation&amp;f=false">improper
-annexation</A> in Arabic. The genitive construction described above
-normally consists of two nouns (first reduced, second genitive). That
-is called proper annexation or iḍāfa. If the first member is an
+annexation</A> in Arabic. 上記の所有構文 (genitive construction) は主に2つの名詞から構成される (first reduced, second genitive). これは，アラビア語においてproper annexation もしくは iḍāfaと呼ばれる. If the first member is an
 adjective or adjectivally used participle and the second member is a
 definite noun, the construction is called improper annexation or false
 iḍāfa.  The result is a compound adjective that is usually used as an
@@ -91,7 +74,7 @@ state to reflect the different origin. See also <A
 HREF="http://ufal.mff.cuni.cz/padt/PADT_1.0/docs/papers/2004-nemlar-padt.pdf">Hajič
 et al.</A> page 3.
 
-#### Examples:
+#### 例:
 
 * [ar] مُخْتَلِفٌ  _muxtalifun_ "different/various" (active participle,
   Form VIII); نَوْعٌ ج أنْوَاعٌ _nawˀun ja anwāˀun_ "kind"; مُخْتَلِفُ

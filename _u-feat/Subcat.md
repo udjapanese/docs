@@ -4,21 +4,18 @@ title: 'Subcat'
 shortdef: 'subcategorization'
 ---
 
-Lexical feature of verbs.
-Some tagsets distinguish intransitive and transitive verbs.
-In many languages however, subcategorization of verbs is much more complex than this.
+この素性は動詞の語彙的素性である．タグセットで動詞の自他を区別するものがあるが，多くの言語では動詞の下位範疇はこれよりもはるかに複雑である．
 
-### Intr: intransitive verb
+### Intr: 自動詞 (intransitive verb)
 
-A verb that does not take arguments other than the subject.
+主語以外に項をとらない動詞.
 
-Examples:
+例:
 [en] _to <b>go</b>_
 
-### Tran: transitive verb
+### Tran: 他動詞 (transitive verb)
 
-A verb that takes a direct (accusative) object as argument (in addition to the subject).
-These verbs can be passivized, then the direct object becomes the subject.
+(主語に加え) 項として直接目的語 (対格) をとる動詞．他動詞は受動化が可能であり，その場合は直接目的語が主語になる．
 
-Examples:
+例:
 [en] _to <b>do</b> something, to be <b>done</b> by somebody_

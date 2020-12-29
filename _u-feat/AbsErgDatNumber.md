@@ -6,41 +6,26 @@ shortdef: 'number agreement with absolutive/ergative/dative argument'
 
 ## Number[abs], Number[erg], Number[dat]
 
-Finite verbs in many Indo-European languages agree in person and [number](u-feat/Number) with their subject.
-In Basque (a <a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">polypersonal language</a>),
-certain verbs overtly mark agreement with up to three arguments:
-one in the absolutive [case](u-feat/Case),
-one in ergative and
-one in dative.
-Thus in _dakarkiogu_ “we bring it to him/her”,
-_akar_ is the stem (_ekarri_ = “bring”),
-_d_ stands for “it” (absolutive argument is the direct object of transitive verbs),
-_ki_ stands for the dative case,
-_o_ stands for “he” and
-_gu_ stands for “we” (ergative argument is the subject of transitive verbs).
+印欧諸語の多くで，定動詞 (finite verbs) は人称 (person) と[数 (number)](u-feat/Number) が主語と一致 (agree) する．バスク語 (<a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">複数人称言語 (polypersonal language)</a>) では，特定の動詞が3つまでの項 (arguments) との一致を標示する: 絶対[格](u-feat/Case)，能格 (ergative)，与格 (dative).
+よって，_dakarkiogu_ “we bring it to him/her” の_akar_は語幹 (stem; _ekarri_ = “bring”) を表し，_d_は“it”を表す (絶対格項は他動詞の直接目的語). そして，_ki_は与格，_o_は“he”，_gu_は“we”を表す (能格項は他動詞主語).
 
-* `Number[abs]` is the number of the absolutive argument of the verb. The corresponding feature in Interset 2.041 is called `absnumber`.
-* `Number[erg]` is the number of the ergative argument of the verb. The corresponding feature in Interset 2.041 is called `ergnumber`.
-* `Number[dat]` is the number of the dative argument of the verb. The corresponding feature in Interset 2.041 is called `datnumber`.
+* `Number[abs]` は動詞の絶対格項の数 (number) を表す．Interset 2.041で対応する素性は`absnumber`と呼ばれる．
+* `Number[erg]` は動詞の能格項の数を表す．Interset 2.041で対応する素性は`ergnumber`である．
+* `Number[dat]` は動詞の与格項の数を表す．Interset 2.041で対応する素性は`datnumber`である．
 
-One may want to use just `Number` instead of `Number[abs]`.
-However, there are two issues with that (at least in Basque).
-First, the absolutive argument is not always the subject. For transitive verbs, it is the object, so the parallelism with nominative-accusative languages would be weak anyway.
-Second, and more important, some Basque finite verbs have additional morphemes of nominal inflection.
-Thus their form reflects the person-number agreement with the absolutive argument _(nor)_, and nominal inflection (case, number etc.) at the same time.
-Examples: _dena_ (`Number=Sing|Number[abs]=Sing`),
+`Number[abs]`ではなく，単に`Number`を用いたくなるかもしれないが，それには問題が2点存在する (少なくともバスク語において). まず，絶対格項は常に主語となるわけではない．他動詞では絶対格項が目的語となるため，主格-対格言語 (nominative-accusative languages) と並行的を見出す根拠は薄い．
+次に，これがより重要であるのだが，バスク語のいつくかの定動詞では名詞の屈折 (inflection) に対応する形態素を備えている．よって，それらの形式は絶対格項について人称-数の一致を示すと同時に，名詞の屈折 (格，数など)も反映している.
+例: _dena_ (`Number=Sing|Number[abs]=Sing`),
 _dituena_ (`Number=Sing|Number[abs]=Plur|Number[erg]=Sing`),
 _dugunak_ (`Number=Plur|Number[abs]=Sing|Number[erg]=Plur`),
 _direnak_ (`Number=Plur|Number[abs]=Plur`).
-So we reserve the `Number` feature for nominal inflection, and the `Number[abs]` feature for agreement.
-
-Note that we also define `Person[abs]` and `Polite[abs]`, although there is no direct conflict for these features.
-But it is better to have these features aligned with `Person[erg]`, `Polite[erg]`, `Person[dat]` and `Polite[dat]`.
+よって，素性`Number`に対しては名詞の屈折素性，`Number[abs]`に関しては一致素性という区分を保持しておく．
+また，素性間の衝突がないとはいえ，`Person[abs]`および`Polite[abs]`についても定義しておく．ただし，これらの素性は`Person[erg]`, `Polite[erg]`, `Person[dat]`および`Polite[dat]`と同じような位置付けだと考えた方がいい．
 
 ### Sing: singular
 
-Examples: [eu] _<b>d</b>akarki<b>o</b>gu_ `Number[abs]=Sing|Number[dat]=Sing`
+例: [eu] _<b>d</b>akarki<b>o</b>gu_ `Number[abs]=Sing|Number[dat]=Sing`
 
 ### Plur: plural
 
-Examples: [eu] _dakarkio<b>gu</b>_ `Number[erg]=Plur`
+例: [eu] _dakarkio<b>gu</b>_ `Number[erg]=Plur`

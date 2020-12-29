@@ -4,31 +4,26 @@ title: 'Style'
 shortdef: 'style or sublanguage to which this word form belongs'
 ---
 
-This
-may be a lexical feature (some words-lemmas are archaic, some are
-colloquial) or a morphological feature (inflectional patterns may
-systematically change between dialects or styles). It could be used
-in many languages but only a few choose to actually annotate it. Seen
-in Bulgarian, Czech, Danish, Finnish and Hungarian.
+この素性は語彙的素性 (見出し語には古風なものや口語的なものがある) であるか，形態的素性 (屈折パタンが方言や文体によって規則的に変化する) である．この素性は多くの言語に用いられるが，実際にタグ付けに用いる言語はわずかである (ブルガリア語，チェコ語，デンマーク語，フィンランド語，ハンガリー語にみられる)．
 
-### Arch: archaic, obsolete
+### Arch: 古風な文体，廃れた文体
 
-### Rare: rare
+### Rare: 稀な文体
 
-### Form: formal, literary
+### Form: フォーマルな文体，文語体
 
-### Poet: poetic
+### Poet: 詩
 
-### Norm: normal, neutral
+### Norm: 通常の文体
 
-### Coll: colloquial
+### Coll: 口語体
 
-### Vrnc: vernacular
+### Vrnc: 世俗的
 
-### Slng: slang
+### Slng: スラング
 
-### Expr: expressive, emotional
+### Expr: 表現的な文体，感情的な文体
 
-### Derg: derogative
+### Derg: 逸脱した文体
 
-### Vulg: vulgar
+### Vulg: 粗野な文体

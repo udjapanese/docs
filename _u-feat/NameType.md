@@ -4,44 +4,41 @@ title: 'NameType'
 shortdef: 'type of named entity'
 ---
 
-Classification of named entities (token-based, no nesting of entities etc.)
-The feature applies mainly to the [cs-pos/PROPN]() tag;
-in multi-word foreign names, [adjectives](cs-pos/ADJ) may also have this feature
-(they preserve the `ADJ` tag but at the same time they would not exist in Czech
-otherwise than in the named entity).
+この素性は名称のある存在物を分類する (token-based, no nesting of entities etc.)． この素性は主に[cs-pos/PROPN]()タグに適用される: 複数の語から成る外国語の名称については，[adjectives](cs-pos/ADJ)もこの素性を持つ <!--Czechがチェコ語なのか，"Czech"という語を指すのかが分からない(they preserve the `ADJ` tag but at the same time they would not exist in Czech
+otherwise than in the named entity).-->
 
-### `Geo`: geographical name
+### `Geo`: 地理的な名称
 
-Names of cities, countries, rivers, mountains etc.
+都市，国家，河川，山といったものの名称
 
-#### Examples
+#### 例
 
 * _<b>Praha</b>&nbsp;_ “Prague”, _<b>Kostelec</b> nad Černými lesy&nbsp;_, _<b>Německo</b>&nbsp;_ “Germany”
 
-### `Prs`: name of person
+### `Prs`: 人名
 
-This value is used if it is not known whether it is a given or a family name, but it is known that it is a personal name.
+この値は，名 (given name) か姓かどうか判断できないものの，人名だと判断できるような名称に対して用いられる．
 
-### `Giv`: given name of person
+### `Giv`: 名 (given name of person)
 
-Given name (not family name). This is usually the first name in European and American names. In Chinese names, the last two syllables (of three) are usually the given name.
+名 (ファミリーネームでない) を表す．これは，欧米人のファーストネームや中国語における (3つの) 音節の後ろから2つに相当する.
 
-### `Sur`: surname / family name of person
+### `Sur`: 姓/ファミリーネーム
 
-Family name (surname). This is usually the last name in European and American names. In Chinese names, the first syllable (of three) is usually the surname.
+ファミリーネーム (姓) を表す．これは，欧米人のラストネームや中国語における (3つの) 音節の先頭に相当する.
 
-### `Nat`: nationality
+### `Nat`: 国籍
 
-Name denoting a member of a particular nation, or inhabitant of a particular territory.
+特定の国家もしくは，特定の領地の住人を示す
 
-#### Examples
+#### 例
 
 * _<b>Čech</b>&nbsp;_ “Czech”, _<b>Němec</b>&nbsp;_ “German”, _<b>Pražan</b>&nbsp;_ “Praguer”
 
-### `Com`: company, organization
+### `Com`: 会社，組織
 
-### `Pro`: product
+### `Pro`: 製品
 
-### `Oth`: other
+### `Oth`: その他
 
-Names of stadiums, guerilla bases, events etc.
+競技場，ゲリラ拠点，イベントなどの名称

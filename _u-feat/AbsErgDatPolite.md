@@ -6,34 +6,22 @@ shortdef: 'politeness agreement with absolutive/ergative/dative argument'
 
 ## Polite[abs], Polite[erg], Polite[dat]
 
-Finite verbs in many Indo-European languages agree in person and number with their subject;
-for the second person this also affects the politeness register.
-In Basque (a <a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">polypersonal language</a>),
-certain verbs overtly mark agreement with up to three arguments:
-one in the absolutive [case](u-feat/Case),
-one in ergative and
-one in dative.
-Thus in _dakarkiogu_ “we bring it to him/her”,
-_akar_ is the stem (_ekarri_ = “bring”),
-_d_ stands for “it” (absolutive argument is the direct object of transitive verbs),
-_ki_ stands for the dative case,
-_o_ stands for “he” and
-_gu_ stands for “we” (ergative argument is the subject of transitive verbs).
+印欧諸語の多くで，定動詞 (finite verbs) は人称 (person) と数 (number) が主語と一致 (agree) する;
+二人称主語は，レジスターの丁寧さ (politeness) にも影響を及ぼす.
+バスク語 (<a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">複数人称言語 (polypersonal language)</a>) では，特定の動詞が3つまでの項 (arguments) との一致を標示する: 絶対[格](u-feat/Case)，能格 (ergative)，与格 (dative).
+よって，_dakarkiogu_ “we bring it to him/her” の_akar_は語幹 (stem; _ekarri_ = “bring”) を表し，_d_は“it”を表す (絶対格項は他動詞の直接目的語). そして，_ki_は与格，_o_は“he”，_gu_は“we”を表す (能格項は他動詞主語).
 
-* `Polite[abs]` is the politeness of the absolutive argument of the verb. The corresponding feature in Interset 2.041 is called `abspoliteness`.
-* `Polite[erg]` is the politeness of the ergative argument of the verb. The corresponding feature in Interset 2.041 is called `ergpoliteness`.
-* `Polite[dat]` is the politeness of the dative argument of the verb. The corresponding feature in Interset 2.041 is called `datpoliteness`.
+* `Polite[abs]` は，動詞の絶対格項の丁寧さを表す．Interset 2.041で対応する素性は`abspoliteness`と呼ばれる．
+* `Polite[erg]` は，動詞の能格項の丁寧さを表す，Interset 2.041で対応する素性は`ergpoliteness`と呼ばれる．
+* `Polite[dat]` は，動詞の与格項の丁寧さを表す．Interset 2.041で対応する素性は`datpoliteness`と呼ばれる．
 
-One may want to use just `Polite` instead of `Polite[abs]`.
-However, there are two issues with that (at least in Basque).
-First, the absolutive argument is not always the subject. For transitive verbs, it is the object, so the parallelism with nominative-accusative languages would be weak anyway.
-Second, we cannot avoid `Number[abs]` (both `Number` and `Number[abs]` can occur at one word)
-and thus we keep `Polite[abs]` to demonstrate that it is the same layer of agreement for both the features.
+`Polite[abs]`の代わりに，単に`Polite`を使いたくなるかもしれないが，これには問題が2つ存在する (少なくともバスク語で)．
+まず，絶対格項は常に主語となるわけではない．他動詞では絶対格項が目的語となるため，主格-対格言語 (nominative-accusative languages) と並行的を見出す根拠は薄い．次に，`Number[abs]` (`Number`と`Number[abs]`の両方が一つの語に生起可能) の使用が不可避であるため，両方の素性が同じ一致レイヤーに属すことを示すためにも`Polite[abs]`を用い続ける．
 
 ### Inf: informal
 
-Examples: [eu] _ezan, ezak_ `Polite[erg]=Inf`
+例: [eu] _ezan, ezak_ `Polite[erg]=Inf`
 
 ### Pol: polite, formal
 
-Examples: [eu] _ezazu_ `Polite[erg]=Pol` (politeness-neutral form is _ezazue_)
+例: [eu] _ezazu_ `Polite[erg]=Pol` (丁寧さに関して中立的な形式は_ezazue_)

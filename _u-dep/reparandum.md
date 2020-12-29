@@ -5,8 +5,7 @@ shortdef: 'overridden disfluency'
 udver: '2'
 ---
 
-We use `reparandum` to indicate disfluencies overridden in a speech
-repair. The disfluency is the dependent of the repair.
+`reparandum`は会話で生じた非流暢性 (disfluencies) を指し，後続する要素によって修復 (repair) される．非流暢部分は修復の依存部となる．r.
 
 ~~~ sdparse
 Go to the righ- to the left .

@@ -5,11 +5,7 @@ shortdef: 'parataxis'
 udver: '2'
 ---
 
-The parataxis relation (from Greek for "place side by side") is a
-relation between a word (often the main predicate of a sentence) and other
-elements, such as a sentential parenthetical or a clause after a “:” or
-a “;”, placed side by side without any explicit
-coordination, subordination, or argument relation with the head word. Parataxis is a discourse-like equivalent of coordination, and so usually obeys an iconic ordering. Hence it is normal for the first part of a sentence to be the head and the second part to be the parataxis dependent, regardless of the headedness properties of the language.  But things do get more complicated, such as cases of parentheticals, which appear medially.
+並置関係 (parataxis relation; ギリシア語で"place side by side"を意味する) とは，語や他の要素 (文括弧や“:” “;”の後の節. 主辞との等位関係 (coordenation)，従属関係 (subordination)，項関係が明示されない.) の間にある関係を指す．並置関係は談話上の等位接続に相当し，類像的な順序(iconic ordering) に従 ．よって，当該言語の主辞性 (headedness) を満たすかどうかに関わらず，通常は文の先頭部分が主辞となり，2番目の部分が並置関係の依存部となる．しかし，要素間に現れる括弧といった要因から事態はより複雑になる．
 
 ~~~ sdparse
 Let 's face it we 're annoyed
@@ -23,19 +19,11 @@ punct(said, ,-3)
 punct(said, ,-6)
 ~~~
 
-## An inventory of constructions to which parataxis has been applied
+## 並置関係が適用される構文のリスト
 
 ### Side-by-side sentences ("run-on sentences")
 
-The relation parataxis is used for a pair of what could have been standalone sentences, 
-but which are being treated together as a single sentence. This may happen because sentence
-segmentation of the sentence was done primarily following the presence of sentence-final punctuation,
-and these clauses are joined by punctuation such as a colon or comma, or not delimited by punctuation
-at all. In a spoken corpus, it may happen because what is labeled as a sentence is more
-commonly an utterance turn. Even if the treebanker is doing the sentence division, it may
-happen because there seems to be a clear discourse relation linking two clauses. 
-Sometimes there are more than two sentences joined in this way. In this case we make all the later sentences
-dependents of the first one, to maximize similarity to the analysis used for conjunction.
+並置関係は独立文であり得るが単一文として扱われるような文のペアに対して用いられる．この関係は，文末記号によって区切りが表され，コロンやカンマによって (もしくは，記号を用いることなしに) 複数の節が組み合わさることで成立する．話ことばコーパスでは，文としてラベル付けされるものが発話のターン (utterance turn) によって表現される．また，ツリーバンク使用者が文境界を設定するとき，2つの節を結合する談話的関係が明確である場合にもこの関係は成立する．この関係を設定する場合，等位接続に用いる分析との類似性を高めるために後部要素は全て1番目の要素の依存部として扱われる．
 
 ~~~ sdparse
 Bearded dragons are sight hunters , they need to see the food to move .
@@ -43,7 +31,7 @@ parataxis(hunters, need)
 punct(need, ,)
 ~~~
 
-This relation may happen with units that are smaller than sentences:
+この関係は対象のユニットが文よりも小さい場合でも成立することがある:
 
 ~~~ sdparse
 Divided world the CIA
@@ -52,9 +40,9 @@ parataxis(world, CIA)
 det(CIA, the)
 ~~~
 
-### Treatment of reported speech
+### 報告文 (reported speech) の扱い
 
-For this reported speech example:
+報告文の例:
 
 ~~~ sdparse
 The guy , John said , left early in the morning
@@ -63,15 +51,7 @@ punct(said, ,-3)
 punct(said, ,-6)
 ~~~
 
-there are paraphrases that convey essentially the same meaning but
-with a different syntactic structure. When the reported speech is embedded in a subordinate clause (with or 
-without an overt complementizer _that_), the subordinate clause is a [ccomp]() of the speech verb. When the
-reported speech follows the speech verb and is separated by a colon, the reported speech forms a main clause
-that attaches to the preceding main clause with a [parataxis]() relation, hence with the speech verb as its head.
-However, when the speech verb occurs as a medial or final parenthetical, the relation is reversed and the speech
-verb is treated as a [parataxis]() of the reported speech. 
-This analysis is not uncontroversial but follows many authorities, such as Huddleston and Pullum (2002),
-_The Cambridge Grammar of the English Language_ (see chapter 11, section 9). 
+パラフレーズによって基本的に同じ意味を伝達することができるが，それらの統語構造は異なる．報告文が従属節に埋め込まれる (補文標識_that_の有無に関わらず) とき，その従属節は発言動詞 (speech verb) の[ccomp]()となる．発言動詞に報告文が後続し，それがコロンによって分離される場合，報告文は主節を形成し，先行する主節と[並置 (parataxis)]()関係を結ぶ．しかし，発言動詞が括弧ないに生起する場合その関係は逆転し，発言動詞は報告文の[並置 (parataxis)]()として扱われる．この分析に議論がないわけではないが，ここではHuddleston and Pullum (2002), _The Cambridge Grammar of the English Language_ (11章9節を参照) といった著名な研究に従うことにしたい．
 
 ~~~ sdparse
 John said that the guy left early in the morning .
@@ -112,15 +92,11 @@ punct(said, ,-3)
 punct(said, ,-6)
 ~~~
 
-An argument for this analysis is that in the cases analyzed as embedding, the entire clause
-can be further embedded (_I was taken aback when John said the guy left early in the morning._),
-while this is not possible with medial or final placement of the speech verb 
-(_*I was taken aback when the guy left early this morning, John said._).
+この分析の考え方とは，埋め込みとして分析された文ならば節全体にさらなる埋め込みを形成でき (_I was taken aback when John said the guy left early in the morning._)，中間部もしくは文末に発言動詞が生起する場合は埋め込みが形成できない (_*I was taken aback when the guy left early this morning, John said._)，というものである．
 
-### News article bylines
+### ニュース記事の署名欄 (News article bylines)
 
-We have used the parataxis relation to connect the parts of a news article byline. 
-There does not seem to be a better relation to use.
+並置関係は，ニュース記事の署名欄にも設定される．他に優れた関係が存在しないように思われるからである．
 
 ~~~ sdparse
 Washington ( CNN ) :
@@ -130,9 +106,9 @@ punct(CNN, ))
 punct(CNN, :)
 ~~~
 
-### Interjected clauses
+### 間投詞的な節 (Interjected clauses)
 
-Single word or phrase interjections are analyzed as [discourse](), but when a whole clause is interjected, we use the relation parataxis.
+単一語もしくは句の挿入 (interjections) は[discourse]()として分析されるが，節全体が挿入される場合は並置関係を用いる．
 
 ~~~ sdparse
 Calafia has great fries ( they are to die for ! )
@@ -146,12 +122,11 @@ Just to let you all know Matt has confirmed the booking for 3rd Dec is OK .
 parataxis(confirmed, let)
 ~~~
 
-In the second example, we treat the second half as the head of the dependency
-because the first half feels like a whole clause interjection, not like the main clause of the utterance.
+2番目の例では，2番目の要素 (Matt has _confirmed_ ..) を依存関係の主辞として扱う．1番目の要素 (Just to _let_ ..)は節全体の挿入と考えられ，発話の主節ではないと思われるからである．<!--わかりにくいので括弧内を書き足したが必要なければ削除-->
 
-### Tag questions
+### 付加疑問 (Tag questions)
 
-We also use the parataxis relation for tag questions such as _isn't it?_ or _haven't you?_.
+並置関係は_isn't it?_や_haven't you?_といった付加疑問にも用いられる．
 
 ~~~ sdparse
 It 's not me , is it ?

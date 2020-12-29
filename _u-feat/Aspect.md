@@ -17,84 +17,50 @@ udver: '2'
 </tr>
 </table>
 
-Aspect is typically a feature of [verbs](u-pos/VERB).
-It may also occur with other parts of speech
-([nouns](u-pos/NOUN), [adjectives](u-pos/ADJ), [adverbs](u-pos/ADV)),
-depending on whether borderline word forms such as gerunds and participles
-are classified as verbs or as the other category.
+典型的に，アスペクト (aspect) は [動詞 (verbs)](u-pos/VERB) についての特徴である．動名詞 (gerund) や分詞 (participle) といった境界的な語をどのように分類するかによって，他の品詞 ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ), [副詞 (adverbs)](u-pos/ADV)) でもアスペクトを担うことがある．
 
-Aspect is a feature that specifies duration of the action in time,
-whether the action has been completed etc. In some languages
-(e.g. English), some [tenses](Tense) are actually combinations of
-tense and aspect. In other languages (e.g. Czech), aspect and tense
-are separate, although not completely independent of each other.
+アスペクトは行為の時間軸上の幅を指定するものであり，当該行為が完了した (completed) かどうかなどを決定する. [時制 (tenses)](Tense) が実際には時制とアスペクトの組み合わせであるような言語 (e.g. 英語) もあれば，完全に独立はしていないものの，アスペクトと時制が分離しているような言語 (e.g. チェコ語) もある．
 
-In Czech and other Slavic languages, aspect is a lexical feature.
-Pairs of imperfective and perfective verbs exist and are often
-morphologically related but the space is highly irregular and the
-verbs are considered to belong to separate lemmas.
+チェコ語や他のスラブ諸語において，アスペクトは語彙の特性である．不完了体 (imperfective) と完了体 (perfective) から成る動詞のペアが存在し，2つは形態論からみて関連はするものの，規則的な違いを見出すことが難しい．よって，動詞の2つの体は別個の見出し語 (lemma) として扱われる． 
 
-Since we proceed bottom-up, the current standard covers only a few
-aspect values found in corpora.  See Wikipedia
-(<http://en.wikipedia.org/wiki/Grammatical_aspect>) for a long list of
-other possible aspects.
+UDはボトムアップ的に記述を進めるため，現行の基準ではコーパスから確認された数点の値 (value) のみをカバーしている．他のアスペクトに関する膨大なリストについては，Wikipedia (<http://en.wikipedia.org/wiki/Grammatical_aspect>) を参照されたい．
 
-### <a name="Imp">`Imp`</a>: imperfect aspect
+### <a name="Imp">`Imp`</a>: 不完了体
 
-The action took / takes / will take some time span and there is no
-information whether and when it was / will be completed.
+当該行為が一定の時間幅をとった/とる/とるだろう という情報を示し，その行為がいつ完了した/完了するだろうか という情報は表さない．
 
-#### Examples
+#### 例
 
 * [cs] _péci_ "to bake" (Imp); _<b>pekl</b> chleba_ "he baked / was
   baking a bread"
 
-### <a name="Perf">`Perf`</a>: perfect aspect
+### <a name="Perf">`Perf`</a>: 完了体
 
-The action has been / will have been completed. Since there is
-emphasis on one point on the time scale (the point of completion),
-this aspect does not work well with the present tense. For example,
-Czech morphology can create present forms of perfective verbs but
-these actually have a future meaning.
+当該行為が完了している/ 完了するだろう という情報を示す．時間軸上の一点 (完了時点) を強調するので，このアスペクトは現在時制と相性が悪い．例えば，チェコ語では完了体動詞の現在形を形態的にはつくれるが，実際は未来の意味を表す．
 
 #### Examples
 
 * [cs] _upéci_ "to bake" (Perf); _<b>upekl</b> chleba_ "he baked / has
   baked a bread"
 
-### <a name="Prosp">`Prosp`</a>: prospective aspect
+### <a name="Prosp">`Prosp`</a>: 前望アスペクト (prospective aspect)
 
-In general, prospective aspect can be described as relative future:
-the action is/was/will be expected to take place at a moment that
-follows the reference point; the reference point itself can be
-in past, present or future.
-In the English sentence
-_When I got home yesterday, John called and said he would arrive soon,_
-the last clause _(he would arrive soon)_ is in prospective aspect.
-Nevertheless, English does not have overt affixal morphemes dedicated
-to the prospective aspect, and we do not need the label in English.
-But other languages do; the _-ko_ suffix in Basque is an example.
+一般的に，前望アスペクト (prospective aspect) は相対的な未来として記述可能である:
+当該行為が，特定の時点に続いて起きる/起きた/起きるだろうと期待される; 特定の時点 (参照点) は過去，現在もしくは未来のいずれかである．
+英語の文，_When I got home yesterday, John called and said he would arrive soon_において，最後尾の節 _(he would arrive soon)_ は前望アスペクトを表す．
+とはいえ，英語は前望アスペクト専用の接辞を持たないので，これを標示するラベルは英語には不要である．他の言語では必要となる; バスク語の接尾辞_-ko_が例である．
 
-Note that this value was called `Pro` in UD v1 and it has been renamed `Prosp`
-in UD v2.
+前望アスペクトを標示する値は，UD v1においては`Pro`だったが，UD v2においては`Prosp`へと名称が変更されている．
 
-#### Examples
+#### 例
 
 * [eu] _Liburua <b>irakurriko</b> behar du._ lit. _book-a read-Prosp must AUX_ "He must go to read a book."
 
-### <a name="Prog">`Prog`</a>: progressive aspect
+### <a name="Prog">`Prog`</a>: 進行アスペクト (progressive aspect)
 
-English progressive tenses (_I am eating, I have been doing &hellip;_)
-have this aspect. They are constructed analytically (auxiliary +
-present participle) but the _-ing_ participle is so bound to
-progressive meaning that it seems a good idea to annotate it with this
-feature (we have to distinguish it from the past participle somehow;
-we may use both the "Tense" and the "Aspect" features).
+英語の進行時制  (_I am eating, I have been doing &hellip;_) は進行アスペクトを持つ．進行時制は分析的に構成される (助動詞+現在分詞) が，_-ing_分詞は進行の意味との結びつきが強いため，これを`Prog`として標示するのがいいように見える (過去分詞 (past participle) との区別が必要であるため，"時制"と"アスペクト"の素性両方を用いる)．
 
-In languages other than English, the progressive meaning may be
-expressed by morphemes bound to the main verb, which makes this value
-even more justified. Example is Turkish with its two distinct progressive
-morphemes, _-yor_ and _-mekte._
+英語以外の言語において進行の意味が主動詞に拘束される形態素から表される場合があり，ことことは`Prog`の正当性を支持する．例に挙げるのは，進行を表す2つの異なった形態素_-yor_と_-mekte_を有するトルコ語である．
 
 #### Examples
 
@@ -103,22 +69,18 @@ morphemes, _-yor_ and _-mekte._
 * [tr] _eve <b>gidiyordu</b>_ “she was going home (when I saw her)”
 * [tr] _eve <b>gimekteydi</b>_ “she was going home (when I saw her)”
 
-### <a name="Hab">`Hab`</a>: habitual aspect
+### <a name="Hab">`Hab`</a>: 習慣アスペクト (habitual aspect)
 
-English simple present has this aspect.
+英語の単純現在時制は，このアスペクトを持つ．
 
-### <a name="Iter">`Iter`</a>: iterative / frequentative aspect
+### <a name="Iter">`Iter`</a>: 反復アスペクト (iterative / frequentative aspect)
 
-Denotes repeated action. Attested e.g. in Hungarian.
-Iteratives also exist in Czech with this name but their meaning is rather habitual.
-They can be formed
-only from imperfective verbs and they are usually not classified as a separate
-aspect; they are just `Aspect=Imp.`
+反復アスペクトは繰り返される行為を示し，ハンガリー語などに観察される．
+チェコ語にも反復アスペクトと呼ばれるものがあるが，どちらかといえば習慣の意味に近い．
+それらは不完了体動詞のみから形成され，通常は独立したアスペクトとして分類されることがない; 単に`Aspect=Imp`として標示される．
 
-Note: This value is new in UD v2 but a similar value has been used in UD v1
-as language-specific for Hungarian, though it was called _frequentative_ there
-(`Freq`).
+注意点: この値はUD v2が初出である．ただし，これに類似したものがUD v1でハンガリー語に対して使用され，_frequentative_ (`Freq`) と呼称していた．
 
-#### Examples
+#### 例
 
 * [hu] _üt_ “hit”, _<b>ütöget</b>_ “hit several times”

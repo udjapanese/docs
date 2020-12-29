@@ -12,11 +12,10 @@ udver: '2'
 </tr>
 </table>
 
-Boolean feature. Is this an abbreviation? Note that the abbreviated
-word(s) typically belongs to a part of speech other than [u-pos/X]().
+ブール素性 (Boolean feature)，これは省略語 (abbreviation) だろうか? 省略を受けた語は基本的に [u-pos/X]() で定義される以外の品詞に属する．
 
-Note: This feature is new in UD version 2. It was used as a language-specific addition in several treebanks in version 1.
+注意: この素性はUDのバージョン2が初出である．これは，バージョン1のツリーバンクへ追加した，言語特有のものである．
 
 ### <a name="Yes">`Yes`</a>: it is abbreviation
 
-Examples: [en] _<b>etc.</b>, <b>J.</b>, <b>UK</b>_
+例: [en] _<b>etc.</b>, <b>J.</b>, <b>UK</b>_

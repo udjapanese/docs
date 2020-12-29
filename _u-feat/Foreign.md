@@ -12,14 +12,9 @@ udver: '2'
 </tr>
 </table>
 
-Boolean feature. Is this a foreign word? Not a loan word and not a
-foreign name but a genuinely foreign word appearing inside native
-text, e.g. inside direct speech, titles of books etc. This feature
-would apply either to the [u-pos/X]() part of speech (unanalyzable token), or
-to other parts of speech if we know and are willing to annotate the
-class to which the word belongs in its original language.
+この素性はブール型 (i.e. 2値) であり，当該表現が外国語であるかどうかを判別する．借用語 (loan word) や外国語の名称ではなく，本当の外国語が直接話法 (direct speech) の内部や書籍のタイトルなど，母国語のテキストに現れることがある．この素性は (分析不可能なトークンにおいて) [u-pos/X]()の品詞タグに適用される．もしくは，そのトークンの品詞が判明していて，かつ元々の言語における品詞としてタグ付けしたい場合にも適用される．
 
-Note: This feature is new in UD version 2. It was used as a language-specific addition in several treebanks in version 1 but it was not considered boolean and three values were foreseen. Since the additional values were used extremely rarely, they are not part of the universal definition of this feature in UD v2.
+注意: この素性はUD v2で新たに設定されたものである．元々は言語固有の素性としていくつかのツリーバンクで用いられていたが，ブール型ではなく3値をとるものも確認された．しかし，他の値が用いられることがめったにないため，UD v2ではこのような定義を採用しない．
 
 ### <a name="Yes">`Yes`</a>: it is foreign
 

@@ -13,27 +13,26 @@ udver: '2'
 </tr>
 </table>
 
-Clusivity is a feature of first-person plural personal [pronouns](u-pos/PRON).
-As such, it can also be reflected by inflection of [verbs](u-pos/VERB), e.g. in Plains Cree (Wolvengrey 2011 p. 66).
+包括性 (clusivity) とは，1人称複数[代名詞 (pronouns)](u-pos/PRON)に関する特徴を指し，[動詞 (verbs)](u-pos/VERB)の屈折にも反映される (e.g. Plains Cree (Wolvengrey 2011 p. 66))
 
-### <a name="In">`In`</a>: inclusive
+### <a name="In">`In`</a>: 内包的 (inclusive)
 
-Includes the listener, i.e. _we_ = _I + you_ (+ optionally _they_).
+聞き手を含む (i.e. _we_ = _I + you_ (+_they_))
 
-#### Examples
+#### 例
 
 * [id] _<b>kita</b>_ “<b>we</b>”
 * [crk] _<b>kiwīcihānaw</b>_ “we (I+you) help him”
 
-### <a name="Ex">`Ex`</a>: exclusive
+### <a name="Ex">`Ex`</a>: 排他的 (exclusive)
 
-Excludes the listener, i.e. _we_ = _I + they._
+聞き手を排除する (i.e. _we_ = _I + they._)
 
-#### Examples
+#### 例
 
 * [id] _<b>kami</b>_ “<b>we</b>”
 * [crk] _<b>niwīcihānān</b>_ “we (I+they) help him”
 
-## References
+## 参考文献
 
 * Arok Elessar Wolvengrey. 2011. _Semantic and pragmatic functions in Plains Cree syntax_ (PhD thesis). LOT, Utrecht, Netherlands. ISBN 978-94-6093-051-5.

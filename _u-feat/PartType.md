@@ -4,43 +4,30 @@ title: 'PartType'
 shortdef: 'particle type'
 ---
 
-Types of particles found in various tagsets. I am merely presenting
-here what I have in Interset now. We will have to make it match our
-new definition of particles.
+いくつものタグセットで，不変化詞 (particle) のタイプが示されている．ここではIntersetにあるものを提示し，UDによる不変化詞の新たな定義に整合させる．
 
-### Mod: modal particle
+### Mod: 法不変化詞 (modal particle)
 
 Examples: [bg] май (possibly), нека (let), [cs] ať, kéž, nechť (let)
 
-### Emp: particle of emphasis
+### Emp: 強調不変化詞 (particle of emphasis)0
 
 Examples: [bg] даже (even)
 
-### Res: particle of response
+### Res: 応答不変化詞 (particle of response)
 
 Examples: yes, no
 
-### Inf: infinitive marker
+### Inf: 不定詞マーカー (infinitive marker)
 
-Did we say that these are subordinating conjunctions?
-
-If so, do we want to have this feature value in "conjtype"?
+これらは従属接続詞 (subordinating conjunctions) だろうか．そうだとすれば，この素性は"conjtype"の値となるだろうか？
 
 Examples: [en] to, [de] zu, [da] at, [sv] att
 
 ### Vbp: separated verb prefix in German
 
-They are analogous to verbal particles in other Germanic languages,
-which again overlap with adpositions and adverbs. Do we want to tag
-them as adpositions/adverbs and add this feature?  Examples: [de] vor
+他のゲルマン語には動詞不変化詞に類するものがあり，それらは側置詞 (adposition) や副詞と重複する．これらには側置詞/副詞としてタグ付けした上で素性`Vbp`を追加するべきだろうか?
+  Examples: [de] vor
 (in "stellen Sie sich vor")
 
-Besides these, various languages have also question particles (they
-cause the sentence to be question, i.e. thye are a sort of pronounced
-question marks) and negative particles (English "not", German "nicht"
-etc.; some people would say that these are adverbs). I have been
-abusing "prontype" values "int" and "neg" to capture these two types
-in Interset but I am not particularly happy with that, as prontype
-otherwise applies to different class of words. So if we keep the
-"PartType" feature, we may want to also add the "int" and "neg" values
-here.
+加えて，複数の言語には疑問不変化詞 (question particles; 文を疑問にする i.e. 疑問マーカーとして音声化されるものの一種) や否定不変化詞 (英語の"not", ドイツ語のGerman "nicht"など; 人によってはこれらを副詞と呼ぶ). Intersetにあるこれらの2タイプを捉えるため，"prontype"の値"int"および"neg"を多用してきたが，prontypeが他の品詞に属することから，この方法には不満が残らないわけではない．素性"PartType"を維持するとすれば，ここでも値"int"と"neg"を追加しておきたい．

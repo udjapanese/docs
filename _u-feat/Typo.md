@@ -12,11 +12,10 @@ udver: '2'
 </tr>
 </table>
 
-Indicates bad spelling, grammatical error etc. Does not say how the
-correct form looks like.
+この素性はスペルの誤りや文法のエラーなどを示すが，正例については何も言及しない．
 
-### Yes: it is typo
+### Yes: タイポ (typo) である
 
-#### Examples
+#### 例
 
 * [en] _<b>Barak</b> Obama_

@@ -16,49 +16,29 @@ udver: '2'
 </tr>
 </table>
 
-Polarity is typically a feature of [verbs](u-pos/VERB),
-[adjectives](u-pos/ADJ), sometimes also [adverbs](u-pos/ADV) and
-[nouns](u-pos/NOUN) in languages that negate using bound
-morphemes.
-In languages that negate using a function word, `Polarity` is used to mark
-that function word, unless it is a pro-form already marked with
-`PronType=Neg` (see below).
+極性 (polarity) は典型的には[動詞 (verbs)](u-pos/VERB)，[形容詞 (adjectives)](u-pos/ADJ) の素性であるが, 拘束形態素を用いて否定を表す言語においては[副詞 (adverbs)](u-pos/ADV) や[名詞(nouns)](u-pos/NOUN) も極性の素性を持つ．機能語を用いて否定を表す言語において，`PronType=Neg`の標示をうけるpro-form (下記参照) を持たない限り，`Polarity`はその機能語を標示するのに用いられる．
 
-Positive polarity (affirmativeness) is rarely, if at all, encoded using overt
-morphology. The feature value `Polarity=Pos` is usually used to signal that a lemma
-has negative forms but this particular form is not negative. Using the feature
-in such cases is somewhat optional for words that can be negated but rarely are.
+正の極性 (肯定) が形態素によって明示的に符号化されるのは稀である．値 `Polarity=Pos` は通常，見出し語 (lemma) が否定形を持つが，その使用が否定形式でないことを示すために用いられる．否定が可能だが否定形の使用が稀であるような語に対して`Polarity=Pos`を用いるかどうかは任意的である．
 
-For instance, all Czech verbs and adjectives can be negated using the prefix
-_ne-_. In theory, all nouns can be negated too, with the meaning “anything
-except the entities denotable by the original noun”. However, negated nouns
-are rare and it is not necessary to annotate every positive noun with
-`Polarity=Pos`. Language-specific documentation should define under which
-circumstances the positive polarity is annotated.
+例えば，チェコ語のあらゆる動詞と形容詞は接頭辞 (prefix) _ne-_ を用いて否定が可能である．理論的には名詞も "当該名詞が指示するもの以外" という意味で否定が可能であるが，あまり見られない用法であるため，肯定形をとる名詞すべてに`Polarity=Pos`をタグ付けする必要はない．言語固有のドキュメンテーションにおいては，どの状況下で正の極性がタグ付けされるかを定めておくべきである．
 
-In English, verbs are negated using the [particle](u-pos/PART) _not_ and
-adjectives are also negated using prefixes, although the process is less
-productive than in Czech _(wise &ndash; unwise, probable &ndash; improbable)_.
+英語では，動詞は[不変化詞 (particle)](u-pos/PART) の_not_を用いて否定される．形容詞は接頭辞 (prefix) によっても否定されるが，チェコ語ではこのようなプロセスの生産的が低い _(wise &ndash; unwise, probable &ndash; improbable)_.
 
-Note that `Polarity=Neg` is not the same thing as
-[PronType]()`=Neg`. For pronouns and other pronominal parts of speech
-there is no such binary opposition as for verbs and adjectives. (There
-is no such thing as "affirmative pronoun".)
+`Polarity=Neg`は[PronType]()`=Neg`とは異なることに注意されたい．代名詞や代名詞的な品詞では，動詞や形容詞のような2値の対立が存在しない ("肯定代名詞 (affirmative pronoun)" のようなものは存在しない).
 
-The `Polarity` feature can be also used to distinguish response
-[interjections](u-pos/INTJ) _yes_ and _no_.
+素性`Polarity`は素性[間投詞 (interjections)](u-pos/INTJ) について，_yes_ と _no_ の返答を区別する役割も持つ.
 
-### <a name="Pos">`Pos`</a>: positive, affirmative
+### <a name="Pos">`Pos`</a>: 肯定 (positive, affirmative)
 
-#### Examples
+#### 例
 
 * [cs] _<b>přišel</b>_ “he came”
 * [cs] _<b>velký</b>_ “big”
 * [en] _<b>yes</b>_
 
-### <a name="Neg">`Neg`</a>: negative
+### <a name="Neg">`Neg`</a>: 否定
 
-#### Examples
+#### 例
 
 * [cs] _<b>nepřišel</b>_ “he did not come”
 * [cs] _<b>nevelký</b>_ “not big”

@@ -5,23 +5,19 @@ shortdef: 'punctuation'
 udver: '2'
 ---
 
-This is used for any piece of [punctuation](/u/pos/PUNCT.html) in a clause, if punctuation
-is being retained in the typed dependencies. Note that symbols tagged [SYM](/u/pos/SYM.html)
-are not punctuation and cannot be attached via the `punct` relation.
+記号が依存関係において保持される場合，節内の[記号 (punctuation)](/u/pos/PUNCT.html)に関係`punct`が用いられる．ただし，[SYM](/u/pos/SYM.html)によってタグ付けされるシンボルは記号 (punctuation) とは区別されるので，関係`punct`によって付加させることができない．
 
 ~~~ sdparse
 Go home !
 punct(Go, !)
 ~~~
 
-Tokens with the relation [u-dep/punct]() always attach to content words (except in cases of ellipsis) and can never have dependents.
-Since `punct` is not a normal dependency relation, the usual criteria for determining the head word do not apply. 
-Instead, we use the following principles:
+関係[u-dep/punct]()にあるトークンは常に内容語 (省略 (ellipsis) されたものを除く) に付加され，それは依存部 (dependents) を持たない．`punct`は通常の依存関係にないため，主辞を決定する通常の規則が適用できない．かわりに，次の原則に従うことにする:
 
-1. A punctuation mark separating coordinated units is attached to the following conjunct.
-2. A punctuation mark preceding or following a dependent unit is attached to that unit.
-3. Within the relevant unit, a punctuation mark is attached at the highest possible node that preserves projectivity.
-4. Paired punctuation marks (e.g. quotes and brackets, sometimes also dashes, commas and other) should be attached to the same word unless that would create non-projectivity. This word is usually the head of the phrase enclosed in the paired punctuation.
+1. 等位関係を形成するユニットを分離する記号は後続要素に付加される.
+2. 依存部ユニットに先行/後続する記号は，そのユニットに付加される．
+3. 関連するユニット内で，記号は投射性 (projectivity) が保持できる最も上位にあるノードへ付加される．
+4. 記号 (e.g. 引用符，括弧，ダッシュ，カンマその他) のペアは，投射性が保たれるならば同一の語へ付加される．その語とは，通常記号ペアに囲まれた句の主辞である．
 
 <div id="punct1" class="sd-parse">
 We have apples , pears , oranges , and bananas .
@@ -43,7 +39,7 @@ punct(kam, .)
 </div>
 
 <div id="punct3" class="sd-parse">
-A.K.A. , AKA , or a\/k\/a may refer to : “ Also known as ” , used to introduce pseudonyms , aliases , etc. ( Compare f.k.a. for “ formerly known as ” . )
+A.K.A. , AKA , もしくは a\/k\/a は“ Also known as ”を指す; 偽名や変名などを表すのに用いられる (“ formerly known as ”のf.k.a. と比較)
 punct(AKA, ,-2)
 punct(a/k/a, ,-4)
 punct(refer, :)
@@ -59,4 +55,4 @@ punct(known-31, ”-33)
 punct(Compare, .-34)
 </div>
 
-See also examples at [parataxis]().
+他の例は[並置 (parataxis)]() を参照されたい．

@@ -5,15 +5,8 @@ shortdef: 'open clausal complement'
 udver: '2'
 ---
 
-An open clausal complement (`xcomp`) of a verb or an adjective is a
-predicative or clausal complement without its own subject. The
-reference of the subject is necessarily determined by an argument
-external to the xcomp (normally by the object of the next higher
-clause, if there is one, or else by the subject of the next higher
-clause). This is often referred to as *obligatory control*. 
-These clauses tend to be non-finite in many languages, 
-but they can be finite as well. The name `xcomp` is
-borrowed from Lexical-Functional Grammar.
+動詞および形容詞の開いた節補部 (open clausal complement; `xcomp`)とは，それ自身が主語を持たない述語・節の補部を指す．
+よって，その主語は必然的にxcompの外部にある項から決定される (通常は上位節の目的語だが，主語からも決定される)．これを指して，*義務的コントロール (obligatory control)*と呼ぶことが多い．これらの節は多くの言語において不定節 (non-finite) をとる傾向が強いが，定形節も存在する．`xcomp`という名前はLFG (Lexical-Functional Grammar) からの借用である．
 
 ~~~ sdparse
 He says that you like to swim
@@ -52,20 +45,14 @@ xcomp(expect, change)
 obj(expect, them)
 ~~~
 
-Note that the above condition “without its own subject” does not mean that a 
-clause is an `xcomp` just because its subject is not _overt._ The subject must be necessarily inherited from a fixed position in the higher clause. That is, there should be no available interpretation where the subject of the lower clause may be distinct
-from the specified role of the upper clause. In cases where the missing subject may or must be distinct from a fixed role in the higher clause, `ccomp` should be used instead, as below.  This includes cases of arbitrary subjects and anaphoric control.
+上記の条件“それ自身が主語を持たない”とは，単に主語が_明示されていない_ため当該の節が`xcomp`になるということではない．主語は上位節から継承されるのであって，下位節の主語が上位節の特定の役割から独立したという解釈が存在しないのである．以下の例にある，欠けた主語が上位節の特定の役割から独立する事例では`ccomp`が代わりに用いられる．これには恣意的な主語 (arvitrary aubjects) や照応のコントロール (anaphoric control) も含まれる
 
 ~~~ sdparse
 The boss said to start digging
 ccomp(said, start)
 ~~~
 
-Pro-drop languages have clauses where the subject is not present as a separate word,
-yet it is inherently present (and often deducible from the form of the verb)
-and it does not depend on arguments from a higher clause.
-Thus in neither of the following two Czech examples is there any overt subject,
-yet only the second example contains an `xcomp`.
+pro-drop言語には，主語が独立した語として生起しない節が存在することもあるが，この節は上位節の項に依存しているわけではない (内在的には主語があり，それは動詞形から推測が可能である)．よって，以下のチェコ語の例では主語が明示されておらず，2つ目の例のみが`xcomp`を有する．
 
 ~~~ sdparse
 Píšu , protože jsem to slíbil . \n I-write , because I-have it promised .
@@ -81,15 +68,15 @@ xcomp(Promised, to-write)
 
 ### Secondary Predicates
 
-The `xcomp` relation is also used in constructions that are known as _secondary predicates_ or _predicatives_.
-Examples:
+関係`xcomp`は_二次述語 (secondary predicates)_ もしくは_述語類 (predicatives)_と呼ばれる.
+例:
 
 * _She declared the cake beautiful._
 * _She declared the cake a success._
 
-We could paraphrase the sentence using a subordinate clause: _She declared that the cake was beautiful._
-There are two predicates mixed in one clause: 1. she declared something, and 2. the cake was beautiful (according to her opinion).
-The secondary predicate will be attached to the main predicate as an `xcomp`:
+上記の例は従属節を用いてパラフレーズが可能である: _She declared that the cake was beautiful._
+1つの節に2つの述語が混ざって生起している: 1. she declared something 2. the cake was beautiful (彼女の意見によると).
+当該の二次述語は`xcomp`として主述語に付加される．
 
 ~~~ sdparse
 She declared the cake beautiful .
@@ -98,7 +85,7 @@ obj(declared, cake)
 xcomp(declared, beautiful)
 ~~~
 
-In the enhanced representation, there is an additional subject link showing the secondary predication:
+拡張版では，二次述語を示す主語が追加される．
 
 ~~~ sdparse
 She declared the cake beautiful .
@@ -108,7 +95,7 @@ xcomp(declared, beautiful)
 nsubj(beautiful, cake)
 ~~~
 
-A Czech example:
+チェコ語の例:
 
 ~~~ sdparse
 jmenovat někoho generálem \n to-appoint someone as-a-general
@@ -116,14 +103,6 @@ obj(jmenovat, někoho)
 xcomp(jmenovat, generálem)
 ~~~
 
-Remember that `xcomp` is used for core arguments of clausal predicates
-so it will not be used for other instances of secondary predication.
-For instance, in _She entered the room sad_ we also have a double predication
-(she entered the room; she was sad).
-But _sad_ is not a core argument of _enter:_ leaving it out will neither affect grammaticality
-nor significantly alter the meaning of the verb.
-On the other hand, leaving out _beautiful_ in _she declared the cake beautiful_
-will either render the sentence ungrammatical or lead to a different interpretation of _declared._
-
-The result is that in _She entered the room sad,_ _sad_ will depend on _She_
-and the relation will be [acl]() instead of `xcomp`.
+`xcomp`は節の述語における必須項 (core arguments) に用いられ，二次述語の他の要素には用いられない．例えば，_She entered the room sad_は述語を2重に持つ (she entered the room; she was sad) が，_sad_は_enter_の必須項ではない:_sad_は_enter_に対する文法的な影響や意味の変更をもたらさない．一方，_she declared the cake beautiful_の_beautiful_をそのままにしておくと，文が文法的でくなったり，_declared_の異なった解釈を生み出したりする．
+a
+つまり,_She entered the room sad_の_sad_は_She_に依存するのであって，その関係は`xcomp`ではなく[acl]()となる．

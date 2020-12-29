@@ -23,16 +23,13 @@ udver: '2'
 </tr>
 </table>
 
-Mood is a feature that expresses modality and subclassifies finite
-verb forms.
+法 (mood) はモダリティ (modality) を表し，定動詞の語形の下位範疇を形成する．
 
-### <a name="Ind">`Ind`</a>: indicative
+### <a name="Ind">`Ind`</a>: 直接法 (indicative)
 
-The indicative can be considered the default mood. A verb in
-indicative merely states that something happens, has happened or will
-happen, without adding any attitude of the speaker.
+直接法はデフォルトの法だと考えられる．直接法をとる動詞は，単に何かが起きる/起きた/起きるだろうということを表すだけであり，話者の態度 (attitude) は一切加えられない.
 
-#### Examples
+#### 例
 
 * [cs] _<b>Studuješ</b> na univerzitě._ "<b>You study</b> at the
   university."
@@ -42,12 +39,11 @@ happen, without adding any attitude of the speaker.
 * [tr] *eve <b>gidiyor</b>* "she is going home"
 * [tr] *eve <b>gitti</b>* "she went home"
 
-### <a name="Imp">`Imp`</a>: imperative
+### <a name="Imp">`Imp`</a>: 命令法 (imperative)
 
-The speaker uses imperative to order or ask the addressee to do the
-action of the verb.
+話者は命令法を用いて聞き手に動詞が示す行為を行うよう命じる/依頼する．
 
-#### Examples
+#### 例
 
 * [cs] _<b>Studuj</b> na univerzitě!_ "<b>Study</b> at the university!"
 * [de] _<b>Studiere</b> an der Universität!_ "<b>Study</b> at the university!"
@@ -56,20 +52,15 @@ action of the verb.
 * [tr] *eve <b>gitsin</b>* "[let him] go home!" (3rd person imperative)
 * [sa] <b>ब्रूहि</b> राजः / _<b>brūhi</b> rājaḥ_ "<b>tell</b> the king"
 
-### <a name="Cnd">`Cnd`</a>: conditional
+### <a name="Cnd">`Cnd`</a>: 条件法 (conditional)
 
-The conditional mood is used to express actions that would have taken
-place under some circumstances but they actually did not / do not
-happen. Grammars of some languages may classify conditional as tense
-(rather than mood) but e.g. in Czech it combines with two different
-tenses (past and present).
+条件法は特定の状況下で起きる行為を表すが，それは実際には起こらない/起きない．いくつかの言語の文法では条件法を (法ではなく) 時制 (tense) に分類するが，チェコ語のような言語では条件法を2種の時制 (過去時制，現在時制) と組み合わせる．
 
-#### Examples
+#### 例
 
 * [cs] <i>Kdy<b>bych</b> byl chytrý, studoval <b>bych</b> na
   univerzitě.</i> "If I were smart I <b>would</b> study at the
-  university" (note that only the auxiliary _bych_ is specific to
-  conditional; the active participle _byl_ is also needed to
+  university" (助動詞の_bych_だけが条件法に特有のものである; the active participle _byl_ is also needed to
   analytically form the conditional mood, however, it will only be
   tagged as participle because it can also be used to form past tense
   indicative.)
@@ -78,75 +69,63 @@ tenses (past and present).
 * [tr] *eve <b>giderse</b>* "if she goes home"
 * [tr] *eve <b>gidecekdiyse</b>* "if she was going to go home"
 
-### <a name="Pot">`Pot`</a>: potential
+### <a name="Pot">`Pot`</a>: 可能法 (potential)
 
-The action of the verb is possible but not certain.
-This mood corresponds to the modal verbs _can, might, be able to_.
-Used e.g. in Finnish. See also the optative.
+可能法は動詞の示す行為が起こりうることを表すが，それ実現するかどうかは分からない.この法は法動詞_can, might, be able to_に対応する．可能法はフィンランド語などで用いられる．希求法 (optative) も参照されたい．
 
-#### Examples
+#### 例
 
 * [tr] *eve <b>gidebilir</b>* "she can go home"
 * [tr] *eve <b>gidemeyebilir</b>* "she may not be able to go home"
 
-### <a name="Sub">`Sub`</a>: subjunctive / conjunctive
+### <a name="Sub">`Sub`</a>: 接続法 (subjunctive / conjunctive)
 
-The subjunctive mood is used under certain circumstances in
-subordinate clauses, typically for actions that are subjective or
-otherwise uncertain. In German, it may be also used to convey the
-conditional meaning.
+接続法は特定の状況下において従属節 (subordinate clauses) で用いられ，特定の行為が想像上のもの，もしくは実現が不確かであることを表す．ドイツ語では，接続法は条件の意味を伝達するのに用いられる．
 
-#### Examples
+#### 例
 
 * [fr] <i>Je veux que tu le <b>fasses</b></i> "I want you to do it" lit. <i>I
   want that you it do</i><tt>.Sub</tt>
 
-### <a name="Jus">`Jus`</a>: jussive / injunctive
+### <a name="Jus">`Jus`</a>: 指令法 (jussive / injunctive)
 
-The jussive mood expresses the desire that the action happens; it is thus close to both imperative and optative.
-Unlike in desiderative, it is the speaker, not the subject who wishes that it happens.
-Used e.g. in Arabic. We also map the Sanskrit injunctive to `Mood=Jus`.
+指令法は特定の行為が起こる望みを表す; これは命令法 (imperative) と希求法 (optative) の両方に類似している．願望法 (desiderative) とは異なり，それが起きることを望んでいるのは主語ではなく話者である．指令法はアラビア語などで用いられる．また，サンスクリット語の指令法 (injunctive) は`Mood=Jus`へ対応づけられる.
 
-#### Examples
+#### 例
 
 * [sa] मैवं <b>वोचः</b> / <i>maivaṁ <b>vocaḥ</b></i> "Do not <b>speak</b> this way"
 
-### <a name="Prp">`Prp`</a>: purposive
+### <a name="Prp">`Prp`</a>: 目的法 (purposive)
 
-Means “in order to”, occurs in Amazonian languages.
+目的法は"in order to"を意味し，アマゾンの言語に現れる．
 
-### <a name="Qot">`Qot`</a>: quotative
+### <a name="Qot">`Qot`</a>: 引用法 (quotative)
 
-The quotative mood is used e.g. in Estonian to denote direct speech.
+引用法はエストニア語などで用いられ，直接話法 (direct speech) を表す．
 
-### <a name="Opt">`Opt`</a>: optative
+### <a name="Opt">`Opt`</a>: 希求法 (optative)
 
-Expresses exclamations like "May you have a long life!" or "If only I were rich!"
-In Turkish it also expresses suggestions.
-In Sanskrit it may express possibility (cf. the potential mood in other languages).
+希求法は "May you have a long life!" や "If only I were rich!" のように，感嘆の意を表す．トルコ語では提案も表し，サンスクリット語では可能性も表す (他言語における可能法 (potential mood) に相当)．
 
-#### Examples
+#### 例
 
 * [tr] *eve <b>gidelim</b>* 'let's go home'
 * [sa] अप्रधानः प्रधानः <b>स्यात्</b> / _apradhānaḥ pradhānaḥ <b>syāt</b>_ "the unimportant person <b>may be (become)</b> important"
 
-### <a name="Des">`Des`</a>: desiderative
+### <a name="Des">`Des`</a>: 願望法 (desiderative)
 
-The desiderative mood corresponds to the modal verb "want to": "He
-<b>wants to come</b>." Used e.g. in Turkish.
+願望法は法動詞"want to"に対応する: ""He <b>wants to come</b>.""
+願望法はトルコ語などで用いられる．
 
-### <a name="Nec">`Nec`</a>: necessitative
+### <a name="Nec">`Nec`</a>: 必然法 (necessitative)
 
-The necessitative mood expresses necessity and corresponds to the modal verbs "must, should,
-have to": "He <b>must</b><b> come</b>."
+必然法は事象の必然性を表し，法動詞"must, shoud, have to"に対応する: "He <b>must</b><b> come</b>."
 
-#### Examples
+#### 例
 
 * [tr] *eve <b>gitmeli</b>* 'she should go home'
 * [tr] *eve <b>gitmeliydi</b>* 'she should have gone home'
 
-### <a name="Adm">`Adm`</a>: admirative
+### <a name="Adm">`Adm`</a>: 感嘆法 (admirative)
 
-Expresses surprise, irony or doubt. Occurs in Albanian, other Balkan languages,
-and in Caddo (Native American from Oklahoma).
-
+感嘆法は驚き，皮肉や疑いを表す．感嘆法はアルバニア語や他のバルカン諸語，およびカドー語 (Caddo; オクラホマのネイティブアメリカンが話す言語) などで用いられる．

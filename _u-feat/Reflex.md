@@ -12,31 +12,16 @@ udver: '2'
 </tr>
 </table>
 
-Boolean feature, typically of [pronouns](u-pos/PRON) or
-[determiners](u-pos/DET). It tells whether the word is reflexive,
-i.e. refers to the subject of its clause.
+素性`Reflex`はブール型であり，典型的に[代名詞 (pronouns)](u-pos/PRON)や[(限定詞) determiners](u-pos/DET) に適用される．この素性は当該の語が再帰的 (reflexive) であるかどうかを判別する (i.e. 節主語を指示する).
 
-While many tagsets would have "reflexive" as one of the various
-pronoun types, this feature is intentionally separate from
-[PronType]().
-When used with pronouns and determiners, it should be combined
-with `PronType=Prs`, regardless whether they really distinguish
-the [Person]() feature (in some languages they do, in others they
-do not).
+多くのタグセットは代名詞のタイプとして"reflexive"を備える一方，この素性は[PronType]()とは意図的に区別される．この素性が代名詞と限定詞で用いられる場合，素性[Person]()に関して区別するかどうかに関わらず (区別する言語としない言語がある)，それは`PronType=Prs`に結合されるだろう.
 
-Note that while some languages also have reflexive verbs, these are in
-fact fused verbs with reflexive pronouns, as in Spanish _despertarse_
-or Russian _проснуться_ (both meaning “to wake up”). Thus in these
-cases the fused token will be split to two syntactic words, one of
-them being a reflexive pronoun.
+いくつかの言語には再帰動詞 (reflexive verbs) が存在するが，実際には再帰代名詞と融合した動詞 (fused verbs) である (その例にはスペイン語の_despertarse_やロシア語の_проснуться_があり，両者は“to wake up”を意味する)．よって，これらの事例は，融合したトークンが2つの統語的な語に分離される．そのうち1つは再帰代名詞である．
 
-### <a name="Yes">`Yes`</a>: it is reflexive
+### <a name="Yes">`Yes`</a>: 再帰的である
 
-Note that there is no `No` value. If the word is not reflexive, the
-`Reflex` feature will just not be mentioned in the `FEAT`
-column. (Which means that empty value has the `No` meaning.)
+この素性には`No`の値が存在しない．当該の語が再帰的でなければ，素性`Reflex`はそもそも`FEAT`カラムに記載されないからである．(すなわち，空の値が`No`を意味する.)
 
-#### Examples
+#### 例
 
-* [cs] reflexive personal pronouns: _se, si_; reflexive possessive
-  pronoun: _svůj_
+* [cs] 再帰人称代名詞: _se, si_; 再帰所有代名詞: _svůj_

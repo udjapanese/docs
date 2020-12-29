@@ -5,26 +5,15 @@ shortdef: 'flat multiword expression'
 udver: '2'
 ---
 
-The `flat` relation is one of three relations for multiword expressions multiword expressions (MWEs) in UD 
-(the other two being [fixed]() and [compound]()). It is used for exocentric (headless) semi-fixed MWEs like
-names (_Hillary Rodham Clinton_) and dates (_24 December_). It contrasts with [fixed](), which applies to
-completely fixed grammaticized (function word-like) MWEs (like _in spite of_), and with [compound](), which applies to
-endocentric (headed) MWEs (like _apple pie_).
+`flat`は，UDにおいて複合表現 (multiword expressions; MWEs) の3つの関係のうちの1つを表す関係である．(他の2つは [fixed]() と [compound]()). 関係`flat`は名称 (_Hillary Rodham Clinton_) や日付 (_24 December_) といった，外心的 (exocentric; 主辞を欠く) な準固定的MWE (semi-fixed MWEs) に用いられる．これは，完全に固定的な (機能語のような) MWE (_in spite of_) や内心的 (endocentric; 主辞を持つ) なMWE (_apple pie_のような) [複合語 (compound)]() と対比される．
 
-Flat MWEs are annotated with a flat structure, where all subsequent words in the expression are attached to the 
-first one using the `flat` label. The assumption is that these expressions do not have any internal syntactic structure 
-and that the structural annotation is in principle arbitrary. In practice, however, it is highly desirable to use 
-a consistent annotation of all flat MWEs in all languages.
+平板型MWW (flat MWEs) は平板構造としてタグ付けされ，後続する語は全て先頭の語に`flat`ラベルを用いて付加させる．これは，平板構造を持つ表現は内部の統語構造を持たず，構造のタグ付けが恣意的になってしまうという想定にもとづく．どのような言語であっても平板型MWEには一貫したタグ付けを与えることが非常に望ましい．
 
-Below we describe some of the most common uses of [flat]() across languages. Note that semantically
-equivalent expressions in different languages (or even in the same language) may require a different analysis if sometimes
-there is and sometimes there is not a regular compositional syntactic structure.
+以下，言語間で共通する[平板型 (flat)]() の最も一般な用法をみることにする．意味的には等しい表現であっても言語によっては標準的な統語構造が異なる場合もある (また，同じ言語内であっても) ため，異なる分析を要することもある．
 
-## Names 
+## 名称 (Names) 
 
-In many languages, there are multiword proper names with no clear internal syntactic structure and no clear 
-evidence that one of the words is the syntactic head. Such names are annotated using the `flat` relation, 
-with the optional subtype `flat:name`.
+多くの言語では複合表現から成る固有名のうち，内部構造が不明瞭でどれが主辞なのかがはっきりしないものが存在する．このような名称に対しては関係`flat`を用いてタグ付けする (サブタイプ`flat:name`は任意である).
 
 ~~~ sdparse
 Hilary Rodham Clinton
@@ -43,8 +32,7 @@ New York
 flat(New, York)
 ~~~
 
-Titles/honorifics are also analyzed using the `flat` relation. Note that some titles are complex
-and have their own internal syntactic structure. Such structure is shown with regular relations embedded under `flat`:
+肩書き/敬称も関係`flat`から分析される．ただし，肩書きによっては固有の内部構造をもつものもあるので，そのような構造は`flat`に埋め込んだ形で表示する:
 
 ~~~ sdparse
 Mr. Smith
@@ -69,14 +57,10 @@ flat(Milliardär-1, Ross-2)
 flat(Milliardär-1, Perot-3)
 ~~~
 
-However if the two halves of a descriptive title and a name appear to be two separate nominals, 
-then analysis with `flat` is not appropriate, and [u-dep/appos]() is appropriate. These cases are often set off by
-punctuation, such as a comma, but no punctuation may appear in more informal text. 
-You can generally test for such examples by asking if the two halves can be reversed; if they can, it is probably an `appos`; 
-see the examples there.
+しかし，肩書きや名称が2つの分離した名詞句から成るように思われる場合，`flat`による分析は適切でなく，[u-dep/appos]()による分析のほうがふさわしい．このような事例には，カンマといった記号から名詞句が区切られる場合もあれば，インフォーマルなテキストでカンマが生起しない場合もある．このとき，2要素が逆転可能かどうかを尋ねるテストを行うと良い; 逆転可能なら，`appos`で分析した方がよいだろう; 以下がその例である．
 
-In contrast to the above, names that have a regular syntactic structure, like _The Lord of the Rings_ and _Captured By
-Aliens_, should be annotated with regular syntactic relations.
+上記のものとは対照的に，名称には_The Lord of the Rings_や_Captured By
+Aliens_のように通常の統語関係によってタグ付けすべき事例もある．
 
 ~~~ sdparse
 The Lord of the Rings
@@ -93,8 +77,7 @@ nmod(king-2, Sweden-4)
 case(Sweden-4, of-3)
 ~~~
 
-For organization names with clear syntactic modification structure, the dependencies should 
-also reflect the syntactic modification structure using regular syntactic relations, as in:
+修飾構造が明瞭である組織名については，次の例のように依存関係が標準の統語関係から修飾構造を示せると良い:
 
 ~~~ sdparse
 Natural Resources Conservation Service
@@ -103,11 +86,12 @@ compound(Conservation-3, Resources-2)
 compound(Service-4, Conservation-3)
 ~~~
 
+<!--加えて，標準的な統語関係は次のようにも用いられる: (i) 修飾する限定詞やその他の機能語に対して (ii) 埋め込み構造を形成する前置詞句や文が名称に関与し，各要素が結合される場合. (i) は，そのような関係が確認された言語に対して適用される (i.e. (i) の分析はフランス語・ドイツ語・スペイン語には適用されるが，英語には適用されない)．そして，(ii) は
 In addition, regular syntactic relations are used: (i) for a modifying determiner or similar function word and (ii) to connect 
 together the words of a description or name which involve embedded prepositional phrases, sentences, etc.,
 when these relations are (i) recognized in the language being annotated (i.e., the analyses below are for
 French, German, and Spanish, not English) and (ii) deemed not to be grammaticalized to the extent that the original role
-of the function words has been lost.
+of the function words has been lost.-->
 
 ~~~ sdparse
 Le Japon
@@ -135,10 +119,7 @@ det(Plata-4, la-3)
 nmod(Río-1, Plata-4)
 ~~~
 
-The above analyses of _Ludwig van Beethoven_ and _Miguel de Cervantes y Saavedra_ assume that _van_ resp. _de_ are prepositions.
-This is true in the languages of the names' origin, but it can be expected to change when the name is used in foreign text 
-or when sufficient grammaticalization has taken place. For example,
-when names like this are annotated in English, the appropriate analysis is as a `flat` name:
+上記の_Ludwig van Beethoven_ と _Miguel de Cervantes y Saavedra_では，_van_や_de_が前置詞だと仮定した上で分析を行なっている．この分析は名称元の言語内では正しいだろうが，外国のテキストで用いられた場合や文法化が十分に進んだとみなされる場合には異なる分析を受けるだろう．例えば，上のような名称を英語でタグ付けするならば`flat`として分析するほうが適切である:
 
 ~~~ sdparse
 Ludwig van Beethoven was a famous German composer .
@@ -165,8 +146,7 @@ flat(Al-1, Arabiya-2)
 nsubj(organization-7, Al-1)
 ~~~
 
-And in Modern German or French, these prepositions have generally just become a fossilized part of a family name 
-and regularly appear without the given name. Again, here, analysis as `flat` seems correct:
+現代ドイツ語もしくはフランス語において，これらの前置詞は姓 (familiy name) の一部として定着しており，名 (given name) を伴わずに生起することがよくある．この場合でも，`flat`による分析は正しいと考えられる:
 
 ~~~ sdparse
 Von Hohenlohe gewann das Rennen . \n Von Hohenlohe won the race .
@@ -174,9 +154,7 @@ flat(Von-1, Hohenlohe-2)
 nsubj(gewann-3, Von-1)
 ~~~
 
-In the case of proper entities named after people, e.g. _Leland Stanford Jr. University_, the `flat` relation 
-should only be used inside the person name, with the rest of the construction analyzed compositionally using 
-normal syntactic relations:
+_Leland Stanford Jr. University_といった人名にちなんだ存在物の固有名では，関係`flat`は人名の内部のみに適用される．そして，残りの部分は通常の統語関係を用いて構成的に分析される:
 
 ~~~ sdparse
 Leland Stanford Jr. University
@@ -185,18 +163,21 @@ flat(Leland-1, Stanford-2)
 flat(Leland-1, Jr.-3)
 ~~~
 
-### Some further notes on relations for names
+### 名称の関係に対する覚書
 
-_This paragraph briefly records some of the arguments that have been made in the past on relations for name structure. It is an issue over which there has historically been variation and about which there is some continuing debate._ Examples like 
-_French actor Gaspard Ulliel:_ Some treebanks have used `nmod` for titles and honorifics like _Mr._ or _French actor_. Most people think this is inappropriate, since an `nmod` dependent should be a full phrase, which will typically take its own case as a modifier in a cased language. In contrast, these titles seem to be part of the same phrase as the name that follows them; they show case agreement concord in a cased language. Some grammatical traditions, descending from Latin, call _French actor_ in such cases a "fixed (or close) apposition" and take the name as the head. UD has restricted the `appos` relation to following appositives (corresponding to "loose (or wide) apposition" in the Latin tradition). The relation `appos` is only used when you have two full nominals, typically joined loosely, and often separated by a punctuation mark like a comma. So `appos` is not correct for these cases. Sometimes the relation `compound` has been used, but this does not seem right. It implies headedness, and titles do not usually behave like compounds: in German, they are not joined to the following words, as compounds are normally joined in German, and they appear at the beginning of names in both German and Hebrew, even though German compounds are head last and Hebrew compounds are head first. So `compound` does not seem appropriate either. Some UDv1 treebanks used `flat` for honorifics like _Mr._, although some felt that was wrong and `flat` should be restricted to joining the proper nouns of multi-word names. In UDv2, `flat` was removed and replaced by `flat`, which allowed a broader notion of a chunk of unheaded material. In the UDv2 guidelines, cases of both titles and honorifics are joined to names with `flat`.
+_このパラグラフでは，名称構造の関係について過去に展開されてきた議論を簡潔にまとめる．その問題とは歴史的に様々な議論が展開されてきたもので，現在でもそれらのいくつかは議論が続いている．_
+_French actor Gaspard Ulliell_のような例: いくつかのツリーバンクでは_Mr._や_French actor_のような肩書きや敬称には`nmod`を用いるが，多くの人はこれを不適切だと考えている．なぜなら，`nmod`の依存部は完全な句であって，格言語 (cased language) においては句の格として修飾語の格をとるべきだからである．<!--Most people think this is inappropriate, since an `nmod` dependent should be a full phrase, which will typically take its own case as a modifier in a cased language. -->対照的に，肩書きはそれに後続する名称と同じ句に属するように思われる; 格言語では一致 (agreement concord) をみせる．
+文法的な慣習 (ラテン語に由来) では，上のような_French actor_は"固定化した側置詞 (fixed apposition)" と呼ばれ，名称 (Gaspard Ulliell) を主辞にとる．
+UDは関係`appos`を次の"appositives" (ラテン語の"緩い (広い) 同格"に対応する) に限定している．関係`appos`は，2つの完全な名詞句が緩やかに結合し，かつカンマといった記号によって分離された場合のみに用いられる．よって，上記の例に`appos`を用いるのは正しくない．また，関係`compound`が使われることもあったが，これも正しくないように思われる．
+It implies headedness, and titles do not usually behave like compounds: in German, they are not joined to the following words, as compounds are normally joined in German, and they appear at the beginning of names in both German and Hebrew, even though German compounds are head last and Hebrew compounds are head first. So `compound` does not seem appropriate either. 
+これは主辞性 (headedness) を思わせる．そして，肩書きのふるまいは複合とは通常異なる:ドイツ語では前者は後続する語と結合し
+UDv1ツリーバンクのいくつかでは`flat`を_Mr._のような敬称に用いたが，これは奇妙に感じられるので，`flat`を複合表現から成る固有名の結合にのみ用いるべきだと考える人もいる．
+UDv2では`flat`は削除され，主辞を取らない要素のチャンクという広い概念を許容する`flat`を取り入れた．<!--どっちも`flat`なの？-->UDv2のガイドラインでは肩書きと敬称のどちらの事例であっても`flat`によって名称と結合するように定めている．
 
 
-## Dates and Complex Numerals
+## 日付と複雑な数値
 
-Date expressions come in many shapes and forms across languages. In some cases, they have a very clear syntactic
-structure, as in _the 4th of July_, and should be annotated with regular dependency relations. In other cases, they
-have a flat structure with no clearly discernible head, as in _1 December 2016_, in which case the `flat` relation 
-should be used. 
+日付は言語によって様々な表現がある．_the 4th of July_のように明瞭な統語構造をみせ，通常の依存関係からタグ付けされる言語もあれば，_1 December 2016_のように平板構造をとり，関係`flat`で分析すべき言語もある.
 
 ~~~ sdparse
 the 4th of July
@@ -211,18 +192,17 @@ flat(1, December)
 flat(1, 2016)
 ~~~
 
-The `flat` relation can also be used for other numerals and other numerical expressions that lack phrasal structure.
+関係`flat`は句構造を欠く他の数値や数表現にも用いられる．
 
 ~~~ sdparse
 four thousand
 flat(four, thousand)
 ~~~
 
-## Foreign Phrases
+## 外国語のフレーズ
 
-The `flat` relation, with the optional subtype `flat:foreign` should also be used when a foreign phrase
-cannot be given a compositional analysis. In this case, it replaces the `foreign` relation, which was used
-in v1 but is no longer part of the relation taxonomy.
+関係`flat` (サブタイプの`flat:foreign`は任意) は，構成的な分析を受けない外国語のフレーズに対しても適用される．
+この事例において．かつてv1で用いられた関係`foreign`は`flat`に置き換えられる．
 
 ~~~ sdparse
 And then she went : gjiko frac zen .

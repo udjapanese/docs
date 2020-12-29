@@ -12,21 +12,15 @@ udver: '2'
 </tr>
 </table>
 
-Boolean feature of pronouns, determiners or adjectives.  It tells
-whether the word is possessive.
+この素性はブール型であり，代名詞か限定詞もしくは形容詞かを決定する．また，この素性は当該の語が所有格 (possessive) かどうかを判別する.
 
-While many tagsets would have "possessive" as one of the various
-pronoun types, this feature is intentionally separate from
-[PronType](), as it is orthogonal to pronominal types. Several of the
-pronominal types can be optionally possessive, and adjectives can too.
+多くのタグセットでは複数ある代名詞のタイプの1つとして"possessive"を備えるが，`Poss`は他の代名詞のタイプから独立していため[PronType]()とは意図的に区別される．複数の代名詞のタイプは任意的に所有格をとり，形容詞も同様である．
 
-### <a name="Yes">`Yes`</a>: it is possessive
+### <a name="Yes">`Yes`</a>: 所有格である
 
-Note that there is no `No` value. If the word is not possessive, the
-`Poss` feature will just not be mentioned in the `FEAT` column. (Which
-means that empty value has the `No` meaning.)
+値`No`は存在しない．当該の語が所有格でなければ，素性`Poss`はそもそも`FEAT`カラムに記載されないからである (空の値は`No`の意味をもつ)
 
-#### Examples
+#### 例
 
 * [en] _my, your, his, mine, yours, whose_
 * [cs] possessive determiners: _můj, tvůj, jeho, její, náš, váš, svůj, čí, jejichž_

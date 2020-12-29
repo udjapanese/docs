@@ -4,26 +4,24 @@ title: 'PunctType'
 shortdef: 'punctuation type'
 ---
 
-Many tagsets have just one tag for punctuation. Others (including the
-Penn Treebank and the Swedish Mamba tagset) classify punctuation in
-more detail.
+多くのタグセットでは記号 (punctuation) に1つのタグだけを備える一方，他 (Penn Treebank や Swedish Mamba tagset を含む) では記号をより細かに分類している.
 
-### Peri: period at the end of sentence; in Penn tagset, includes question and exclamation
+### Peri: 文末ピリオド; Pennタグセットでは，クエスチョンマークとエクスクラメーションも含む
 
-### Qest: question mark
+### Qest: クエスチョンマーク
 
-### Excl: exclamation mark
+### Excl: エクスクラメーションマーク
 
-### Quot: quoation marks (various sorts in various languages)
+### Quot: 引用符 (言語によって様々)
 
-### Brck: bracket
+### Brck: 括弧
 
-### Comm: comma
+### Comm: カンマ
 
-### Colo: colon; in Penn tagset, ":" is in fact tag for generic other punctuation
+### Colo: コロン; Pennタグセットでは，他の記号は総じて ":" のタグで表される．
 
-### Semi: semicolon
+### Semi: セミコロン
 
-### Dash: dash, hyphen
+### Dash: ダッシュ，ハイフン
 
-### Symb: symbol
+### Symb: シンボル

@@ -15,73 +15,43 @@ udver: '2'
 </tr>
 </table>
 
-`Gender` is usually a lexical feature of [nouns](u-pos/NOUN) and inflectional feature
-of other parts of speech ([pronouns](u-pos/PRON),
-[adjectives](u-pos/ADJ), [determiners](u-pos/DET), [numerals](u-pos/NUM),
-[verbs](u-pos/VERB)) that mark agreement with
-nouns. In English gender affects only the choice of the personal
-pronoun _(he / she / it)_ and the feature is usually not encoded in
-English tagsets.
+`Gender` は[名詞 (nouns)](u-pos/NOUN)の語彙的素性であり，名詞との一致を標示する他の品詞 ([代名詞 (pronouns)](u-pos/PRON), [形容詞 (adjectives)](u-pos/ADJ), [限定詞 (determiners)](u-pos/DET), [数詞 (numerals)](u-pos/NUM), [動詞 (verbs)](u-pos/VERB)) における屈折素性でもある．英語では性 (gender) が影響を及ぼすのは人称代名詞 _(he / she / it)_ の選択のみに限定されるため，素性`Gender`は英語のタグセットでエンコードしないのが通例である．
 
-See also the related feature of [Animacy]().
+これに関連する素性として，[有生性 (Animacy)]()も参照されたい．
 
-African languages have an analogous feature of [noun classes](NounClass): there
-might be separate grammatical categories for flat objects, long thin
-objects etc.
+アフリカの言語は[名詞クラス (noun classes)](NounClass)に類似した素性をもつ: 平たい物体や細長い物体といったものでも文法範疇から区別されるかもしれない．
 
-### <a name="Masc">`Masc`</a>: masculine gender
+### <a name="Masc">`Masc`</a>: 男性 (masculine gender)
 
-Nouns denoting male persons are masculine. Other nouns may be also
-grammatically masculine, without any relation to sex.
+男性 (male person) を指示する名詞は性 (gender) として男性 (masculine) をとる．他の名詞も，性別 (sex) には関係せず文法的に男性をとることがある．
 
-#### Examples
+#### 例
 
 * [cs] _<b>hrad</b>_ "castle"
 
-### <a name="Fem">`Fem`</a>: feminine gender
+### <a name="Fem">`Fem`</a>: 女性 (feminine gender)
 
-Nouns denoting female persons are feminine. Other nouns may be also
-grammatically feminine, without any relation to sex.
+女性 (female person) を指示する名詞は性 (gender) として女性 (feminine) をとる．他の名詞も，性別 (sex) には関係せず文法的に女性をとることがある．
 
-#### Examples
+#### 例
 
 * [de] _<b>Burg</b>_ "castle"
 
-### <a name="Neut">`Neut`</a>: neuter gender
+### <a name="Neut">`Neut`</a>: 中性 (neuter gender)
 
-Some languages have only the masculine/feminine distinction while
-others also have this third gender for nouns that are neither
-masculine nor feminine (grammatically).
+性 (gender) を男性/女性についてのみ区別する言語がある一方で，(文法的に) そのどちらでもない3番目の性を持つ言語もある．
 
-#### Examples
+#### 例
 
 * [en] _<b>castle</b>_
 * [cs] _<b>dítě</b>_ "child"
 
-### <a name="Com">`Com`</a>: common gender
+### <a name="Com">`Com`</a>: 汎性 (common gender)
 
-Some languages do not distinguish masculine/feminine most of the time
-but they do distinguish neuter vs. non-neuter (Swedish neutrum /
-utrum). The non-neuter is called common gender.
+いくつかの言語では，男性/女性の区別を大抵の場合で行わないが中性 (neuter) かそうでないか (non-neuter) については区別するものがある．非中性的なものは汎性 (common gender) と呼ばれる．
 
-Note that it could also be expressed as a combined value
-`Gender=Fem,Masc`. Nevertheless we keep `Com` also as a separate
-value. Combined feature values should only be used in exceptional,
-undecided cases, not for something that occurs systematically in the
-grammar. Language-specific extensions to these guidelines should
-determine whether the `Com` value is appropriate for a particular
-language.
+汎性は結合した値`Gender=Fem,Masc`として表現できるだろうが，`Com`を独立した値として保持しておく．結合した値は例外的に用いられるべきであって，文法内で体系的に起こるものに対しては適用すべきでない．上記のガイドラインを特定の言語向けに拡張するのであれば，当該言語において値`Com`が適切かどうかを決定すべきである．
 
-Note further that the `Com` value is not intended for cases where
-we just cannot derive the gender from the word itself (without seeing the context),
-while the language actually distinguishes `Masc` and `Fem`.
-For example, in Spanish, nouns distinguish two genders, masculine and feminine, and
-every noun can be classified as either `Masc` or `Fem`. Adjectives are supposed to
-agree with nouns in gender (and number), which they typically achieve by alternating _-o / -a._
-But then there are adjectives such as _grande_ or _feliz_ that have only one form for both genders.
-So we cannot tell whether they are masculine or feminine unless we see the context.
-Yet they are either masculine or feminine (feminine in _una ciudad grande,_ masculine in _un puerto grande)._
-Therefore in Spanish we should not tag _grande_ with `Gender=Com`.
-Instead, we should either drop the gender feature entirely
-(suggesting that this word does not inflect for gender)
-or tag individual instances of _grande_ as either masculine or feminine, depending on context.
+注意が必要なことだが，値`Com`は，`Masc`と`Fem`を区別する言語において，(コンテクストを参照しない限り) 語単体からは性が分からないような事例へ適用するようには意図されていない．<!--日本語ダサいな．．-->
+
+例えば，スペイン語では名詞は男性と女性に区別されるため，全ての名詞は`Masc`もしくは`Fem`として分類される．形容詞は性 (および数) について名詞と一致し，_-o / -a_を交替させることで区別される．ただし，_grande_ もしくは _feliz_ のように，両方の性に対して１つの形式しかもたないような名刺が存在する．この場合，コンテクストを参照しない限りそれが男性か女性のどちらかが分からない．とはいえ，それらの形容詞は男性か女性かのどちらかである (_una ciudad grande_では女性，_un puerto grande_では男性) ため，_grande_を`Gender=Com`とタグ付けするわけにはいかない．代替案としては，そもそも性素性を仮定しない (_grande_が性に関して屈折しないと考える) か，コンテクスト上に現れる_grande_のインスタンスを男性または女性としてタグ付けすることが考えられる．

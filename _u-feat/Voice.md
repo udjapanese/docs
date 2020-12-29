@@ -19,70 +19,53 @@ udver: '2'
 </tr>
 </table>
 
-Voice is typically a feature of [verbs](u-pos/VERB).
-It may also occur with other parts of speech
-([nouns](u-pos/NOUN), [adjectives](u-pos/ADJ), [adverbs](u-pos/ADV)),
-depending on whether borderline word forms such as gerunds and participles
-are classified as verbs or as the other category.
+ヴォイス・態 (voice) は典型的には[動詞 (verbs)](u-pos/VERB)の素性である．動名詞 (gerunds) や分詞 (participles) といった境界線上にあるような語形が動詞として分類されるか否かによって，この素性は他の品詞にも生起する ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ), [副詞 (adverbs)](u-pos/ADV)).
 
-For Indo-European speakers, voice means mainly the active-passive
-distinction. In other languages, other shades of verb meaning are
-categorized as voice.
+印欧語話者にとって，ヴォイスとは主に能動態-受動態の区別を意味する．他言語では，動詞が仄めかす意味がヴォイスとしてカテゴリ化される．
 
-### <a name="Act">`Act`</a>: active voice
+### <a name="Act">`Act`</a>: 能動態 (active voice)
 
-The subject of the verb is the doer of the action (agent), the object
-is affected by the action (patient).
+動詞の主語が動作主 (agent) であり，目的語は被動作主 (patient) である．
 
-#### Examples
+#### 例
 
 * [cs] _<b>Napadli</b> jsme nepřítele._ “We <b>attacked</b> the enemy”
-  (the active participle _napadli_ can be used to form either past
-  tense or conditional mood; here it forms the past tense.)
+  (能動分詞_napadli_は過去形や条件法 (conditional mood) を形成するのに用いられる; この例では過去形として用いられる.)
+  
+### <a name="Mid">`Mid`</a>: 中動態 (middle voice)
 
-### <a name="Mid">`Mid`</a>: middle voice
+古代ギリシア語やサンスクリット語で必要となる，能動態と受動態の中間的なヴォイス．
 
-Between active and passive, needed e.g. in Ancient Greek or Sanskrit.
+### <a name="Pass">`Pass`</a>: 受動態 (passive voice)
 
-### <a name="Pass">`Pass`</a>: passive voice
-
-The subject of the verb is affected by the action (patient). The doer
-(agent) is either unexpressed or it appears as an object of the verb.
-
+動詞の主語が被動作主 (patient) である．動作主 (agent) は明示されないか動詞の目的語として生起する．
 #### Examples
 
 * [cs] _Jsme <b>napadeni</b> nepřítelem._ “We are <b>attacked</b> by
-  the enemy” (the passive participle _napadeni_ is used to form
-  passive in all tenses; here it forms the present passive.)
+  the enemy” (全ての時制 (tense) において，受動分詞_napadeni_は受動態を形成するのに用いられる．)
 
-### <a name="Antip">`Antip`</a>: antipassive voice
+### <a name="Antip">`Antip`</a>: 逆受動態 (antipassive voice)
 
-In ergative-absolutive languages, an ergative subject is demoted to an absolutive subject.
+能格-絶対格言語 (ergative-absolutive languages) において，能格主語が絶対格に降格 (demote) する．
 
-### <a name="Dir">`Dir`</a>: direct voice
+### <a name="Dir">`Dir`</a>: 順行態 (direct voice)
 
-Used in direct-inverse voice systems, e.g. in North American languages.
-Direct means that the argument that is higher in salience hierarchy is the subject.
-Example hierarchy: human 1st person – 2nd – 3rd – non-human animate – inanimate.
+順行-逆行のヴォイス体系を採用する北アメリカ言語に用いられる．順行態とは，際立ちの階層 (salience hierarchy) の高い項が主語であることを指す．階層の例: 人間 1人称 – 2人称 – 3人称 – 非人間有生物 – 無生物.
 
-### <a name="Inv">`Inv`</a>: inverse voice
+### <a name="Inv">`Inv`</a>: 逆行態 (inverse voice)
 
-Used in direct-inverse voice systems, e.g. in North American languages.
-Inverse voice marking means that the argument lower in the hierarchy functions as subject.
+順行-逆行のヴォイス体系を採用する北アメリカ言語に用いられる．逆行態とは，際立ちの低い項が目的語として機能することを示すヴォイス標示体系である．
 
-### <a name="Rcp">`Rcp`</a>: reciprocal voice
+### <a name="Rcp">`Rcp`</a>: 相互態 (reciprocal voice)
 
-#### Examples
+#### 例
 
 * [tr] _<b>karıştı</b>_, _<b>tutuştular</b>_
 
-### <a name="Cau">`Cau`</a>: causative voice
+### <a name="Cau">`Cau`</a>: 使役態 (causative voice)
 
-<A HREF="https://wiki.ufal.ms.mff.cuni.cz/_media/user:zeman:treebanks:ttbankkl.pdf">Documentation</A>
-of the METU Sabanci treebank classifies causative as voice (page 26).
-Note that this is a feature of verbs. There are languages that have
-also the causative case of nouns.
+<A HREF="https://wiki.ufal.ms.mff.cuni.cz/_media/user:zeman:treebanks:ttbankkl.pdf">METU Sabanci treebankのドキュメンテーション</A>では，使役形 (causative) がヴォイスの一種として分類される (p.26)．これは動詞の素性であるが，名詞の原因格 (causative case) を持つ言語も存在する．
 
-#### Examples
+#### 例
 
 * [tr] _<b>karıştırıyor</b>_ "is confusing"

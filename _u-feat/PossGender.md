@@ -4,21 +4,12 @@ title: 'PossGender'
 shortdef: 'possessor’s gender'
 ---
 
-Possessive
-adjectives and pronouns may have two different genders: that of the
-possessed object (gender agreement with modified noun) and that of
-the possessor (lexical feature, inherent gender). The PossGender
-feature captures the possessor's gender. For simplicity, the set of
-possible values is identical to Gender, although only a subset has
-been observed in corpora so far.
+所有形容詞・代名詞 (possessive adjectives and pronouns) は2つの異なる性 (gender) を持つことがある: 所有物 (被修飾名詞との性の一致 (agreement)) と所有者 (語彙的な素性であり，固有の性をもつ)．素性`PossGender`所有者の性を表す．今のところサブセットしかコーパスでは観察されないが，議論を簡潔にするため，この素性の可能な値は`Gender`のものと同一だと考えたい．
 
-In
-the Czech examples below, the masculine PossGender implies using one
-of the suffixes <I>-</I><I>ův, -ova, -ovo,</I>
-and the feminine PossGender implies using one of <I>-</I><I>in,
--ina, -ino</I>.
+以下に示すチェコ語の例では，男性 (masculiune) の`PossGender`が接尾辞 <I>-</I><I>ův, -ova, -ovo,</I> を含意し，女性 (feminine) の`PossGender`が
+ <I>-</I><I>in, -ina, -ino</I> のいずれかを使用していることを含意する．
 
-### Masc: masculine possessor
+### Masc: 男性の所有者 (masculine possessor)
 
 Examples:
 [cs]
@@ -35,7 +26,7 @@ dítě</I></span>
 (father's
 child; PossGender=Masc|Gender=Neut).
 
-### Fem: feminine possessor
+### Fem: 女性の所有者 (feminine possessor)
 
 Examples:
 [cs]

@@ -16,60 +16,48 @@ udver: '2'
 </tr>
 </table>
 
-Degree of comparison is typically an inflectional feature of some
-[adjectives](u-pos/ADJ) and [adverbs](u-pos/ADV).
+比較の程度 (degree of comparison) とは典型的に，[形容詞 (adjectives)](u-pos/ADJ)と[副詞 (adverbs)](u-pos/ADV)の屈折素性を指す.
 
 ### <a name="Pos">`Pos`</a>: positive, first degree
 
-This is the base form that merely states a quality of something,
-without comparing it to qualities of others. Note that although this
-degree is traditionally called "positive", negative properties can be
-compared, too.
+これは語基 (base) の形式をとり，何かの性質を述べるだけで比較を行わない．この程度 (degree) は伝統的に"positive"と呼ばれるものの，否定的な性質も比較することができる．
 
-#### Examples
+#### 例
 
 * [en] _<b>young</b> man_
 * [cs] _<b>mladý</b> muž_
 
-### <a name="Equ">`Equ`</a>: equative
+### <a name="Equ">`Equ`</a>: 等価 (equative)
 
-The quality of one object is compared to the same quality of another
-object, and the result is that they are identical or similar (“as X as”).
-Note that it marks the adjective and it is distinct from the equative [Case](),
-which marks the standard of comparison.
+ある事物の性質について，同じ性質をもつ他の事物と比較したとき，それが同一であるか類似している場合がある (“as X as”)．これについて標示を受けるのは形容詞であり，比較基準となる名詞を標示する等[格 (Case)]()とは区別されることに注意したい．
 
-#### Examples
+#### 例
 
 * [et] _<b>pikkune</b> (pikkus+ne)_ “as tall as”
 
-### <a name="Cmp">`Cmp`</a>: comparative, second degree
+### <a name="Cmp">`Cmp`</a>: 比較級 (comparative, second degree)
 
-The quality of one object is compared to the same quality of another
-object.
+ある事物の性質について，同じ性質をもつ他の事物と比較される．
 
-#### Examples
+#### 例
 
 * [en] _the man is <b>younger</b> than me_
 * [cs] _ten muž je <b>mladší</b> než já_
 
-### <a name="Sup">`Sup`</a>: superlative, third degree
+### <a name="Sup">`Sup`</a>: 最上級 (superlative, third degree)
 
-The quality of one object is compared to the same quality of all other
-objects within a set.
+ある事物の性質について，同じ性質を持つ事物の集合における他の全ての成員と比較される．
 
-#### Examples
+#### 例
 
 * [en] _this is the <b>youngest</b> man in our team_
 * [cs] _toto je <b>nejmladší</b> muž v našem týmu_
 
-### <a name="Abs">`Abs`</a>: absolute superlative
+### <a name="Abs">`Abs`</a>: 絶対最上級 (absolute superlative)
 
-Some languages can express morphologically that the studied quality of
-the given object is so strong that there is hardly any other object
-exceeding it. The quality is not actually compared to any particular
-set of objects.
+いくつかの言語では，事物の特定の性質が強すぎるが故に，他の事物がそれを超えないことを形態的に表すことができる．その性質は他の事物と比較ができない．
 
-#### Examples
+#### 例
 
 * [es] _guapo_ "handsome"; _<b>guapísimo</b>_ "<b>indescribably
   handsome</b>"

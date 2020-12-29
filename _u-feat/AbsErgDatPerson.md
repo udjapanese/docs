@@ -6,37 +6,24 @@ shortdef: 'person agreement with absolutive/ergative/dative argument'
 
 ## Person[abs], Person[erg], Person[dat]
 
-Finite verbs in many Indo-European languages agree in [person](u-feat/Person) and number with their subject.
-In Basque (a <a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">polypersonal language</a>),
-certain verbs overtly mark agreement with up to three arguments:
-one in the absolutive [case](u-feat/Case),
-one in ergative and
-one in dative.
-Thus in _dakarkiogu_ “we bring it to him/her”,
-_akar_ is the stem (_ekarri_ = “bring”),
-_d_ stands for “it” (absolutive argument is the direct object of transitive verbs),
-_ki_ stands for the dative case,
-_o_ stands for “he” and
-_gu_ stands for “we” (ergative argument is the subject of transitive verbs).
+多くの印欧諸語において，定動詞は[人称 (person)](u-feat/Person)，数 (number) に関して主語と一致 (agree) する．バスク語 (<a href="http://en.wikipedia.org/wiki/Polypersonal_agreement">複数人称言語 (polypersonal language)</a>) では，特定の動詞が3つまでの項 (arguments) との一致を標示する: 絶対[格](u-feat/Case)，能格 (ergative)，与格 (dative).
+よって，_dakarkiogu_ “we bring it to him/her” の_akar_は語幹 (stem; _ekarri_ = “bring”) を表し，_d_は“it”を表す (絶対格項は他動詞の直接目的語). そして，_ki_は与格，_o_は“he”，_gu_は“we”を表す (能格項は他動詞主語).
 
-* `Person[abs]` is the person of the absolutive argument of the verb. The corresponding feature in Interset 2.041 is called `absperson`.
-* `Person[erg]` is the person of the ergative argument of the verb. The corresponding feature in Interset 2.041 is called `ergperson`.
-* `Person[dat]` is the person of the dative argument of the verb. The corresponding feature in Interset 2.041 is called `datperson`.
+* `Person[abs]` は動詞の絶対格項の人称を表す．is the person of the absolutive argument of the verb. Interset 2.041で対応する素性は`absperson`と呼ばれる．
+* `Person[erg]` は動詞の能格項の人称を表す．Interset 2.041で対応する素性は`ergperson`である．
+* `Person[dat]` は動詞の与格項の人称を表す．Interset 2.041で対応する素性は`datperson`である．
 
-One may want to use just `Person` instead of `Person[abs]`.
-However, there are two issues with that (at least in Basque).
-First, the absolutive argument is not always the subject. For transitive verbs, it is the object, so the parallelism with nominative-accusative languages would be weak anyway.
-Second, we cannot avoid `Number[abs]` (both `Number` and `Number[abs]` can occur at one word)
-and thus we keep `Person[abs]` to demonstrate that it is the same layer of agreement for both the features.
+`Person[abs]`ではなく，単に`Person`を用いたくなるかもしれないが，それには問題が2点存在する (少なくともバスク語において)．まず，絶対格項は常に主語となるわけではない．他動詞では絶対格項が目的語となるため，主格-対格言語 (nominative-accusative languages) と並行的を見出す根拠は薄い．
+次に，`Number[abs]` (`Number`と`Number[abs]`の両方が一つの語に生起可能) の使用が不可避であるため，両方の素性が同じ一致レイヤーに属すことを示すためにも`Person[abs]`を用い続ける．
 
 ### 1: first person
 
-Examples: [eu] _dakarkio<b>gu</b>_ `Person[erg]=1`
+例: [eu] _dakarkio<b>gu</b>_ `Person[erg]=1`
 
 ### 2: second person
 
-Examples: [eu] _dakarkio<b>zu</b>_ `Person[erg]=2`
+例: [eu] _dakarkio<b>zu</b>_ `Person[erg]=2`
 
 ### 3: third person
 
-Examples: [eu] _<b>d</b>akarki<b>o</b>gu_ `Person[abs]=3|Person[dat]=3`
+例: [eu] _<b>d</b>akarki<b>o</b>gu_ `Person[abs]=3|Person[dat]=3`

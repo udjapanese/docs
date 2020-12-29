@@ -15,81 +15,56 @@ udver: '2'
 </tr>
 </table>
 
-Various languages have various means to express politeness or respect; some
-of the means are morphological. Three to four dimensions of politeness are
-distinguished in linguistic literature. The `Polite` feature currently covers
-(and mixes) two of them; a more elaborate system of feature values may be
-devised in future versions of UD if needed. The two axes covered are:
+丁寧さ (politenss) や尊敬 (respect) を表す手段は多岐にわたる; 1つの手段として，形態素を用いる方法がある．言語学の文献によると丁寧さの次元は3つから4つあるとされる．素性`Polite`は今のところ2つの次元を捉えることができる; 必要に応じて，UDの将来のバージョンではより洗練された値 (value) の体系が構築されるだろう．現時点でカバーされる2つの軸とは次のものである:
 
-* speaker-referent axis (meant to include the addressee when he happens to be the referent)
-* speaker-addressee axis (word forms depend on who is the addressee, although the addressee is not referred to)
+* 話者-指示対象 (聞き手が指示対象である場合も，これに含まれる)
+* 話者-聞き手 (聞き手が指示対象ではないが，聞き手が誰かによって語形が変化する)
 
-Changing pronouns and/or person and/or number of the verb forms when respectable
-persons are addressed in Indo-European languages belongs to the speaker-referent
-axis because the honorific pronouns are used to refer to the addressee.
+印欧語において代名詞が発話に含まれる際に代名詞もしくは動詞の人称 (person) および数 (number) が変更される現象は，話者-指示対象の軸に属する．尊敬代名詞 (honorific pronouns) は聞き手を指示するために用いられるからである．
 
-In Czech, formal second person has the same form for singular and plural, and
-is identical to informal second person plural. This involves both the pronoun
-and the finite verb but not a participle, which has no special formal form
-(that is, formal singular is identical to informal singular, not to informal plural).
+チェコ語ではフォーマルな2人称が単複同形であり，インフォーマルな2人称複数とも同一である．そのため，フォーマルな言い方をする場合であっても代名詞と定の動詞 (分詞 (participle) はそうでない) は特別な形式を持たない (つまり，フォーマルな単数形はインフォーマルな単数形と同一であるが，インフォーマルな複数形とは同一でない).<!--(that is, formal singular is identical to informal singular, not to informal plural).-->
 
-In German, Spanish or Hindi, both number and person are changed (informal third
-person is used as formal second person) and in addition, special pronouns are used
-that only occur in the formal register ([de] _Sie;_ [es] _usted, ustedes;_
+ドイツ語，スペイン語もしくはヒンディー語では，数と人称が変化する (インフォーマルな3人称はフォーマルな2人称として用いられる)．さらに，フォーマルな使用域 (register) でのみ生起する特別な代名詞がある ([de] _Sie;_ [es] _usted, ustedes;_
 [hi] आप _āpa_).
 
-In Japanese, verbs and other words have polite and informal forms but the polite
-forms are not referring to the addressee (they are not in second person). They
-are just used because of who the addressee is, even if the topic does not
-involve the addressee at all. This kind of polite language is called teineigo (丁寧語)
-and belongs to the speaker-addressee axis. Nevertheless, we currently use the
-same values for both axes, i.e. `Polite=Form` can be used for teineigo too.
-This approach may be refined in future.
+日本語では，動詞と他の語は丁寧さを表す形式とインフォーマルな形式を持つ．しかし，丁寧さを表す形式は聞き手を指示しない (2人称には存在しない)．主題 (topic) が聞き手に関与しないとしても，これらの形式は聞き手が誰なのかを示すために用いられる．この種の丁寧さを表すことばは丁寧語 (teineigo) と呼ばれ，これは話者-聞き手の軸に属する．しかし，現行の取り組みでは両軸に対して同じ値を用いる．つまり，`Polite=Form`が丁寧語にも用いられるということである．
 
-### <a name="Infm">`Infm`</a>: informal register
 
-Usage varies but if the language distinguishes levels of politeness, then
-the informal register is usually meant for communication with family
-members and close friends.
+### <a name="Infm">`Infm`</a>: インフォーマルな使用域 (informal register)
 
-Examples:
+使用法は多岐にわたる．ただし，当該言語が丁寧さのレベルを区別するとすれば，インフォーマルな使用域とは家族や近しい友人とのコミュニケーションを意味する．
+
+例:
 
 * [cs] _<b>ty jdeš / vy jdete</b>_ (you go.Sing/Plur)
 * [de] _<b>du gehst / ihr geht</b>_ (you go.Sing/Plur)
 * [es] _<b>tú vas / vosotros vais</b>_ (you go.Sing/Plur)
 * [ja] <b>行かない _ikanai_</b> (will not go)
 
-### <a name="Form">`Form`</a>: formal register
+### <a name="Form">`Form`</a>: フォーマルな使用域 (formal register)
 
-Usage varies but if the language distinguishes levels of politeness, then
-the polite register is usually meant for communication with strangers
-and people of higher social status than the one of the speaker.
+使用法は多岐にわたるが当該言語において丁寧さを区別するのであれば，フォーマルな使用域とは知らない人および話者よりも社会的地位が高い人とのコミュニケーションを意味する．
 
-Examples:
+例:
 
 * [cs] _<b>vy jdete</b>_ (you go.Sing/Plur)
 * [de] _<b>Sie gehen</b>_ (you go.Sing/Plur)
 * [es] _<b>usted va / ustedes van</b>_ (you go.Sing/Plur)
 * [ja] <b>行きません _ikimasen_</b> (will not go)
 
-### <a name="Elev">`Elev`</a>: referent elevating
+### <a name="Elev">`Elev`</a>: 指示対象の格上げ (referent elevating)
 
-This register belongs to the speaker-referent axis and can be seen as a subtype
-of the formal register there. As an example, Japanese sonkeigo (尊敬語) is a set
-of honorific forms that elevate the status of the referent.
+この使用域は話者-指示対象の軸に属し，フォーマルな使用域のサブタイプに属するものとして捉えられる.．例としては日本語の尊敬語 (sonkeigo) があり，これは指示対象の地位を上げるような尊敬形 (honorific forms) の集合を指す．
 
-* [ja] <b>なさる _nasaru,_</b> なさいます _nasaimasu_ (to do; when talking about a customer or a superior)
+* [ja] <b>なさる _nasaru,_</b> なさいます _nasaimasu_ (to do; 客や目上の人について話す場合)
 
-### <a name="Humb">`Humb`</a>: speaker humbling
+### <a name="Humb">`Humb`</a>: 話者の謙遜 (speaker humbling)
 
-This register belongs to the speaker-referent axis and can be seen as a subtype
-of the formal register there. As an example, Japanese kenjōgo (謙譲語) is a set
-of honorific forms that lower the speaker's status, thereby raising the referent's
-status by comparison.
+この使用域は話者-指示対象の軸に属し，フォーマルな使用域のサブタイプに属するものとして捉えられる．例としては日本語の謙譲語 (kenjōgo) があり，これは話者の地位を下げることによって相対的に指示対象の地位を上げるような尊敬形 (honorific forms) の集合を指す．
 
-* [ja] <b>いたす _itasu,_</b> いたします _itashimasu_ (to do; when referring to one's own actions or the actions of a group member)
+* [ja] <b>いたす _itasu,_</b> いたします _itashimasu_ (to do; 話者や話者の属するグループの成員による行為を指す場合)
 
-### References
+### 参考文献
 
 * Brown, Penelope and Stephen C. Levinson. 1987. Politeness: Some Universals in Language Usage. Studies in Interactional Sociolinguistics, Cambridge, UK: Cambridge University Press.
 * Comrie, Bernard. 1976. Linguistic politeness axes: Speaker-addressee, speaker-referent, speaker-bystander. Pragmatics Microfiche 1.7(A3). Department of Linguistics, University of

@@ -22,81 +22,64 @@ udver: '2'
 </tr>
 </table>
 
-This feature typically applies to
-[pronouns](u-pos/PRON),
-pronominal adjectives ([determiners](u-pos/DET)),
-pronominal [numerals](u-pos/NUM) (quantifiers) and
-pronominal [adverbs](u-pos/ADV).
+この素性は典型的に [代名詞 (pronouns)](u-pos/PRON),
+代名詞的形容詞 (pronominal adjectives) ([限定詞 (determiners)](u-pos/DET)), 代名詞的 [数詞 (numerals)](u-pos/NUM) (数量詞 (quantifiers)) および代名詞的 [副詞 (adverbs)](u-pos/ADV) に対して適用される.
 
-### <a name="Prs">`Prs`</a>: personal or possessive personal pronoun or determiner
+### <a name="Prs">`Prs`</a>: 人称代名詞，所有代名詞，限定詞
 
-See also the [Poss]() feature that distinguishes normal personal
-pronouns from possessives. Note that `Prs` also includes reflexive
-personal/possessive pronouns (e.g. [cs] _se / svůj;_ see the
-[Reflex]() feature).
+通常の人称代名詞が所有代名詞と区別されることについては[Poss]()を参照されたい．`Prs`は再帰代名詞/所有代名詞 (reflexive
+personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _se / svůj;_素性[Reflex]()を参照).
 
-#### Examples
+#### 例
 
 * [en] _I, you, he, she, it, we, they, my, your, his, her, its, our,
   their, mine, yours, hers, ours, theirs_
 * [cs] _já, ty, on, ona, ono, my, vy, oni, ony, se, můj, tvůj, jeho, její, náš,
   váš, jejich, svůj_
 
-### <a name="Rcp">`Rcp`</a>: reciprocal pronoun
+### <a name="Rcp">`Rcp`</a>: 相互代名詞 (reciprocal pronoun)
 
-This value is used for pronouns that are specifically reciprocal. If a reflexive pronoun can be used to convey reciprocal meaning,
-it is still labeled as reflexive (`PronType=Prs|Reflex=Yes`). It is not marked as reciprocal in contexts in which it is used
-reciprocally.
+この値は特に相互的である代名詞に対して用いられる．相互的意味が再帰代名詞によって表される場合，当該の語は依然として再帰代名詞としてラベル付けされる (`PronType=Prs|Reflex=Yes`). コンテクスト上で相互的な意味が現れる場合は，相互代名詞としては標示されない．
 
-Reciprocal means that there is a plural subject and every member of the group does the thing described by the predicate to
-every other member of the group. A reciprocal pronoun is used in the object position to signal such configuration.
+相互的とは，複数を表す主語がある場合に各成員が述語 (predicate) の指す行為を行うことを意味する．そのような意味を表すため，相互代名詞が目的語の位置において用いられる．
 
-#### Examples
+#### 例
 
 * [de] _einander_ “each other”
 * [da] _hinanden_ “each other”
 
-### <a name="Art">`Art`</a>: article
+### <a name="Art">`Art`</a>: 冠詞 (article)
 
-Article is a special case of determiner that bears the feature of
-[definiteness](Definite) (in other languages, the feature may be
-marked directly on nouns).
+冠詞は限定詞の特殊な事例であり，[定性 (definiteness)](Definite)の素性を持つ (他言語では，この素性は名詞に対して直接標示される.
 
-#### Examples
+#### 例
 
 * [en] _a, an, the_ 
 * [de] _ein, eine, der, die, das_ 
 * [es] _un, una, el, la_
 
-### <a name="Int">`Int`</a>: interrogative pronoun, determiner, numeral or adverb
+### <a name="Int">`Int`</a>: 疑問 (interrogative) 代名詞，限定詞，数詞，副詞
 
-Note that possessive interrogative determiners (_whose_) can be
-distinguished by the [Poss]() feature.
+所有疑問代名詞 (_whose_) は素性[Poss]()から区別される場合がある．
 
-#### Examples: 
+#### 例:
 
 * [cs/en] _kdo / who, co / what, který / which, čí / whose, kolik /
-  how many, how much, kolikátý / how-maniest_ (ordinal quantifier),
+  how many, how much, kolikátý / how-maniest_ (基数の数量詞),
   _kolikrát / how many times, kde / where, kam / where to, kdy / when,
   jak / how, proč / why_
 
-### <a name="Rel">`Rel`</a>: relative pronoun, determiner, numeral or adverb
+### <a name="Rel">`Rel`</a>: 関係 (relative) 代名詞，限定詞，数詞，副詞
 
-Note that in many languages this class heavily overlaps with
-interrogatives, yet there are pronouns that are only relative, and in
-some languages (Bulgarian, Hindi) the two classes are distinct.
+多くの言語において，このクラスは疑問詞 (interrogatives) と大いに重複する．とはいえ，関係詞のみに属する代名詞も存在し，言語 (ブルガリア語，ヒンディー語) によっては2つのクラスが独立している場合もある．
 
-#### Examples: 
+#### 例: 
 
-* [cs] _jenž, což_ “which”, “that” (relative but not interrogative
-  pronouns); _jehož_ “whose” (possessive relative pronoun)
+* [cs] _jenž, což_ “which”, “that” (疑問代名詞ではなく関係代名詞); _jehož_ “whose” (所有関係代名詞）
 
-### <a name="Exc">`Exc`</a>: exclamative determiner
+### <a name="Exc">`Exc`</a>: 感嘆の限定詞 (exclamative determiner)
 
-Exclamative pro-adjectives (determiners) express the speaker’s surprise towards
-the modified noun, e.g. _what_ in “What a surprise!” In many languages,
-exclamative determiners are recruited from the set of interrogative determiners.
-Therefore, not all tagsets distinguish them.
+感嘆の限定詞<!--Exclamative pro-adjectives (determiners)-->は，それが修飾している名詞に対する話者の驚きを表す (e.g. _what_ in “What a surprise!”) 多くの言語で感嘆の限定詞は疑問限定詞 (interrogative determiners) から選ばれるので，これらを区別しないタグセットも存在する．
 
 #### Examples: 
 
@@ -110,60 +93,54 @@ These are often parallel to interrogatives. Some tagsets might also
 distinguish a separate feature of distance (_here / there_; [es] _aquí
 / ahí / allí_).
 
-#### Examples
+#### 例
 
 * [cs/en] _tento / this, tamten / that, takový / such, týž / same,
-  tolik / so much, tolikátý / so-maniest_ (ordinal number), _tolikrát
+  tolik / so much, tolikátý / so-maniest_ (基数), _tolikrát
   / so many times, tady / here, tam / there, teď / now, tehdy / then,
   tak / so_
 
-### <a name="Emp">`Emp`</a>: emphatic determiner
+### <a name="Emp">`Emp`</a>: 強調の限定詞 (emphatic determiner)
 
-Emphatic pro-adjectives (determiners) emphasize the nominal they depend on.
-There are similarities with reflexive and demonstrative pronouns / determiners.
+強調の限定詞<!--Emphatic pro-adjectives (determiners)-->は，それが依存している名詞を強調する．これらは再帰代名詞や指示代名詞/限定詞に類似している．
 
-#### Examples
+#### 例
 
 * [ro] _însuși_
 * [cs] _sám_
-* [en] _himself_ as in “He himself did it.”
+* [en] _himself_ “He himself did it.” 内の
 
-### <a name="Tot">`Tot`</a>: total (collective) pronoun, determiner or adverb
+### <a name="Tot">`Tot`</a>: 集合 (collective) 代名詞，限定詞，副詞
 
-#### Examples
+#### 例
 
 * [cs/en] _každý / every, everybody, everyone, each, všechno /
   everything, all, všude / everywhere, vždy / always_
 
-### <a name="Neg">`Neg`</a>: negative pronoun, determiner or adverb
+### <a name="Neg">`Neg`</a>: 否定 (neganitve) 代名詞，限定詞，副詞
 
-Negative pronominal words are distinguished from negating [particles](u-pos/PART)
-and from words that inflect for polarity (verbs, adjectives etc.) Those words
-do not use `PronType=Neg`, they use `Polarity=Neg` instead. See the
-[Polarity]() feature for further details.
+否定代名詞は否定[不変化詞 (particles)](u-pos/PART)や極性 (polarity) に関して屈折する語 (動詞，形容詞など) とは区別される. これらの語には`PronType=Neg`を持ちいず，かわりに`Polarity=Neg`を用いる．詳細については[Polarity]()を参照されたい．
 
-#### Examples: 
+#### 例:
 
 * [cs/en] _nikdo / nobody, nic / nothing, nijaký / no, ničí / no
-  one's_ (possessive negative determiner), _žádný / no, none, nikde /
+  one's_ (否定の所有限定詞 (possessive negative determiner)), _žádný / no, none, nikde /
   nowhere, nikdy / never, nijak / no way_ (lit. “no-how”)
 
-### <a name="Ind">`Ind`</a>: indefinite pronoun, determiner, numeral or adverb
+### <a name="Ind">`Ind`</a>: 不定の代名詞，限定詞，数詞，副詞
 
-Note that some tagsets might further subclassify this category to
-distinguish “some” from “any” etc. Such distinctions are not part of
-universal features but may be added in language-specific extensions.
+タグセットによっては，このカテゴリに“some”と“any”などの区別によって下位分類を設けることがある．そのような区別は普遍的素性 (universal features) に含まれないが，特定の言語に拡張したものには追加されるかもしれない．
 
-#### Examples
+#### 例
 
 * [cs/en] _někdo / somebody, něco / something, některý / some, něčí /
-  someone's_ (possessive indefinite pronoun), _několik / a few,
-  several_ (indefinite numeral/quantifier), _několikátý / “a fewth”,
-  “severalth”_ (indefinite ordinal numeral), _několikrát / a few
+  someone's_ (不定の所有代名詞), _několik / a few,
+  several_ (不定の数詞/数量詞), _několikátý / “a fewth”,
+  “severalth”_ (不定の基数詞), _několikrát / a few
   times, several times, někde / somewhere, někdy / sometimes, nějak /
   somehow_
 * [cs/en] _kdokoli / anybody, cokoli / anything, kterýkoli / any,
-  číkoli / anyone's_ (possessive indefinite pronoun), _kdekoli /
+  číkoli / anyone's_ (不定の所有代名詞), _kdekoli /
   anywhere, kdykoli / any time, jakkoli / anyhow_
 * [cs/en] _málokdo / few people, leckdo / quite a few people, kdosi /
   somebody…_

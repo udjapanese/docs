@@ -4,11 +4,8 @@ title: 'Prefix'
 shortdef: 'Word functions as a prefix in a compund construction'
 ---
 
-Boolean feature. Is this a prefix word in a compound, that usually cannot stand on its own?
+この素性はブール型であり，複合語中の通常自立しないような接頭語 (prefix word) かどうかを決定する・
 
-These are words corresponding to prefixes such `inter-` (inter disciplinary), `post-` (post traumatic), `un-` (un avoidable), `di-` (di transitive) and so on in English, but which are 
-relized as distinct tokens (without the hyphen) in different languages.
+これらの語は`inter-` (inter disciplinary), `post-` (post traumatic), `un-` (un avoidable), `di-` (di transitive) といった英語の接頭辞に対応するが，他の言語では独立したトークン (ハイフンなしで) として実現される場合がある．
 
-### Yes: it is a prefix of a compound
-
-
+### Yes: 複合語における接頭辞である

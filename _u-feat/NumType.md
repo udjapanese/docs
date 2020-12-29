@@ -18,8 +18,7 @@ udver: '2'
 </tr>
 </table>
 
-Some languages (especially Slavic) have a complex system of
-[numerals](u-pos/NUM). For example, in the school grammar of Czech,
+いくつかの言語 (特にスラヴ語で) は[数 (numerals)](u-pos/NUM) の複雑な体系を備える．例えば，チェコ語の学校文法には"numeral"という数の主要な品詞があり，これは数えることに関してほとんど全てのものを包含し，いくつものサブタイプが存在する． <!--For example, in the school grammar of Czech,
 the main part of speech is "numeral", it includes almost everything
 where counting is involved and there are various subtypes. It also
 includes interrogative, relative, indefinite and demonstrative words
@@ -27,35 +26,27 @@ referring to numbers (words like _kolik / how many, tolik / so many,
 několik / some, a few),_ so at the same time we may have a non-empty
 value of [PronType]().  (In English, these words are called
 quantifiers and they are considered a subgroup of
-[determiners](u-pos/DET).)
+[determiners](u-pos/DET).)-->
 
-From the syntactic point of view, some numtypes behave like adjectives
-and some behave like adverbs. We tag them [u-pos/ADJ]() and
-[u-pos/ADV]() respectively. Thus the `NumType` feature applies to
-several different parts of speech:
+統語論の観点からいえば，形容詞のようにふるまうnumtypeもあれば，副詞のようにふるまうものもある．それぞれ，[u-pos/ADJ]()と[u-pos/ADV]()のようにタグ付けされる．このように，素性`NumType`はさまざまな品詞に適用される:
 
-* [u-pos/NUM](): cardinal numerals
-* [u-pos/DET](): quantifiers
-* [u-pos/ADJ](): definite adjectival, e.g. ordinal numerals
-* [u-pos/ADV](): adverbial (e.g. ordinal and multiplicative) numerals, both definite and pronominal
+* [u-pos/NUM](): 基数 (cardinal numerals)
+* [u-pos/DET](): 数量詞 (quantifiers)
+* [u-pos/ADJ](): 限定形容詞 (definite adjectival; e.g. 序数 (ordinal numerals))
+* [u-pos/ADV](): 副詞的な数詞 (e.g. 序数詞，倍数詞)で，限定的なものと代名詞的なものの両方をもつ
 
 ### <a name="Card">`Card`</a>: cardinal number or corresponding interrogative / relative / indefinite / demonstrative word
 
-Note that in some Indo-European languages there is a fuzzy borderline
-between numerals and nouns for _thousand, million_ and _billion._
+いくつかの印欧語では，_thousand_, _million_ や_billion_は数詞か名詞どちらに属すかが明瞭でない．
 
-#### Examples
+#### 例
 
 * [en] _one, two, three_
 * [cs] _jeden, dva, tři_ "one, two, three"; _kolik_ "how many";
   _několik_ "some"; _tolik_ "so many"; _mnoho_ "many"; _málo_ "few"
-* [cs] _<b>čtvero, patero, desatero</b>_ (specific forms of four, five, ten;
-  they are morphologically, syntactically and stylistically distinct from the
-  default forms _čtyři, pět, deset_; in Czech grammar they are classified
-  as "generic numerals", which also encompasses some other rare types;
-  nevertheless, `Card` is the closest match for them among the universal types.
+* [cs] _<b>čtvero, patero, desatero</b>_ (four, five, tenの特定の形式; これらは形態的，統語的，そして文体的にみてもデフォルト形式の_čtyři, pět, deset_とは区別される; チェコ語の文法では，これらは "generic numerals" と呼ばれ, 他のあまり見られないタイプも包含する; 普遍的なタイプの中でこれに最も近いのは`Card`である.)
 
-<!--
+<!--↓元々コメントアウト部分
 Czech:        <feat name="NumType" value="Gen" upos="ADJ">62</feat><!-- dvojí, obojí, dvojím, dvojího, obojím, trojí, dvojími, obého
 Czech CAC:    <feat name="NumType" value="Gen" upos="ADJ">33</feat><!-- dvojí, obojí, dvojím, trojí, dvojího, trojím, dvojímu, obojího, obojím
 Croatian:     <feat name="NumType" value="Gen" upos="NUM">85</feat><!-- obje, oba, obiju, 50%, deseci, objema, 20%, 30%, 9%, dvoje
@@ -67,9 +58,9 @@ Greek:        <feat name="NumType" value="Gen" upos="NUM">19</feat><!-- δεκά
 
 ### <a name="Ord">`Ord`</a>: ordinal number or corresponding interrogative / relative / indefinite / demonstrative word
 
-This is a subtype of adjective or (in some languages) of adverb.
+これは，形容詞か (いくつかの言語では) 副詞である．
 
-#### Examples
+#### 例
 
 * [en] _first, second, third;_
 * [cs] adjectival: _první_ "first"; _druhý_ "second", _třetí_ "third";
@@ -81,9 +72,9 @@ This is a subtype of adjective or (in some languages) of adverb.
 
 ### <a name="Mult">`Mult`</a>: multiplicative numeral or corresponding interrogative / relative / indefinite / demonstrative word
 
-This is subtype of adjective or adverb.
+これは，形容詞か副詞のサブタイプである．
 
-#### Examples
+#### 例
 
 * [sl] _dvojen_ "double, twofold"; _trojen_ "triple, threefold"; _četveren_ "fourfold"
 * [cs] _dvojí_ "twofold"; _trojí_ "threefold" (multiplicative adjectives)
@@ -93,12 +84,9 @@ This is subtype of adjective or adverb.
 
 ### <a name="Frac">`Frac`</a>: fraction
 
-This is a subtype of cardinal numbers, occasionally distinguished in
-corpora. It may denote a fraction or just the denominator of the
-fraction. In various languages these words may behave morphologically
-and syntactically as nouns or ordinal numerals.
+基数のサブタイプであり，コーパスによっては設定される．分数もしくは単に分母を表し，さまざまな言語で形態的，統語的に名詞もしくは序数詞としてふるまう．
 
-#### Examples
+#### 例
 
 * [en] _three-quarters_
 * [cs] _půl / polovina_ "half"; _třetina_ "one third"; _čtvrt /
@@ -106,33 +94,27 @@ and syntactically as nouns or ordinal numerals.
 
 ### <a name="Sets">`Sets`</a>: number of sets of things; collective numeral
 
-Morphologically distinct class of numerals used to count sets of
-things, or nouns that are pluralia tantum. Some authors call this type
-collective numeral.
+数詞の独立クラスであり，事物の集合を数えるために用いられる数詞か，絶対複数 (pluralia tantum) を示す名詞である．研究者によってはこのタイプを集合数詞 (collective numeral) と呼ぶことがある．
 
-#### Examples
+#### 例
 
 * [cs] _<b>dvoje</b> / <b>troje</b> boty_ "<b>two</b> / <b>three</b>
-  [pairs of] shoes"; as opposed to normal cardinal numbers: _dvě / tři
+  [pairs of] shoes"; 通常の基数詞とは区別される: _dvě / tři
   boty_ "two / three shoes"
 
 ### <a name="Dist">`Dist`</a>: distributive numeral
 
-Used to express that the same quantity is distributed to each member
-in a set of targets.
+同じ量が特定のターゲット内の各成員に配分されることを表す.
 
-#### Examples
+#### 例
 
 * [hu] _három-három in gyermekenként <b>három-három</b> ezer
   forinttal_ "three thousand forint per child"
 
-### <a name="Range">`Range`</a>: range of values
+### <a name="Range">`Range`</a>: 数値の範囲
 
-This could be considered a subtype of cardinal numbers, occasionally
-distinguished in corpora.
+基数のサブタイプと考えられ，コーパスによっては設定されることがある．
 
-#### Examples
+#### 例
 
-* [en] _two-five_ "two to five" (provided tokenization leaves it as
-  one token.)
-
+* [en] _two-five_ "two to five" (トークン化の際，全体を1つのトークンとして扱う.)

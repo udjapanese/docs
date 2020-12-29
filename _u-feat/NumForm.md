@@ -4,22 +4,16 @@ title: 'NumForm'
 shortdef: 'numeral form'
 ---
 
-Feature of cardinal and ordinal numbers. Is the number expressed by
-digits or as a word? This feature appears in 10+ tagsets that I
-studied. Note that it is a bit Euro-centric because it distinguishes
-(in some tagsets) (Euro)Arabic digits and Roman numerals, but what
-about digits in various other scripts? In texts in many Indian scripts
-and in the Arabic script both native digits and Euro-Arabic digits can
-appear (e.g. 2014 vs. २०१४ in Devanagari).
+この素性は基数 (cardinal number) と序数 (ordinal number) を表し，数が数字 (digit) から表されたのか語として表現されたのかを判別する．筆者の知る限り，この素性は10つ以上のタグセットにみられる．この素性は(ヨーロッパ)アラビア数字とローマ数字を区別するため，欧米言語を中心に用いられる傾向にある．では，他の書記体系ではどうだろうか． インドの書記体系やアラビア語の文字では，当該言語の数字とヨーロッパ・アラビア数字の両方が生起する(e.g. 2014 vs. デヴァナーガリーの२०१४).
 
-### Word: number expressed as word
+### Word: 語として表現された数
 
-Examples: one, two, three
+例: one, two, three
 
-### Digit: number expressed using digits
+### Digit: 数字を用いて表現された数
 
-Examples: 1, 2, 3
+例: 1, 2, 3
 
-### Roman: roman numeral
+### Roman: ローマ数字
 
-Examples: I, II, III
+例: I, II, III

@@ -15,25 +15,16 @@ udver: '2'
 </tr>
 </table>
 
-Similarly to [Gender]() (and to the African noun classes), animacy is
-usually a lexical feature of [nouns](u-pos/NOUN) and inflectional feature
-of other parts of speech ([pronouns](u-pos/PRON),
+
+Similarly to [性 (Gender)]() (アフリカ諸語の名詞クラス) と同じように，有生性 (animacy) は [名詞 (nouns)](u-pos/NOUN) についての特徴であり，名詞との一致 (agreement) を標示する他の品詞 ([代名詞 (pronouns)](u-pos/PRON),
 [adjectives](u-pos/ADJ), [determiners](u-pos/DET), [numerals](u-pos/NUM),
-[verbs](u-pos/VERB)) that mark agreement with
-nouns. Some languages distinguish only gender, some only animacy,
-and in some languages both gender and animacy play a role in the grammar.
-(Some non-UD tagsets then combine the two features into an extended system
-of genders; however, in UD the two features are annotated separately.)
+[verbs](u-pos/VERB))における屈折素性 (inflectional feature) でもある．
+言語によっては性についてのみ区別するものや，有生性についてのみ区別するものもある．また，性と有生性の両方が文法に何らかの役割を果たす言語もある．
+(UD以外のタグセットでは2つの素性を性の拡張システム (extended system) に包括する場合がある; ただし，UDでは別々のタグ付けを行う)
 
-Similarly to gender, the values of animacy refer to semantic properties of the
-noun, but this is only an approximation, referring to the prototypical members
-of the categroy. There are nouns that are treated as grammatically animate,
-although semantically the are inanimate.
+性と同じように有生性の値 (value) は名詞の意味特徴を表すが，あくまでも近似に過ぎない．当該カテゴリの典型的な成員を表すだけである．文法的には有生と扱われるが，意味的には無生物 (inanimate) である名詞も存在する．
 
-The following table is an example of a three-way animacy distinction
-(human – animate nonhuman – inanimate) in the declension of the masculine
-determiner _który_ "which" in Polish (boldface forms in the upper and lower
-rows differ from the middle row):
+以下の表は，ポーランド語の男性 (masculines) 決定詞_który_ "which" の曲用 (declension) について，有生性から3通りの区別 (人間-人間以外の生物-無生物) を与えるものである (上部と下部の行にある太字部分は，中間部の行とは区別される):
 
 |------------------------------------------------------------------------------------------------------------------------------------------------|
 | gender            | sg-nom | sg-gen  | sg-dat  | sg-acc      | sg-ins | sg-loc | pl-nom     | pl-gen  | pl-dat | pl-acc      | pl-ins  | pl-loc  |
@@ -44,8 +35,8 @@ rows differ from the middle row):
 |------------------------------------------------------------------------------------------------------------------------------------------------|
 {: cellpadding="2" cellspacing="0" }
 
-In the corresponding paradigm of Czech, only two values are distinguished:
-masculine animate and masculine inanimate:
+チェコ語の対応するパラダイムでは，2つの値についてのみ区別される:
+男性・有生と男性・無生物
 
 |------------------------------------------------------------------------------------------------------------------------------------------------|
 | gender            | sg-nom | sg-gen  | sg-dat  | sg-acc      | sg-ins | sg-loc | pl-nom     | pl-gen  | pl-dat | pl-acc      | pl-ins  | pl-loc  |
@@ -55,33 +46,20 @@ masculine animate and masculine inanimate:
 |------------------------------------------------------------------------------------------------------------------------------------------------|
 {: cellpadding="2" cellspacing="0" }
 
+より一般的に言えば，言語には有生と無生物 (e.g. チェコ語の男性) を区別するもの，人間と人間以外 (e.g. RyukyuanのYuwan語) を区別するもの，そして人間と人間以外，有生と無生物の3通りの区別を行うもの (e.g. ポーランド語の男性) がある.
 
-More generally: Some languages distinguish animate vs. inanimate (e.g. Czech
-masculines), some languages distinguish human vs. non-human (e.g. Yuwan, a
-Ryukyuan language), and others distinguish three values, human vs. non-human
-animate vs. inanimate (e.g. Polish masculines).
+### <a name="Anim">`Anim`</a>: 有生物
 
-### <a name="Anim">`Anim`</a>: animate
+人間，動物，架空の人物，職名などは，通常は有生物 (animate) である．擬人化された (personified) 場合，通常非生物であるような名詞であっても有生の屈折を受ける．また，特定の言語における特定の語は意味的な理由がなくとも，文法上有生物としてふるまうものがある．
 
-Human beings, animals, fictional characters, names of professions
-etc. are normally animate. Even nouns that are normally inanimate can be
-inflected as animate if they are personified. And some words in some
-languages can grammatically behave like animates although there is no
-obvious semantic reason for that.
+### <a name="Inan">`Inan`</a>: 無生物
 
-### <a name="Inan">`Inan`</a>: inanimate
+有生物でない名詞は無生物 (inanimate) である
 
-Nouns that are not animate are inanimate.
+### <a name="Hum">`Hum`</a>: 人間
 
-### <a name="Hum">`Hum`</a>: human
+有生物のサブセットには，典型的な成員が人間 (human) であり，動物 (animal) でないようなものがある．ここでも例外として，意味的には整合しないが文法上人間のクラスに属するような名詞が存在する．
 
-A subset of animates where the prototypical member is a human being but not
-an animal. Again, there may be exceptions that do not fit the class semantically
-but belong to it grammatically.
+### <a name="Nhum">`Nhum`</a>: 非人間
 
-### <a name="Nhum">`Nhum`</a>: non-human
-
-In languages that only distinguish human from non-human, this value includes
-inanimates. In languages that distinguish human animates, non-human animates
-and inanimates, this value is used only for non-human animates, while `Inan`
-is used for inanimates.
+人間と非人間 (non-human) についてのみ区別する言語において，この値 (non-human) には無生物 (inanimate) も含まれている．人間・生物，非人間・生物．非人間・無生物の3通りを区別する言語では，この値 (non-human) は非人間・生物を表す場合にのみ用いられる．そして，`Inan`が無生物に対して用いられる．
