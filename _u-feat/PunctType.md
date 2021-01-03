@@ -4,7 +4,7 @@ title: 'PunctType'
 shortdef: 'punctuation type'
 ---
 
-多くのタグセットでは記号 (punctuation) に1つのタグだけを備える一方，他 (Penn Treebank や Swedish Mamba tagset を含む) では記号をより細かに分類している.
+多くのタグセットでは記号 (punctuation) について1つのタグだけを備える一方，他 (Penn Treebank や Swedish Mamba tagset を含む) では記号をより細かに分類している.
 
 ### Peri: 文末ピリオド; Pennタグセットでは，クエスチョンマークとエクスクラメーションも含む
 

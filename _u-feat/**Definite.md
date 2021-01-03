@@ -41,7 +41,7 @@ udver: '2'
 
 ### <a name="Cons">`Cons`</a>: 連語形 (construct state / reduced definiteness)
 
-[連語形 (construct state)](http://en.wikipedia.org/wiki/Status_constructus) はアラビア語で用いられる．2つの名詞が所有関係 (genitive relation) にあるとき，先頭の名詞 ("nomen regens") は"reduced definiteness"を有し，後続の名詞は属格であり定か不定である．Reduced formは定の形態素 (冠詞) および不定の形態素 (nunation) を持たない．
+[連語形 (construct state)](http://en.wikipedia.org/wiki/Status_constructus) はアラビア語で用いられる．2つの名詞が所有関係 (genitive relation) にあるとき，先頭の名詞 ("nomen regens") は"reduced definiteness"を有し，後続の名詞は属格となり，それは定か不定のどちらかである．Reduced formは定の形態素 (冠詞) および不定の形態素 (nunation) を持たない．
 
 UD v1において，この値は`Red`と呼ばれた．UD v2では`Cons`とリネームされた．
 

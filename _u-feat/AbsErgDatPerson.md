@@ -13,17 +13,17 @@ shortdef: 'person agreement with absolutive/ergative/dative argument'
 * `Person[erg]` は動詞の能格項の人称を表す．Interset 2.041で対応する素性は`ergperson`である．
 * `Person[dat]` は動詞の与格項の人称を表す．Interset 2.041で対応する素性は`datperson`である．
 
-`Person[abs]`ではなく，単に`Person`を用いたくなるかもしれないが，それには問題が2点存在する (少なくともバスク語において)．まず，絶対格項は常に主語となるわけではない．他動詞では絶対格項が目的語となるため，主格-対格言語 (nominative-accusative languages) と並行的を見出す根拠は薄い．
-次に，`Number[abs]` (`Number`と`Number[abs]`の両方が一つの語に生起可能) の使用が不可避であるため，両方の素性が同じ一致レイヤーに属すことを示すためにも`Person[abs]`を用い続ける．
+`Person[abs]`ではなく，単に`Person`を用いたくなるかもしれないが，それには問題が2点存在する (少なくともバスク語において)．まず，絶対格項は常に主語となるわけではない．他動詞では絶対格項が目的語となるため，主格-対格言語 (nominative-accusative languages) との並行性を見出す根拠は薄い．
+また，`Number[abs]` (`Number`と`Number[abs]`の両方が一つの語に生起可能) の使用が不可避であるため，両方の素性が同じ一致レイヤーに属することを示すためにも`Person[abs]`を用い続ける．
 
-### 1: first person
+### 1: 1人称
 
 例: [eu] _dakarkio<b>gu</b>_ `Person[erg]=1`
 
-### 2: second person
+### 2: 2人称
 
 例: [eu] _dakarkio<b>zu</b>_ `Person[erg]=2`
 
-### 3: third person
+### 3: 3人称
 
 例: [eu] _<b>d</b>akarki<b>o</b>gu_ `Person[abs]=3|Person[dat]=3`

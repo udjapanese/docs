@@ -19,7 +19,7 @@ udver: '2'
 </tr>
 </table>
 
-名前からしてこの素性は[動詞 (verbs)](u-pos/VERB)だけに適用されるようにみえるが，実際はそうでない．当該形式が動詞か他の品詞 ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ)，[副詞 (adverbs)](u-pos/ADV)) どちらに属するかが不明瞭であるような言語も存在するからである．
+名前からして，この素性は[動詞 (verbs)](u-pos/VERB) だけに適用されるように思えるが，実際はそうでない．当該形式が動詞か他の品詞 ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ)，[副詞 (adverbs)](u-pos/ADV)) のどちらに属するかが不明瞭であるような言語も存在するからである．
 例えば，分詞 (participles) は動詞か形容詞のいずれに分類されるが，これは言語やコンテクストに左右される．どちらの場合であっても，`VerbForm=Part`は他の動詞形や形容詞形から区別するのに用いられるだろう．
 
 ### <a name="Fin">`Fin`</a>: 定動詞 (finite verb)
@@ -34,7 +34,7 @@ udver: '2'
 
 ### <a name="Inf">`Inf`</a>: 不定詞 (infinitive)
 
-多くの言語で不定詞は動詞の引用形である．英語とは異なり，不定詞は定動詞と語形が異なる場合が多い．不定詞は助動詞 (auxiliaries) と組み合わせることで時制 (e.g. 未来時制 [cs] _budu <b>sedět</b> vletadle_ "I will sit in a plane") を迂言的に表すことがあり，法助動詞 (modal verbs) などの項として生起する．言語によっては不定詞が名詞のようにふるまうことがあり，そのように使用される (英語の動名詞のように)．
+多くの言語で，不定詞は動詞の引用形である．英語とは異なり，不定詞は定動詞と語形が異なる場合が多い．不定詞は助動詞 (auxiliaries) と組み合わせることで時制 (e.g. 未来時制 [cs] _budu <b>sedět</b> vletadle_ "I will sit in a plane") を迂言的に表すことがあり，それは法助動詞 (modal verbs) などの項として生起する．言語によっては不定詞が名詞のようにふるまうことがあり，名詞として使用される (英語の動名詞のように)．
 
 #### 例
 
@@ -63,9 +63,9 @@ udver: '2'
 * [en] _he could have <b>been prepared</b> if he had
   <b>forseen</b> it_; _I will be <b>driving</b> home_.
 
-### <a name="Conv">`Conv`</a>: 副動詞 (converb), 同時形 (transgressive), 副詞分詞 (adverbial participle), 動詞的副詞 (verbal adverb)
+### <a name="Conv">`Conv`</a>: 副動詞 (converb), 同時形 (transgressive), 副詞的分詞 (adverbial participle), 動詞的副詞 (verbal adverb)
 
-副動詞は副詞的分詞や同時形 (transgetessive) とも呼ばれ，これは動詞と副詞の性質をもつ不定動詞である．副動詞はスラブ語やインド・アーリヤ諸語に生起する．
+副動詞は副詞的分詞や同時形 (transgreessive) とも呼ばれ，これは動詞と副詞の性質をもつ不定動詞である．副動詞はスラブ語やインド・アーリヤ諸語に生起する．
 
 この値はUDv1では`Trans`と呼ばれたが，UDv2では`Conv`と呼称されている．
 
@@ -84,7 +84,7 @@ udver: '2'
 
 動名詞は動詞と名詞の性質を備えた不定動詞である．英語において動名詞の形式は現在分詞と同一であるため，本タグセットでは両者を区別しない．
 
-`VerbForm=Ger`の使用は推奨できない．スペイン語などでは_動名詞 (gerund)_という用語が混乱を生むので，別の値を用いることを推奨する: スペイン語 (および他のロマンス諸語) では，これは現在分詞を指すので`Tense=Pres|VerbForm=Part`としてラベル付けすべきである; スラブ語では副動詞 (副詞的な分詞) を指すので，`VerbForm=Conv`としてラベル付けすべきである; また，UDv1 では動詞名詞 (verbal nouns) に対して用いることが推奨されたので，UDv2 では`VerbForm=Vnoun`を用いる．
+`VerbForm=Ger`の使用は推奨できない．スペイン語などでは_動名詞 (gerund)_という用語が混乱を生むので，別の値を用いることを推奨する: スペイン語 (および他のロマンス諸語) では，これは現在分詞を指すので`Tense=Pres|VerbForm=Part`としてラベル付けすべきである; スラブ語では副動詞 (副詞的分詞) を指すので，`VerbForm=Conv`としてラベル付けすべきである; また，UDv1では動詞名詞 (verbal nouns) に対して用いることが推奨されたので，UDv2では`VerbForm=Vnoun`を用いる．
 
 しかし，素性`VerbForm=Ger`はUDv2でも利用可能であって，他の選択肢がなければ許容される．この素性は将来のバージョンで削除されるだろうが，ともかく包括的な調査が必要である．
 
@@ -93,9 +93,9 @@ udver: '2'
 * [en] _I look forward to <b>seeing</b> you_; _he turns a blind
   eye to my <b>being</b> late_
 
-### <a name="Vnoun">`Vnoun`</a>: 動詞名詞 (verbal noun, masdar)
+### <a name="Vnoun">`Vnoun`</a>: 動詞的名詞 (verbal noun, masdar)
 
-動詞名詞は不定詞 (infinitives) とは区別される．研究者によっては，これは"masdars"と呼ばれることがある (e.g. Haspelmath, 1995)
+動詞的名詞は不定詞 (infinitives) とは区別される．研究者によっては，これは"masdars"と呼ばれることがある (e.g. Haspelmath, 1995)
 
 #### 例
 

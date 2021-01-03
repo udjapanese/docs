@@ -24,10 +24,11 @@ Examples: yes, no
 
 Examples: [en] to, [de] zu, [da] at, [sv] att
 
-### Vbp: separated verb prefix in German
+### Vbp: ドイツ語における分離した動詞の接頭辞
 
-他のゲルマン語には動詞不変化詞に類するものがあり，それらは側置詞 (adposition) や副詞と重複する．これらには側置詞/副詞としてタグ付けした上で素性`Vbp`を追加するべきだろうか?
+他のゲルマン語には動詞不変化詞に類するものがあり，それらは側置詞 (adposition) や副詞に重複する．これらについては，側置詞/副詞のタグを付与した上で素性`Vbp`を追加するべきだろうか?
+
   Examples: [de] vor
 (in "stellen Sie sich vor")
 
-加えて，複数の言語には疑問不変化詞 (question particles; 文を疑問にする i.e. 疑問マーカーとして音声化されるものの一種) や否定不変化詞 (英語の"not", ドイツ語のGerman "nicht"など; 人によってはこれらを副詞と呼ぶ). Intersetにあるこれらの2タイプを捉えるため，"prontype"の値"int"および"neg"を多用してきたが，prontypeが他の品詞に属することから，この方法には不満が残らないわけではない．素性"PartType"を維持するとすれば，ここでも値"int"と"neg"を追加しておきたい．
+加えて，複数の言語には疑問不変化詞 (question particles; 疑問文にする i.e. 疑問マーカーとして音声化されるものの一種) や否定不変化詞 (英語の"not", ドイツ語のGerman "nicht"など; 人によってはこれらを副詞と呼ぶ). Intersetにあるこれら2タイプを捉えるため，"prontype"の値として"int"および"neg"を多用してきたが，prontypeが他の品詞に属することから，この方法には不満が残らないわけではない．しかし，素性"PartType"を維持するとすれば，ここでもやはり値"int"と"neg"を追加しておきたい．

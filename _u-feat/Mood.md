@@ -23,11 +23,11 @@ udver: '2'
 </tr>
 </table>
 
-法 (mood) はモダリティ (modality) を表し，定動詞の語形の下位範疇を形成する．
+法・ムード (mood) はモダリティ (modality) を表し，定動詞の語形の下位範疇を形成する．
 
 ### <a name="Ind">`Ind`</a>: 直接法 (indicative)
 
-直接法はデフォルトの法だと考えられる．直接法をとる動詞は，単に何かが起きる/起きた/起きるだろうということを表すだけであり，話者の態度 (attitude) は一切加えられない.
+直接法はデフォルトの法だと考えられる．直接法をとる動詞は，単に何かが起きる/起きた/起きるだろう ということを表すだけであり，話者の態度 (attitude) は一切加えられない.
 
 #### 例
 
@@ -54,16 +54,13 @@ udver: '2'
 
 ### <a name="Cnd">`Cnd`</a>: 条件法 (conditional)
 
-条件法は特定の状況下で起きる行為を表すが，それは実際には起こらない/起きない．いくつかの言語の文法では条件法を (法ではなく) 時制 (tense) に分類するが，チェコ語のような言語では条件法を2種の時制 (過去時制，現在時制) と組み合わせる．
+条件法は特定の状況下で起きる行為を表すが，それは実際には 起こらない/起きない．いくつかの言語の文法では条件法を (法ではなく) 時制 (tense) に分類するが，チェコ語といった言語では条件法を時制 (2種の時制; 過去時制，現在時制) との組み合わせによって表現する．
 
 #### 例
 
 * [cs] <i>Kdy<b>bych</b> byl chytrý, studoval <b>bych</b> na
   univerzitě.</i> "If I were smart I <b>would</b> study at the
-  university" (助動詞の_bych_だけが条件法に特有のものである; the active participle _byl_ is also needed to
-  analytically form the conditional mood, however, it will only be
-  tagged as participle because it can also be used to form past tense
-  indicative.)
+  university" (助動詞の_bych_だけが条件法に特有のものである; 能動的な分詞_byl_ は条件法を分析的に形成するのに必要であるが，過去時制の直接法を形成するためにも用いられるので_byl_は単に分詞としてタグ付けられる．)
 * [tr] *eve <b>gittiyse</b>* "if she went home"
 * [tr] *eve <b>gidiyorsa</b>* "if she is going home"
 * [tr] *eve <b>giderse</b>* "if she goes home"
@@ -71,7 +68,7 @@ udver: '2'
 
 ### <a name="Pot">`Pot`</a>: 可能法 (potential)
 
-可能法は動詞の示す行為が起こりうることを表すが，それ実現するかどうかは分からない.この法は法動詞_can, might, be able to_に対応する．可能法はフィンランド語などで用いられる．希求法 (optative) も参照されたい．
+可能法は動詞の示す行為が起こりうることを表すが，それ実現するかどうかは分からない．このムードは法動詞_can, might, be able to_に対応する．可能法はフィンランド語などで用いられる．また，希求法 (optative) も参照されたい．
 
 #### 例
 
@@ -80,7 +77,7 @@ udver: '2'
 
 ### <a name="Sub">`Sub`</a>: 接続法 (subjunctive / conjunctive)
 
-接続法は特定の状況下において従属節 (subordinate clauses) で用いられ，特定の行為が想像上のもの，もしくは実現が不確かであることを表す．ドイツ語では，接続法は条件の意味を伝達するのに用いられる．
+接続法は特定の状況下で従属節 (subordinate clauses) に用いられ，それは特定の行為が想像上のもの，もしくは実現が不確かであることを表す．ドイツ語では，接続法は条件的意味を伝達するのに用いられる．
 
 #### 例
 
@@ -89,7 +86,7 @@ udver: '2'
 
 ### <a name="Jus">`Jus`</a>: 指令法 (jussive / injunctive)
 
-指令法は特定の行為が起こる望みを表す; これは命令法 (imperative) と希求法 (optative) の両方に類似している．願望法 (desiderative) とは異なり，それが起きることを望んでいるのは主語ではなく話者である．指令法はアラビア語などで用いられる．また，サンスクリット語の指令法 (injunctive) は`Mood=Jus`へ対応づけられる.
+指令法は特定の行為が起こる望みを表す; これは命令法 (imperative) と希求法 (optative) の両方に類似している．願望法 (desiderative) とは異なり，行為が起きることを望んでいるのは主語ではなく常に話者である．指令法はアラビア語などで用いられる．また，サンスクリット語の指令法 (injunctive) は`Mood=Jus`へ対応づけられる.
 
 #### 例
 
@@ -105,7 +102,7 @@ udver: '2'
 
 ### <a name="Opt">`Opt`</a>: 希求法 (optative)
 
-希求法は "May you have a long life!" や "If only I were rich!" のように，感嘆の意を表す．トルコ語では提案も表し，サンスクリット語では可能性も表す (他言語における可能法 (potential mood) に相当)．
+希求法は "May you have a long life!" や "If only I were rich!" のように用いられ，感嘆の意を示す．トルコ語では提案も表し，サンスクリット語では可能性も表す (他言語における可能法 (potential mood) に相当)．
 
 #### 例
 

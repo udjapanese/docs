@@ -13,11 +13,11 @@ udver: '2'
 </tr>
 </table>
 
-包括性 (clusivity) とは，1人称複数[代名詞 (pronouns)](u-pos/PRON)に関する特徴を指し，[動詞 (verbs)](u-pos/VERB)の屈折にも反映される (e.g. Plains Cree (Wolvengrey 2011 p. 66))
+包括性 (clusivity) とは，1人称複数[代名詞 (pronouns)](u-pos/PRON) についての特性を指す．また，包括性は[動詞 (verbs)](u-pos/VERB) の屈折にも反映される (e.g. Plains Cree (Wolvengrey 2011 p. 66))
 
 ### <a name="In">`In`</a>: 内包的 (inclusive)
 
-聞き手を含む (i.e. _we_ = _I + you_ (+_they_))
+聞き手を含む (i.e. _we_ = _I + you_ (+_they_))．
 
 #### 例
 
@@ -26,7 +26,7 @@ udver: '2'
 
 ### <a name="Ex">`Ex`</a>: 排他的 (exclusive)
 
-聞き手を排除する (i.e. _we_ = _I + they._)
+聞き手を排除する (i.e. _we_ = _I + they_)．
 
 #### 例
 

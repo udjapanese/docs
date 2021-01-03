@@ -19,9 +19,9 @@ udver: '2'
 </tr>
 </table>
 
-ヴォイス・態 (voice) は典型的には[動詞 (verbs)](u-pos/VERB)の素性である．動名詞 (gerunds) や分詞 (participles) といった境界線上にあるような語形が動詞として分類されるか否かによって，この素性は他の品詞にも生起する ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ), [副詞 (adverbs)](u-pos/ADV)).
+ヴォイス・態 (voice) は，典型的には[動詞 (verbs)](u-pos/VERB) の素性である．動名詞 (gerunds) や分詞 (participles) といった境界線上にあるような語形が動詞として分類されるか否かによって，この素性は他の品詞にも生起する ([名詞 (nouns)](u-pos/NOUN), [形容詞 (adjectives)](u-pos/ADJ), [副詞 (adverbs)](u-pos/ADV)).
 
-印欧語話者にとって，ヴォイスとは主に能動態-受動態の区別を意味する．他言語では，動詞が仄めかす意味がヴォイスとしてカテゴリ化される．
+印欧語話者にとって，ヴォイスとは主に能動態-受動態の区別を意味する．他言語では，動詞の仄めかす意味がヴォイスとしてカテゴリ化される．
 
 ### <a name="Act">`Act`</a>: 能動態 (active voice)
 
@@ -38,11 +38,11 @@ udver: '2'
 
 ### <a name="Pass">`Pass`</a>: 受動態 (passive voice)
 
-動詞の主語が被動作主 (patient) である．動作主 (agent) は明示されないか動詞の目的語として生起する．
+動詞の主語は被動作主 (patient) である．動作主 (agent) は明示されないか動詞の目的語として生起する．
 #### Examples
 
 * [cs] _Jsme <b>napadeni</b> nepřítelem._ “We are <b>attacked</b> by
-  the enemy” (全ての時制 (tense) において，受動分詞_napadeni_は受動態を形成するのに用いられる．)
+  the enemy” (全ての時制において，受動分詞_napadeni_は受動態を形成するのに用いられる).
 
 ### <a name="Antip">`Antip`</a>: 逆受動態 (antipassive voice)
 
@@ -50,11 +50,11 @@ udver: '2'
 
 ### <a name="Dir">`Dir`</a>: 順行態 (direct voice)
 
-順行-逆行のヴォイス体系を採用する北アメリカ言語に用いられる．順行態とは，際立ちの階層 (salience hierarchy) の高い項が主語であることを指す．階層の例: 人間 1人称 – 2人称 – 3人称 – 非人間有生物 – 無生物.
+順行-逆行のヴォイス体系を採用する北アメリカ言語で用いられる．順行態とは，際立ちの階層 (salience hierarchy) の高い項が主語であることを指す．階層の例: 人間 1人称 – 2人称 – 3人称 – 非人間有生物 – 無生物.
 
 ### <a name="Inv">`Inv`</a>: 逆行態 (inverse voice)
 
-順行-逆行のヴォイス体系を採用する北アメリカ言語に用いられる．逆行態とは，際立ちの低い項が目的語として機能することを示すヴォイス標示体系である．
+順行-逆行のヴォイス体系を採用する北アメリカ言語で用いられる．逆行態とは，際立ちの低い項が目的語として機能することを示すヴォイス標示体系である．
 
 ### <a name="Rcp">`Rcp`</a>: 相互態 (reciprocal voice)
 
@@ -64,7 +64,7 @@ udver: '2'
 
 ### <a name="Cau">`Cau`</a>: 使役態 (causative voice)
 
-<A HREF="https://wiki.ufal.ms.mff.cuni.cz/_media/user:zeman:treebanks:ttbankkl.pdf">METU Sabanci treebankのドキュメンテーション</A>では，使役形 (causative) がヴォイスの一種として分類される (p.26)．これは動詞の素性であるが，名詞の原因格 (causative case) を持つ言語も存在する．
+<A HREF="https://wiki.ufal.ms.mff.cuni.cz/_media/user:zeman:treebanks:ttbankkl.pdf">METU Sabanci treebankのドキュメンテーション</A>では，使役形 (causative) がヴォイスの一種として分類される (p.26)．これは動詞の素性であるが，名詞の原因格 (causative case) も同時に持つような言語も存在する．
 
 #### 例
 

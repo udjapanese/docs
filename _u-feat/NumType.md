@@ -18,15 +18,7 @@ udver: '2'
 </tr>
 </table>
 
-いくつかの言語 (特にスラヴ語で) は[数 (numerals)](u-pos/NUM) の複雑な体系を備える．例えば，チェコ語の学校文法には"numeral"という数の主要な品詞があり，これは数えることに関してほとんど全てのものを包含し，いくつものサブタイプが存在する． <!--For example, in the school grammar of Czech,
-the main part of speech is "numeral", it includes almost everything
-where counting is involved and there are various subtypes. It also
-includes interrogative, relative, indefinite and demonstrative words
-referring to numbers (words like _kolik / how many, tolik / so many,
-několik / some, a few),_ so at the same time we may have a non-empty
-value of [PronType]().  (In English, these words are called
-quantifiers and they are considered a subgroup of
-[determiners](u-pos/DET).)-->
+いくつかの言語 (特にスラヴ語で) は，[数 (numerals)](u-pos/NUM) の複雑な体系を備える．例えば，チェコ語の学校文法では"numeral"という数についての主要な品詞があり，これは数えることに関してほとんど全てのものを包含し，いくつものサブタイプが存在する．また，これには，数 (_kolik / how many, tolik / so many, několik / some, a few_といった語) を指示する疑問詞 (interrogative), 関係詞 (relative), 不定の指示語 (indefinite and demonstrative words) も含まれ，[PronType]()において，これらは空でない値を持つだろう (英語では，これらの語は数量詞 (quantifier) と呼ばれ，[限定詞 (determiners)](u-pos/DET) の下位グループに属する)．
 
 統語論の観点からいえば，形容詞のようにふるまうnumtypeもあれば，副詞のようにふるまうものもある．それぞれ，[u-pos/ADJ]()と[u-pos/ADV]()のようにタグ付けされる．このように，素性`NumType`はさまざまな品詞に適用される:
 
@@ -35,9 +27,9 @@ quantifiers and they are considered a subgroup of
 * [u-pos/ADJ](): 限定形容詞 (definite adjectival; e.g. 序数 (ordinal numerals))
 * [u-pos/ADV](): 副詞的な数詞 (e.g. 序数詞，倍数詞)で，限定的なものと代名詞的なものの両方をもつ
 
-### <a name="Card">`Card`</a>: cardinal number or corresponding interrogative / relative / indefinite / demonstrative word
+### <a name="Card">`Card`</a>: 基数 (ordinal number) か，それに対応する疑問詞 / 関係詞 / 不定詞 / 指示語
 
-いくつかの印欧語では，_thousand_, _million_ や_billion_は数詞か名詞どちらに属すかが明瞭でない．
+いくつかの印欧語では，_thousand_, _million_ や_billion_に相当する語は数詞か名詞どちらに属すかが明瞭でない．
 
 #### 例
 
@@ -56,7 +48,7 @@ Italian:      <feat name="NumType" value="Gen" upos="NUM">21</feat><!-- 6', 1'13
 Greek:        <feat name="NumType" value="Gen" upos="NUM">19</feat><!-- δεκάδες, χιλιάδες, εκατοντάδες, χιλιάδων, διπλάσιο, εκατοντάδων
 -->
 
-### <a name="Ord">`Ord`</a>: ordinal number or corresponding interrogative / relative / indefinite / demonstrative word
+### <a name="Ord">`Ord`</a>: 序数 (ordinal number) か，それに対応する疑問詞 / 関係詞 / 不定詞 / 指示語
 
 これは，形容詞か (いくつかの言語では) 副詞である．
 
@@ -82,9 +74,9 @@ Greek:        <feat name="NumType" value="Gen" upos="NUM">19</feat><!-- δεκά
   _kolikrát_ "how many times", _několikrát_ "several times";
   _tolikrát_ "so many times" (multiplicative adverbs)
 
-### <a name="Frac">`Frac`</a>: fraction
+### <a name="Frac">`Frac`</a>: 分数 (fraction)
 
-基数のサブタイプであり，コーパスによっては設定される．分数もしくは単に分母を表し，さまざまな言語で形態的，統語的に名詞もしくは序数詞としてふるまう．
+基数のサブタイプに属し，コーパスによっては設定されることがある．これは分数もしくは単に分母を表し，さまざまな言語で形態的，統語的に名詞もしくは序数詞としてふるまう．
 
 #### 例
 
@@ -92,9 +84,9 @@ Greek:        <feat name="NumType" value="Gen" upos="NUM">19</feat><!-- δεκά
 * [cs] _půl / polovina_ "half"; _třetina_ "one third"; _čtvrt /
   čtvrtina_ "quarter"
 
-### <a name="Sets">`Sets`</a>: number of sets of things; collective numeral
+### <a name="Sets">`Sets`</a>: 集合の数・集合数詞 (number of sets of things; collective numeral)
 
-数詞の独立クラスであり，事物の集合を数えるために用いられる数詞か，絶対複数 (pluralia tantum) を示す名詞である．研究者によってはこのタイプを集合数詞 (collective numeral) と呼ぶことがある．
+これは数詞の独立したクラスであり，事物の集合を数えるために用いられる数詞か，絶対複数 (pluralia tantum) を示す名詞である．研究者によってはこのタイプを集合数詞 (collective numeral) と呼ぶことがある．
 
 #### 例
 
@@ -102,7 +94,7 @@ Greek:        <feat name="NumType" value="Gen" upos="NUM">19</feat><!-- δεκά
   [pairs of] shoes"; 通常の基数詞とは区別される: _dvě / tři
   boty_ "two / three shoes"
 
-### <a name="Dist">`Dist`</a>: distributive numeral
+### <a name="Dist">`Dist`</a>: 配分される数 (distributive numeral)
 
 同じ量が特定のターゲット内の各成員に配分されることを表す.
 

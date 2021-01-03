@@ -4,20 +4,20 @@ title: 'AdpType'
 shortdef: 'adposition type'
 ---
 
-### Prep: preposition
+### Prep: 前置詞
 
 例: in, on, to, from
 
-### Post: postposition
+### Post: 後置詞
 
 例: ドイツ語 "der Strasse entlang" における "entlang" (along the street)
 
-### Circ: circumposition
+### Circ: 両置詞
 
 Examples: ドイツ語 "von … an" in "von dieser Stelle an" (from this place
 on)
 
-### Voc: vocalized preposition
+### Voc: 有声化する前置詞
 
 スラブ諸語において，前置詞 (preposition) のいくつかは音節を形成 (non-syllabic) しない．発音を流暢にするため，前置詞の形式はコンテクストによって変わる．
 

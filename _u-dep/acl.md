@@ -5,7 +5,7 @@ shortdef: 'clausal modifier of noun (adjectival clause)'
 udver: '2'
 ---
 
-`acl`は，名詞を修飾する定型/非定型節 (finite/non-finite clauses) を表す. 関係`acl`は関係 [advcl]() と対照を成し，後者は述語 (predicate) を修飾する副詞節に用いられる．関係`acl`の主辞 (head) は被修飾名詞であり，依存部 (dependent) は名詞を修飾する節の主辞である．
+`acl`は，名詞を修飾する定型/非定型節 (finite/non-finite clauses) を表す. 関係`acl`は関係 [advcl]() と対照的であり，後者は述語 (predicate) を修飾する副詞節に用いられる．関係`acl`の主辞 (head) は被修飾名詞であり，依存部 (dependent) は名詞を修飾する節の主辞である．
 
 ~~~ sdparse
 the issues as he sees them

@@ -12,7 +12,7 @@ ROOT I love French fries .
 root(ROOT, love)
 ~~~
 
-**v2から:** どのツリーであっても，依存関係`root`を結ぶ1つのノードが存在しなければならない．主述語 (main predicate) が (省略によって) 生起しない場合，そして"orphaned dependent"が複数存在する場合，それらのうち1つが主辞 (根) へと昇格 (promote) し，他の"orphan"はそれに付加される. (この規則はv1.2から続くが，v1の元々のガイドラインでは明言していない)．
+**v2から:** どのツリーであっても，依存関係`root`を結ぶ1つのノードが存在しなければならない．主述語 (main predicate) が (省略によって) 生起しない場合，そして"orphaned dependent"が複数存在する場合，それらのうち1つが主辞 (根) へと昇格 (promote) し，他の"orphan"はそれに付加される. (この規則はv1.2から続くが，v1の元々のガイドラインでは明言されていない)．
 
 ~~~ sdparse
 ROOT And Robert the fourth place .

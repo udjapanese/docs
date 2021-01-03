@@ -4,9 +4,9 @@ title: 'PossGender'
 shortdef: 'possessor’s gender'
 ---
 
-所有形容詞・代名詞 (possessive adjectives and pronouns) は2つの異なる性 (gender) を持つことがある: 所有物 (被修飾名詞との性の一致 (agreement)) と所有者 (語彙的な素性であり，固有の性をもつ)．素性`PossGender`所有者の性を表す．今のところサブセットしかコーパスでは観察されないが，議論を簡潔にするため，この素性の可能な値は`Gender`のものと同一だと考えたい．
+所有形容詞・代名詞 (possessive adjectives and pronouns) は2つの異なる性 (gender) を持つことがある: 所有物 (被修飾名詞との性の一致 (agreement)) と所有者 (語彙的な素性であり，固有の性をもつ)．素性`PossGender`は所有者の性を表す．今のところ一部しかコーパスでは観察されないが，議論を簡潔にするため，この素性の可能な値は`Gender`のものと同一だと考えたい．
 
-以下に示すチェコ語の例では，男性 (masculiune) の`PossGender`が接尾辞 <I>-</I><I>ův, -ova, -ovo,</I> を含意し，女性 (feminine) の`PossGender`が
+以下に示すチェコ語の例では，男性 (masculiune) の`PossGender`が接尾辞 <I>-</I><I>ův, -ova, -ovo,</I> を含意し，女性 (feminine) の`PossGender`は
  <I>-</I><I>in, -ina, -ino</I> のいずれかを使用していることを含意する．
 
 ### Masc: 男性の所有者 (masculine possessor)

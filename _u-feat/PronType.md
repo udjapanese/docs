@@ -22,13 +22,11 @@ udver: '2'
 </tr>
 </table>
 
-この素性は典型的に [代名詞 (pronouns)](u-pos/PRON),
-代名詞的形容詞 (pronominal adjectives) ([限定詞 (determiners)](u-pos/DET)), 代名詞的 [数詞 (numerals)](u-pos/NUM) (数量詞 (quantifiers)) および代名詞的 [副詞 (adverbs)](u-pos/ADV) に対して適用される.
+この素性は典型的に[代名詞 (pronouns)](u-pos/PRON), 代名詞的形容詞 (pronominal adjectives) ([限定詞 (determiners)](u-pos/DET)), 代名詞的[数詞 (numerals)](u-pos/NUM) (数量詞 (quantifiers)) および代名詞的[副詞 (adverbs)](u-pos/ADV) に対して適用される.
 
 ### <a name="Prs">`Prs`</a>: 人称代名詞，所有代名詞，限定詞
 
-通常の人称代名詞が所有代名詞と区別されることについては[Poss]()を参照されたい．`Prs`は再帰代名詞/所有代名詞 (reflexive
-personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _se / svůj;_素性[Reflex]()を参照).
+通常の人称代名詞が所有代名詞と区別されることについては，[Poss]()を参照されたい．`Prs`は再帰代名詞/所有代名詞 (reflexive personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _se / svůj;_素性[Reflex]()を参照).
 
 #### 例
 
@@ -39,9 +37,9 @@ personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _s
 
 ### <a name="Rcp">`Rcp`</a>: 相互代名詞 (reciprocal pronoun)
 
-この値は特に相互的である代名詞に対して用いられる．相互的意味が再帰代名詞によって表される場合，当該の語は依然として再帰代名詞としてラベル付けされる (`PronType=Prs|Reflex=Yes`). コンテクスト上で相互的な意味が現れる場合は，相互代名詞としては標示されない．
+この値は特に相互的である代名詞に対して用いられる．互恵的意味が再帰代名詞によって表される場合でも，当該の語は依然として再帰代名詞としてラベル付けされる (`PronType=Prs|Reflex=Yes`). コンテクスト上で互恵的意味が現れる場合は，相互代名詞としては標示されない．
 
-相互的とは，複数を表す主語がある場合に各成員が述語 (predicate) の指す行為を行うことを意味する．そのような意味を表すため，相互代名詞が目的語の位置において用いられる．
+相互的とは，複数を表す主語がある場合に各成員が述語 (predicate) の指す行為を行うことを意味する．そのような意味を表すため，相互代名詞が目的語の位置に用いられる．
 
 #### 例
 
@@ -50,7 +48,7 @@ personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _s
 
 ### <a name="Art">`Art`</a>: 冠詞 (article)
 
-冠詞は限定詞の特殊な事例であり，[定性 (definiteness)](Definite)の素性を持つ (他言語では，この素性は名詞に対して直接標示される.
+冠詞は限定詞の特殊な事例であり，[定性 (definiteness)](Definite) の素性を持つ (他言語では，この素性は名詞に対して直接標示される).
 
 #### 例
 
@@ -79,7 +77,7 @@ personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _s
 
 ### <a name="Exc">`Exc`</a>: 感嘆の限定詞 (exclamative determiner)
 
-感嘆の限定詞<!--Exclamative pro-adjectives (determiners)-->は，それが修飾している名詞に対する話者の驚きを表す (e.g. _what_ in “What a surprise!”) 多くの言語で感嘆の限定詞は疑問限定詞 (interrogative determiners) から選ばれるので，これらを区別しないタグセットも存在する．
+感嘆の限定詞<!--Exclamative pro-adjectives (determiners)-->は，それが修飾している名詞に対する話者の驚きを表す (e.g. _what_ in “What a surprise!”)． 多くの言語で感嘆の限定詞は疑問限定詞 (interrogative determiners) から選ばれるので，これらを区別しないタグセットも存在する．
 
 #### Examples: 
 
@@ -89,8 +87,7 @@ personal/possessive pronouns) を含むことに注意されたい (e.g. [cs] _s
 
 ### <a name="Dem">`Dem`</a>: demonstrative pronoun, determiner, numeral or adverb
 
-These are often parallel to interrogatives. Some tagsets might also
-distinguish a separate feature of distance (_here / there_; [es] _aquí
+これらは疑問詞との共通点が多い．タグセットによっては，距離について独立した素性を設定する場合もある (_here / there_; [es] _aquí
 / ahí / allí_).
 
 #### 例
@@ -108,7 +105,7 @@ distinguish a separate feature of distance (_here / there_; [es] _aquí
 
 * [ro] _însuși_
 * [cs] _sám_
-* [en] _himself_ “He himself did it.” 内の
+* [en] _himself_ (“He himself did it.”内の)
 
 ### <a name="Tot">`Tot`</a>: 集合 (collective) 代名詞，限定詞，副詞
 
@@ -119,7 +116,7 @@ distinguish a separate feature of distance (_here / there_; [es] _aquí
 
 ### <a name="Neg">`Neg`</a>: 否定 (neganitve) 代名詞，限定詞，副詞
 
-否定代名詞は否定[不変化詞 (particles)](u-pos/PART)や極性 (polarity) に関して屈折する語 (動詞，形容詞など) とは区別される. これらの語には`PronType=Neg`を持ちいず，かわりに`Polarity=Neg`を用いる．詳細については[Polarity]()を参照されたい．
+否定代名詞は否定[不変化詞 (particles)](u-pos/PART) や極性 (polarity) に関して屈折する語 (動詞，形容詞など) とは区別される. これらの語には`PronType=Neg`を持ちいず，かわりに`Polarity=Neg`を用いる．この詳細については[Polarity]()を参照されたい．
 
 #### 例:
 
@@ -129,7 +126,7 @@ distinguish a separate feature of distance (_here / there_; [es] _aquí
 
 ### <a name="Ind">`Ind`</a>: 不定の代名詞，限定詞，数詞，副詞
 
-タグセットによっては，このカテゴリに“some”と“any”などの区別によって下位分類を設けることがある．そのような区別は普遍的素性 (universal features) に含まれないが，特定の言語に拡張したものには追加されるかもしれない．
+タグセットによっては“some”と“any”などを区別し，下位分類を設けることがある．そのような区別は普遍的素性 (universal features) に含まれないが，特定の言語向けに拡張したものには追加されるかもしれない．
 
 #### 例
 

@@ -4,7 +4,7 @@ title: 'NameType'
 shortdef: 'type of named entity'
 ---
 
-この素性は名称のある存在物を分類する (token-based, no nesting of entities etc.)． この素性は主に[cs-pos/PROPN]()タグに適用される: 複数の語から成る外国語の名称については，[adjectives](cs-pos/ADJ)もこの素性を持つ <!--Czechがチェコ語なのか，"Czech"という語を指すのかが分からない(they preserve the `ADJ` tag but at the same time they would not exist in Czech
+この素性は名称の付いた存在物を分類する (token-based, no nesting of entities etc.)． この素性は主に[cs-pos/PROPN]()タグに適用される; 複数の語から成る外国語の名称については，[形容詞 (adjectives)](cs-pos/ADJ) もこの素性を持つ <!--(they preserve the `ADJ` tag but at the same time they would not exist in Czech
 otherwise than in the named entity).-->
 
 ### `Geo`: 地理的な名称
@@ -29,7 +29,7 @@ otherwise than in the named entity).-->
 
 ### `Nat`: 国籍
 
-特定の国家もしくは，特定の領地の住人を示す
+特定の国家もしくは，特定の領地の住人を示す．
 
 #### 例
 
@@ -41,4 +41,4 @@ otherwise than in the named entity).-->
 
 ### `Oth`: その他
 
-競技場，ゲリラ拠点，イベントなどの名称
+競技場，ゲリラ拠点，イベントなどの名称．
