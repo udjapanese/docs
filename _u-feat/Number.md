@@ -22,104 +22,92 @@ udver: '2'
 </tr>
 </table>
 
-`Number` is usually an inflectional feature of [nouns](u-pos/NOUN) and,
-depending on language, other parts of speech ([pronouns](u-pos/PRON),
-[adjectives](u-pos/ADJ), [determiners](u-pos/DET), [numerals](u-pos/NUM),
-[verbs](u-pos/VERB)) that mark agreement with nouns.
+`Number` は通常，[名詞 (nouns)](u-pos/NOUN) の屈折素性である．言語によっては，他の品詞 ([代名詞 (pronouns)](u-pos/PRON),
+[形容詞 (adjectives)](u-pos/ADJ), [限定詞 (determiners)](u-pos/DET), [数詞 (numerals)](u-pos/NUM), [動詞 (verbs)](u-pos/VERB))も数に関して名詞との一致 (agreement) を標示することがある．
 
-### <a name="Sing">`Sing`</a>: singular number
+### <a name="Sing">`Sing`</a>: 単数 (singular number)
 
-A singular noun denotes one person, animal or thing.
+人物・動物・事物を1つ示す単数名詞.
 
-#### Examples
+#### 例
 
 * [en] _<b>car</b>_
 
-### <a name="Plur">`Plur`</a>: plural number
+### <a name="Plur">`Plur`</a>: 複数 (plural number)
 
-A plural noun denotes several persons, animals or things.
+人物・動物・事物を複数示す複数名詞.
 
-#### Examples
+#### 例
 
 * [en] _<b>cars</b>_
 
-### <a name="Dual">`Dual`</a>: dual number
+### <a name="Dual">`Dual`</a>: 双数 (dual number)
 
-A dual noun denotes two persons, animals or things.
+人物・動物・事物を2つ示す双数名詞
 
-#### Examples
+#### 例
 
 * [sl] singular _glas_ "voice", dual _<b>glasova</b>_ "voices", plural
   _glasovi_ "voices"
 * [ar] singular سَنَةٌ _sanatun_ "year", dual <b>سَنَتَانِ
   _sanatāni_</b> "years", plural سِنُونَ _sinūna_ "years".
 
-### <a name="Tri">`Tri`</a>: trial number
+### <a name="Tri">`Tri`</a>: 三数 (trial number)
 
-A trial pronoun denotes three persons, animals or things.
-It occurs in pronouns of several Austronesian languages.
+三数代名詞 (trial pronoun denotes) は人物・動物・事物を3つ示す．三数代名詞
+はオーストロネシア諸語のいくつかに現れる．
 
-### <a name="Pauc">`Pauc`</a>: paucal number
+### <a name="Pauc">`Pauc`</a>: 少数 (paucal number)
 
-A paucal noun denotes “a few” persons, animals or things.
+少数名詞 (paucal noun) は“少数の”人物・動物・事物を表す．
 
-### <a name="Grpa">`Grpa`</a>: greater paucal number
+### <a name="Grpa">`Grpa`</a>: 複数の少数 (greater paucal number)
 
-A greater paucal noun denotes “more than several but not many” persons, animals or things.
-It occurs in Sursurunga, an Austronesian language.
+複数少数名詞 (greater paucal noun) は "少数ではないが，多数でない" 人物・動物・事物を指す．
+オーストロネシア言語のスルスルンガ語 (Sursurunga) に生起する．
 
-### <a name="Grpl">`Grpl`</a>: greater plural number
+### <a name="Grpl">`Grpl`</a>: 大数 (greater plural number0
+大数名詞 (greater plural noun) は “多数の，可能なもの全ての” 人物・動物・事物を指す．
+その正確な意味は言語によって多岐にわたる．
 
-A greater plural noun denotes “many, all possible” persons, animals or things.
-Precise semantics varies across languages.
+### <a name="Inv">`Inv`</a>: 逆数 (inverse number)
 
-### <a name="Inv">`Inv`</a>: inverse number
+逆数は特定の名詞の数がデフォルトでないことを表す． (名詞よっては単数がデフォルトであったり，複数がデフォルトであったりする.)
+逆数はキオワ語 (Kiowa) に生起する．
 
-Inverse number means non-default for that particular noun. (Some nouns are by
-default assumed to be singular, some plural.) Occurs e.g. in Kiowa.
+### <a name="Count">`Count`</a> 加算複数 (count plural)
 
-### <a name="Count">`Count`</a> count plural
+加算複数はブルガリア語やマケドニア語で確認され，"加算形"，"加算複数"，"定量複数" のように，様々な呼び方がある (Sussex and Cubberley 2006, p. 324).
+数詞 (numeral) に後続する場合，これは名詞の特殊な複数形となる．
+(この形式はスラブ祖語の双数形に起源を持つが，`Number=Dual`とは標示されない．
+なぜなら，(1)双数はブルガリア語で消失した (2)その形式が2という数と意味的な関連性を持たなくなったからである．)
 
-Attested in Bulgarian and Macedonian. It is known variously as “counting form”,
-“count plural” or “quantitative plural” (Sussex and Cubberley 2006, p. 324).
-It is a special plural form of nouns if they occur after numerals.
-(The form originates in the Proto-Slavic dual but it should not be marked
-`Number=Dual` because 1. the dual vanished from Bulgarian and 2. the form is
-no longer semantically tied to the number two.)
-
-#### Examples
+#### 例
 
 * [bg] _tri <b>stola</b>_ “three chairs” vs. _stolove_ “chairs”
 
-### <a name="Ptan">`Ptan`</a>: plurale tantum
+### <a name="Ptan">`Ptan`</a>: 絶対複数 (plurale tantum)
 
-Some nouns appear only in the plural form even though they denote one
-thing (semantic singular); some tagsets mark this distinction.
-Grammatically they behave like plurals, so `Plur` is obviously the
-back-off value here; however, if the language also marks gender, the
-non-existence of singular form sometimes means that the gender is
-unknown. In Czech, special type of numerals is used when counting
-nouns that are plurale tantum ([NumType]() = Sets).
+名詞によっては，例えそれが1つの事物 (意味的に単数) しか表していなくても複数形でしか生起しないようなものがある;
+いくつかのタグセットでは．この区別を標示する．
+文法的には複数形のようにふるまうので，`Plur`はバックオフの値をとる; しかし，性 (gender) も標示する言語については，単数形の不在が性について不明であること意味する場合がある．チェコ語において加算名詞が絶対複数を表す場合，このような特別なタイプの数詞が用いられる ([NumType]() = Sets)．
 
-#### Examples
+#### 例
 
 * [en] _<b>scissors, pants</b>_
 * [cs] _<b>nůžky, kalhoty</b>_
 
-### <a name="Coll">`Coll`</a>: collective / mass / singulare tantum
+### <a name="Coll">`Coll`</a>: 集合名詞，質量名詞，絶対単数 (collective / mass / singulare tantum)
 
-Collective or mass or singulare tantum is a special case of
-singular. It applies to words that use grammatical singular to
-describe sets of objects, i.e. semantic plural. Although in theory
-they might be able to form plural, in practice it would be rarely
-semantically plausible. Sometimes, the plural form exists and means
-"several sorts of" or "several packages of".
+集合名詞，質量名詞，絶対単数は単数形の特別例である．これらは文法的単数が事物の集合 (i.e. 意味的に複数) を表す場合に適用される．理論的には複数形を形成できるだろうが，意味的に単数を表すのは難しい．
+ただし，複数形は"いくつかの種類の"，"いくつかのパッケージの"といった意味を表すことがある．
 
-#### Examples
+
+#### 例
 
 * [cs] _<b>lidstvo</b>_ "mankind"
 
-### References
+### 参考文献
 
 * Sussex, Roland and Cubberley, Paul. 2006. _The Slavic Languages._ Cambridge University Press.
 

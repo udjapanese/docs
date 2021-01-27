@@ -8,50 +8,30 @@ POSのレベルで既に助動詞とそれ以外を区別してきたが，タ�
 
 ### Aux: 助動詞 (auxiliary verb)
 
+周辺的な動詞形 (時制，受動など) をつくるのに用いられる．多くの言語では助動詞とそれ以外の用法とで曖昧性が存在するので，同じ動詞形がコンテクストによって異なるタグや素性が付与されることもある．
 
-Verb used to create periphrastic verb forms (tenses, passives etc.) In
-many languages there will be ambiguity between auxiliary and other
-usages, thus the same verb should get different tags or feature values
-depending on context.
+### Cop: コピュラ動詞
 
-### Cop: copula verb
+形容詞，名詞もしくは分詞から名詞述語 (nominal predicates) をつくるのに用いられる．言語によっては，コピュラを省略したり，他の手段を用いて名詞述語をつくることがある．コピュラを有する言語においては，それは"to be"や"to become"に相当する意味を持つことが多い．
 
-Verb used to make nominal predicates from adjectives, nouns or
-participles. Some languages omit the copula or use other means to
-create nominal predicates. In languages that have copula, it is often
-the equivalent of the verbs "to be" or "to become".
+例: It *is* purple. He just *became* father.
 
-Examples: It *is* purple. He just *became* father.
+### Mod: 法動詞
 
-### Mod: modal verb
+法動詞 (modal verb) は，いくつかの言語の文法において伝統的に設定されてきた動詞グループである．法動詞は他の動詞不定形 (不定詞を標示する接続詞を伴う言語と，そうでない言語がある) を項にとり，その動詞に可能性や必然性といった意味を加える.
+他にも不定詞を項にとる動詞が存在するが，それらは法動詞とは考えられない (e.g. 句動詞 "to *begin* to do something")．ある言語内で法動詞は閉じたクラスを成すため，種類を数え上げることが可能である．
 
-A group of verbs traditionally distinguished in grammars of some
-languages. They take infinitive of another verb as argument (with or
-without infinitive-marking conjunction, in languages that have it) and
-add various modes of possibility, necessity etc. to the meaning of the
-infinitive. There are other verbs that take infinitives as arguments
-but they are not considered modal (e.g. phasal verbs such as "to
-*begin* to do something"). The set of modal verbs for a language is
-closed and can be enumerated.
+いくつかの言語 (e.g. トルコ語) では，動詞を法動詞と結合させる代わりに，主動詞の特殊な形式を用いる．
 
-Note that some languages (e.g. Turkish) use special forms of the main
-verb instead of combining it with a modal verb.
-
-German examples: dürfen (may), können (can), mögen (want/like to),
+ドイツ語の例:: dürfen (may), können (can), mögen (want/like to),
 müssen (must), sollen (shall), wollen (want to), wissen (know to)
 
-Czech examples: muset (must), mít (shall, have to), moci (can), smět
+チェコ語の例: muset (must), mít (shall, have to), moci (can), smět
 (may, be allowed to), umět (know to), chtít (want to)
 
-### Light: light (support) verb
+### Light: 軽動詞・補助動詞
 
-Light or support verb is used in verbo-nominal constructions where the main
-part of the meaning is contributed by a noun complement.
-An English example would be _to take a nap,_ where _take_ is the light verb.
-It is often the case that the light verb can also function as a normal verb
-in the language (cf. _to take two dollars_).
-If the light verb constructions are used frequently in a language (e.g. Hindi or Japanese) or
-if there is a dedicated light verb that cannot be used as normal verb,
-it makes sense to mark light verbs with a dedicated feature value.
+軽動詞もしくは補助動詞は動詞-名詞構文 (verbo-nominal constructions) に用いられ，主たる意味が補部名詞から与えられる．英語の例 _to take a nap,_ では， _take_ が軽動詞である．軽動詞は当該の言語において普通の動詞としても機能することが多い (cf. _to take two dollars_).
+軽動詞構文が多用されるような言語 (e.g. ヒンディー語，日本語) だったり，軽動詞としてしか用いられない動詞が存在する場合には，軽動詞専用の素性の値を設定するのが良いだろう．
 
-Japanese example: suru
+日本語の例: suru (する)

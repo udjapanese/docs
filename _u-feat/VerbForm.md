@@ -48,8 +48,8 @@ udver: '2'
 
 * 単純過去: I ate (the) dinner = _Jag åt maten_ (using preterite)
 * 合成過去 (Composite past): I have eaten (the) dinner = _Jag har <b>ätit</b> maten_ (スピーヌムを用いて)
-* 中性の過去分詞 (Past participle common): (The) dinner is eaten = _Maten är äten_ (using past participle)
-* 般性の過去分詞 (Past participle neuter): (The) apple is eaten = _Äpplet är ätet_
+* 中性の過去分詞 (Past participle common): (The) dinner is eaten = _Maten är äten_ (過去分詞を用いて)
+* 汎性の過去分詞 (Past participle neuter): (The) apple is eaten = _Äpplet är ätet_
 * 複数の過去分詞 (Past participle plural): (The) apples are eaten = _Äpplena är ätna_ 
 
 ### <a name="Part">`Part`</a>: 分詞 (participle) 動詞的形容詞 (verbal adjective)
@@ -86,7 +86,7 @@ udver: '2'
 
 `VerbForm=Ger`の使用は推奨できない．スペイン語などでは_動名詞 (gerund)_という用語が混乱を生むので，別の値を用いることを推奨する: スペイン語 (および他のロマンス諸語) では，これは現在分詞を指すので`Tense=Pres|VerbForm=Part`としてラベル付けすべきである; スラブ語では副動詞 (副詞的分詞) を指すので，`VerbForm=Conv`としてラベル付けすべきである; また，UDv1では動詞名詞 (verbal nouns) に対して用いることが推奨されたので，UDv2では`VerbForm=Vnoun`を用いる．
 
-しかし，素性`VerbForm=Ger`はUDv2でも利用可能であって，他の選択肢がなければ許容される．この素性は将来のバージョンで削除されるだろうが，ともかく包括的な調査が必要である．
+ただし，UDv2でも素性`VerbForm=Ger`は利用可能であリ，他の選択肢がなければ許容される．この素性は将来のバージョンで削除されるだろうが，ともかく包括的な調査が必要である．
 
 #### 例
 

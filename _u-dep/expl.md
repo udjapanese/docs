@@ -6,7 +6,7 @@ udver: '2'
 ---
 
 関係`expl`とは虚辞 (expletive) や冗語 (pleonastic) を表す名詞句を指す．これらは述語の項位置に生起する名詞句ではあるが，それら自身は述語のいずれの意味役割 (semantic role) も満たさない．節の主述語 (動詞，叙述形容詞もしくは名詞) が支配項となる．英語において，*it* や *there* のいくつかは虚辞に該当する: 外置構文 (extraposition construction) における存在の*there*や*it*.
-(*it*や*there*は虚辞でない用法もある)
+(*it*や*there*は虚辞でない用法もある).
 
 ~~~ sdparse
 There is a ghost in the room
@@ -57,10 +57,9 @@ obl(mentioned, Mary)
 ccomp(mentioned, leaving)
 ~~~
 
-関係`expl`に関連する第二の使用法は，真正な二重接語 (true clitic doubling) に関するものである．接語や語彙的名詞句が相補的分布を示す言語 –"Kayneの一般化"に従うようなフランス語等の言語–において，接語と語彙的名詞句のどちらが生起したとしても，[obj]() もしくは [iobj]()といった適切な意味役割を受ける．口語フランス語など，そのような言語で接辞の二重化が起きた場合，語彙的名詞句を [dislocated]() としてみなすことが正しい分析の仕方となる (例を参照)，そのような事例において当該の分析は，名詞句が別の名詞句もしくは名詞句の項位置を埋める代名詞に二重化する分析と同一になるだろう．<!--As such, the analysis will be the same as when a noun phrase doubles another noun phrase or a regular pronoun that fills a nominal argument position. -->
-しかし，ギリシア語やブルガリア語といった他言語においては語彙的名詞句や代名詞的接語の二重化を許す．前者では
-with the former still appearing in its regular role as an argument of the predicate.これらの事例では， In these cases, if only one of the lexical nominal and the clitic appear in a clause, then whichever appears will be given the grammatical role of [obj](), [iobj](), etc. – parallel to the treatment of lexical nominals and pronouns in other languages, modulo the clitic pronoun having a different position in the sentence.  
-しかし，両者が生起した場合，名詞句は[obj]()と[iobj]()などの文法役割を得る．そして，接語は代名詞のコピーとして扱われ，それ自身の意味役割を得ないため`expl`の役割を得る. <!--Modulo the different word order,-->これは上述した英語の_it_と_there_の扱いと並行的であり，このとき別の句が述語の意味役割を満たす． ギリシア語とブルガリア語の例は以下に示される:
+関係`expl`に関連する第二の使用法は，真正な二重接語 (true clitic doubling) に関するものである．接語や語彙的名詞句が相補的分布を示す言語 –"Kayneの一般化"に従うようなフランス語等の言語–において，接語と語彙的名詞句のどちらが生起したとしても，[obj]() もしくは [iobj]()といった適切な意味役割を受ける．口語フランス語など，そのような言語で接辞の二重化が起きた場合，語彙的名詞句を [dislocated]() としてみなすことが正しい分析の仕方となる (例を参照)，そのような事例において当該の分析は，名詞句が別の名詞句もしくは名詞句の項位置を埋める代名詞を二重化させる分析と同一になるだろう．
+しかし，ギリシア語やブルガリア語といった他言語においては語彙的名詞句や代名詞的接語の二重化を許すとはいえ，前者では述語の項として標準的な役割を持つ．これらの事例では，語彙的名詞や接語のうち1つのみが節に現れた場合に限り，どちらが生起しようとも [obj]()，[iobj]() 等の役割が付与される – 他言語における語彙的名詞句と代名詞の扱いに並行して, 接語代名詞は文中の異なる位置に生起する.
+しかし，両者が生起した場合，名詞句は[obj]()と[iobj]()などの文法役割を得る．そして，接語は代名詞のコピーとして扱われ，それ自身の意味役割を得ないため`expl`の役割を得る. これは上述した英語の_it_と_there_の扱いと並行的であり，このとき別の句が述語の意味役割を満たす． ギリシア語とブルガリア語の例は以下に示される:
 
 ~~~ sdparse
 Της τον έδωσε της Καίτης τον αναπτήρα \n PRON.Fem.Gen PRON.Masc.Acc gave ART.Fem.Gen Keti.Gen ART.Masc.Acc lighter.Acc
