@@ -11,7 +11,7 @@ twitter_username: masayu_a
 github_username:  masayu-a
 
 # Build settings
-theme: minima
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
