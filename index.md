@@ -36,7 +36,7 @@ Universal Dependencies の日本語の情報ページです。
 
 ## 研究会の記録：
 
-### <a href="https://ccd.ninjal.ac.jp/event/20210622.html">第3回 Universal Dependencies 公開研究会</a>
+### <a href="https://clrd.ninjal.ac.jp/event/20210622.html">第3回 Universal Dependencies 公開研究会</a>
 * 日時：2021年6月22日(火) 10:00-16:30
 * 会場：オンライン（国立国語研究所 2階 多目的室から配信）
 
